@@ -39,6 +39,15 @@ a:hover{
     color: rgb(158, 196, 238);
     cursor: pointer;
 }
+.social-icons li a{
+    color: black;
+    font-size: 18px;
+}
+.social-icons {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
 .burger{
     display: none;
     border: 1px solid black;
@@ -51,6 +60,17 @@ a:hover{
     margin: 5px;
     transition: All 0.3s ease-in-out;
 }
+@media screen and (max-width:1300px) {
+    img{
+        width: 200px;
+    }
+    .nav-links{
+        width: 40%;
+    }
+    .social-icons{
+        width: 200px;
+    }
+}
 
 @media screen and (max-width: 1050px) {
     nav{
@@ -61,13 +81,21 @@ a:hover{
         width: 150px;
     }
     .nav-links{
-        width: 60%;
+        width: 45%;
+    }
+    .social-icons{
+        width: 200px;
     }
 }
 
+
 @media screen and (max-width:750px) {
     body{
+       
         overflow-x: hidden;
+    }
+    .social-icons{
+        display: none;
     }
     .nav-links{
         position: absolute;
