@@ -26,17 +26,16 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-nav ul{
+.links{
     display: flex;
     width: 300px;
     justify-content: space-between;
     align-items: center;
 }
-nav li{
+.links li{
     list-style: none;
 }
-nav a{
-    font-size: 22px;
+.a{
     color: red;
 }
 .button-div{
@@ -46,31 +45,8 @@ nav a{
     align-items: center;
     justify-content: center;
 }
-.modal{
 
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    border-radius: 15px;
-}
-.one{
-    align-items: center;
-    width: 500px;
-    height: 250px;
-    display: none;
-}
-.model-header{
-    margin-top:60px;
-    color: red;
-    font-size: 3rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 5px;
-}  
+
 
 .modal-btn{
     background-color: rgb(73, 166, 233);
@@ -86,48 +62,4 @@ nav a{
     background-color: transparent;
     border: 3px rgb(73, 166, 233) solid;
     color: rgb(73, 166, 233);
-}
-
-.two{
-    width: 500px;
-    height: 230px;
-    border-radius: 0;
-    background-color: white;
-    display: flex;
-    align-items: center;
-}
-.header{
-    width: 100%;
-    height: 45px;background-color: red;
-    display: flex;
-    justify-content: end;
-}
-button{
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: e;
-    font-size: 2rem;
-    margin-right: 18px;
-    color: white;
-}
-
-.like{
-    margin-top: 25px;
-    color: red;
-}
-.good{
-    margin-top: 15px;
-    font-size: 2.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    color: red;
-    letter-spacing: 3px;
-}
-.toggle{
-    display: flex;
-}
-
-.changeBackgroud {
-   
 }
