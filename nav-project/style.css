@@ -115,7 +115,7 @@ a:hover{
         background-color: coral;
         flex-direction: column;
         justify-content: start;
-         transform: translatex(-100%); 
+        transform: translatex(-100%); 
         transition: transform 0.5s ease-in-out; 
         width: 40%;
     }

@@ -1,7 +1,10 @@
-// let openModel = document.querySelector('.modal-btn')
-// let closeModel = document.querySelector('.cancel')
-// let modal = document.querySelector('.two')
+let openModel = document.querySelector('.modal-btn')
+let closeModel = document.querySelector('.cancel')
+let modal = document.querySelector('.two')
 
-// openModel.addEventListener('click' , function(){
-//     modal.classList.add('toggle')
-// })
+openModel.addEventListener('click' , function(){
+    modal.classList.add('toggle')
+})
+closeModel.addEventListener('click', ()=>{
+    modal.classList.remove('toggle')
+})
