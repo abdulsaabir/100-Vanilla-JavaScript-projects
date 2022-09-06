@@ -15,3 +15,6 @@ closeModel.addEventListener('click', ()=>{
     modal.classList.remove('toggle')
     body.classList.remove('changeBackgroud')
 })
+
+
+
