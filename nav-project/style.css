@@ -95,7 +95,16 @@ a:hover{
         overflow-x: hidden;
     }
     .social-icons{
-        display: none;
+        display:flex;
+        position: absolute;
+        left: 5px;
+        top: 90vh;
+        width: 150px;
+        transform: translateX(-130%);
+        transition: transform 0.5s ease-in-out;
+    }
+    .social-icons-toggle{
+        transform: translateX(0%);
     }
     .nav-links{
         position: absolute;
