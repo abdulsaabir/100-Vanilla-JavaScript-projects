@@ -1,5 +1,5 @@
 // the main undrestanding is in css 
-//showAll is the class doing all the job
+//Show-text is the class doing all the job
 
 // choose all the element parents
 let parent = document.querySelectorAll('.question')
