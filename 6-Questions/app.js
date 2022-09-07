@@ -2,7 +2,7 @@
 //showAll is the class doing all the job
 
 // choose all the element parents
-let parent = document.querySelectorAll('.parent')
+let parent = document.querySelectorAll('.question')
 
 // loop through them to check the btn clicked
 parent.forEach(currentParrent =>{
@@ -15,11 +15,11 @@ parent.forEach(currentParrent =>{
             // comparing clicked btn and the others 
             if( chekingParent !== currentParrent)
             {
-                chekingParent.classList.remove("showAll")
+                chekingParent.classList.remove("show-text")
             }
         })
         // toggling on/off the btn clicked
-        currentParrent.classList.toggle('showAll')
+        currentParrent.classList.toggle('show-text')
     })
     
 })

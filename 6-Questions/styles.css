@@ -112,6 +112,7 @@ h4 {
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
+  font-weight: bold;
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -128,12 +129,14 @@ p {
   }
   body {
     font-size: 1rem;
+    background-color: #222;
   }
   h1,
   h2,
   h3,
   h4 {
     line-height: 1;
+    font-weight: bold;
   }
 }
 /*  global classes */
