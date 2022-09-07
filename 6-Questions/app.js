@@ -1,25 +1,25 @@
-//using selectors inside the element
-// traversing the dom
+// the main undrestanding is in css 
+//showAll is the class doing all the job
 
-
-let btns = document.querySelectorAll(".question-btn")
+// choose all the element parents
 let parent = document.querySelectorAll('.parent')
 
-btns.forEach(btn =>{
-    btn.addEventListener('click' , (e)=>{
-        let parentOfbtn  = e.currentTarget.parentElement.parentElement
-        let currenbtn = e.currentTarget
-        parentOfbtn.classList.toggle("showAll")
-        parent.forEach(close => {
-            let currenparent = close.classList
-           if(currenparent.contains("showAll"))
-           {
-            console.log(currenparent)
-           }
-           else{
-            currenparent.remove("showAll")
-           }
+// loop through them to check the btn clicked
+parent.forEach(currentParrent =>{
+    // get the btn in the curren parent
+    let btn = currentParrent.querySelector('.question-btn')
+    // listen if the btn is clcked
+    btn.addEventListener('click', ()=>{
+        // turning off to get two parents open at the same time
+        parent.forEach(chekingParent => {
+            // comparing clicked btn and the others 
+            if( chekingParent !== currentParrent)
+            {
+                chekingParent.classList.remove("showAll")
+            }
         })
-
+        // toggling on/off the btn clicked
+        currentParrent.classList.toggle('showAll')
     })
+    
 })

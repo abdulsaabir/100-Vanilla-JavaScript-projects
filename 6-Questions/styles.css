@@ -75,18 +75,6 @@ button{
  /* display: none;  */
 } 
 
-.showAll .btnhiden {
-  display: block;
-  top: 12px
-}
-
-.showAll .clickbtn{
-  display: none;
-}
-
-.showAll .hiddentext{
-  display: block;
-}
 
 @media screen and (max-width: 650px) {
   
@@ -103,3 +91,18 @@ button{
   }
 }
 
+
+
+/* the function */
+.showAll .btnhiden {
+  display: block;
+  top: 12px
+}
+
+.showAll .clickbtn{
+  display: none;
+}
+
+.showAll .hiddentext{
+  display: block;
+}
