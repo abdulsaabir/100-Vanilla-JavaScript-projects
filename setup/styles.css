@@ -1,16 +1,21 @@
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family:"Roboto", sans-serif;
   line-height: 1.5;
   font-size: 0.875rem;
-  background-color: rgb(231, 220, 220);
+  background-color: rgb(241, 245, 248);
 }
 .main{
   width: 88%;
   margin: auto;
-  padding: 80px;
+  padding: 80px 10px;
 }
 .container{
   width: 50%;
@@ -26,8 +31,85 @@ h1{
 .underline{
   width: 100px;
   height: 4px;
-  background-color: rebeccapurple;
+  background-color: rgb(197, 157, 95);
+  margin-bottom: 35px;
 }
 .titles{
   display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+button{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 4px 8px;
+  border-color: rgb(197, 157, 95);
+  font-size: 20px;
+  color: rgb(197, 157, 95);
+  transition: background-color 0.5s ease-in-out;
+}
+button:hover{
+  background-color: rgb(197, 157, 95);
+  color: white;
+
+}
+.mealscontainer{
+  display: grid;
+  width: 100%;
+  gap: 100px;
+  grid-template-columns: 1fr 1fr;
+
+}
+img{
+  width: 100%;
+  border-radius: 10px;
+  border: 4px solid rgb(197, 157, 95);
+  height: 100%;
+}
+.meals{
+  display: grid;
+  grid-template-columns: 250px 1fr ;
+  gap: 20px;
+  height: 180PX;
+
+}
+hr{
+  border: 2px dotted rebeccapurple;
+  border-style: none none dotted; 
+  color: #fff; 
+  background-color: #fff;
+  margin-bottom: 20px; 
+}
+
+span{
+  float: right;
+}
+h4{
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: rgb(97, 126, 153);
+}
+p{
+  font-size: 16px;
+  color: rgb(97, 126, 153);
+  font-weight: 300;
+  line-height:  24px;
+}
+
+@media screen and (max-width:1400px) {
+  .mealscontainer{
+    grid-template-columns: 1fr;
+  }
+  .meals{
+    width: 68%;
+    margin: auto;
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .meals{
+    display: flex;
+    flex-direction: column;
+  }
 }
