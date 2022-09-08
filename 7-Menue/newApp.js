@@ -8,14 +8,6 @@ const menu = [
       desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
     },
     {
-        id: 1,
-        title: "buttermilk pancakes",
-        category: "galab",
-        price: 15.99,
-        img: "./images/item-1.jpeg",
-        desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
-      },
-    {
       id: 2,
       title: "diner double",
       category: "lunch",
@@ -93,37 +85,58 @@ let sectionCenter = document.querySelector('.section-center')
 let buttons = document.querySelector('.btn-container')
 
 window.addEventListener('DOMContentLoaded' , () =>{
+    // load the items of the page
   displayitemsfuction(menu)
-  displaymenusfunction(menu)
+
+  // load the menues
+  displaymenusfunction()
 })
 
 
 
-function displaymenusfunction (array)
+function displaymenusfunction ()
 {
-    let oldcategories = array.map(item =>{
+    // to display menues you neeed to read from the array all the categories you have
+
+    // select all the diffrent catagerios in the menu array
+    let oldcategories = menu.map(item =>{
+        // return only the category object
      return item.category },)
+     // remove the duplicates from the catagerios
      let newcategories = [ ... new Set(oldcategories)]
      newcategories.unshift('all')
-
+     // add to the page all the catagerios found
     let btnload = newcategories.map( function (item){    
         return `<button type="button" class="filter-btn" data-id=${item}>${item}</button>`
     })
     btnload = btnload.join('')
     buttons.innerHTML = btnload
-    
-    let allbtns = document.querySelectorAll('')
-    allbtns.forEach(btn =>{
-        btn.addEventListener('click', (e) => {
-            let clickedbtn = e.currentTarget.dataset.id
-            if(clickedbtn =="all")
+
+    // after adding make for them fuctionality
+    let allbtns= document.querySelectorAll('.filter-btn')
+    allbtns.forEach(btn=>{
+        btn.addEventListener('click' , (e) => {
+            // get the clicked btn
+            let clikcedbtn = e.currentTarget.dataset.id
+            // to display the  content of the clicked btn
+            // filter the menu array 
+            let newmenu = menu.filter(item => {
+                // get all the categerios matches the clicked btn dataset id
+                if(item.category == clikcedbtn)
+                {
+                    // return and store in newmenu
+                    return item
+                }
+            })
+            // if it's all display all the menue
+            if(clikcedbtn === "all")
             {
                 displayitemsfuction(menu)
             }
+            // or display the newmenu 
             else {
-                displayfilterfunction(menu)
+                displayitemsfuction(newmenu)
             }
-    
         })
     })
  }
@@ -131,6 +144,7 @@ function displaymenusfunction (array)
 
 
 function displayitemsfuction(array){
+    // display all the the items in menu array
     let ContentLoad = array.map(item =>{
         return `<article class="menu-item">
         <img src="${item.img}" alt="menu item" class="photo" />
