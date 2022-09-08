@@ -112,3 +112,16 @@ const menu = [
     menucontent = menucontent.join('')
     sectionCenter.innerHTML = menucontent
   }
+
+
+  let btns= document.querySelectorAll('.filter-btn')
+
+  btns.forEach(btn => {
+    btn.addEventListener('click' , (e)=>{
+        let btnclicked = e.currentTarget.classList
+        console.log(btnclicked)
+        sectionCenter.innerHTML=''
+
+        
+    })
+  });
