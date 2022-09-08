@@ -81,47 +81,4 @@ const menu = [
     },
   ];
 
-  let sectionCenter = document.querySelector(".section-center")
-  let image =  document.querySelector(".photo")
-  let itemtitle =  document.querySelector(".item-info h4")
-  let price = document.querySelector(".price")
-  let textitem =  document.querySelector(".item-text")
-
-  window.addEventListener('DOMContentLoaded' , ()=>{
-    displayMenuitems(menu)
-    
-  })
-
-
-
-  function displayMenuitems(array){
-    let menucontent = array.map(item =>{
-        return `<article class="menu-item">
-        <img src="${item.img}" alt="${item.title} class="photo" />
-        <div class="item-info">
-          <header>
-            <h4>${item.title}</h4>
-            <h4 class="price">${item.price}</h4>
-          </header>
-          <p class="item-text">
-            ${item.desc}
-          </p>
-        </div>
-      </article>`
-    })
-    menucontent = menucontent.join('')
-    sectionCenter.innerHTML = menucontent
-  }
-
-
-  let btns= document.querySelectorAll('.filter-btn')
-
-  btns.forEach(btn => {
-    btn.addEventListener('click' , (e)=>{
-        let btnclicked = e.currentTarget.classList
-        console.log(btnclicked)
-        sectionCenter.innerHTML=''
-
-        
-    })
-  });
+  
