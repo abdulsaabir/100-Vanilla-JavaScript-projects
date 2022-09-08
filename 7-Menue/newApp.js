@@ -8,6 +8,14 @@ const menu = [
       desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
     },
     {
+        id: 1,
+        title: "buttermilk pancakes",
+        category: "galab",
+        price: 15.99,
+        img: "./images/item-1.jpeg",
+        desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+      },
+    {
       id: 2,
       title: "diner double",
       category: "lunch",
@@ -99,11 +107,28 @@ function displaymenusfunction (array)
      newcategories.unshift('all')
 
     let btnload = newcategories.map( function (item){    
-        return `button type="button" class="filter-btn" data-id=${item}>${item}</button>`
+        return `<button type="button" class="filter-btn" data-id=${item}>${item}</button>`
     })
     btnload = btnload.join('')
     buttons.innerHTML = btnload
-}
+    
+    let allbtns = document.querySelectorAll('')
+    allbtns.forEach(btn =>{
+        btn.addEventListener('click', (e) => {
+            let clickedbtn = e.currentTarget.dataset.id
+            if(clickedbtn =="all")
+            {
+                displayitemsfuction(menu)
+            }
+            else {
+                displayfilterfunction(menu)
+            }
+    
+        })
+    })
+ }
+
+
 
 function displayitemsfuction(array){
     let ContentLoad = array.map(item =>{
@@ -126,4 +151,3 @@ function displayitemsfuction(array){
     ContentLoad = ContentLoad.join('')
     sectionCenter.innerHTML = ContentLoad
 }
-

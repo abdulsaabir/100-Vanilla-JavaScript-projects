@@ -88,27 +88,27 @@
 //   displayitemsfuction(menu)
 // })
 
-// btns.forEach(btn =>{
-//     btn.addEventListener('click' ,(e)=>{
-//         let selectedbtn = e.currentTarget.dataset.id
-//         let newMenu = menu.filter(items=>{
+btns.forEach(btn =>{
+    btn.addEventListener('click' ,(e)=>{
+        let selectedbtn = e.currentTarget.dataset.id
+        let newMenu = menu.filter(items=>{
            
-//             if(items.category === selectedbtn)
-//             {
-//                 return items
-//             }
-//         })
+            if(items.category === selectedbtn)
+            {
+                return items
+            }
+        })
 
-//         if (selectedbtn === "all")
-//         {
-//             displayitemsfuction(menu)
-//         }
-//         else{
-//             displayitemsfuction(newMenu)
-//         }
+        if (selectedbtn === "all")
+        {
+            displayitemsfuction(menu)
+        }
+        else{
+            displayitemsfuction(newMenu)
+        }
 
-//     })
-// })
+    })
+})
 
 
 
