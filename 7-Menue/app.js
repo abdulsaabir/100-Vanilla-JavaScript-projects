@@ -81,4 +81,58 @@ const menu = [
     },
   ];
 
-  
+let sectionCenter = document.querySelector('.section-center')
+let btns = document.querySelectorAll(".filter-btn")
+
+window.addEventListener('DOMContentLoaded' , () =>{
+  displayitemsfuction(menu)
+})
+
+btns.forEach(btn =>{
+    btn.addEventListener('click' ,(e)=>{
+        let selectedbtn = e.currentTarget.dataset.id
+        let newMenu = menu.filter(items=>{
+           
+            if(items.category === selectedbtn)
+            {
+                return items
+            }
+        })
+
+        if (selectedbtn === "all")
+        {
+            displayitemsfuction(menu)
+        }
+        else{
+            displayitemsfuction(newMenu)
+        }
+
+    })
+})
+
+
+
+
+
+
+function displayitemsfuction(array){
+    let ContentLoad = array.map(item =>{
+        return `<article class="menu-item">
+        <img src="${item.img}" alt="menu item" class="photo" />
+        <div class="item-info">
+          <header>
+            <h4>${item.title}</h4>
+            <h4 class="price">${item.price}</h4>
+          </header>
+          <p class="item-text">
+          ${
+            item.desc
+          }
+          </p>
+        </div>
+      </article>`
+    })
+
+    ContentLoad = ContentLoad.join('')
+    sectionCenter.innerHTML = ContentLoad
+}
