@@ -13,18 +13,42 @@ let navToggle = document.querySelector('.nav-toggle')
 let links = document.querySelector('.links')
 
 navToggle.addEventListener('click' , () => {
-    // linksContainer.classList.toggle('show-links')
-    let allLink = links.querySelectorAll('li').length
+    // to get the links heigth dynamically you can use two approches 
+    // approach 1 : 
+   
+    // get the heigth of the container 
     let containerHeight = linksContainer.getBoundingClientRect().height;
+    // get the heigth of all links 
+    let linksheight = links.getBoundingClientRect().height
+
     if (containerHeight === 0)
     {
-        linksContainer.style.height = `${allLink*50}px`
+        // if the container heigth is zero the give it the height of the links and then all links will apear
+        linksContainer.style.height = `${linksheight}px`
     }
+    // if it's not zero remove the all height and make it zero to diseaper all the linkd
     else {
+        
         linksContainer.style.height = '0px'
     }
-    // let showlinks = document.querySelector('.show-links')
-    // console.log(showlinks.style.height)
+
+    // approach 2: 
+    // get how many links in there by selecting all 'li' in the 'ul'
+    // let allLink = links.querySelectorAll('li').length
+
+    // if (linksContainer.classList.contains('show-links'))
+    // {
+        // if the container has the show links class then remove it and hide all the links
+    //     linksContainer.classList.remove('show-links')
+    //     linksContainer.style.height = '0px'
+    // }
+    // else
+    // {
+        // if the container does'nt have show link class then give a height based on (50px*) heigth for every link times all the all links in there
+    //     linksContainer.classList.add('show-links')
+    //     linksContainer.style.height = `${allLink*50}px`
+    // }
+
 })
 // ********** fixed navbar ************
 
