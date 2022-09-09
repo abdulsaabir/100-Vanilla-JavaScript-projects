@@ -251,12 +251,10 @@ h1 {
   display: block;
   transition: var(--transition);
 }
-/* .slide .switch {
-  left: 50%;
-} */
-.slide  {
+.slide .switch {
   left: 50%;
 }
+
  /* header after  */
 header::after {
   content: "";

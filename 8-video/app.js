@@ -3,17 +3,22 @@
 // The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images.
 
 let btn = document.querySelector('.switch-btn')
-let switchbtn = document.querySelector('.switch')
 let video = document.querySelector('.video-container')
 // btns.classList.add('slide')
+let preloader=  document.querySelector('.preloader')
 
-btn.addEventListener('click' , (e)=> {
-    switchbtn.classList.toggle('slide')
-    if (switchbtn.classList.contains('slide'))
+window.addEventListener('load' ,(e) =>{
+    preloader.classList.add('hide-preloader')
+})
+
+btn.addEventListener('click' , ()=> {
+    if (!btn.classList.contains('slide'))
     {
+        btn.classList.add('slide')
         video.pause()
     }
     else{
+        btn.classList.remove('slide')
         video.play()
     }
     
