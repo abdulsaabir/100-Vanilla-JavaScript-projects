@@ -4,9 +4,24 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 // ********** set date ************
+let date = document.getElementById("date")
+date.textContent = new Date().getDay() + '-' + new Date().getMonth() + '-' + new Date().getFullYear()
 
 // ********** close links ************
+let linksContainer = document.querySelector(".links-container") 
+let navToggle = document.querySelector('.nav-toggle')
+let links = document.querySelector('.links')
 
+navToggle.addEventListener('click' , () => {
+    // linksContainer.classList.toggle('show-links')
+    let allLink = links.querySelectorAll('li').length
+    // linksContainer.style.height = '250px'
+    linksContainer.classList.toggle('show-links')
+    
+    
+    // let showlinks = document.querySelector('.show-links')
+    // console.log(showlinks.style.height)
+})
 // ********** fixed navbar ************
 
 // ********** smooth scroll ************
