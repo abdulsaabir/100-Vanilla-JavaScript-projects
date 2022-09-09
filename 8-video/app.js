@@ -10,7 +10,9 @@ window.addEventListener('load' ,(e) =>{
     preloader.classList.add('hide-preloader')
 })
 
+
 btn.addEventListener('click' , ()=> {
+    // if the btn does'nt have slide class 
     if (!btn.classList.contains('slide'))
     {
         btn.classList.add('slide')
