@@ -76,4 +76,20 @@ window.addEventListener('scroll' , () =>{
 })
 
 // ********** smooth scroll ************
+
+let linksclicked = document.querySelectorAll('.scroll-link')
+linksclicked.forEach(link =>{
+    link.addEventListener('click', (e) =>{
+        e.preventDefault()
+      let currentAttribute =  e.currentTarget.getAttribute('href').slice(1);
+      let element = document.getElementById(currentAttribute)
+      let position = element.offsetTop
+      window.scrollTo({
+        left: 0,
+        top: position,
+      })
+      linksContainer.style.height = 0
+    })
+    // getttir
+})
 // select links
