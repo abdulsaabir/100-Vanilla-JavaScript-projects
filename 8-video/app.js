@@ -5,7 +5,7 @@
 let btn = document.querySelector('.switch-btn')
 let video = document.querySelector('.video-container')
 let preloader=  document.querySelector('.preloader')
-
+// hiding the preloader when it's complete the load of the page
 window.addEventListener('load' ,(e) =>{
     preloader.classList.add('hide-preloader')
 })
