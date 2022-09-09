@@ -20,6 +20,7 @@ btn.addEventListener('click' , ()=> {
         video.pause()
     }
     else{
+        // it means it has the class slide so remove it and play the video
         btn.classList.remove('slide')
         video.play()
     }
