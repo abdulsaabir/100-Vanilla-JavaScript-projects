@@ -53,19 +53,22 @@ navToggle.addEventListener('click' , () => {
 
 })
 // ********** fixed navbar ************
-
+//making the navbar fixed after scrolling
 let fixednavbar = document.getElementById('nav')
 let fixedbtn  = document.querySelector('.top-link')
 window.addEventListener('scroll' , () =>{
 
-
+// if  the page scrolled more then 110 the navbar will be fixed
+// why '110' it's the height of mian header of the front page so once we pass the that the navbar has to be fixed
     if ( window.pageYOffset >110 )
     {
         fixednavbar.classList.add('fixed-nav')
     }
+    // if it's not no navbar will be fixed
     else {
         fixednavbar.classList.remove('fixed-nav')
     }
+    // making fixed the little arrow 
     if (window.pageYOffset > 666 )
     {
         fixedbtn.classList.add('show-link')
@@ -79,16 +82,18 @@ window.addEventListener('scroll' , () =>{
 
 // ********** smooth scroll ************
 
-let linksclicked = document.querySelectorAll('.scroll-link')
-linksclicked.forEach(link =>{
-    link.addEventListener('click', (e) =>
-    {
-    
+    // select all the links in the page
     let clickedlink = document.querySelectorAll('.scroll-link')
     clickedlink.forEach(link =>{
+    //add event listenter the link clicked
     link.addEventListener('click' , (e) => {
-        e.preventDefault()
+    // stop the defult setting in the clicks
+    e.preventDefault()
+    // get the attirbute of the link clicked
+    // the attirbute will tell you the section of the page will go this link
+    // bcz the attirbute in the links and section-id are same
     let id = e.currentTarget.getAttribute('href').slice(1)
+    // using the attribute link found in the id variable search the section has the same name
     let element = document.getElementById(id)
 
     let navbarheigth = fixednavbar.getBoundingClientRect().height
@@ -110,8 +115,9 @@ linksclicked.forEach(link =>{
         top: position,
         left: 0,
     })
-    })
     linksContainer.style.height = '0'
+    })
+  
         })
-})
-})
+// })
+// })
