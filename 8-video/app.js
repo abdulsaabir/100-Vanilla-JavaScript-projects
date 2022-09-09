@@ -4,7 +4,6 @@
 
 let btn = document.querySelector('.switch-btn')
 let video = document.querySelector('.video-container')
-// btns.classList.add('slide')
 let preloader=  document.querySelector('.preloader')
 
 window.addEventListener('load' ,(e) =>{
