@@ -4,6 +4,8 @@
 //offsetTop - A Number, representing the top position of the element, in pixels
 
 // ********** set date ************
+
+// get the date in the footer automaticly without writin in the html
 let date = document.getElementById("date")
 date.textContent = new Date().getDay() + '-' + new Date().getMonth() + '-' + new Date().getFullYear()
 
@@ -51,6 +53,27 @@ navToggle.addEventListener('click' , () => {
 
 })
 // ********** fixed navbar ************
+
+let fixednavbar = document.getElementById('nav')
+let fixedbtn  = document.querySelector('.top-link')
+window.addEventListener('scroll' , () =>{
+    if ( window.pageYOffset > 81.97917175292969)
+    {
+        fixednavbar.classList.add('fixed-nav')
+    }
+    else {
+        fixednavbar.classList.remove('fixed-nav')
+    }
+    if (window.pageYOffset > 666 )
+    {
+        fixedbtn.classList.add('show-link')
+    } 
+    else{
+        fixedbtn.classList.remove('show-link')
+    }
+    // console.log(window.pageYOffset)
+
+})
 
 // ********** smooth scroll ************
 // select links
