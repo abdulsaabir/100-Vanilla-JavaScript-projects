@@ -15,9 +15,17 @@ let links = document.querySelector('.links')
 navToggle.addEventListener('click' , () => {
     // linksContainer.classList.toggle('show-links')
     let allLink = links.querySelectorAll('li').length
-    // linksContainer.style.height = '250px'
-    linksContainer.classList.toggle('show-links')
-    
+    if (linksContainer.classList.contains('show-links'))
+    {
+        linksContainer.classList.remove('show-links')
+        linksContainer.style.height = '0'
+    }
+    else
+    {
+        linksContainer.classList.add('show-links')
+        linksContainer.style.height = allLink
+    }
+
     
     // let showlinks = document.querySelector('.show-links')
     // console.log(showlinks.style.height)
