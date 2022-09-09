@@ -15,6 +15,7 @@ btn.addEventListener('click' , ()=> {
     // if the btn does'nt have slide class 
     if (!btn.classList.contains('slide'))
     {
+        // add to it and then pause the video
         btn.classList.add('slide')
         video.pause()
     }
