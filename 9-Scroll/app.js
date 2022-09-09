@@ -57,7 +57,9 @@ navToggle.addEventListener('click' , () => {
 let fixednavbar = document.getElementById('nav')
 let fixedbtn  = document.querySelector('.top-link')
 window.addEventListener('scroll' , () =>{
-    if ( window.pageYOffset > 81.97917175292969)
+
+
+    if ( window.pageYOffset >110 )
     {
         fixednavbar.classList.add('fixed-nav')
     }
@@ -79,17 +81,37 @@ window.addEventListener('scroll' , () =>{
 
 let linksclicked = document.querySelectorAll('.scroll-link')
 linksclicked.forEach(link =>{
-    link.addEventListener('click', (e) =>{
+    link.addEventListener('click', (e) =>
+    {
+    
+    let clickedlink = document.querySelectorAll('.scroll-link')
+    clickedlink.forEach(link =>{
+    link.addEventListener('click' , (e) => {
         e.preventDefault()
-      let currentAttribute =  e.currentTarget.getAttribute('href').slice(1);
-      let element = document.getElementById(currentAttribute)
-      let position = element.offsetTop
-      window.scrollTo({
-        left: 0,
+    let id = e.currentTarget.getAttribute('href').slice(1)
+    let element = document.getElementById(id)
+
+    let navbarheigth = fixednavbar.getBoundingClientRect().height
+    let linksContainerHeight  = linksContainer.getBoundingClientRect().height
+
+    let chekingfixednavbar = fixednavbar.classList.contains('fixed-nav')
+    let position = element.offsetTop - navbarheigth
+
+    if(!chekingfixednavbar) 
+    {
+        position =  position - navbarheigth
+    }
+    if (navbarheigth > 82) 
+    {
+        position = position + linksContainerHeight
+    }
+    
+    window.scrollTo({
         top: position,
-      })
-      linksContainer.style.height = 0
+        left: 0,
     })
-    // getttir
+    })
+    linksContainer.style.height = '0'
+        })
 })
-// select links
+})
