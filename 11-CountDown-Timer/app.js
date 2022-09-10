@@ -21,3 +21,5 @@ const weekdays = [
   'Friday',
   'Saturday',
 ];
+let dates =new Date()
+console.log(dates)
