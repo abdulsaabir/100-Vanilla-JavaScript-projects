@@ -27,8 +27,6 @@ const dead = document.querySelector('.april');
 const items = document.querySelectorAll('.deadline-format h4');
 
 let dates =new Date()
-console.log(dates.getDay())
 window.addEventListener('DOMContentLoaded', () => {
-
+  dead.textContent = dates.getDay() + " " + dates.getMonth()
 })
-dead.textContent = 
