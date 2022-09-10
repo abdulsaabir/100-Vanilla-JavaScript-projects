@@ -25,8 +25,8 @@ const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 const dead = document.querySelector('.april');
 const items = document.querySelectorAll('.deadline-format h4');
-
-let dates =new Date()
-window.addEventListener('DOMContentLoaded', () => {
-  dead.textContent = dates.getDay() + " " + dates.getMonth() + " " + dates.getFullYear() + " , " + dates.getHours() + ":" + dates.getMinutes() 
-})
+24 April 2020, 8:00am
+let dates =new Date(2022,9,7,10,40,30)
+let day
+window.addEventListener('DOMContentLoaded', () => {dsfads
+})dfa
