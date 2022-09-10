@@ -24,10 +24,22 @@ btns.forEach(btn=> {
     btn.addEventListener('click', (e) => {
         let clickedbtn = e.currentTarget.dataset.id
         articles.forEach(item =>{
+           
             if(item.category === clickedbtn )
             {
+                REmove()
+
+                btn.classList.add('active')
                 paragraph.textContent = item.Text
             } 
         })
     })
 })
+function REmove(){
+    let classe3 = document.querySelector('.Goals')
+    let classe1 = document.querySelector('.history')
+    let classe2 = document.querySelector('.Vision')
+    classe1.classList.remove('active')
+    classe2.classList.remove('active')
+    classe3.classList.remove('active')
+}
