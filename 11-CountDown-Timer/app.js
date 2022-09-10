@@ -22,4 +22,4 @@ const weekdays = [
   'Saturday',
 ];
 let dates =new Date()
-console.log(dates)
+console.log(dates[0])
