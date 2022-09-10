@@ -38,3 +38,5 @@ v
 console.log(day);
 console.log(day);
 console.log(day);
+
+console.log(day);
