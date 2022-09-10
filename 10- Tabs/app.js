@@ -7,7 +7,7 @@ about.addEventListener('click' , (e) => {
     //get the dateset id of the clicked item 
     // store the date set id of that btn in btn clicked
    let datasetOfbtnClicked =  e.target.dataset.id
-   if(datasetOfbtnClicked != undefined)
+   if(datasetOfbtnClicked)
    {
     btns.forEach(btn => {
         btn.classList.remove('active')
