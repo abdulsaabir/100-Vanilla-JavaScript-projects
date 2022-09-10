@@ -31,5 +31,5 @@ let year= dates.getFullYear()
 let hours= dates.getHours()
 let minutes= dates.getMinutes()
 let month =dates.getMonth()
-let day = dates.getDay()
-console.log(day);
+let day= dates.getDay()
+consol.log(day);
