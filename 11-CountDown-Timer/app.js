@@ -34,5 +34,5 @@ let minutes= dates.getMinutes()
 let month =dates.getMonth()
 let day= dates.getDay()
 window.addEventListener("DOMContentLoaded" ,() => {
-  dead.textContent = weekdays[day]+" "+  months[month]+" "+  year+", "+hours+":"+ + minutes +"am"
+  dead.textContent = weekdays[day]+" "+  months[month]+" "+  year+", "+hours+":"+ +minutes +"am"
 })
