@@ -33,4 +33,3 @@ let minutes= dates.getMinutes()
 let month =dates.getMonth()
 let day= dates.getDay()
 
-console.log(day);
