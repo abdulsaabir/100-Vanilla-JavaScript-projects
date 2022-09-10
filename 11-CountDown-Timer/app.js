@@ -33,6 +33,3 @@ let minutes= dates.getMinutes()
 let month =dates.getMonth()
 let day = dates.getDay()
 console.log(day)
-window.addEventListener('DOMContentLoaded', () => {
-  dead.textContent = `${weekdays[day]} ${months[month]} ${year} ${hours}:${minutes}am`
-})
