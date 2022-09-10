@@ -28,5 +28,5 @@ const items = document.querySelectorAll('.deadline-format h4');
 
 let dates =new Date()
 window.addEventListener('DOMContentLoaded', () => {
-  dead.textContent = dates.getDay() + " " + dates.getMonth()
+  dead.textContent = dates.getDay() + " " + dates.getMonth() + " " + dates.getFullYear() 
 })
