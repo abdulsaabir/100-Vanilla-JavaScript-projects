@@ -24,5 +24,6 @@ const weekdays = [
 const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
+
 let dates =new Date()
 console.log(dates.getDay())
