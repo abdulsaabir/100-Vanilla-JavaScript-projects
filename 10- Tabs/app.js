@@ -32,22 +32,3 @@ about.addEventListener('click' , (e) => {
 })
 
    
-
-//    // chek
-//    // looop in the articles to get one at the time article
-//    articles.forEach(article => {
-//     // notice every article has an id 
-//     // if the article id matches the datasetOfbtnClicked
-
-// })
-// // adding and removing the class active from the btns
-// btns.forEach(btn => {
-//     if(datasetOfbtnClicked === btn.dataset.id)
-//     {
-//         btn.classList.add('active')
-//     }
-//     else
-//     {
-//         btn.classList.remove('active')
-//     }
-// })
