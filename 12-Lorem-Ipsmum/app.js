@@ -38,17 +38,7 @@ form.addEventListener('submit' ,(e) =>{
   })
 
 
-  if (isNaN(result) || result < 0 || result > 9) {
-    loremText.innerHTML = `<p class="result">${text[RandomNumber]}</p>`;
-  } else {
-    let tempText = text.slice(0, result);
-    tempText = tempText
-      .map(function (item) {
-        return `<p class="result">${item}</p>`;
-      })
-      .join("");
-      loremText.innerHTML = tempText;
-  }
+
 
 
   
