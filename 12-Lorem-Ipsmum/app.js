@@ -27,22 +27,16 @@ form.addEventListener('submit' ,(e) =>{
   }
   else
   {
-    let newText = text.slice(0,result)
-    let temptext = newText.map(item => {
-      return `<p class="result"> ${item} </p>`
-    }).join('')
-    loremText.innerHTML = temptext
+    let tempText = text.slice(0, result);
+    tempText = tempText
+      .map(function (item) {
+        return `<p class="result">${item}</p>`;
+      })
+      .join("");
+    loremText.innerHTML = tempText;
     }
   })
 
-
-  // let tempText = text.slice(0, value);
-  //   tempText = tempText
-  //     .map(function (item) {
-  //       return `<p class="result">${item}</p>`;
-  //     })
-  //     .join("");
-  //   result.innerHTML = tempText;
   
 
 
