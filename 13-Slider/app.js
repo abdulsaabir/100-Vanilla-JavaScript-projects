@@ -17,7 +17,6 @@ nextBtn.addEventListener('click', () => {
 counter++
 counterlimit(counter)
 slidingFunction(counter)
-// negativeLimit(counter)
 
 })
 
@@ -28,7 +27,6 @@ function slidingFunction(counter) {
 }
 
 function counterlimit(counter){
-  
   if (counter>0)
   {
     prevBtn.style.display = 'block'
@@ -47,8 +45,4 @@ function counterlimit(counter){
 
   }
 
-}
-function negativeLimit (counter) {
-
-  
 }
