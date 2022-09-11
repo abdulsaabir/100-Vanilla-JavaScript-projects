@@ -18,9 +18,25 @@ let loremText = document.querySelector('.lorem-text')
 
 form.addEventListener('submit' ,(e) =>{
   e.preventDefault()
+  loremText.textContent =''
   let result = parseInt( input.value)
-let counter = Math.floor(Math.random()* input.value)
-console.log(result)
+  if (result <= 0 ||  result > 9 || isNaN)
+  {
+    alert('Invalid Value')
+  }
+  else
+  {
+    for (let i = 0 ; i < result ; i++)
+    {
+      let counter = Math.floor(Math.random()* result)
+      loremText.textContent += text[counter]
+
+    }
+  }
+
+
+
+// console.log(result)
 })
 
 
