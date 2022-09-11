@@ -21,20 +21,7 @@ form.addEventListener('submit' ,(e) =>{
   loremText.textContent =''
   let result = parseInt( input.value)
   let RandomNumber = Math.floor(Math.random() * text.length)
-  if (result <= 0 ||  result > 9 || isNaN)
-  {
-    loremText.innerHTML = `<p class="result">${text[RandomNumber]} </p>`
-  }
-  else
-  {
-    let tempText = text.slice(0, result);
-    tempText = tempText
-      .map(function (item) {
-        return `<p class="result">${item}</p>`;
-      })
-      .join("");
-    loremText.innerHTML = tempText;
-    }
+  
   })
 
   
