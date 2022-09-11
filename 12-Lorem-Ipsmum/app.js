@@ -18,9 +18,26 @@ let loremText = document.querySelector('.lorem-text')
 
 form.addEventListener('submit' ,(e) =>{
   e.preventDefault()
-  loremText.textContent=""
+  loremText.textContent =''
   let result = parseInt( input.value)
   let RandomNumber = Math.floor(Math.random() * text.length)
+  if (result <= 0 ||  result > 9 || isNaN(result))
+  {
+    loremText.innerHTML = `<p class="result">${text[RandomNumber]} </p>`
+  }
+  else
+  {
+    let tempText = text.slice(0, result);
+    tempText = tempText
+      .map(function (item) {
+        return `<p class="result">${item}</p>`;
+      })
+      .join("");
+    loremText.innerHTML = tempText;
+    }
+  })
+
+
   if (isNaN(result) || result < 0 || result > 9) {
     loremText.innerHTML = `<p class="result">${text[RandomNumber]}</p>`;
   } else {
@@ -32,7 +49,7 @@ form.addEventListener('submit' ,(e) =>{
       .join("");
       loremText.innerHTML = tempText;
   }
-  })
+
 
   
 
