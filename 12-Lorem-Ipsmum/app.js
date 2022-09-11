@@ -10,35 +10,23 @@ I just told you! You've killed me! Fry! Quit doing the right thing, you jerk! Mi
   `Man braid celiac synth freegan readymade, pitchfork fam salvia waistcoat lomo bitters gentrify four loko. Pitchfork semiotics post-ironic vegan. Tofu meditation microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki. Prism poutine farm-to-table, messenger bag vegan taxidermy tattooed sartorial squid jean shorts fixie selvage trust fund vape.`,
   `Rutters Plate Fleet boom chandler Brethren of the Coast handsomely lookout marooned brigantine knave. Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab draught measured fer yer chains dance the hempen jig Chain Shot yardarm.`,
 ];
-
-
 let input = document.getElementById('amount')
-let form = document.querySelector('.lorem-form')
-let loremText = document.querySelector('.lorem-text')
+let Output = document.querySelector('.lorem-text')
+let btn = document.querySelector('.btn')
 
-form.addEventListener('submit' ,(e) =>{
+btn.addEventListener('click' , (e) =>{
   e.preventDefault()
-  loremText.textContent =''
-  let result = parseInt( input.value)
-  let RandomNumber = Math.floor(Math.random() * text.length)
-  if (result <= 0 ||  result > 9 || isNaN(result))
+  let userInput = parseInt( input.value)
+  let random = Math.floor(Math.random() * text.length)
+  if(isNaN(userInput) || userInput <= 0 || userInput > 9 )
   {
-    loremText.innerHTML = `<p class="result">${text[RandomNumber]} </p>`
+    Output.innerHTML = `<p class='result'> ${text[random]} </p> `
   }
-  else
-  {
-    let tempText = text.slice(0, result);
-    tempText = tempText
-      .map(function (item) {
-        return `<p class="result">${item}</p>`;
-      })
-      .join("");
-    loremText.innerHTML = tempText;
-    }
-  })
-
-
-  
-
-
-
+  else {
+    let newText = text.slice(0, userInput)
+    newText = newText.map(paragraph => {
+      return  `<p class="result"> ${paragraph} </p>`
+    })
+    Output.innerHTML = newText
+  }
+})
