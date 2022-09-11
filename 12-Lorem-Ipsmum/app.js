@@ -18,19 +18,19 @@ let loremText = document.querySelector('.lorem-text')
 
 form.addEventListener('submit' ,(e) =>{
   e.preventDefault()
-  loremText.textContent =''
+  loremText.textContent=""
   let result = parseInt( input.value)
   let RandomNumber = Math.floor(Math.random() * text.length)
-  if (isNaN(value) || value < 0 || value > 9) {
-    result.innerHTML = `<p class="result">${text[random]}</p>`;
+  if (isNaN(result) || result < 0 || result > 9) {
+    loremText.innerHTML = `<p class="result">${text[RandomNumber]}</p>`;
   } else {
-    let tempText = text.slice(0, value);
+    let tempText = text.slice(0, result);
     tempText = tempText
       .map(function (item) {
         return `<p class="result">${item}</p>`;
       })
       .join("");
-    result.innerHTML = tempText;
+      loremText.innerHTML = tempText;
   }
   })
 
