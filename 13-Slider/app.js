@@ -1,43 +1,54 @@
-const slides = document.querySelectorAll(".slide");
-const nextBtn = document.querySelector(".nextBtn");
-const prevBtn = document.querySelector(".prevBtn");
-slides.forEach(function (slide, index) {
-  slide.style.left = `${index * 100}%`;
-});
-let counter = 0;
-nextBtn.addEventListener("click", function () {
-  counter++;
-  carousel();
-});
+let prevBtn = document.querySelector('.prevBtn')
+let nextBtn = document.querySelector('.nextBtn')
+let slides = document.querySelectorAll('.slide')
 
-prevBtn.addEventListener("click", function () {
-  counter--;
-  carousel();
-});
+slides.forEach((item , index) => {
+  item.style.left =   `${index * 100}%`
+})
+prevBtn.style.display = 'none'
+let counter = 0
+prevBtn.addEventListener('click', () => {
+counter--;0
+counterlimit(counter)
+slidingFunction(counter)
+negativeLimit(counter)
+})
+nextBtn.addEventListener('click', () => {
+counter++
+counterlimit(counter)
+slidingFunction(counter)
+// negativeLimit(counter)
 
-function carousel() {
-  // working with slides
-  // if (counter === slides.length) {
-  //   counter = 0;
-  // }
-  // if (counter < 0) {
-  //   counter = slides.length - 1;
-  // }
-  // working with buttons
+})
 
-  if (counter < slides.length - 1) {
-    nextBtn.style.display = "block";
-  } else {
-    nextBtn.style.display = "none";
-  }
-  if (counter > 0) {
-    prevBtn.style.display = "block";
-  } else {
-    prevBtn.style.display = "none";
-  }
-  slides.forEach(function (slide) {
-    slide.style.transform = `translateX(-${counter * 100}%)`;
-  });
+function slidingFunction(counter) {
+  slides.forEach(slide => {
+    slide.style.transform =`translateX(-${counter * 100}%)`
+  })
 }
 
-prevBtn.style.display = "none";
+function counterlimit(counter){
+  
+  if (counter>0)
+  {
+    prevBtn.style.display = 'block'
+  }
+  else
+  {
+    prevBtn.style.display = 'none'
+  }
+  if (counter === slides.length -1 )
+  {
+    nextBtn.style.display = 'none'
+  }
+  else 
+  {
+    nextBtn.style.display= 'block'
+
+  }
+
+}
+function negativeLimit (counter) {
+
+  
+}
