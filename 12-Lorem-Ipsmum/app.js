@@ -20,24 +20,20 @@ form.addEventListener('submit' ,(e) =>{
   e.preventDefault()
   loremText.textContent =''
   let result = parseInt( input.value)
+  let RandomNumber = Math.floor(Math.random() * text.length)
   if (result <= 0 ||  result > 9 || isNaN)
   {
-    alert('Invalid Value')
+    loremText.innerHTML = `<p class="result">${text[RandomNumber]} </p>`
   }
   else
   {
-    for (let i = 0 ; i < result ; i++)
-    {
-      let counter = Math.floor(Math.random()* result)
-      loremText.textContent += text[counter]
-
+    let newText = text.slice(0,result)
+    temptext = newText.map(item => {
+      return `<p class="result"> ${item} </p>`
+    }).join('')
+    loremText.innerHTML = temptext
     }
-  }
+  })
 
 
 
-// console.log(result)
-})
-
-
-// console.log('hi')
