@@ -55,6 +55,7 @@ let deletebtn = document.querySelectorAll('.delete-btn')
     if (groceryListContianer.childNodes.length === 0)
     {
         groceryContainer.classList.remove('show-container')
+        submitbtn.textContent='sumbit'
     }
 
   })
@@ -70,9 +71,24 @@ editbtn.forEach(btn => {
         submitbtn.textContent= "Edit"
         let editpara= paragraph.textContent
         form.value= editpara
-        
+        idsearch = article.dataset.id
     })
 })
+if(input && switcher)
+{
+    let allarticles = document.querySelectorAll('article')
+    allarticles.forEach(p => {
+        if(p.dataset.id == idsearch)
+        {
+        let paragraph = p.querySelector('p')
+        paragraph.textContent = form.value
+        }
+    })
+    // console.log('editable')
+    switcher = false
+    submitbtn.textContent = "submit"
+    form.value=""
+}
 
 })
 
@@ -86,4 +102,5 @@ clearbtn.addEventListener('click', () => {
 
 
 
-// delete btn
+// alert
+let alertType= document.querySelector('.alert')
