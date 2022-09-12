@@ -5,6 +5,7 @@ let container = document.querySelector('.grocery-container')
 let groceryList = document.querySelector('.grocery-list')
 let alerttType = document.querySelector('.alert')
 let id= 0;
+let idsearch;
 // add event listener in the submit form
 sumbitbtn.addEventListener('click' , (e) => {
     e.preventDefault()
@@ -21,9 +22,8 @@ sumbitbtn.addEventListener('click' , (e) => {
         return 1;
     }
     id= new Date().getTime().toString() 
-    
     let groceryListContainer =   `<article class="grocery-item">
-    <p class="title" date-id= "${id}">${userinputvalue}</p>
+    <p class="title" data-id= "${id}">${userinputvalue}</p>
     <div class="container">
       <button type="button" class="edit-btn">
         <i class="fas fa-edit"></i>
@@ -66,23 +66,25 @@ editbtn.forEach(edit => {
     let userinputTitle = editparagraph.querySelector('.title')
     let newuser = userinputTitle.textContent
   
-    let id = userinputTitle.getAttribute('date-id')
+   idsearch = userinputTitle.getAttribute('data-id')
+    console.log(idsearch)
     input.value= newuser
-    console.log(id)
     sumbitbtn.textContent = 'Edit'
     })
 })
     }
     if(sumbitbtn.textContent == "Edit")
     {
-      let all = document.querySelectorAll('[date-id]');
-      console.log(all)
-      all.forEach(item => {
-        if (item.dataset.id === id)
+      let paragraph = document.querySelectorAll('p')
+      paragraph.forEach(item => {
+        if(item.dataset.id === idsearch)
         {
-          console.log(item)
+          item.textContent= input.value
         }
       })
+      // let user = document.querySelector("[data-id='']");
+      sumbitbtn.textContent = 'submit'
+      input.value=''
     }
 })
 
