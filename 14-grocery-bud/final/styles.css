@@ -202,13 +202,14 @@ Grocery List
   letter-spacing: var(--spacing);
   text-transform: capitalize;
 }
-.alert-danger {
+.danger {
   color: #721c24;
   background: #f8d7da;
 }
+.success
 .alert-success {
-  color: #155724;
-  background: #d4edda;
+  color: #fff;
+  background-color: #000000;
 }
 .grocery-form h3 {
   color: var(--clr-primary-1);
@@ -262,6 +263,7 @@ Grocery List
 }
 .show-container {
   visibility: visible;
+  
 }
 .grocery-item {
   display: flex;
