@@ -32,6 +32,7 @@ submitbtn.addEventListener('click' , (e) => {
           </button>
         </div>
       </article>`;
+      useralert("ITEM REGISTERED SECCESFULLY" , 'danger')
 
 
 
@@ -57,8 +58,14 @@ let deletebtn = document.querySelectorAll('.delete-btn')
         groceryContainer.classList.remove('show-container')
         submitbtn.textContent='sumbit'
     }
+    useralert("ITEM DELETED SECCESFULLY" , 'success')
 
   })
+  if(deletedarticle== idsearch)
+  {
+    form.value==""
+  }
+  
 })
 
 
@@ -83,11 +90,16 @@ if(input && switcher)
         let paragraph = p.querySelector('p')
         paragraph.textContent = form.value
         }
-    })
-    // console.log('editable')
     switcher = false
     submitbtn.textContent = "submit"
     form.value=""
+    useralert("ITEM EDITED SECCESFULLY" , 'danger')
+    })
+    // console.log('editable')
+    
+}
+else{
+    useralert('INPUT VALUE ' , 'danger')
 }
 
 })
@@ -98,9 +110,19 @@ if(input && switcher)
 clearbtn.addEventListener('click', () => {
     groceryListContianer.innerHTML= ''
     groceryContainer.classList.remove('show-container')
+    useralert("ALL ITEMS CLEARED" , 'danger')
 })
 
 
 
 // alert
 let alertType= document.querySelector('.alert')
+function useralert(message , action){
+    alertType.textContent = message
+    alertType.classList.add= `.alert-${action}`
+
+    setTimeout(() => {
+        alertType.textContent = ""
+        alertType.classList.remove= `.alert-${action}`
+    }, 1000);
+}
