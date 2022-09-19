@@ -60,6 +60,7 @@ let questioncounter= 0;
 let availibleQuestion= []
 let counter =0
 let allowedAnswer = false
+let CurrentQuestion =0;
 
 
 startQuiz = () =>{
@@ -77,21 +78,30 @@ getQuestion = () => {
     }
     else {
     let QuestionNumber = Math.floor(Math.random() * availibleQuestion.length)
-    let CurrentQuestion = availibleQuestion[QuestionNumber]
+    CurrentQuestion = availibleQuestion[QuestionNumber]
     questiontext.innerText = CurrentQuestion.question
     choices.forEach(choice => {
         let dateId = choice.dataset['id']
         choice.innerText = CurrentQuestion["choice" + dateId]
     })
     availibleQuestion.splice(QuestionNumber , 1)
-    allowedAnswer = true
+    allowedAnswer =  true
 }
 }
 startQuiz()
 
 choices.forEach(choice => {
     choice.addEventListener('click' , (e) => {
-        getQuestion()
+        let currentAnswer = e.target
+        let Parentlement = e.currentTarget
+        let answerNumber = currentAnswer.dataset['id']
+        console.log(Parentlement)
+        // if (answerNumber == CurrentQuestion.answer)
+        // {
+        //     Parentlement.classList.add('correct')
+        // }
     })
-    
+    // ParentE
 })
+
+
