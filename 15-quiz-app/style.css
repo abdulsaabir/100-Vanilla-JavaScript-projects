@@ -43,3 +43,28 @@ margin-bottom: 4rem;
 #high-score{
     background-color:#FFFF00;
 }
+.fa-crown{
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* effects in javascript */
+.display{
+    display: none;
+}
+.disabled:hover{
+    cursor: not-allowed;
+	box-shadow: none;
+    transform: none;
+}
