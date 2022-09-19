@@ -18,7 +18,7 @@ let question = [
     {
         question: 'Champions of Eurobe 2021?',
         choice1: 'Bayern Munich ',
-        choice2: 'liverpoo;',
+        choice2: 'liverpool',
         choice3: 'Chelsea ',
         choice4: 'Real Madrid',
         answer: 3
@@ -46,9 +46,9 @@ let btns = document.querySelectorAll('.btns')
 
 btns.forEach(btn => {
     btn.addEventListener('click' , (e)=> {
-        startQuiz()
         cover.classList.add('display')
         quiz.classList.remove('display')
+        availibleQuestion = [...question]
     })
 })
 
@@ -70,12 +70,12 @@ startQuiz = () =>{
 }
 
 getQuestion = () => {
-    if(availibleQuestion.length=== 0)
+    if(availibleQuestion.length === 0)
     {
         cover.classList.remove('display')
         quiz.classList.add('display')
     }
-   
+    else {
     let QuestionNumber = Math.floor(Math.random() * availibleQuestion.length)
     let CurrentQuestion = availibleQuestion[QuestionNumber]
     questiontext.innerText = CurrentQuestion.question
@@ -86,7 +86,8 @@ getQuestion = () => {
     availibleQuestion.splice(QuestionNumber , 1)
     allowedAnswer = true
 }
-
+}
+startQuiz()
 
 choices.forEach(choice => {
     choice.addEventListener('click' , (e) => {

@@ -146,3 +146,10 @@ margin-bottom: 4rem;
 	box-shadow: none;
     transform: none;
 }
+
+.correct{
+    background: green;
+}
+.incorrect{
+    background-color: red;
+}
