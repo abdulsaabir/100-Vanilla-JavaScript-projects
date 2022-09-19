@@ -35,6 +35,8 @@ margin-bottom: 4rem;
     background-color: rgb(18, 92, 255);
     margin: 1rem 0;
     font-family: 'Nova Square', cursive;
+    border: transparent;
+    border-radius: 5px;
 }
 .center button:hover{
     box-shadow: 0 0.4rem 1.4em rgb(8, 114, 244);
