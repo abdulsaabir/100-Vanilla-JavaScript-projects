@@ -46,37 +46,66 @@ let btns = document.querySelectorAll('.btns')
 btns.forEach(btn => {
     btn.addEventListener('click' , (e)=> {
         cover.classList.add('display')
-      
+        startGame()
     })
 })
 
 
 let QuestionTitle = document.querySelector('.question')
 let AvailibleQuestion = {}
+let currentQuestion 
+let quiz = document.querySelector('.quiz')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
 startGame = () => {
     AvailibleQuestion= [...question]
     getQuestion()
+    quiz.classList.remove('display')
 }
 
 getQuestion = () => {
+    if(AvailibleQuestion.length === 0)
+    {
+        cover.classList.remove('display')
+        quiz.classList.add('display')
+
+    }
+    else
+    {
     let questionNumber = Math.floor(Math.random() * AvailibleQuestion.length)
-    let currentQuestion = AvailibleQuestion[questionNumber]
+    currentQuestion= AvailibleQuestion[questionNumber]
     QuestionTitle.innerText = currentQuestion.question
     choices.forEach(choiceNow => {
-        choiceNow.innerText = currentQuestion['choice' + questionNumber]
+        let dataID = choiceNow.dataset['id']
+        choiceNow.innerText = currentQuestion['choice' + dataID]
     })
-    AvailibleQuestion.splice(questionNumber , 1)
+     AvailibleQuestion.splice(questionNumber , 1)
+    }
 }
 
-startGame()
 
 choices.forEach(item => {
 item.addEventListener('click', (e) => {
     let choosedAnswer = e.target
     let parent = e.currentTarget.parentElement
     let dataID = choosedAnswer.dataset['id']
-    
-   
+    if(dataID == currentQuestion.answer)
+    {
+        parent.classList.add('correct')
+        
+        setTimeout(() => {
+            parent.classList.remove('correct')
+        }, 1000);
+    }
+    else{
+        parent.classList.add('incorrect')
+        
+        setTimeout(() => {
+            parent.classList.remove('incorrect')
+        }, 1000);
+    }
+    setTimeout(() => {
+        getQuestion()
+    }, 1000);
+ 
 })
 })
