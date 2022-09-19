@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nova Square', cursive;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center h1{
+font-size: 5rem;
+margin-bottom: 4rem;
+}
+.center .buttons{
+    display: flex;
+    flex-direction: column;
+}
+.center button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 2rem 0;
+    width: 400px;
+    background-color: rgb(18, 92, 255);
+    margin: 1rem 0;
+    font-family: 'Nova Square', cursive;
+}
+.center button:hover{
+    box-shadow: 0 0.4rem 1.4em rgb(8, 114, 244);
+    transform:scale(1.03);
+}
+#high-score{
+    background-color:#FFFF00;
+}
