@@ -54,6 +54,7 @@ btns.forEach(btn => {
 let QuestionTitle = document.querySelector('.question')
 let AvailibleQuestion = {}
 let currentQuestion 
+let counter = 0
 let QuestionCounter = document.querySelector('.questionNumber')
 let quiz = document.querySelector('.quiz')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
@@ -61,13 +62,16 @@ startGame = () => {
     AvailibleQuestion= [...question]
     getQuestion()
     quiz.classList.remove('display')
+    QuestionCounter.textContent= counter
 }
 
 getQuestion = () => {
+ 
     if(AvailibleQuestion.length === 0)
     {
         cover.classList.remove('display')
         quiz.classList.add('display')
+        counter=0
 
     }
     else
@@ -78,9 +82,12 @@ getQuestion = () => {
     choices.forEach(choiceNow => {
         let dataID = choiceNow.dataset['id']
         choiceNow.innerText = currentQuestion['choice' + dataID]
+    
     })
      AvailibleQuestion.splice(questionNumber , 1)
+    
     }
+    console.log(counter)
 }
 
 
@@ -89,7 +96,9 @@ item.addEventListener('click', (e) => {
     let choosedAnswer = e.target
     let parent = e.currentTarget.parentElement
     let dataID = choosedAnswer.dataset['id']
+    counter++
     if(dataID == currentQuestion.answer)
+   
     {
         parent.classList.add('correct')
         
