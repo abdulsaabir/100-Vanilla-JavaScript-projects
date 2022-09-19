@@ -51,10 +51,30 @@ btns.forEach(btn => {
 })
 
 
-let currentQuestion = document.querySelector('.question')
+let QuestionTitle = document.querySelector('.question')
 let AvailibleQuestion = {}
+let choices = Array.from( document.getElementsByClassName('Choice-text'))
 startGame = () => {
     AvailibleQuestion= [...question]
     getQuestion()
 }
+
+getQuestion = () => {
+    let questionNumber = Math.floor(Math.random() * AvailibleQuestion.length)
+    let currentQuestion = AvailibleQuestion[questionNumber]
+    QuestionTitle.innerText = currentQuestion.question
+    choices.forEach(choiceNow => {
+        choiceNow.addEventListener('click', (e) => {
+            let choosedAnswer = e.target
+            let parent = e.currentTarget.parentElement
+            let dataID = choosedAnswer.dataset['id']
+            console.log(parent)
+
+            choiceNow.innerText = currentQuestion['choice' + questionNumber]
+        })
+    })
+
+}
+
+startGame()
 
