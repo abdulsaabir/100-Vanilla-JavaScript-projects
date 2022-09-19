@@ -32,16 +32,18 @@
     </div>
 
     <!-- quiz -->
-    <div class="quiz">
+    <div class="quiz display">
       <div class="center-container">
         <div class="container-top">
           <div class="right-part">
             <h1>Question <span class="questionNumber"></span></h1>
-            <div id="proggress"></div>
+            <div id="proggress">
+              <div class="progressgo"></div>
+            </div>
           </div>
           <div class="right-part">
             <p>score</p>
-            <p>20</p>
+            <p class="score">0</p>
           </div>
         </div>
         <div class="questions">
@@ -65,6 +67,25 @@
             <p class="Choice-text" data-id="4">YOU</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- reslut -->
+    <div class="containerResult display">
+      <div class="centertext">
+        <div class="top">HEY Thanks For Taking This QUIZ</div>
+        <div class="scores">
+          Your Score is <span class="scoreReslt"> 1</span>
+        </div>
+        <div class="text">
+          <p class="amazing">
+            You're amazing for taking this quiz. Not many people challenge
+            themselves every now and then. It's always good to stay confident
+            with any challenges that may come your way.
+          </p>
+          <p class="author">AUTHOR: ABDULSAABIR HAAJI</p>
+        </div>
+        <button class="Home">BACK TO HOME</button>
       </div>
     </div>
     <script src="./app.js"></script>

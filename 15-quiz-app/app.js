@@ -1,34 +1,34 @@
 let question = [
+    { 
+        question: ' Whose death sparked World War I?',
+        choice1: 'Kaiser Wilhelm',
+        choice2: ' Archbishop Ussher',
+        choice3: 'Queen Victoria',
+        choice4: 'Archduke Franz Ferdinand',
+        answer: 4
+    },
     {
-        question: 'The Best club in the history?',
+        question: 'The Best club in the History of Football?',
         choice1: 'Real Madrid',
-        choice2: 'Chelsea',
-        choice3: 'Bayern Munich',
-        choice4: 'Manchester-United',
+        choice2: 'Bayern Munich',
+        choice3: 'Barcelone',
+        choice4: 'Ac Milan',
         answer: 1
     },
     {
-        question: 'The Best club in the world Right-now?',
-        choice1: 'Real Madrid',
-        choice2: 'Manchester City',
-        choice3: 'Atlanta',
-        choice4: 'Bayern Munich',
-        answer: 1
+        question: 'Which of these nations was neutral in World War I?',
+        choice1: 'Germany ',
+        choice2: ' Norway',
+        choice3: 'Italy ',
+        choice4: 'England',
+        answer: 2
     },
     {
-        question: 'Champions of Eurobe 2021?',
-        choice1: 'Bayern Munich ',
-        choice2: 'liverpool',
-        choice3: 'Chelsea ',
-        choice4: 'Real Madrid',
-        answer: 3
-    },
-    {
-        question: 'Club of the decade?',
-        choice1: 'Chelsea',
-        choice2: 'Real Madrid',
-        choice3: 'Bayern Munich',
-        choice4: 'Athletico Madrid',
+        question: ' Which weapon was first used at the Battle of the Somme in World War I?',
+        choice1: ' Submarine',
+        choice2: 'Tank',
+        choice3: 'Jet fighter',
+        choice4: 'Chariot',
         answer:  2
     },
     {
@@ -38,8 +38,50 @@ let question = [
         choice3: 'Maradona',
         choice4: 'Cristaino Ronaldo',
         answer:  4
+    },
+    {
+        question: 'World War I ended in:',
+        choice1: '1925',
+        choice2: '1918',
+        choice3: '1920',
+        choice4: ' 1915',
+        answer:  2
+    },
+    {
+        question: 'Which of these battles did not involve Roman soldiers?',
+        choice1: 'Arretium',
+        choice2: 'Chalons',
+        choice3: 'Cannae',
+        choice4: 'Thermopylae ',
+        answer:  4
+    },
+    {
+        question: 'Where were the Aegean Bronze Age civilizations located?',
+        choice1: 'Algeria',
+        choice2: 'India',
+        choice3: 'Greece',
+        choice4: 'Somalia',
+        answer:  3
+    },
+    {
+        question: 'Who was the first U.S. president to appear on television?',
+        choice1: 'Richard Nixon',
+        choice2: ' Ronald Reagan',
+        choice3: 'Abraham Lincoln',
+        choice4: 'Franklin Delano Roosevelt',
+        answer:  4
+    },
+    {
+        question: ' In which city would you find the Statue of Liberty?',
+        choice1: ' San Francisco',
+        choice2: ' New York City',
+        choice3: 'Deyniile',
+        choice4: 'Philadelphia',
+        answer:  2
     }
 ]
+
+
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
 
@@ -47,6 +89,7 @@ btns.forEach(btn => {
     btn.addEventListener('click' , (e)=> {
         cover.classList.add('display')
         startGame()
+        AvailibleQuestion= [...question]
     })
 })
 
@@ -54,28 +97,43 @@ btns.forEach(btn => {
 let QuestionTitle = document.querySelector('.question')
 let AvailibleQuestion = {}
 let currentQuestion 
-let counter = 0
+let counter = 1
+let Score = 0
+let increaseProgress = 100/question.length
+let progressCounter = 0
+let progress =document.querySelector('.progressgo')
+let scoreCounter = document.querySelector('.score')
+let home = document.querySelector('.Home')
 let QuestionCounter = document.querySelector('.questionNumber')
 let quiz = document.querySelector('.quiz')
+let containerResult= document.querySelector('.containerResult')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
+let scoreReslt = document.querySelector('.scoreReslt')
 startGame = () => {
     AvailibleQuestion= [...question]
     getQuestion()
     quiz.classList.remove('display')
     QuestionCounter.textContent= counter
+    scoreCounter.innerText = Score
+    progress.style.width= `${progressCounter}%`
+    counter= 1
+    Score= 0
+    progressCounter= 0
 }
 
 getQuestion = () => {
- 
     if(AvailibleQuestion.length === 0)
     {
-        cover.classList.remove('display')
+        
+        containerResult.classList.remove('display')
         quiz.classList.add('display')
-        counter=0
-
+        scoreReslt.innerText = Score
     }
     else
     {
+    QuestionCounter.innerText= counter
+    scoreCounter.innerText= Score
+    progress.style.width= `${progressCounter}%`
     let questionNumber = Math.floor(Math.random() * AvailibleQuestion.length)
     currentQuestion= AvailibleQuestion[questionNumber]
     QuestionTitle.innerText = currentQuestion.question
@@ -87,7 +145,6 @@ getQuestion = () => {
      AvailibleQuestion.splice(questionNumber , 1)
     
     }
-    console.log(counter)
 }
 
 
@@ -97,10 +154,12 @@ item.addEventListener('click', (e) => {
     let parent = e.currentTarget.parentElement
     let dataID = choosedAnswer.dataset['id']
     counter++
+    progressCounter += increaseProgress
     if(dataID == currentQuestion.answer)
    
     {
         parent.classList.add('correct')
+        Score += 10
         
         setTimeout(() => {
             parent.classList.remove('correct')
@@ -118,4 +177,9 @@ item.addEventListener('click', (e) => {
     }, 1000);
  
 })
+})
+
+home.addEventListener('click' ,() => {
+    containerResult.classList.add('display')
+    cover.classList.remove('display')
 })
