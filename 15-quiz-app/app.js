@@ -64,17 +64,19 @@ getQuestion = () => {
     let currentQuestion = AvailibleQuestion[questionNumber]
     QuestionTitle.innerText = currentQuestion.question
     choices.forEach(choiceNow => {
-        choiceNow.addEventListener('click', (e) => {
-            let choosedAnswer = e.target
-            let parent = e.currentTarget.parentElement
-            let dataID = choosedAnswer.dataset['id']
-            console.log(parent)
-
-            choiceNow.innerText = currentQuestion['choice' + questionNumber]
-        })
+        choiceNow.innerText = currentQuestion['choice' + questionNumber]
     })
-
+    AvailibleQuestion.splice(questionNumber , 1)
 }
 
 startGame()
 
+choices.forEach(item => {
+item.addEventListener('click', (e) => {
+    let choosedAnswer = e.target
+    let parent = e.currentTarget.parentElement
+    let dataID = choosedAnswer.dataset['id']
+    
+   
+})
+})
