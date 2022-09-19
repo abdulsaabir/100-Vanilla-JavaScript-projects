@@ -25,7 +25,7 @@ let question = [
     },
     {
         question: ' Which weapon was first used at the Battle of the Somme in World War I?',
-        choice1: ' Submarine',
+        choice1: 'Submarine',
         choice2: 'Tank',
         choice3: 'Jet fighter',
         choice4: 'Chariot',
@@ -66,15 +66,15 @@ let question = [
     {
         question: 'Who was the first U.S. president to appear on television?',
         choice1: 'Richard Nixon',
-        choice2: ' Ronald Reagan',
+        choice2: 'Ronald Reagan',
         choice3: 'Abraham Lincoln',
         choice4: 'Franklin Delano Roosevelt',
         answer:  4
     },
     {
-        question: ' In which city would you find the Statue of Liberty?',
-        choice1: ' San Francisco',
-        choice2: ' New York City',
+        question: 'In which city would you find the Statue of Liberty?',
+        choice1: 'San Francisco',
+        choice2: 'New York City',
         choice3: 'Deyniile',
         choice4: 'Philadelphia',
         answer:  2
@@ -85,8 +85,8 @@ let question = [
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
 
-btns.forEach(btn => {
-    btn.addEventListener('click' , (e)=> {
+btns.forEach(btnbtn => {
+    btnbtn.addEventListener('click' , (e)=> {
         cover.classList.add('display')
         startGame()
         AvailibleQuestion= [...question]
