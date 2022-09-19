@@ -1,22 +1,3 @@
-let cover = document.querySelector('.cover')
-
-let btns = document.querySelectorAll('.btns')
-
-btns.forEach(btn => {
-    btn.addEventListener('click' , (e)=> {
-        cover.classList.add('display')
-    })
-})
-
-let questiontext = document.querySelector('.question')
-let choices =  Array.from(document.querySelectorAll('.Choice-text'))
-
-
-let questioncounter= 0;
-let availibleQuestion= []
-let counter =0
-let allowedAnswer = false
-
 let question = [
     {
         question: 'The Best club in the history?',
@@ -59,6 +40,27 @@ let question = [
         answer:  4
     }
 ]
+let cover = document.querySelector('.cover')
+let quiz = document.querySelector('.quiz')
+let btns = document.querySelectorAll('.btns')
+
+btns.forEach(btn => {
+    btn.addEventListener('click' , (e)=> {
+        startQuiz()
+        cover.classList.add('display')
+        quiz.classList.remove('display')
+    })
+})
+
+let questiontext = document.querySelector('.question')
+let choices =  Array.from(document.querySelectorAll('.Choice-text'))
+
+
+let questioncounter= 0;
+let availibleQuestion= []
+let counter =0
+let allowedAnswer = false
+
 
 startQuiz = () =>{
     questioncounter= 0
@@ -68,6 +70,11 @@ startQuiz = () =>{
 }
 
 getQuestion = () => {
+    if(availibleQuestion.length=== 0)
+    {
+        cover.classList.remove('display')
+        quiz.classList.add('display')
+    }
    
     let QuestionNumber = Math.floor(Math.random() * availibleQuestion.length)
     let CurrentQuestion = availibleQuestion[QuestionNumber]
@@ -76,7 +83,14 @@ getQuestion = () => {
         let dateId = choice.dataset['id']
         choice.innerText = CurrentQuestion["choice" + dateId]
     })
-
+    availibleQuestion.splice(QuestionNumber , 1)
     allowedAnswer = true
 }
-startQuiz()
+
+
+choices.forEach(choice => {
+    choice.addEventListener('click' , (e) => {
+        getQuestion()
+    })
+    
+})

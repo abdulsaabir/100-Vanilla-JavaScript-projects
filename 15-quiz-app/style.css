@@ -94,6 +94,9 @@ margin-bottom: 4rem;
 .quiz .container-choses:hover{
     transform: scale(1.03);
 }
+.quiz .Choice-text{
+    width: 100%;
+}
 
 
 
