@@ -54,6 +54,7 @@ btns.forEach(btn => {
 let QuestionTitle = document.querySelector('.question')
 let AvailibleQuestion = {}
 let currentQuestion 
+let QuestionCounter = document.querySelector('.questionNumber')
 let quiz = document.querySelector('.quiz')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
 startGame = () => {
