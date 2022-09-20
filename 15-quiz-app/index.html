@@ -19,12 +19,12 @@
     />
   </head>
   <body>
-    <div class="container cover">
+    <div class="container cover ">
       <div class="center">
         <h1>ARE YOU READY?</h1>
         <div class="buttons">
           <button class="btns">PLAY</button>
-          <button class="btns" id="high-score" disabled>
+          <button id="high-score">
             HIGH SCORE <i class="fas fa-crown"></i>
           </button>
         </div>
@@ -71,9 +71,11 @@
     </div>
 
     <!-- reslut -->
+    
     <div class="containerResult display">
+      <h4 class="savedAlert display">your Scores is saved</h1>
       <h4>Your Score:</h4>
-      <h1 class="recentScore">0</h1>
+      <h1 class="recentScore">15</h1>
       <form>
         <input
           type="text"
@@ -84,6 +86,16 @@
         <button disabled class="save">Save Your Score</button>
         <button class="Play">Play Again</button>
       </form>
+    </div>
+
+    <!-- high scores -->
+    <div class="scoresContainer display">
+      <h1>highest Scores</h1>
+      <ul class="scoresList"></ul>
+      <div class="butns">
+        <button class="Backbtn">BACK TO HOME</button>
+        <button class="reset">Reset</button>
+      </div>
     </div>
     <script src="./app.js"></script>
   </body>

@@ -81,6 +81,13 @@ let question = [
     }
 ]
 
+window.addEventListener('DOMContentLoaded' , ()=> {
+    if( localStorage.getItem('highScore') === null)
+    {
+    showscores.disabled = true
+    showscores.style.boxShadow= 'none'
+    }
+})
 
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
@@ -196,6 +203,63 @@ btnplayAgain.addEventListener('click' ,() => {
     cover.classList.remove('display')
     containerResult.classList.add('display')
 })
+ 
+// create local storage
+Score = 100
+let highScores = JSON.parse(localStorage.getItem('highScore')) || []
+btnsave.addEventListener('click' , (e) => {
+    
+    e.preventDefault()
+    let NewScore = {
+        Name: inputValue.value,
+        Score:  Score
+    }
+    
+    highScores.push(NewScore)
+    highScores.sort((a,b) => b.Score - a.Score)
+    highScores.splice(5)
+    localStorage.setItem('highScore' , JSON.stringify(highScores))
+    inputValue.disabled = true
+    btnsave.disabled = true
+    inputValue.value = ''
+
+    let savedAlert= document.querySelector('.savedAlert')
+    savedAlert.classList.remove('display') 
+    setTimeout(() => {
+        savedAlert.classList.add('display') 
+    }, 1000);
+  
+
+})
+
+
+// show high scores
+let showscores = document.getElementById('high-score')
+showscores.addEventListener('click' , () => {
+    cover.classList.add('display')
+    scoresContainer.classList.remove('display')
+})
+let scoresList = document.querySelector('.scoresList')
+let totalScores = JSON.parse(localStorage.getItem('highScore'))
+totalScores.forEach(item => {
+    scoresList.innerHTML+= ` <li class="NaME">${item.Name} - <span class="hisScore">${item.Score}</span></li>`
+})
+
+
+let Backbtn = document.querySelector('.Backbtn')
+let Reset = document.querySelector('.reset')
+let scoresContainer = document.querySelector('.scoresContainer')
+
+Backbtn.addEventListener('click' , () => {
+    scoresContainer.classList.add('display')
+    cover.classList.remove('display')
+}) 
+
+Reset.addEventListener('click' , () => {
+    localStorage.removeItem('highScore')
+    scoresList.innerHTML= ''
+})
+
 
 
 
