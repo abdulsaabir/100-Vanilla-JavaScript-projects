@@ -125,7 +125,7 @@ startGame = () => {
 }
 
 getQuestion = () => {
-    if(questionNumber == AvailibleQuestion/length)
+    if(questionNumber == AvailibleQuestion.length-1)
     {
         containerResult.classList.remove('display')
         quiz.classList.add('display')
