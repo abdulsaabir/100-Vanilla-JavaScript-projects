@@ -1,20 +1,6 @@
 let question = [
-    { 
-        question: ' Whose death sparked World War I?',
-        choice1: 'Kaiser Wilhelm',
-        choice2: ' Archbishop Ussher',
-        choice3: 'Queen Victoria',
-        choice4: 'Archduke Franz Ferdinand',
-        answer: 4
-    },
-    {
-        question: 'The Best club in the History of Football?',
-        choice1: 'Real Madrid',
-        choice2: 'Bayern Munich',
-        choice3: 'Barcelone',
-        choice4: 'Ac Milan',
-        answer: 1
-    },
+   ,
+    
     {
         question: 'Which of these nations was neutral in World War I?',
         choice1: 'Germany ',
