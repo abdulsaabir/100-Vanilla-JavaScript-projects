@@ -44,7 +44,6 @@ let choices = Array.from( document.getElementsByClassName('Choice-text'))
 let scoreReslt = document.querySelector('.recentScore')
 let containerResult = document.querySelector('.containerResult')
 let questionNumber
-let questionsdisable = document.querySelector('.questions')
 startGame = () => {
     AvailibleQuestion= [...question]
     questionNumber = -1
@@ -99,17 +98,17 @@ item.addEventListener('click', (e) => {
     {
         parent.classList.add('correct')
         Score += 10
-        questionsdisable.disabled = true
+      
         setTimeout(() => {
-            questionsdisable.disabled = false
+         
             parent.classList.remove('correct')
         }, 1000);
     }
     else{
         parent.classList.add('incorrect')
-        questionsdisable.disabled = true
+       
         setTimeout(() => {
-            questionsdisable.disabled = false
+          
             parent.classList.remove('incorrect')
         }, 1000);
     }
