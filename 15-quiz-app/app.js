@@ -106,7 +106,6 @@ let scoreCounter = document.querySelector('.score')
 let home = document.querySelector('.Home')
 let QuestionCounter = document.querySelector('.questionNumber')
 let quiz = document.querySelector('.quiz')
-let containerResult= document.querySelector('.containerResult')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
 let scoreReslt = document.querySelector('.scoreReslt')
 let questionNumber
@@ -182,7 +181,3 @@ item.addEventListener('click', (e) => {
 })
 })
 
-home.addEventListener('click' ,() => {
-    containerResult.classList.add('display')
-    cover.classList.remove('display')
-})
