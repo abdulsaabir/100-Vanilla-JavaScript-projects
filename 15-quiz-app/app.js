@@ -107,7 +107,8 @@ let home = document.querySelector('.Home')
 let QuestionCounter = document.querySelector('.questionNumber')
 let quiz = document.querySelector('.quiz')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
-let scoreReslt = document.querySelector('.scoreReslt')
+let scoreReslt = document.querySelector('.recentScore')
+let containerResult = document.querySelector('.containerResult')
 let questionNumber
 startGame = () => {
     AvailibleQuestion= [...question]
@@ -127,6 +128,7 @@ getQuestion = () => {
     if(questionNumber == AvailibleQuestion.length-1)
     {
         containerResult.classList.remove('display')
+        localStorage.setItem('mostRecentScore' , Score);
         quiz.classList.add('display')
         scoreReslt.innerText = Score
     }
@@ -180,4 +182,20 @@ item.addEventListener('click', (e) => {
  
 })
 })
+
+
+let inputValue = document.getElementById('inputvalue')
+let btnsave = document.querySelector('.save')
+let btnplayAgain = document.querySelector('.Play')
+
+inputValue.addEventListener('keyup' , (e)=>{
+    btnsave.disabled = !inputValue.value
+} )
+
+btnplayAgain.addEventListener('click' ,() => {
+    cover.classList.remove('display')
+    containerResult.classList.add('display')
+})
+
+
 

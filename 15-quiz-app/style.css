@@ -128,6 +128,30 @@ margin-bottom: 4rem;
 }
 
 
+.containerResult{
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    margin-bottom: 1rem;
+    padding: 15px 10px;
+    caret-color: red;
+}
+.containerResult button{
+    padding: 15px 47px;
+    margin: 8px 0;
+}
+.containerResult .Play{
+    padding: 15px 65px;
+}
 
 
 

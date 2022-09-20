@@ -19,7 +19,7 @@
     />
   </head>
   <body>
-    <div class="container cover display">
+    <div class="container cover">
       <div class="center">
         <h1>ARE YOU READY?</h1>
         <div class="buttons">
@@ -71,11 +71,17 @@
     </div>
 
     <!-- reslut -->
-    <div class="containerResult">
+    <div class="containerResult display">
+      <h4>Your Score:</h4>
       <h1 class="recentScore">0</h1>
       <form>
-        <input type="text" placeholder="Enter Your Name" />
-        <button class="save">Save Your Score</button>
+        <input
+          type="text"
+          id="inputvalue"
+          autofocus="on"
+          placeholder="Your Name"
+        />
+        <button disabled class="save">Save Your Score</button>
         <button class="Play">Play Again</button>
       </form>
     </div>
