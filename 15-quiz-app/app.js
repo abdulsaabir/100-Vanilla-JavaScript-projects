@@ -109,22 +109,24 @@ let quiz = document.querySelector('.quiz')
 let containerResult= document.querySelector('.containerResult')
 let choices = Array.from( document.getElementsByClassName('Choice-text'))
 let scoreReslt = document.querySelector('.scoreReslt')
+let questionNumber
 startGame = () => {
     AvailibleQuestion= [...question]
+    questionNumber = -1
     getQuestion()
+    Score= 0
     quiz.classList.remove('display')
     QuestionCounter.textContent= counter
     scoreCounter.innerText = Score
     progress.style.width= `${progressCounter}%`
     counter= 1
-    Score= 0
     progressCounter= 0
+   
 }
 
 getQuestion = () => {
-    if(AvailibleQuestion.length === 0)
+    if(questionNumber == AvailibleQuestion/length)
     {
-        
         containerResult.classList.remove('display')
         quiz.classList.add('display')
         scoreReslt.innerText = Score
@@ -134,7 +136,8 @@ getQuestion = () => {
     QuestionCounter.innerText= counter
     scoreCounter.innerText= Score
     progress.style.width= `${progressCounter}%`
-    let questionNumber = Math.floor(Math.random() * AvailibleQuestion.length)
+    // let questionNumber = Math.floor(Math.random() * AvailibleQuestion.length)
+    questionNumber += 1
     currentQuestion= AvailibleQuestion[questionNumber]
     QuestionTitle.innerText = currentQuestion.question
     choices.forEach(choiceNow => {
@@ -142,7 +145,7 @@ getQuestion = () => {
         choiceNow.innerText = currentQuestion['choice' + dataID]
     
     })
-     AvailibleQuestion.splice(questionNumber , 1)
+    //  AvailibleQuestion.splice(questionNumber , 1)
     
     }
 }
