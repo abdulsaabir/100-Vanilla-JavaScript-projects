@@ -261,11 +261,7 @@ Reset.addEventListener('click' , () => {
     scoresList.innerHTML= ''
 })
 
-if( localStorage.getItem('highScore') === null)
-{
-showscores.disabled = true
-showscores.style.boxShadow= 'none'
-}
+
 
 
 
