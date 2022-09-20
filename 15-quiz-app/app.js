@@ -1,6 +1,6 @@
 let question = []
   
-
+let sectionload = document.querySelector('.sectionload')
 
 fetch("questions.json")
 .then(res => {
@@ -9,7 +9,11 @@ fetch("questions.json")
 .then(loadedQestions => {
     question= loadedQestions
     startGame()
+    setTimeout(() => {
+        sectionload.classList.add('display')
+    }, 2000);
     quiz.classList.add('display')
+    cover.classList.remove('display')
 })
 .catch(err => {
     console.error(err)
@@ -32,7 +36,7 @@ let QuestionTitle = document.querySelector('.question')
 let AvailibleQuestion = {}
 let currentQuestion 
 let counter = 1
-let Score = 0
+let Score = 0 
 let increaseProgress = 100/question.length
 let progressCounter = 0
 let progress =document.querySelector('.progressgo')
