@@ -81,13 +81,18 @@ let question = [
     }
 ]
 
-window.addEventListener('DOMContentLoaded' , ()=> {
-    if( localStorage.getItem('highScore') === null)
-    {
-    showscores.disabled = true
-    showscores.style.boxShadow= 'none'
-    }
-})
+// window.addEventListener('DOMContentLoaded' , ()=> {
+//     if( localStorage.getItem('highScore') === null)
+//     {
+//     showscores.disabled = true
+//     showscores.style.boxShadow= 'none'
+//     }
+// })
+if( localStorage.getItem('highScore') === null)
+{
+showscores.disabled = true
+showscores.style.boxShadow= 'none'
+}
 
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
