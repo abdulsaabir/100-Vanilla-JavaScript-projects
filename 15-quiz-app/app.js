@@ -1,13 +1,20 @@
 let question = []
   
 
-// window.addEventListener('DOMContentLoaded' , ()=> {
-//     if( localStorage.getItem('highScore') === null)
-//     {
-//     showscores.disabled = true
-//     showscores.style.boxShadow= 'none'
-//     }
-// })
+
+fetch("questions.json")
+.then(res => {
+    return res.json();
+})
+.then(loadedQestions => {
+    question= loadedQestions
+    startGame()
+    quiz.classList.add('display')
+})
+.catch(err => {
+    console.error(err)
+})
+
 
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
@@ -37,6 +44,7 @@ let choices = Array.from( document.getElementsByClassName('Choice-text'))
 let scoreReslt = document.querySelector('.recentScore')
 let containerResult = document.querySelector('.containerResult')
 let questionNumber
+let questionsdisable = document.querySelector('.questions')
 startGame = () => {
     AvailibleQuestion= [...question]
     questionNumber = -1
@@ -91,15 +99,17 @@ item.addEventListener('click', (e) => {
     {
         parent.classList.add('correct')
         Score += 10
-        
+        questionsdisable.disabled = true
         setTimeout(() => {
+            questionsdisable.disabled = false
             parent.classList.remove('correct')
         }, 1000);
     }
     else{
         parent.classList.add('incorrect')
-        
+        questionsdisable.disabled = true
         setTimeout(() => {
+            questionsdisable.disabled = false
             parent.classList.remove('incorrect')
         }, 1000);
     }
@@ -121,6 +131,8 @@ inputValue.addEventListener('keyup' , (e)=>{
 
 btnplayAgain.addEventListener('click' ,() => {
     cover.classList.remove('display')
+    quiz.classList.add('display')
+    // cover.classList.remove('display')
     containerResult.classList.add('display')
 })
  
@@ -184,9 +196,16 @@ Backbtn.addEventListener('click' , () => {
 Reset.addEventListener('click' , () => {
     localStorage.removeItem('highScore')
     scoresList.innerHTML= ''
+    showscores.disabled = true
+    showscores.style.boxShadow= 'none'
 })
 
 
 
-
+// cover.addEventListener('load' , () => {
+//     {
+//         showscores.disabled = true
+//         showscores.style.boxShadow= 'none'
+//         }
+// })
 
