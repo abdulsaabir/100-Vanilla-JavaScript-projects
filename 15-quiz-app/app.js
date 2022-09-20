@@ -246,9 +246,6 @@ showscores.disabled = true
 showscores.style.boxShadow= 'none'
 }else
 {
-
-
-
 let totalScores = JSON.parse(localStorage.getItem('highScore'))
 totalScores.forEach(item => {
     scoresList.innerHTML+= ` <li class="NaME">${item.Name} - <span class="hisScore">${item.Score}</span></li>`
