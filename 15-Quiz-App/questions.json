@@ -1,0 +1,86 @@
+[
+    { 
+        "question": " Whose death sparked World War I?",
+        "choice1": "Kaiser Wilhelm",
+        "choice2": " Archbishop Ussher",
+        "choice3": "Queen Victoria",
+        "choice4": "Archduke Franz Ferdinand",
+        "answer": 4
+    },
+    {
+        "question: 'The Best club in the History of Football?',
+        "choice1: 'Real Madrid',
+        "choice2: 'Bayern Munich',
+        "choice3: 'Barcelone',
+        "choice4: 'Ac Milan',
+        "answer: 1
+    },
+    {
+        "question: 'Which of these nations was neutral in World War I?',
+        "choice1: 'Germany ',
+        "choice2: ' Norway',
+        "choice3: 'Italy ',
+        "choice4: 'England',
+        "answer: 2
+    },
+    {
+        "question: ' Which weapon was first used at the Battle of the Somme in World War I?',
+        "choice1: 'Submarine',
+        "choice2: 'Tank',
+        "choice3: 'Jet fighter',
+        "choice4: 'Chariot',
+        "answer:  2
+    },
+    {
+        "question: 'The GOAT of Football',
+        "choice1: 'Messi',
+        "choice2: 'Pele',
+        "choice3: 'Maradona',
+        "choice4: 'Cristaino Ronaldo',
+        "answer:  4
+    },
+    {
+        "question: 'World War I ended in:',
+        "choice1: '1925',
+        "choice2: '1918',
+        "choice3: '1920',
+        "choice4: ' 1915',
+        "answer:  2
+    },
+    {
+        "question: 'Which of these battles did not involve Roman soldiers?',
+        "choice1: 'Arretium',
+        "choice2: 'Chalons',
+        "choice3": 'Cannae',
+        "choice4": 'Thermopylae ',
+        "answer":  4
+    },
+    {
+        "question": 'Where were the Aegean Bronze Age civilizations located?',
+        "choice1": 'Algeria',
+        "choice2": 'India',
+        "choice3": 'Greece',
+        "choice4": 'Somalia',
+        "answer":  3
+    },
+    {
+        "question": 'Who was the first U.S. president to appear on television?',
+        "choice1": 'Richard Nixon',
+        "choice2": 'Ronald Reagan',
+        "choice3": 'Abraham Lincoln',
+        "choice4": 'Franklin Delano Roosevelt',
+        "answer":  4
+    },
+    {
+        ""question": "In which city would you find the Statue of Liberty?",
+        "choice1": "San Francisco",
+        "choice2": "New York City",
+        "choice3": "Deyniile",
+        "choice4": "Philadelphia",
+        "answer":  2
+    }
+    ,
+    {
+        ""question" : "I AM PROBLEM",
+
+]
