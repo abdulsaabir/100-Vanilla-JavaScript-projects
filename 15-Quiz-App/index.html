@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+   <section class="sectionload"><div id="loader"></div></section>
+    <div class="container cover display">
+      <div class="center">
+        <h1>ARE YOU READY?</h1>
+        <div class="buttons">
+          <button class="btns">PLAY</button>
+          <button id="high-score">
+            HIGH SCORE <i class="fas fa-crown"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- quiz -->
+    <div class="quiz display">
+      <div class="center-container">
+        <div class="container-top">
+          <div class="right-part">
+            <h1>Question <span class="questionNumber"></span></h1>
+            <div id="proggress">
+              <div class="progressgo"></div>
+            </div>
+          </div>
+          <div class="right-part">
+            <p>score</p>
+            <p class="score">0</p>
+          </div>
+        </div>
+        <div class="questions">
+          <h1 class="question">
+            Why Somalia is failed state more then 60 years
+          </h1>
+          <div class="container-choses">
+            <p class="prefix">A</p>
+            <p class="Choice-text" data-id="1">WE</p>
+          </div>
+          <div class="container-choses">
+            <p class="prefix">B</p>
+            <p class="Choice-text" data-id="2">US</p>
+          </div>
+          <div class="container-choses">
+            <p class="prefix">C</p>
+            <p class="Choice-text" data-id="3">THEY</p>
+          </div>
+          <div class="container-choses">
+            <p class="prefix">D</p>
+            <p class="Choice-text" data-id="4">YOU</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- reslut -->
+    
+    <div class="containerResult display">
+      <h4 class="savedAlert display">your Scores is saved</h1>
+      <h4>Your Score:</h4>
+      <h1 class="recentScore">15</h1>
+      <form>
+        <input
+          type="text"
+          id="inputvalue"
+          autofocus="on"
+          placeholder="Your Name"
+        />
+        <button disabled class="save">Save Your Score</button>
+        <button class="Play">Play Again</button>
+      </form>
+    </div>
+
+    <!-- high scores -->
+    <div class="scoresContainer display">
+      <h1>highest Scores</h1>
+      <ul class="scoresList"></ul>
+      <div class="butns">
+        <button class="Backbtn">BACK TO HOME</button>
+        <button class="reset">Reset</button>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html
