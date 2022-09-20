@@ -89,7 +89,6 @@ let question = [
 //     }
 // })
 
-
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
 
@@ -235,17 +234,26 @@ btnsave.addEventListener('click' , (e) => {
 
 
 // show high scores
+let scoresList = document.querySelector('.scoresList')
 let showscores = document.getElementById('high-score')
 showscores.addEventListener('click' , () => {
     cover.classList.add('display')
     scoresContainer.classList.remove('display')
 })
-let scoresList = document.querySelector('.scoresList')
+if( localStorage.getItem('highScore') === null)
+{
+showscores.disabled = true
+showscores.style.boxShadow= 'none'
+}else
+{
+
+
+
 let totalScores = JSON.parse(localStorage.getItem('highScore'))
 totalScores.forEach(item => {
     scoresList.innerHTML+= ` <li class="NaME">${item.Name} - <span class="hisScore">${item.Score}</span></li>`
 })
-
+}
 
 let Backbtn = document.querySelector('.Backbtn')
 let Reset = document.querySelector('.reset')
@@ -260,7 +268,6 @@ Reset.addEventListener('click' , () => {
     localStorage.removeItem('highScore')
     scoresList.innerHTML= ''
 })
-
 
 
 
