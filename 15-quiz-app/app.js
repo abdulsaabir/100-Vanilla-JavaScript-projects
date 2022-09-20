@@ -2,22 +2,43 @@ let question = []
   
 let sectionload = document.querySelector('.sectionload')
 
-fetch("questions.json")
-.then(res => {
+fetch("https://opentdb.com/api.php?amount=15&category=9&difficulty=easy&type=multiple")
+.then((res) => {
     return res.json();
 })
-.then(loadedQestions => {
-    question= loadedQestions
-    startGame()
+.then((loadedQuestions) => {
+    question = loadedQuestions.results.map((loadedQuestion) => {
+        const formattedQuestion = {
+            question: loadedQuestion.question,
+        };
+
+        const answerChoices = [...loadedQuestion.incorrect_answers];
+        formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+        answerChoices.splice(
+            formattedQuestion.answer - 1,
+            0,
+            loadedQuestion.correct_answer
+        );
+
+        answerChoices.forEach((choice, index) => {
+            formattedQuestion['choice' + (index + 1)] = choice;
+        });
+
+        return formattedQuestion;
+    });
     setTimeout(() => {
-        sectionload.classList.add('display')
-    }, 2000);
+                 sectionload.classList.add('display')
+             }, 2000);
+            //  quiz.classList.add('display')
+           
+    startGame();
     quiz.classList.add('display')
     cover.classList.remove('display')
 })
-.catch(err => {
-    console.error(err)
-})
+.catch((err) => {
+    console.error(err);
+    
+});
 
 
 let cover = document.querySelector('.cover')
@@ -212,3 +233,20 @@ Reset.addEventListener('click' , () => {
 //         }
 // })
 
+
+
+// .then(res => {
+//     return res.json();
+// })
+// .then(loadedQestions => {
+//     question= loadedQestions
+//     startGame()
+//     setTimeout(() => {
+//         sectionload.classList.add('display')
+//     }, 2000);
+//     quiz.classList.add('display')
+//     cover.classList.remove('display')
+// })
+// .catch(err => {
+//     console.error(err)
+// })
