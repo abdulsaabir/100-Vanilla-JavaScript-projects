@@ -88,11 +88,7 @@ let question = [
 //     showscores.style.boxShadow= 'none'
 //     }
 // })
-if( localStorage.getItem('highScore') === null)
-{
-showscores.disabled = true
-showscores.style.boxShadow= 'none'
-}
+
 
 let cover = document.querySelector('.cover')
 let btns = document.querySelectorAll('.btns')
@@ -264,6 +260,12 @@ Reset.addEventListener('click' , () => {
     localStorage.removeItem('highScore')
     scoresList.innerHTML= ''
 })
+
+if( localStorage.getItem('highScore') === null)
+{
+showscores.disabled = true
+showscores.style.boxShadow= 'none'
+}
 
 
 
