@@ -1,11 +1,11 @@
 let btn = document.querySelector('.btn')
 btn.addEventListener('mouseover' , (e) => {
     
-   let left = e.pageX - btn.offsetLeft
-   let top = e.pageY - btn.offsetTop
+   let x = (e.pageX - btn.offsetLeft)
+   let y = (e.pageY - btn.offsetTop)
  
-   btn.style.setProperty('--xPos', top + "px");
-   btn.style.setProperty('--yPos', left + "px");
+   btn.style.setProperty('--xPos', y + "px");
+   btn.style.setProperty('--yPos', x + "px");
 
    
 })
