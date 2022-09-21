@@ -6,9 +6,8 @@
 
 body{
     width: 100%;
-    height: 100vh;background: #FFEFBA; 
-    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);   
-    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    height: 100vh;
+    padding-bottom: 250px;
     
 }
 img{
@@ -29,7 +28,7 @@ img{
     background-color: white;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
 
 .logo img{
@@ -68,5 +67,114 @@ img{
 
 
 /* favories */
+.Favorites{
+    width: 100%;
+    background-color: rgb(229, 242, 242);
+}
+.fav-container{
+    height: 150px;
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+}
+.fav-container li{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.fav-container img{
+    border-radius: 50%;
+    width: 70px;
+    height:70px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+.fav-container p{
+    font-size: 20px;
+    font-size: 800;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1.2px;
+}
 
-.fav-container
+
+/* adver-container */
+
+.adver-container{
+    width: 88%;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+    padding-top: 1rem;
+    background: rgb(2,0,36);
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+.brand{
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding: 0 0.5rem;
+}
+.brand h3{
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+.brand p{
+    font-size: 1.3rem;
+}
+.brand a{
+    position: absolute;
+    font-size: 30px;
+    top: 0;
+    right: 0px;
+    color: white;
+}
+.btn{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2rem;
+}
+.btn button{
+    padding: 0.6rem 2rem;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    color: white;
+    font-size: 1rem
+    ;
+    letter-spacing: 1.2px;
+}
+
+
+/* recipe */
+
+
+.recipe{
+    width: 88%;
+    margin: auto;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 200ox;
+}
+.recipe img{
+    width:100\\\\\\50
+}
+
+.recipe icon{
+    background-color: black;
+    /* color: red; */
+    font-size: 6rem;
+    overflow: hidden;
+}
