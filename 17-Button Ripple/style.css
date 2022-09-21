@@ -20,15 +20,16 @@ body{
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
+    border-radius: 5px;
    
 }
 .btn::before{
     position: absolute;
     content: "";
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 50%;
+    width: 0px;
+    height: 0px;
+    top:var(--xPos);
+    left: var(--yPos);
     transform: translate(-50% , -50%);
     background-color: orangered;
     transition: width 0.5s,  height 0.5s;
