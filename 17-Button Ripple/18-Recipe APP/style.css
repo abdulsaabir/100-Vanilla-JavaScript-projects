@@ -8,7 +8,7 @@ body{
     width: 100%;
     height: 100vh;
     padding-bottom: 250px;
-    
+    background-color: #536472;
 }
 img{
     width: 100%;
@@ -40,22 +40,29 @@ img{
     align-items: center;
 }
 
-.search input{
+.search #searchin{
     padding: 10px;
     border: none;
     outline: none;
-    border-bottom: 1px solid black;
+    border-bottom: 4px solid black;
     /* display: none; */
-    width: 0;
+    width: 60px;
     height: 0;
     border: none;
     transition: width 0.6s ease-in ;
 }
+#searchin .display{
+   /* width: 200px;
+   border-bottom: 1px solid black; */
+}
+.hide{
+    display: none;
+}
 
-.search:hover input{
+/* .search:hover input{
     width: 200px;
     border-bottom: 1px solid black;
-}
+} */
 .header  .search iconify-icon{
     font-size: 18px;
     color: red;
@@ -70,6 +77,7 @@ img{
 .Favorites{
     width: 100%;
     background-color: rgb(229, 242, 242);
+    background-color: #D3A08A;
 }
 .fav-container{
     height: 150px;
@@ -112,9 +120,11 @@ img{
     padding: 2rem 1rem;
     padding-top: 1rem;
     background: rgb(2,0,36);
-    background: #7F7FD5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #7F7FD5;  
+     background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  
+    
+    /* background-color: #9695ED; */
     border-radius: 6px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
@@ -162,19 +172,43 @@ img{
 
 
 .recipe{
+    padding-bottom: 2rem;
     width: 88%;
     margin: auto;
     margin-top: 3rem;
     display: grid;
-    grid-template-rows: 1fr 200ox;
+    grid-template-rows:1fr 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .recipe img{
-    width:100\\\\\\50
+    width:100%;
+    border-radius: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.recipe .textMeal{
+    background-color: white;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+border-top-right-radius: 0;
+display: flex;
+height: 80%;
+justify-content: start;
+align-items: center;
+padding-left: 1rem;
+}
+.recipe h3{
+    opacity: 0.7;
 }
 
-.recipe icon{
-    background-color: black;
-    /* color: red; */
-    font-size: 6rem;
-    overflow: hidden;
+
+.recipe .icon1{
+    opacity: 0.7;
+    padding:  0 0.2rem;
+    font-size: 14px;
+}
+.recipe .icon{
+    font-size: 24px;
+    position: absolute;
+    right: 60px;
 }
