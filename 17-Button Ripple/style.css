@@ -33,6 +33,10 @@ body{
     background-color: orangered;
     transition: width 0.5s,  height 0.5s;
 }
+.ribble{
+    position:relative;
+    z-index: 2;
+}
 
 .btn:hover::before{
     width: 100%;
