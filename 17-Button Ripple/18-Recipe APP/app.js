@@ -3,9 +3,7 @@ let searchBox = document.querySelector('.searchBox')
 let logo =document.querySelector('.logo')
 
 searchBox.addEventListener('click' , (e) => {
-    e.preventDef
-    ault()
+    e.preventDefault()
     searchinput.classList.add('display')
     logo.classList.add('hide')
-    
 })
