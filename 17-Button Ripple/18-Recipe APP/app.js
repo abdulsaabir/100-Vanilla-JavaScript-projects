@@ -6,4 +6,4 @@ searchBox.addEventListener('click' , (e) => {
     e.preventDefault()
     searchinput.classList.add('display')
     logo.classList.add('hide')
-}
+})
