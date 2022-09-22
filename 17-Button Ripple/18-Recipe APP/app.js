@@ -4,6 +4,6 @@ let logo =document.querySelector('.logo')
 
 searchBox.addEventListener('click' , (e) => {
     e.preventDefault()
-    searchinput..add('display')
+    searchinput.classList.add('display')
     logo.classList.add('hide')
 })
