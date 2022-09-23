@@ -30,6 +30,9 @@ img {
   align-items: center;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
+.logo {
+  transition: display 1s ease-in-out;
+}
 
 .logo img {
   width: 100px;
@@ -44,26 +47,19 @@ img {
   padding: 10px;
   border: none;
   outline: none;
-  width: 0px;
+  width: 150px;
   height: 0px;
-  display: none;
+
   border: none;
   transition: width 0.6s ease-in;
   border-bottom: 2px solid black;
-  margin-right: 10px;
-  width: 150px;
-  display: inline-block;
+  display: none;
 }
-.showSearch {
+.search .showSearch {
+  display: inline-block;
 }
 .hide {
   display: none;
-}
-
-.header .search iconify-icon {
-  font-size: 18px;
-  color: red;
-  font-weight: bold;
 }
 .header .menu {
   font-size: 22px;
