@@ -52,7 +52,6 @@ img {
   width: 150px;
   height: 0px;
   border: none;
-
   border-bottom: 2px solid black;
   display: none;
   transition: display 1s ease-in;
