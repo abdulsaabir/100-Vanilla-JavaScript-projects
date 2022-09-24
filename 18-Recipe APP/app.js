@@ -55,7 +55,9 @@ favicon.addEventListener("click", (e) => {
   setTimeout(() => {
     favicon.style.color = "black";
   }, 300);
-  favicon.disabled = true;
+  setTimeout(() => {
+    favicon.style.display = "none";
+  }, 400);
 });
 
 function updateFav() {
