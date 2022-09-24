@@ -34,11 +34,12 @@ favicon.addEventListener("click", (e) => {
   console.log(img);
   let foodname = text.textContent;
   // if(favfood.childElementCount > 4)
-  favfood.innerHTML += `  <ul class="fav-container">
+
+  let addstorage = (favfood.innerHTML += `  <ul class="fav-container">
     <!-- image 1 -->
     <li>
         <img src="${img}" alt="">
             <p> ${foodname}</p>
         </img>
-    </li>`;
+    </li>`);
 });
