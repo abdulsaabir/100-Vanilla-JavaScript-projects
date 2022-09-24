@@ -5,10 +5,15 @@ let mealid = document.getElementById("mealid");
 let foottitle = document.getElementById("foodtitle");
 let favicon = document.querySelector(".icon");
 let favfood = document.querySelector(".fav-container");
+let getRandomFood = document.querySelector(".start");
 window.addEventListener("DOMContentLoaded", () => {
   updateFav();
 });
 
+getRandomFood.addEventListener("click", () => {
+  console.log("hey");
+  Function();
+});
 (function () {
   fetch("https:www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
