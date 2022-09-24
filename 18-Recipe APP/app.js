@@ -39,6 +39,7 @@ searchBox.addEventListener("click", (e) => {
   e.preventDefault();
   searchinput.classList.toggle("showSearch");
 });
+// prepare local storage to add the favorites food
 let favorites = JSON.parse(localStorage.getItem("favfood")) || [];
 
 //  add to the favorites button
@@ -48,6 +49,7 @@ favicon.addEventListener("click", (e) => {
   let picture = e.target.parentElement.previousElementSibling;
   let img = picture.querySelector("#mealid");
   img = img.src;
+  //
   let foodname = text.textContent;
   let newFavorites = {
     favName: foodname,
@@ -58,11 +60,6 @@ favicon.addEventListener("click", (e) => {
     favorites.unshift(newFavorites);
     favorites.splice(4);
     localStorage.setItem("favfood", JSON.stringify(favorites));
-    // console.log(favorites);
-    // <i class="fa-solid fa-heart"></i>
-    // <i class="fa-regular icon fa-heart"></i>
-
-    // updating favorites food
 
     updateFav();
     favicon.classList.add("fa-solid");
