@@ -49,26 +49,29 @@ favicon.addEventListener("click", (e) => {
   let picture = e.target.parentElement.previousElementSibling;
   let img = picture.querySelector("#mealid");
   img = img.src;
-  //
   let foodname = text.textContent;
+
+  // declare object to store the new favorite food
   let newFavorites = {
     favName: foodname,
     favSrc: img,
   };
 
+  // distanguish wethere it's add favorites or remove
   if (favicon.classList.contains("fa-regular")) {
+    // add the fav to begginng and just save 4 fav foods only
     favorites.unshift(newFavorites);
     favorites.splice(4);
     localStorage.setItem("favfood", JSON.stringify(favorites));
-
+    // fuction adds food to the local storage
     updateFav();
+    // change the btn into favorite full
     favicon.classList.add("fa-solid");
     favicon.classList.remove("fa-regular");
-    console.log("i am in");
   } else {
+    // it means remove  then remove it
     favicon.classList.remove("fa-solid");
     favicon.classList.add("fa-regular");
-    console.log("i am out");
     removefav();
   }
 });
