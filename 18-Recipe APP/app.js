@@ -34,22 +34,14 @@ favicon.addEventListener("click", (e) => {
   img = img.src;
   let foodname = text.textContent;
   let newFavorites = {
-    itemName: foodname,
-    itemSrc: img,
+    favName: foodname,
+    favSrc: img,
   };
+  // console.log(newFavorites);
   favorites.push(newFavorites);
-  localStorage.setItem("favfood", JSON.stringify(newFavorites));
-
-  let NewScore = {
-    Name: inputValue.value,
-    Score: Score,
-  };
-
-  highScores.push(NewScore);
-  highScores.sort((a, b) => b.Score - a.Score);
-  highScores.splice(5);
-  localStorage.setItem("highScore", JSON.stringify(highScores));
-
+  // favorites.splice(5);
+  localStorage.setItem("favfood", JSON.stringify(favorites));
+  console.log(favorites);
   // if(favfood.childElementCount > 4)
 
   favfood.innerHTML += `  <ul class="fav-container">
