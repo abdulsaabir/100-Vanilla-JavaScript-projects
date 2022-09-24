@@ -217,3 +217,17 @@ img {
 .recipe .img .mealtitle {
   color: black;
 }
+.btnget {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start {
+  padding: 10px;
+  background-color: rgb(206, 166, 166);
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

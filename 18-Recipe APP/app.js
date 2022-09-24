@@ -5,16 +5,16 @@ let mealid = document.getElementById("mealid");
 let foottitle = document.getElementById("foodtitle");
 let favicon = document.querySelector(".icon");
 let favfood = document.querySelector(".fav-container");
-let getRandomFood = document.querySelector(".start");
+let getRandomFood = d         ocument.querySelector(".start");
 window.addEventListener("DOMContentLoaded", () => {
   updateFav();
 });
 
 getRandomFood.addEventListener("click", () => {
-  console.log("hey");
-  Function();
+  getRandom();
+  favicon.style.display = "inline-block";
 });
-(function () {
+function getRandom() {
   fetch("https:www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
     .then((data) => displayFoods(data));
@@ -28,7 +28,9 @@ getRandomFood.addEventListener("click", () => {
       mealtitle.textContent = "Random Meal";
     });
   };
-})();
+}
+
+getRandom();
 
 searchBox.addEventListener("click", (e) => {
   e.preventDefault();
