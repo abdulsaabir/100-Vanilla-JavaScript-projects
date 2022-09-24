@@ -13,7 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
 // when the page load add random food to the page
 getRandomFood.addEventListener("click", () => {
   getRandom();
-  favicon.style.display = "inline-block";
+  favicon.classList.remove("fa-solid");
+  favicon.classList.add("fa-regular");
 });
 //  function of get random food
 function getRandom() {
@@ -49,7 +50,13 @@ favicon.addEventListener("click", (e) => {
   let picture = e.target.parentElement.previousElementSibling;
   let img = picture.querySelector("#mealid");
   img = img.src;
-  let foodname = text.textContent;
+  let foodname = text.innerText;
+
+  // split the first 2 names only
+  var names = foodname.split(" ");
+  foodname = names[0] + " " + names[1];
+
+  // foodname = foodname.join("");
 
   // declare object to store the new favorite food
   let newFavorites = {
@@ -100,6 +107,20 @@ function updateFav() {
 function removefav() {
   let favfood = JSON.parse(localStorage.getItem("favfood"));
   favfood.shift();
-  localStorage.setItem("favfood", JSON.stringify(favfood));
-  updateFav();
+  console.log(favfood);
+  // updateFav();
+}
+function use2namesonly(name) {
+  let couonter = 0;
+  for (let i = 0; i < name.length; i++) {
+    if (name[i] === " ") {
+      if (couonter === 1) {
+        break;
+      }
+      couonter++;
+    }
+    return name[i];
+    i++;
+  }
+  return name;
 }
