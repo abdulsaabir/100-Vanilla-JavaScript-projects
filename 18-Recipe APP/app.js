@@ -25,21 +25,38 @@ searchBox.addEventListener("click", (e) => {
   e.preventDefault();
   searchinput.classList.toggle("showSearch");
 });
+let favorites = JSON.parse(localStorage.getItem("favfood")) || [];
 
 favicon.addEventListener("click", (e) => {
   let text = e.target.nextSibling.parentElement;
   let picture = e.target.parentElement.previousElementSibling;
   let img = picture.querySelector("#mealid");
   img = img.src;
-  console.log(img);
   let foodname = text.textContent;
+  let newFavorites = {
+    itemName: foodname,
+    itemSrc: img,
+  };
+  favorites.push(newFavorites);
+  localStorage.setItem("favfood", JSON.stringify(newFavorites));
+
+  let NewScore = {
+    Name: inputValue.value,
+    Score: Score,
+  };
+
+  highScores.push(NewScore);
+  highScores.sort((a, b) => b.Score - a.Score);
+  highScores.splice(5);
+  localStorage.setItem("highScore", JSON.stringify(highScores));
+
   // if(favfood.childElementCount > 4)
 
-  let addstorage = (favfood.innerHTML += `  <ul class="fav-container">
+  favfood.innerHTML += `  <ul class="fav-container">
     <!-- image 1 -->
     <li>
         <img src="${img}" alt="">
             <p> ${foodname}</p>
         </img>
-    </li>`);
+    </li>`;
 });
