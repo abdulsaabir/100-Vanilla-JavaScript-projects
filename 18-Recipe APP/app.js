@@ -25,8 +25,7 @@ searchBox.addEventListener("click", (e) => {
 });
 
 favicon.addEventListener("click", (e) => {
-  let text = e.target.nextSibling.ap;
-  console.log(text);
+  let text = e.target.nextSibling.parentElement;
   // let foodname = text.textContent;
   // console.log(foodname);
 });
