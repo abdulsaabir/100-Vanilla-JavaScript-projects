@@ -200,3 +200,19 @@ img {
   position: absolute;
   right: 60px;
 }
+
+.recipe .img {
+  position: relative;
+}
+.mealtitlecontainer {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  background: white;
+  background-color: white;
+  padding: 2px 20px;
+  padding-left: 20px;
+}
+.recipe .img .mealtitle {
+  color: black;
+}
