@@ -10,15 +10,18 @@ window.addEventListener("DOMContentLoaded", () => {
   updateFav();
 });
 
+// when the page load add random food to the page
 getRandomFood.addEventListener("click", () => {
   getRandom();
   favicon.style.display = "inline-block";
 });
+//  function of get random food
 function getRandom() {
+  //  take data from public api
   fetch("https:www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
     .then((data) => displayFoods(data));
-
+  // store into local array
   const displayFoods = (foods) => {
     foods.meals.forEach((meal) => {
       mealid.src = `${meal.strMealThumb}`;
@@ -31,14 +34,16 @@ function getRandom() {
 }
 
 getRandom();
-
+//  search box
 searchBox.addEventListener("click", (e) => {
   e.preventDefault();
   searchinput.classList.toggle("showSearch");
 });
 let favorites = JSON.parse(localStorage.getItem("favfood")) || [];
 
+//  add to the favorites button
 favicon.addEventListener("click", (e) => {
+  // get the name and src of this favorited food throug traversing DOM
   let text = e.target.nextSibling.parentElement;
   let picture = e.target.parentElement.previousElementSibling;
   let img = picture.querySelector("#mealid");
