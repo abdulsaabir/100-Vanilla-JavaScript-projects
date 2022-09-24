@@ -94,4 +94,5 @@ function removefav() {
   let favfood = JSON.parse(localStorage.getItem("favfood"));
   favfood.shift();
   localStorage.setItem("favfood", JSON.stringify(favfood));
+  updateFav();
 }
