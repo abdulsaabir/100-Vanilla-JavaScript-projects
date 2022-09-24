@@ -79,7 +79,7 @@ favicon.addEventListener("click", (e) => {
     // it means remove  then remove it
     favicon.classList.remove("fa-solid");
     favicon.classList.add("fa-regular");
-    removefav(newFavorites);
+    removefav();
   }
 });
 
@@ -104,9 +104,12 @@ function updateFav() {
 }
 
 // fuction remove favorite food from local storage
-function removefav(name) {
-  localStorage.removeItem(name);
-  updateFav;
+function removefav() {
+  favorites = JSON.parse(localStorage.getItem("favfood"));
+  favorites.shift();
+  console.log(favorites);
+  localStorage.setItem("favfood", JSON.stringify(favorites));
+
   // updateFav();
 }
 function use2namesonly(name) {
@@ -123,3 +126,9 @@ function use2namesonly(name) {
   }
   return name;
 }
+
+let xx = document.getElementById("click");
+xx.addEventListener("click", () => {
+  localStorage.removeItem("favfood");
+  console.log("done");
+});
