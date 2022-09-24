@@ -5,6 +5,10 @@ let mealid = document.getElementById("mealid");
 let foottitle = document.getElementById("foodtitle");
 let favicon = document.querySelector(".icon");
 let favfood = document.querySelector(".fav-container");
+window.addEventListener("DOMContentLoaded", () => {
+  updateFav();
+});
+
 (function () {
   fetch("https:www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
@@ -37,18 +41,38 @@ favicon.addEventListener("click", (e) => {
     favName: foodname,
     favSrc: img,
   };
-  // console.log(newFavorites);
-  favorites.push(newFavorites);
-  // favorites.splice(5);
-  localStorage.setItem("favfood", JSON.stringify(favorites));
-  console.log(favorites);
-  // if(favfood.childElementCount > 4)
 
-  favfood.innerHTML += `  <ul class="fav-container">
-    <!-- image 1 -->
-    <li>
-        <img src="${img}" alt="">
-            <p> ${foodname}</p>
-        </img>
-    </li>`;
+  favorites.unshift(newFavorites);
+  favorites.splice(4);
+  localStorage.setItem("favfood", JSON.stringify(favorites));
+  // console.log(favorites);
+
+  // updating favorites food
+
+  updateFav();
+  favicon.style.color = "red";
+
+  setTimeout(() => {
+    favicon.style.color = "black";
+  }, 300);
+  favicon.disabled = true;
 });
+
+function updateFav() {
+  if (localStorage.getItem("favfood") === null) {
+    console.log("empty");
+  } else {
+    favfood.innerHTML = "";
+    let foods = JSON.parse(localStorage.getItem("favfood"));
+    // console.log(foods);
+    foods.forEach((food) => {
+      favfood.innerHTML += `  <ul class="fav-container">
+        <!-- image 1 -->
+        <li>
+            <img src="${food.favSrc}" alt="">
+                <p> ${food.favName}</p>
+            </img>
+        </li>`;
+    });
+  }
+}
