@@ -28,5 +28,16 @@ searchBox.addEventListener("click", (e) => {
 
 favicon.addEventListener("click", (e) => {
   let text = e.target.nextSibling.parentElement;
+  let picture = e.target.parentElement.previousElementSibling;
+  let img = picture.querySelector(".");
   let foodname = text.textContent;
+
+  favfood.innerHTML +
+    `  <ul class="fav-container">
+    <!-- image 1 -->
+    <li>
+        <img src="https://www.themealdb.com/images/media/meals/n7qnkb1630444129.jpg" alt="">
+            <p> ${foodname}</p>
+        </img>
+    </li>`;
 });
