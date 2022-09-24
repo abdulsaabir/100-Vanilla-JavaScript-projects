@@ -15,6 +15,8 @@ let favfood = document.querySelector(".Favorites");
       mealid.src = `${meal.strMealThumb}`;
       foottitle.textContent = meal.strMeal;
       // console.log(meal);
+      let mealtitle = document.querySelector(".mealtitle");
+      mealtitle.textContent = "Random Meal";
     });
   };
 })();
@@ -26,6 +28,5 @@ searchBox.addEventListener("click", (e) => {
 
 favicon.addEventListener("click", (e) => {
   let text = e.target.nextSibling.parentElement;
-  // let foodname = text.textContent;
-  // console.log(foodname);
+  let foodname = text.textContent;
 });
