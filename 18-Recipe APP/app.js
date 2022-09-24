@@ -54,6 +54,9 @@ favicon.addEventListener("click", (e) => {
   localStorage.setItem("favfood", JSON.stringify(favorites));
   // console.log(favorites);
 
+  <i class="fa-solid fa-heart"></i>
+  <i class="fa-regular icon fa-heart"></i>
+
   // updating favorites food
 
   updateFav();
