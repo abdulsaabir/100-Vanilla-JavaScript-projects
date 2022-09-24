@@ -76,6 +76,7 @@ favicon.addEventListener("click", (e) => {
   }
 });
 
+// function add favorite food to the local storage
 function updateFav() {
   if (localStorage.getItem("favfood") === null) {
     console.log("empty");
@@ -95,6 +96,7 @@ function updateFav() {
   }
 }
 
+// fuction remove favorite food from local storage
 function removefav() {
   let favfood = JSON.parse(localStorage.getItem("favfood"));
   favfood.shift();
