@@ -4,7 +4,7 @@ let logo = document.querySelector(".logo");
 let mealid = document.getElementById("mealid");
 let foottitle = document.getElementById("foodtitle");
 let favicon = document.querySelector(".icon");
-let favfood = document.querySelector(".Favorites");
+let favfood = document.querySelector(".fav-container");
 (function () {
   fetch("https:www.themealdb.com/api/json/v1/1/random.php")
     .then((res) => res.json())
@@ -29,14 +29,15 @@ searchBox.addEventListener("click", (e) => {
 favicon.addEventListener("click", (e) => {
   let text = e.target.nextSibling.parentElement;
   let picture = e.target.parentElement.previousElementSibling;
-  let img = picture.querySelector(".");
+  let img = picture.querySelector("#mealid");
+  img = img.src;
+  console.log(img);
   let foodname = text.textContent;
-
-  favfood.innerHTML +
-    `  <ul class="fav-container">
+  // if(favfood.childElementCount > 4)
+  favfood.innerHTML += `  <ul class="fav-container">
     <!-- image 1 -->
     <li>
-        <img src="https://www.themealdb.com/images/media/meals/n7qnkb1630444129.jpg" alt="">
+        <img src="${img}" alt="">
             <p> ${foodname}</p>
         </img>
     </li>`;
