@@ -186,9 +186,9 @@ img {
   align-items: center;
   padding-left: 1rem;
 }
-.recipe .icon:hover {
+/* .recipe .icon:hover {
   <i class="fa-solid fa-heart"></i>
-}
+} */
 .recipe h3 {
   opacity: 0.7;
 }

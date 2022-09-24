@@ -49,25 +49,26 @@ favicon.addEventListener("click", (e) => {
     favSrc: img,
   };
 
-  favorites.unshift(newFavorites);
-  favorites.splice(4);
-  localStorage.setItem("favfood", JSON.stringify(favorites));
-  // console.log(favorites);
+  if (favicon.classList.contains("fa-regular")) {
+    favorites.unshift(newFavorites);
+    favorites.splice(4);
+    localStorage.setItem("favfood", JSON.stringify(favorites));
+    // console.log(favorites);
+    // <i class="fa-solid fa-heart"></i>
+    // <i class="fa-regular icon fa-heart"></i>
 
-  <i class="fa-solid fa-heart"></i>
-  <i class="fa-regular icon fa-heart"></i>
+    // updating favorites food
 
-  // updating favorites food
-
-  updateFav();
-  favicon.style.color = "red";
-
-  setTimeout(() => {
-    favicon.style.color = "black";
-  }, 300);
-  setTimeout(() => {
-    favicon.style.display = "none";
-  }, 400);
+    updateFav();
+    favicon.classList.add("fa-solid");
+    favicon.classList.remove("fa-regular");
+    console.log("i am in");
+  } else {
+    favicon.classList.remove("fa-solid");
+    favicon.classList.add("fa-regular");
+    console.log("i am out");
+    removefav();
+  }
 });
 
 function updateFav() {
@@ -76,7 +77,7 @@ function updateFav() {
   } else {
     favfood.innerHTML = "";
     let foods = JSON.parse(localStorage.getItem("favfood"));
-    // console.log(foods);
+    console.log(foods);
     foods.forEach((food) => {
       favfood.innerHTML += `  <ul class="fav-container">
         <!-- image 1 -->
@@ -87,4 +88,10 @@ function updateFav() {
         </li>`;
     });
   }
+}
+
+function removefav() {
+  let favfood = JSON.parse(localStorage.getItem("favfood"));
+  favfood.shift();
+  localStorage.setItem("favfood", JSON.stringify(favfood));
 }
