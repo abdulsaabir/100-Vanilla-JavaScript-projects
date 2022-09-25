@@ -126,9 +126,3 @@ function use2namesonly(name) {
   }
   return name;
 }
-
-let xx = document.getElementById("click");
-xx.addEventListener("click", () => {
-  localStorage.removeItem("favfood");
-  console.log("done");
-});
