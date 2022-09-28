@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   updateFav();
 });
 
-// when the page load add random food to the page
+//  when the page load add random food to the page
 getRandomFood.addEventListener("click", () => {
   getRandom();
   favicon.classList.remove("fa-solid");
