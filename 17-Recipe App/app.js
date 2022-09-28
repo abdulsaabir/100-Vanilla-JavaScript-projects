@@ -15,7 +15,7 @@ getRandomFood.addEventListener("click", () => {
   getRandom();
   favicon.classList.remove("fa-solid");
   favicon.classList.add("fa-regular");
-});
+});c  
 //  function of get random food
 function getRandom() {
   //  take data from public api
