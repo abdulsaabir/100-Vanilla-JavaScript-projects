@@ -4,7 +4,7 @@ let logo = document.querySelector(".logo");
 let mealid = document.getElementById("mealid");
 let foottitle = document.getElementById("foodtitle");
 let favicon = document.querySelector(".icon");
-let favfood = document.querySe  lector(".fav-container");
+let favfood = document.querySelector(".fav-container");
 let getRandomFood = document.querySelector(".start");
 window.addEventListener("DOMContentLoaded", () => {
   updateFav();
