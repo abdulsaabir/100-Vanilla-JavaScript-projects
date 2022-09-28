@@ -16,7 +16,7 @@ getRandomFood.addEventListener("click", () => {
   favicon.classList.remove("fa-solid");
   favicon.classList.add("fa-regular");
 });
-//  function of get random food
+//  function of get random food  
 function getRandom() {
   //  take data from public api
   fetch("https:www.themealdb.com/api/json/v1/1/random.php")
