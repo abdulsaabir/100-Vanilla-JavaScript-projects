@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // when the page load add random food to the page
 getRandomFood.addEventListener("click", () => {
-  getRandom();
+  getRandom();  
   favicon.classList.remove("fa-solid");
   favicon.classList.add("fa-regular");
 });
