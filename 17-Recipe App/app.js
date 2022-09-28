@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
 getRandomFood.addEventListener("click", () => {
   getRandom();
   favicon.classList.remove("fa-solid");
-  favicon.classList.add("fa-regular");
+  favicon.classList.add  ("fa-regular");
 });
 //  function of get random food
 function getRandom() {
