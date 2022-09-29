@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="notes">
-      <div>
+      <div class="left">
         <button>Add Note</button>
         <!-- list -->
         <div class="listNotes">
@@ -19,13 +20,21 @@
             <p class="date">Thurdsay 13:30</p>
           </div>
           <!-- item2 -->
-          <div class="listItem">
+          <!-- <div class="listItem">
             <h4 class="NoteTItle">Lecture Notes</h4>
             <p class="noteBody">I learned NOthing Today</p>
             <p class="date">Thurdsay 13:30</p>
-          </div>
+          </div> -->
         </div>
       </div>
+
+      <!-- notetext -->
+      <section class="noteText">
+        <input type="text" placeholder="Enter a title" />
+        <textarea name="text" id="note" cols="30" rows="10">
+I am the note body</textarea
+        >
+      </section>
     </div>
   </body>
 </html>

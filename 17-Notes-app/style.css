@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.notes {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+.noteText {
+  display: flex;
+  flex-direction: column;
+}
+.noteText input,
+.noteText textarea {
+  border: none;
+}
+.left {
+  padding: 2rem;
+  border-right: 3px solid rgba(155, 154, 154, 0.384);
+}
+button {
+  padding: 1rem 7rem;
+  background-color: rgb(48, 167, 48);
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 1rem;
+}
+.NoteTItle {
+  margin-bottom: 0.4rem;
+}
+
+.noteBody {
+  margin-bottom: 0.4rem;
+}
+.date {
+  float: right;
+}
