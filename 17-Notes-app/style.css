@@ -76,6 +76,7 @@ button {
 
 .noteText .save {
   background-color: red;
-  padding: 0rem 0rem;
-  text-align: center;
+  padding: 1rem 4rem;
+  justify-self: center;
+  align-self: center;
 }
