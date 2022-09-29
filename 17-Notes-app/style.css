@@ -61,9 +61,16 @@ button {
 .noteText textarea {
   font-size: 1.1rem;
 }
+.listItem {
+  margin-bottom: 1.5rem;
+}
 
 /* selected class */
 .selectedItem {
   background-color: gray;
   font-weight: bold;
+  padding: 0.4rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0.2rem;
+  color: white;
 }
