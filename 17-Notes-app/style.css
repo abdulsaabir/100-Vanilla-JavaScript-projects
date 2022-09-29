@@ -38,6 +38,7 @@ button {
 }
 .NoteTItle {
   margin-bottom: 0.4rem;
+  font-weight: 500;
 }
 
 .noteBody {
@@ -59,4 +60,10 @@ button {
 }
 .noteText textarea {
   font-size: 1.1rem;
+}
+
+/* selected class */
+.selectedItem {
+  background-color: gray;
+  font-weight: bold;
 }
