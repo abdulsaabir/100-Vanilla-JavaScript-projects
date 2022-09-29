@@ -32,6 +32,7 @@ button {
   font-weight: bold;
   font-family: sans-serif;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 .NoteTItle {
   margin-bottom: 0.4rem;
