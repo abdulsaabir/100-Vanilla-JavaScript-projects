@@ -7,7 +7,7 @@ let favicon = document.querySelector(".icon");
 let favfood = document.querySelector(".fav-container");
 let getRandomFood = document.querySelector(".start");
 window.addEventListener("DOMContentLoaded", () => {
-  updateFav();
+   updateFav();
 });
 
 // when the page load add random food to the page
