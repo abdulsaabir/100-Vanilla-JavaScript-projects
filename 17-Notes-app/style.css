@@ -19,7 +19,7 @@ body {
 .noteText input,
 .noteText textarea {
   border: none;
-  s
+  outline: none;
 }
 .left {
   padding: 2rem 1rem;
@@ -56,4 +56,7 @@ button {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 2rem;
+}
+.noteText textarea {
+  font-size: 1.1rem;
 }
