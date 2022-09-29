@@ -12,10 +12,7 @@ body {
   display: grid;
   grid-template-columns: 300px 1fr;
 }
-.noteText {
-  display: flex;
-  flex-direction: column;
-}
+
 .noteText input,
 .noteText textarea {
   border: none;
@@ -52,6 +49,8 @@ button {
 /* inputNOte */
 .noteText {
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .noteText input {
   font-size: 3rem;
@@ -73,4 +72,10 @@ button {
   padding-bottom: 1.5rem;
   border-radius: 0.2rem;
   color: white;
+}
+
+.noteText .save {
+  background-color: red;
+  padding: 0rem 0rem;
+  text-align: center;
 }
