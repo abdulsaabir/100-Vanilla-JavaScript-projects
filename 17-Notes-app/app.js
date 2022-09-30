@@ -26,7 +26,7 @@ let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
-let listItem = document.querySelector(".listNotes");
+let listItem = document.querySelectorAll(".listItem");
 
 DisplayAllTheNotes();
 
@@ -99,8 +99,8 @@ function DisplayAllTheNotes() {
   }
 }
 
-listItem.addEventListener("click", (e) => {
-  e.chi;
+listItem.forEach((element) => {
+  element.addEventListener("click", (e) => {});
 });
 // edit btn
 // editNote.addEventListener("click");
