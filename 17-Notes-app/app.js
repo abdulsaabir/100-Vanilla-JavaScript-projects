@@ -148,3 +148,9 @@ function addtolacalstorage(item) {
   idholder = 0;
   DisplayAllTheNotes();
 }
+
+delNOte.addEventListener("click ", () => {
+  storage = [];
+  addtolacalstorage(storage);
+  DisplayAllTheNotes();
+});
