@@ -29,16 +29,23 @@ let listNotes = document.querySelector(".listNotes");
 // addNote.addEventListener("click", () => {
 
 // });
+// let Storage = JSON.parse(localStorage.getItem("notes") || []);
+let storage = JSON.parse(localStorage.getItem("note")) || [];
+
 // save the note
-savebtn.addEventListener("click", () => {
-  // check if input value is empty
+savebtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
   let totalDate;
+  let noteTitle = Titletext.value;
+  let notebody = textarea.value;
+
+  // check if input value is empty
   if (textarea.value === "" || Titletext.value === "") {
     alert("haha");
   } else {
     // take  the values
-    let noteTitle = Titletext.value;
-    let notebody = textarea.value;
+
     let Noteshow = notebody.substr(0, 30);
     Noteshow += "...";
     // setting date
@@ -62,23 +69,18 @@ savebtn.addEventListener("click", () => {
       minutes
     )}</p>
   </div>`;
-  }
 
-  // save to the local storage
-  console.log(totalDate);
-  let Storage = JSON.parse(localStorage.getItem("notes") || []);
-  let noteStorage = [
-    {
+    // save to the local storage
+
+    let noteStorage = {
       noteTitle: noteTitle,
       TheNOte: notebody,
       date: totalDate,
-    },
-  ];
-  console.log(noteStorage);
+    };
 
-  Storage.unshift(noteStorage);
-  localStorage.setItem("notes", JSON.stringify(Storage));
-  // localStorage.setItem("highScore", JSON.stringify(highScores));
+    storage.unshift(noteStorage);
+    localStorage.setItem("notes", JSON.stringify(storage));
+  }
 });
 
 // make double digit if the time isn't
