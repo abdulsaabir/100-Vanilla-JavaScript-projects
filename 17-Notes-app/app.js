@@ -21,11 +21,13 @@ let months = [
   "Nov",
   "Dec",
 ];
+
 let editNote = document.getElementById("Note");
 let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
+// idholder tells weather it's save or edit
 let idholder = 0;
 
 DisplayAllTheNotes();
@@ -47,52 +49,41 @@ savebtn.addEventListener("click", (e) => {
       alert("haha");
     } else {
       // take  the values
-
+      //  show the first 30 letters of the note as preview
       let Noteshow = notebody.substr(0, 30);
       Noteshow += "...";
-      // setting date
-
-      // add to the list
 
       // save to the local storage
       let noteStorage = {
         id: id,
         noteTitle: noteTitle,
         TheNOte: notebody,
-        date: totalDate,
+        date: settingDate(),
       };
       storage.unshift(noteStorage);
-      localStorage.setItem("notes", JSON.stringify(storage));
+      addtolacalstorage(storage);
     }
-
-    DisplayAllTheNotes();
-
-    Titletext.value = "";
-    textarea.value = "";
   } else {
-    let timeEddited = new Date().getTime().toString();
+    //  id holder is greater then 1 and that means it's time of edit
+    let timeEddited = settingDate();
     let editone = document.getElementById(idholder);
-    let reEditTitle = editone.querySelector(".NoteTItle");
-    let reEditBody = editone.querySelector(".noteBody");
-    // reEditBody.textContent = textarea.value;
-    // reEditTitle.textContent = Titletext.value;
-
+    let noteTitle = Titletext.value;
+    let notebody = textarea.value;
     //  select all the storage
-    let editstorage = JSON.parse(localStorage.getItem("notes"));
-    editstorage.forEach((item) => {
-      if (item.id === idholder) {
-        // item.noteTitle = reEditTitle.value;
-        // item.TheNOte = reEditBody.value;
-        // item.date = timeEddited;
-        console.log(item.date);
-        console.log(timeEddited);
+    let storage = JSON.parse(localStorage.getItem("notes"));
+    storage = storage.filter((item) => {
+      if (item.id != idholder) {
+        return item;
       }
     });
-
-    Titletext.value = "";
-    textarea.value = "";
-    idholder = 0;
-    DisplayAllTheNotes();
+    let editedValue = {
+      id: id,
+      noteTitle: noteTitle,
+      TheNOte: notebody,
+      date: settingDate(),
+    };
+    storage.unshift(editedValue);
+    addtolacalstorage(storage);
   }
 });
 
@@ -140,3 +131,23 @@ function DisplayAllTheNotes() {
 // editNote.addEventListener("click");
 
 // setting date
+function settingDate() {
+  let dayName = new Date().getDay();
+  let todayDate = new Date().getDate();
+  let month = new Date().getMonth();
+  let year = new Date().getFullYear();
+  let hour = new Date().getHours();
+  let minutes = new Date().getMinutes();
+  totalDate = ` ${days[dayName - 1]}, ${todayDate} ${
+    months[month]
+  } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(minutes)}`;
+  return totalDate;
+}
+
+function addtolacalstorage(item) {
+  localStorage.setItem("notes", JSON.stringify(item));
+  Titletext.value = "";
+  textarea.value = "";
+  idholder = 0;
+  DisplayAllTheNotes();
+}
