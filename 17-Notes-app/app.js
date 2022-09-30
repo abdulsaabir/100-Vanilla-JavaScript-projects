@@ -152,8 +152,3 @@ function addtolacalstorage(item) {
   idholder = 0;
   DisplayAllTheNotes();
 }
-
-// let inputValue = Titletext.value;
-textarea.addEventListener("keyup", (e) => {
-  savebtn.disabled = !textarea.value;
-});
