@@ -30,7 +30,7 @@ let listNotes = document.querySelector(".listNotes");
 
 // });
 // let Storage = JSON.parse(localStorage.getItem("notes") || []);
-let storage = JSON.parse(localStorage.getItem("note")) || [];
+let storage = JSON.parse(localStorage.getItem("notes")) || [];
 
 // save the note
 savebtn.addEventListener("click", (e) => {
@@ -60,15 +60,6 @@ savebtn.addEventListener("click", (e) => {
     } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(minutes)}`;
 
     // add to the list
-    listNotes.innerHTML += `<div class="listItem">
-    <h4 class="NoteTItle">${noteTitle}</h4>
-    <p class="noteBody">${Noteshow}</p>
-    <p class="date">${days[dayName - 1]}, ${todayDate} ${
-      months[month]
-    } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(
-      minutes
-    )}</p>
-  </div>`;
 
     // save to the local storage
     let noteStorage = {
@@ -76,13 +67,26 @@ savebtn.addEventListener("click", (e) => {
       TheNOte: notebody,
       date: totalDate,
     };
-
     storage.unshift(noteStorage);
     localStorage.setItem("notes", JSON.stringify(storage));
   }
+
+  DisplayAllTheNotes();
 });
 
 // make double digit if the time isn't
 function makedoubledigitTime(number) {
   return (parseInt(number, 10) < 10 ? "0" : "") + number;
+}
+
+function DisplayAllTheNotes() {
+  let Notesin = JSON.parse(localStorage.getItem("notes"));
+  console.log(Notesin);
+  Notesin.foreach((note) => {
+    listNotes.innerHTML += `<div class="listItem">
+    <h4 class="NoteTItle">${note.noteTitle}</h4>
+    <p class="noteBody">${note.TheNOte}</p>
+    <p class="date">${note.date}</p>
+  </div>`;
+  });
 }
