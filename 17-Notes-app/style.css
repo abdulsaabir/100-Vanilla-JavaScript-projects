@@ -66,6 +66,11 @@ button {
 .listItem {
   margin-bottom: 1.5rem;
   cursor: pointer;
+  position: relative;
+}
+.delthis {
+  position: absolute;
+  right: 5px;
 }
 
 /* selected class */

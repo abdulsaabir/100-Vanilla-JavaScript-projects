@@ -21,8 +21,7 @@ let months = [
   "Nov",
   "Dec",
 ];
-
-let delNOte = document.querySelector("#Note");
+let notesdel = document.querySelector(".notesdel");
 let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
@@ -69,11 +68,7 @@ savebtn.addEventListener("click", (e) => {
     //  select all the storage
     let storage = JSON.parse(localStorage.getItem("notes"));
     // remove the edit item
-    storage = storage.filter((item) => {
-      if (item.id != idholder) {
-        return item;
-      }
-    });
+    storagefilter(storage);
     let editedValue = {
       id: id,
       noteTitle: noteTitle,
@@ -98,12 +93,21 @@ function DisplayAllTheNotes() {
       let notesub = note.TheNOte.substr(0, 30);
       notesub += "...";
       listNotes.innerHTML += `<div class="listItem" id="${note.id}">
+      <a class="delthis" > <iconify-icon icon="ant-design:delete-filled"></iconify-icon> </a>
     <h4 class="NoteTItle">${note.noteTitle}</h4>
     <p class="noteBody">${notesub}</p>
     <p class="date">${note.date}</p>
   </div>`;
     });
   }
+
+  // delete single note
+  let delthis = document.querySelectorAll(".delthis");
+  delthis.forEach((del) => {
+    del.addEventListener("click", (e) => {
+      console.log(e.currentTarget.parentElement);
+    });
+  });
 
   let listItem = document.querySelectorAll(".listItem");
   listItem.forEach((element) => {
@@ -149,9 +153,16 @@ function addtolacalstorage(item) {
   DisplayAllTheNotes();
 }
 
-delNOte.addEventListener("click ", () => {
-  console.log(storage);
+notesdel.addEventListener("click", () => {
   storage = [];
-  addtolacalstorage(storage);
+  localStorage.removeItem("notes");
   DisplayAllTheNotes();
 });
+
+function storagefilter(filtering) {
+  storage = filtering.filter((item) => {
+    if (item.id != idholder) {
+      return item;
+    }
+  });
+}
