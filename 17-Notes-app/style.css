@@ -90,3 +90,30 @@ button {
   align-self: center;
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .notes {
+    display: grid;
+    /* grid-template-columns: 150px 300px; */
+    grid-template-rows: 1fr 300px;
+  }
+
+  button {
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 3px;
+  }
+  .noteText .save {
+    background-color: red;
+    padding: 0.3rem 1rem;
+    border-radius: 3px;
+  }
+  .noteText {
+    height: 30em;
+    width: 20em;
+  }
+}
