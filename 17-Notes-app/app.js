@@ -41,43 +41,55 @@ savebtn.addEventListener("click", (e) => {
   let totalDate;
   let noteTitle = Titletext.value;
   let notebody = textarea.value;
+  if (idholder < 1) {
+    // check if input value is empty
+    if (textarea.value === "" || Titletext.value === "") {
+      alert("haha");
+    } else {
+      // take  the values
 
-  // check if input value is empty
-  if (textarea.value === "" || Titletext.value === "") {
-    alert("haha");
+      let Noteshow = notebody.substr(0, 30);
+      Noteshow += "...";
+      // setting date
+      let dayName = new Date().getDay();
+      let todayDate = new Date().getDate();
+      let month = new Date().getMonth();
+      let year = new Date().getFullYear();
+      let hour = new Date().getHours();
+      let minutes = new Date().getMinutes();
+      totalDate = ` ${days[dayName - 1]}, ${todayDate} ${
+        months[month]
+      } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(
+        minutes
+      )}`;
+
+      // add to the list
+
+      // save to the local storage
+      let noteStorage = {
+        id: id,
+        noteTitle: noteTitle,
+        TheNOte: notebody,
+        date: totalDate,
+      };
+      storage.unshift(noteStorage);
+      localStorage.setItem("notes", JSON.stringify(storage));
+    }
+
+    DisplayAllTheNotes();
+
+    Titletext.value = "";
+    textarea.value = "";
   } else {
-    // take  the values
-
-    let Noteshow = notebody.substr(0, 30);
-    Noteshow += "...";
-    // setting date
-    let dayName = new Date().getDay();
-    let todayDate = new Date().getDate();
-    let month = new Date().getMonth();
-    let year = new Date().getFullYear();
-    let hour = new Date().getHours();
-    let minutes = new Date().getMinutes();
-    totalDate = ` ${days[dayName - 1]}, ${todayDate} ${
-      months[month]
-    } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(minutes)}`;
-
-    // add to the list
-
-    // save to the local storage
-    let noteStorage = {
-      id: id,
-      noteTitle: noteTitle,
-      TheNOte: notebody,
-      date: totalDate,
-    };
-    storage.unshift(noteStorage);
-    localStorage.setItem("notes", JSON.stringify(storage));
+    let editone = document.getElementById(idholder);
+    let reEditTitle = editone.querySelector(".NoteTItle");
+    let reEditBody = editone.querySelector(".noteBody");
+    reEditBody.textContent = textarea.value;
+    reEditTitle.textContent = Titletext.value;
   }
-
-  DisplayAllTheNotes();
-
   Titletext.value = "";
   textarea.value = "";
+  idholder = 0;
 });
 
 // make double digit if the time isn't
@@ -101,11 +113,23 @@ function DisplayAllTheNotes() {
   let listItem = document.querySelectorAll(".listItem");
   listItem.forEach((element) => {
     element.addEventListener("click", (e) => {
+      let targetcurrent = e.currentTarget;
       idholder = e.currentTarget.id;
-      // Titletext.value = e.currentTarget;
-      // textarea.value = "";
+
+      let titleedit = targetcurrent.querySelector(".NoteTItle");
+      let bodyEdit = targetcurrent.querySelector(".noteBody");
+      removehighliht();
+      targetcurrent.classList.add("selectedItem");
+      Titletext.value = titleedit.textContent;
+      textarea.value = bodyEdit.textContent;
     });
   });
+
+  function removehighliht() {
+    listItem.forEach((element) => {
+      element.classList.remove("selectedItem");
+    });
+  }
 }
 
 // edit btn
