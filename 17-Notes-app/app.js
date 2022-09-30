@@ -51,17 +51,6 @@ savebtn.addEventListener("click", (e) => {
       let Noteshow = notebody.substr(0, 30);
       Noteshow += "...";
       // setting date
-      let dayName = new Date().getDay();
-      let todayDate = new Date().getDate();
-      let month = new Date().getMonth();
-      let year = new Date().getFullYear();
-      let hour = new Date().getHours();
-      let minutes = new Date().getMinutes();
-      totalDate = ` ${days[dayName - 1]}, ${todayDate} ${
-        months[month]
-      } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(
-        minutes
-      )}`;
 
       // add to the list
 
@@ -81,15 +70,30 @@ savebtn.addEventListener("click", (e) => {
     Titletext.value = "";
     textarea.value = "";
   } else {
+    let timeEddited = new Date().getTime().toString();
     let editone = document.getElementById(idholder);
     let reEditTitle = editone.querySelector(".NoteTItle");
     let reEditBody = editone.querySelector(".noteBody");
-    reEditBody.textContent = textarea.value;
-    reEditTitle.textContent = Titletext.value;
+    // reEditBody.textContent = textarea.value;
+    // reEditTitle.textContent = Titletext.value;
+
+    //  select all the storage
+    let editstorage = JSON.parse(localStorage.getItem("notes"));
+    editstorage.forEach((item) => {
+      if (item.id === idholder) {
+        // item.noteTitle = reEditTitle.value;
+        // item.TheNOte = reEditBody.value;
+        // item.date = timeEddited;
+        console.log(item.date);
+        console.log(timeEddited);
+      }
+    });
+
+    Titletext.value = "";
+    textarea.value = "";
+    idholder = 0;
+    DisplayAllTheNotes();
   }
-  Titletext.value = "";
-  textarea.value = "";
-  idholder = 0;
 });
 
 // make double digit if the time isn't
@@ -134,3 +138,5 @@ function DisplayAllTheNotes() {
 
 // edit btn
 // editNote.addEventListener("click");
+
+// setting date
