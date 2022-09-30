@@ -68,7 +68,11 @@ savebtn.addEventListener("click", (e) => {
     //  select all the storage
     let storage = JSON.parse(localStorage.getItem("notes"));
     // remove the edit item
-    storagefilter(storage);
+    storage = storage.filter((item) => {
+      if (item.id != idholder) {
+        return item;
+      }
+    });
     let editedValue = {
       id: id,
       noteTitle: noteTitle,
@@ -105,7 +109,17 @@ function DisplayAllTheNotes() {
   let delthis = document.querySelectorAll(".delthis");
   delthis.forEach((del) => {
     del.addEventListener("click", (e) => {
-      console.log(e.currentTarget.parentElement);
+      let deletedNOte = e.currentTarget.parentElement;
+      console.log(deletedNOte.id);
+      storage = JSON.parse(localStorage.getItem("notes"));
+      storage.filter((item) => {
+        if (item.id != idholder) {
+          return item;
+        }
+      });
+
+      console.log(storage);
+      addtolacalstorage(storage);
     });
   });
 
@@ -158,11 +172,3 @@ notesdel.addEventListener("click", () => {
   localStorage.removeItem("notes");
   DisplayAllTheNotes();
 });
-
-function storagefilter(filtering) {
-  storage = filtering.filter((item) => {
-    if (item.id != idholder) {
-      return item;
-    }
-  });
-}
