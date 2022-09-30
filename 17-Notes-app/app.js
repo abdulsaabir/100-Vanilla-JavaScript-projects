@@ -101,7 +101,8 @@ function DisplayAllTheNotes() {
 
 listItem.forEach((element) => {
   element.addEventListener("click", (e) => {
-    console.log(e.currentTarget);
+    console.log(e.currentTarget.parentElement);
+    alert("ji");
   });
 });
 // edit btn
