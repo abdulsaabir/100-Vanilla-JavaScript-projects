@@ -5,6 +5,15 @@ let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
 // addNote.addEventListener("click", () => {
 
+let days = [
+  "Monday",
+  "Wednesday",
+  "Tuesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 // });
 // save the note
 savebtn.addEventListener("click", () => {
@@ -17,6 +26,11 @@ savebtn.addEventListener("click", () => {
     let notebody = textarea.value;
     let Noteshow = notebody.substr(0, 30);
     Noteshow += "...";
+    // setting date
+    let day = new Date().getDay();
+    let dayName = days[day - 1];
+    let todayDate = new Date().getDate();
+    let month = new Date().getMonth();
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${noteTitle}</h4>
     <p class="noteBody">${Noteshow}</p>
