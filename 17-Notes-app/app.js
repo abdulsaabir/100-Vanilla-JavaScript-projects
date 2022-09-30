@@ -72,6 +72,9 @@ savebtn.addEventListener("click", (e) => {
   }
 
   DisplayAllTheNotes();
+
+  noteTitle.value = "";
+  notebody.value = "";
 });
 
 // make double digit if the time isn't
@@ -80,9 +83,10 @@ function makedoubledigitTime(number) {
 }
 
 function DisplayAllTheNotes() {
+  listNotes.innerHTML = "";
   let Notesin = JSON.parse(localStorage.getItem("notes"));
   console.log(Notesin);
-  Notesin.foreach((note) => {
+  Notesin.forEach((note) => {
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${note.noteTitle}</h4>
     <p class="noteBody">${note.TheNOte}</p>
