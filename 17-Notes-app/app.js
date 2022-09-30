@@ -31,10 +31,13 @@ savebtn.addEventListener("click", () => {
     let dayName = days[day - 1];
     let todayDate = new Date().getDate();
     let month = new Date().getMonth();
+    let year = new Date().getFullYear();
+    let hour = new Date().getHours();
+    let minutes = new Date().getMinutes();
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${noteTitle}</h4>
     <p class="noteBody">${Noteshow}</p>
-    <p class="date">Thurdsay 13:30</p>
+    <p class="date">${} 13:30</p>
   </div>`;
   }
 
