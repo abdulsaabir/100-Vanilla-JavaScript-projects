@@ -71,7 +71,6 @@ savebtn.addEventListener("click", (e) => {
   </div>`;
 
     // save to the local storage
-
     let noteStorage = {
       noteTitle: noteTitle,
       TheNOte: notebody,
