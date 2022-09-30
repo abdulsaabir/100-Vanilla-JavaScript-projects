@@ -98,11 +98,9 @@ button {
   }
   .notes {
     display: grid;
-    /* grid-template-columns: 150px 300px; */
-    grid-template-rows: 1fr 300px;
+    grid-template-rows: 200px 1fr;
   }
-
-  button {
+  */ button {
     padding: 0.3rem 0.6rem;
     font-size: 1rem;
     border-radius: 3px;
