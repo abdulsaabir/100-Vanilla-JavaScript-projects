@@ -21,21 +21,23 @@ let months = [
   "Nov",
   "Dec",
 ];
-// let addNote = document.getElementById("Note");
+let editNote = document.getElementById("Note");
 let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
-// addNote.addEventListener("click", () => {
+let listItem;
 
-// });
-// let Storage = JSON.parse(localStorage.getItem("notes") || []);
+DisplayAllTheNotes();
+
+// create local storage
 let storage = JSON.parse(localStorage.getItem("notes")) || [];
 
 // save the note
 savebtn.addEventListener("click", (e) => {
   e.preventDefault();
 
+  let id = new Date().getTime().toString();
   let totalDate;
   let noteTitle = Titletext.value;
   let notebody = textarea.value;
@@ -63,6 +65,7 @@ savebtn.addEventListener("click", (e) => {
 
     // save to the local storage
     let noteStorage = {
+      id: id,
       noteTitle: noteTitle,
       TheNOte: notebody,
       date: totalDate,
@@ -73,8 +76,8 @@ savebtn.addEventListener("click", (e) => {
 
   DisplayAllTheNotes();
 
-  noteTitle.value = "";
-  notebody.value = "";
+  Titletext.value = "";
+  textarea.value = "";
 });
 
 // make double digit if the time isn't
@@ -85,12 +88,21 @@ function makedoubledigitTime(number) {
 function DisplayAllTheNotes() {
   listNotes.innerHTML = "";
   let Notesin = JSON.parse(localStorage.getItem("notes"));
-  console.log(Notesin);
-  Notesin.forEach((note) => {
-    listNotes.innerHTML += `<div class="listItem">
+  if (Notesin) {
+    Notesin.forEach((note) => {
+      listNotes.innerHTML += `<div class="listItem" id="${note.id}">
     <h4 class="NoteTItle">${note.noteTitle}</h4>
     <p class="noteBody">${note.TheNOte}</p>
     <p class="date">${note.date}</p>
   </div>`;
-  });
+    });
+  }
+
+  listItem = document.querySelector(".listItem");
 }
+
+// listItem.forEach("item", (e) => {
+//   console.log(e.parentElement);
+// });
+// edit btn
+// editNote.addEventListener("click");
