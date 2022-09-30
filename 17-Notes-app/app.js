@@ -29,7 +29,6 @@ let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
 // idholder tells weather it's save or edit
 let idholder = 0;
-// checkinput();
 DisplayAllTheNotes();
 
 // create local storage
