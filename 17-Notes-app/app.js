@@ -123,6 +123,8 @@ function DisplayAllTheNotes() {
       // console.log(storage);
       addtolacalstorage(storage);
       DisplayAllTheNotes();
+      Titletext.value = "";
+      textarea.value = "";
     });
   });
 
@@ -171,7 +173,14 @@ function addtolacalstorage(item) {
 }
 
 notesdel.addEventListener("click", () => {
-  storage = [];
+  // let storage = JSON.parse(localStorage.getItem("notes"));
   localStorage.removeItem("notes");
+  storage = [];
   DisplayAllTheNotes();
+
+  if (idholder > 1) {
+    Titletext.value = "";
+    textarea.value = "";
+    idholder = 0;
+  }
 });
