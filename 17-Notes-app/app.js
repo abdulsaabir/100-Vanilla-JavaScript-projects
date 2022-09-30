@@ -41,8 +41,7 @@ savebtn.addEventListener("click", () => {
     let Noteshow = notebody.substr(0, 30);
     Noteshow += "...";
     // setting date
-    let day = new Date().getDay();
-    let dayName = days[day - 1];
+    let dayName = new Date().getDay();
     let todayDate = new Date().getDate();
     let month = new Date().getMonth();
     let year = new Date().getFullYear();
@@ -51,11 +50,21 @@ savebtn.addEventListener("click", () => {
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${noteTitle}</h4>
     <p class="noteBody">${Noteshow}</p>
-    <p class="date">${dayName}, ${todayDate} ${month} ${year} at ${hour}:${minutes}</p>
+    <p class="date">${days[dayName - 1]}, ${todayDate} ${
+      months[month]
+    } ${year} at ${hour}:${minutes}</p>
   </div>`;
   }
 
   // save to the local storage
 
-  let noteStorage = JSON.parse(localStorage.getItem("notes") || []);
+  let Storage = JSON.parse(localStorage.getItem("notes") || []);
+  let noteStorage = [];
 });
+
+function makedoubledigitTime(min) {
+  // return (parseInt(hour, 10) < 10 ? "0" : "") + hour;
+  return (parseInt(min, 10) < 10 ? "0" : "") + min;
+  console.log(hour);
+  console.log(min);
+}
