@@ -32,6 +32,7 @@ let listNotes = document.querySelector(".listNotes");
 // save the note
 savebtn.addEventListener("click", () => {
   // check if input value is empty
+  let totalDate;
   if (textarea.value === "" || Titletext.value === "") {
     alert("haha");
   } else {
@@ -47,23 +48,40 @@ savebtn.addEventListener("click", () => {
     let year = new Date().getFullYear();
     let hour = new Date().getHours();
     let minutes = new Date().getMinutes();
-    makedoubledigitTime(hour, minutes);
+    totalDate = ` ${days[dayName - 1]}, ${todayDate} ${
+      months[month]
+    } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(minutes)}`;
+
+    // add to the list
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${noteTitle}</h4>
     <p class="noteBody">${Noteshow}</p>
     <p class="date">${days[dayName - 1]}, ${todayDate} ${
       months[month]
-    } ${year} at ${hour}:${minutes}</p>
+    } ${year} at ${makedoubledigitTime(hour)}:${makedoubledigitTime(
+      minutes
+    )}</p>
   </div>`;
   }
 
   // save to the local storage
-
+  console.log(totalDate);
   let Storage = JSON.parse(localStorage.getItem("notes") || []);
-  let noteStorage = [];
+  let noteStorage = [
+    {
+      noteTitle: noteTitle,
+      TheNOte: notebody,
+      date: totalDate,
+    },
+  ];
+  console.log(noteStorage);
+
+  Storage.unshift(noteStorage);
+  localStorage.setItem("notes", JSON.stringify(Storage));
+  // localStorage.setItem("highScore", JSON.stringify(highScores));
 });
 
-function makedoubledigitTime(hour, min) {
-  return (parseInt(hour, 10) < 10 ? "0" : "") + hour;
-  return (parseInt(min, 10) < 10 ? "0" : "") + min;
+// make double digit if the time isn't
+function makedoubledigitTime(number) {
+  return (parseInt(number, 10) < 10 ? "0" : "") + number;
 }
