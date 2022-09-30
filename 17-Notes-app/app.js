@@ -1,10 +1,3 @@
-// let addNote = document.getElementById("Note");
-let savebtn = document.querySelector(".save");
-let textarea = document.querySelector(".textarea");
-let Titletext = document.querySelector(".Titletext");
-let listNotes = document.querySelector(".listNotes");
-// addNote.addEventListener("click", () => {
-
 let days = [
   "Monday",
   "Wednesday",
@@ -14,6 +7,27 @@ let days = [
   "Saturday",
   "Sunday",
 ];
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "June",
+  "July",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+// let addNote = document.getElementById("Note");
+let savebtn = document.querySelector(".save");
+let textarea = document.querySelector(".textarea");
+let Titletext = document.querySelector(".Titletext");
+let listNotes = document.querySelector(".listNotes");
+// addNote.addEventListener("click", () => {
+
 // });
 // save the note
 savebtn.addEventListener("click", () => {
@@ -37,7 +51,7 @@ savebtn.addEventListener("click", () => {
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${noteTitle}</h4>
     <p class="noteBody">${Noteshow}</p>
-    <p class="date">${} 13:30</p>
+    <p class="date">${dayName}, ${todayDate} ${month} ${year} at ${hour}:${minutes}</p>
   </div>`;
   }
 
