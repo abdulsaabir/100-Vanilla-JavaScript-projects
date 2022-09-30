@@ -68,9 +68,9 @@ button {
   cursor: pointer;
   position: relative;
 }
-.delthis {
-  position: absolute;
-  right: 5px;
+.listNotes {
+  display: grid;
+  grid-template-columns: 1fr 10px;
 }
 
 /* selected class */

@@ -97,11 +97,12 @@ function DisplayAllTheNotes() {
       let notesub = note.TheNOte.substr(0, 30);
       notesub += "...";
       listNotes.innerHTML += `<div class="listItem" id="${note.id}">
-      <a class="delthis" > <iconify-icon icon="ant-design:delete-filled"></iconify-icon> </a>
+
     <h4 class="NoteTItle">${note.noteTitle}</h4>
     <p class="noteBody">${notesub}</p>
     <p class="date">${note.date}</p>
-  </div>`;
+  </div> 
+  <a class="delthis" > <iconify-icon icon="ant-design:delete-filled"></iconify-icon> </a>`;
     });
   }
 
@@ -109,17 +110,19 @@ function DisplayAllTheNotes() {
   let delthis = document.querySelectorAll(".delthis");
   delthis.forEach((del) => {
     del.addEventListener("click", (e) => {
-      let deletedNOte = e.currentTarget.parentElement;
-      console.log(deletedNOte.id);
+      let deletedNOte = e.currentTarget.previousElementSibling;
+      idholder = deletedNOte.id;
+      console.log(deletedNOte);
       storage = JSON.parse(localStorage.getItem("notes"));
-      storage.filter((item) => {
+      storage = storage.filter((item) => {
         if (item.id != idholder) {
           return item;
         }
       });
 
-      console.log(storage);
+      // console.log(storage);
       addtolacalstorage(storage);
+      DisplayAllTheNotes();
     });
   });
 
