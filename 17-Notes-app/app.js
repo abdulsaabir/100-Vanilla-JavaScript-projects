@@ -22,7 +22,7 @@ let months = [
   "Dec",
 ];
 
-let editNote = document.getElementById("Note");
+let delNOte = document.getElementById("Note");
 let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
@@ -126,9 +126,6 @@ function DisplayAllTheNotes() {
     });
   }
 }
-
-// edit btn
-// editNote.addEventListener("click");
 
 // setting date
 function settingDate() {
