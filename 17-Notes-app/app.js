@@ -26,7 +26,7 @@ let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
-let listItem = document.querySelectorAll(".listItem");
+let idholder = 0;
 
 DisplayAllTheNotes();
 
@@ -97,10 +97,16 @@ function DisplayAllTheNotes() {
   </div>`;
     });
   }
+
+  let listItem = document.querySelectorAll(".listItem");
+  listItem.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      idholder = e.currentTarget.id;
+      // Titletext.value = e.currentTarget;
+      // textarea.value = "";
+    });
+  });
 }
 
-listItem.forEach((element) => {
-  element.addEventListener("click", (e) => {});
-});
 // edit btn
 // editNote.addEventListener("click");
