@@ -71,6 +71,7 @@ savebtn.addEventListener("click", (e) => {
     let notebody = textarea.value;
     //  select all the storage
     let storage = JSON.parse(localStorage.getItem("notes"));
+    // remove the edit item
     storage = storage.filter((item) => {
       if (item.id != idholder) {
         return item;
