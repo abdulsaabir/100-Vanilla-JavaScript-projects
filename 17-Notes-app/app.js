@@ -47,6 +47,7 @@ savebtn.addEventListener("click", () => {
     let year = new Date().getFullYear();
     let hour = new Date().getHours();
     let minutes = new Date().getMinutes();
+    makedoubledigitTime(hour, minutes);
     listNotes.innerHTML += `<div class="listItem">
     <h4 class="NoteTItle">${noteTitle}</h4>
     <p class="noteBody">${Noteshow}</p>
@@ -62,9 +63,7 @@ savebtn.addEventListener("click", () => {
   let noteStorage = [];
 });
 
-function makedoubledigitTime(min) {
-  // return (parseInt(hour, 10) < 10 ? "0" : "") + hour;
+function makedoubledigitTime(hour, min) {
+  return (parseInt(hour, 10) < 10 ? "0" : "") + hour;
   return (parseInt(min, 10) < 10 ? "0" : "") + min;
-  console.log(hour);
-  console.log(min);
 }
