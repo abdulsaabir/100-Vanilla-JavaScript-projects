@@ -29,7 +29,7 @@ let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
 // idholder tells weather it's save or edit
 let idholder = 0;
-
+// checkinput();
 DisplayAllTheNotes();
 
 // create local storage
@@ -45,9 +45,7 @@ savebtn.addEventListener("click", (e) => {
   let notebody = textarea.value;
   if (idholder < 1) {
     // check if input value is empty
-    if (textarea.value === "" || Titletext.value === "") {
-      alert("haha");
-    } else {
+    if (textarea.value && Titletext.value) {
       // take  the values
       //  show the first 30 letters of the note as preview
       let Noteshow = notebody.substr(0, 30);
@@ -98,9 +96,11 @@ function DisplayAllTheNotes() {
   let Notesin = JSON.parse(localStorage.getItem("notes"));
   if (Notesin) {
     Notesin.forEach((note) => {
+      let notesub = note.TheNOte.substr(0, 30);
+      notesub += "...";
       listNotes.innerHTML += `<div class="listItem" id="${note.id}">
     <h4 class="NoteTItle">${note.noteTitle}</h4>
-    <p class="noteBody">${note.TheNOte}</p>
+    <p class="noteBody">${notesub}</p>
     <p class="date">${note.date}</p>
   </div>`;
     });
@@ -152,3 +152,8 @@ function addtolacalstorage(item) {
   idholder = 0;
   DisplayAllTheNotes();
 }
+
+// let inputValue = Titletext.value;
+textarea.addEventListener("keyup", (e) => {
+  savebtn.disabled = !textarea.value;
+});
