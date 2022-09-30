@@ -26,7 +26,7 @@ let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
 let listNotes = document.querySelector(".listNotes");
-let listItem;
+let listItem = document.querySelectorAll(".listItem");
 
 DisplayAllTheNotes();
 
@@ -97,12 +97,12 @@ function DisplayAllTheNotes() {
   </div>`;
     });
   }
-
-  listItem = document.querySelector(".listItem");
 }
 
-// listItem.forEach("item", (e) => {
-//   console.log(e.parentElement);
-// });
+listItem.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    console.log(e.currentTarget);
+  });
+});
 // edit btn
 // editNote.addEventListener("click");

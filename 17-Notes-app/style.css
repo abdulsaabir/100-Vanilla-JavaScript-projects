@@ -40,7 +40,6 @@ button {
   margin-bottom: 0.4rem;
   font-weight: 500;
 }
-
 .noteBody {
   margin-bottom: 0.4rem;
   opacity: 0.7;
@@ -66,6 +65,7 @@ button {
 }
 .listItem {
   margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 /* selected class */
