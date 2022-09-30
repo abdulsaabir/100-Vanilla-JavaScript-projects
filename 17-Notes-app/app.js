@@ -22,7 +22,7 @@ let months = [
   "Dec",
 ];
 
-let delNOte = document.getElementById("Note");
+let delNOte = document.querySelector("#Note");
 let savebtn = document.querySelector(".save");
 let textarea = document.querySelector(".textarea");
 let Titletext = document.querySelector(".Titletext");
@@ -150,6 +150,7 @@ function addtolacalstorage(item) {
 }
 
 delNOte.addEventListener("click ", () => {
+  console.log(storage);
   storage = [];
   addtolacalstorage(storage);
   DisplayAllTheNotes();
