@@ -17,6 +17,8 @@ body {
 .noteText textarea {
   border: none;
   outline: none;
+  border-radius: 4px;
+  padding: 10px;
 }
 .left {
   padding: 2rem 1rem;
@@ -80,4 +82,5 @@ button {
   padding: 1rem 4rem;
   justify-self: center;
   align-self: center;
+  margin-top: 1rem;
 }

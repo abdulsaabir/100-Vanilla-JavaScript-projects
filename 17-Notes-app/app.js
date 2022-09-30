@@ -23,4 +23,8 @@ savebtn.addEventListener("click", () => {
     <p class="date">Thurdsay 13:30</p>
   </div>`;
   }
+
+  // save to the local storage
+
+  let noteStorage = JSON.parse(localStorage.getItem("notes") || []);
 });
