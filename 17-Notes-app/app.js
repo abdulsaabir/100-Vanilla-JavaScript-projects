@@ -21,6 +21,9 @@ months = [
   "November",
   "December",
 ];
+window.addEventListener("DOMContentLoaded", () => {
+  addtothebody();
+});
 let addBox = document.querySelector(".addBox"),
   boxnote = document.querySelector(".notepopup"),
   cancel = document.querySelector(".cl"),
@@ -32,7 +35,8 @@ let addBox = document.querySelector(".addBox"),
 addBox.addEventListener("click", () => {
   boxnote.classList.remove("display");
 });
-let storage = JSON.parse(localStorage.getItem("notes") || []);
+// let storage = JSON.parse(localStorage.getItem("notes") || []);
+let storage = JSON.parse(localStorage.getItem("notes")) || [];
 
 cancel.addEventListener("click", () => {
   boxnote.classList.add("display");
@@ -41,12 +45,13 @@ cancel.addEventListener("click", () => {
 // save fucntion
 save.addEventListener("click", (e) => {
   let valuetitle = notetitle.value,
-    valuebody = notebody.value;
+    valuebody = notebody.value,
+    id = new Date().getTime().toString();
   getdate();
-  addtothebody(valuetitle, valuebody, getdate());
   boxnote.classList.add("display");
 
   let newNOte = {
+    id: id,
     notetitle: valuetitle,
     note: valuebody,
     date: getdate(),
@@ -54,10 +59,11 @@ save.addEventListener("click", (e) => {
   addtolacalstorage(newNOte);
 
   // edit and deletebtn
+  addtothebody();
   let popupbtn = document.querySelector(".popupbtn");
   let settings = document.querySelector(".settings");
-  displaybtn(settings, popupbtn);
-  hideclickelse(popupbtn);
+
+  hideclickelse(popupbtn, settings);
   console.log(valuetitle);
 });
 
@@ -74,16 +80,19 @@ function addzeroz(n) {
   return ((parseInt, 10), n < 10 ? "0" : "") + n;
 }
 
-function addtothebody(title, body, date) {
-  container.innerHTML += `<div class="note">
+function addtothebody() {
+  storage = JSON.parse(localStorage.getItem("notes"));
+  if (storage) {
+    storage.forEach((element) => {
+      container.innerHTML += `<div class="note" id="${element.id}">
   <article>
-    <h1>${title}</h1>
+    <h1>${element.notetitle}</h1>
     <p>
-    ${body}
+    ${element.note}
     </p>
   </article>
   <section class="footer">
-    <footer class="date">${date}</footer>
+    <footer class="date">${element.date}</footer>
     <footer class="settings">
       <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
     </footer>
@@ -98,23 +107,24 @@ function addtothebody(title, body, date) {
     </h4>
   </section>
   </section>`;
+    });
+  }
 }
 
-function displaybtn(btn, action) {
-  btn.addEventListener("click", () => {
-    action.classList.remove("display");
-  });
-}
-
-function hideclickelse(message) {
+function hideclickelse(message, action) {
   document.addEventListener("mouseup", function (e) {
     if (!message.contains(e.target)) {
       message.classList.add("display");
     }
   });
+
+  action.addEventListener("click", () => {
+    message.classList.remove("display");
+  });
 }
 
 function addtolacalstorage(object) {
+  storage = [];
   storage.push(object);
   localStorage.setItem("notes", JSON.stringify(storage));
 }
