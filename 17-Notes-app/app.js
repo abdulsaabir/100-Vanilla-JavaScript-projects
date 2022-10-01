@@ -60,11 +60,6 @@ save.addEventListener("click", (e) => {
 
   // edit and deletebtn
   addtothebody();
-  let popupbtn = document.querySelector(".popupbtn");
-  let settings = document.querySelector(".settings");
-  settings.addEventListener("click", () => {
-    popupbtn.classList.remove("display");
-  });
   hideclickelse(popupbtn);
   console.log(valuetitle);
 });
@@ -83,7 +78,7 @@ function addzeroz(n) {
 }
 
 function addtothebody() {
-  storage = JSON.parse(localStorage.getItem("notes")) || [];
+  storage = JSON.parse(localStorage.getItem("notes"));
   if (storage) {
     storage.forEach((element) => {
       container.innerHTML += `<div class="note" id="${element.id}">
@@ -111,6 +106,13 @@ function addtothebody() {
   </section>`;
     });
   }
+  function btnsteting() {
+    let popupbtn = document.querySelector(".popupbtn");
+    let settings = document.querySelector(".settings");
+    settings.addEventListener("click", () => {
+      popupbtn.classList.remove("display");
+    });
+  }
 }
 
 function hideclickelse(message) {
@@ -122,7 +124,6 @@ function hideclickelse(message) {
 }
 
 function addtolacalstorage(object) {
-  storage = [];
   storage.push(object);
   localStorage.setItem("notes", JSON.stringify(storage));
 }
