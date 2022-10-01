@@ -62,8 +62,10 @@ save.addEventListener("click", (e) => {
   addtothebody();
   let popupbtn = document.querySelector(".popupbtn");
   let settings = document.querySelector(".settings");
-
-  hideclickelse(popupbtn, action);
+  settings.addEventListener("click", () => {
+    popupbtn.classList.remove("display");
+  });
+  hideclickelse(popupbtn);
   console.log(valuetitle);
 });
 
@@ -81,7 +83,7 @@ function addzeroz(n) {
 }
 
 function addtothebody() {
-  storage = JSON.parse(localStorage.getItem("notes"));
+  storage = JSON.parse(localStorage.getItem("notes")) || [];
   if (storage) {
     storage.forEach((element) => {
       container.innerHTML += `<div class="note" id="${element.id}">
@@ -111,7 +113,7 @@ function addtothebody() {
   }
 }
 
-function hideclickelse(message, action) {
+function hideclickelse(message) {
   document.addEventListener("mouseup", function (e) {
     if (!message.contains(e.target)) {
       message.classList.add("display");
