@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  background-color: skyblue;
+  background-color: #88abff;
   width: 100%;
+  font-family: sans-serif;
 }
 .container {
   width: 90%;
@@ -17,20 +18,68 @@ body {
 }
 div {
   border-radius: 6px;
-  width: 300px;
+  width: 290px;
   height: 250px;
   background-color: white;
   padding: 1rem;
+  margin-bottom: 30px;
 }
 .addBox {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 .addBox iconify-icon {
   font-size: 4rem;
   border-radius: 50%;
-  border: 1px solid skyblue;
-  border-style: dotted 8px;
+  border: 2px dashed #88abff;
 }
+
+.note {
+  display: grid;
+  grid-template-rows: 190px 40px;
+}
+article {
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+​ article h1 {
+  margin-bottom: 0.6rem;
+}
+article p {
+  opacity: 0.6;
+  line-height: 150%;
+}
+.footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.233);
+  padding-top: 6px;
+  /* background-color: red; */
+}
+
+article::-webkit-scrollbar,
+.popup textarea::-webkit-scrollbar {
+  width: 0;
+}
+article:hover::-webkit-scrollbar,
+.popup textarea:hover::-webkit-scrollbar {
+  width: 5px;
+}
+article:hover::-webkit-scrollbar-track,
+.popup textarea:hover::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+article:hover::-webkit-scrollbar-thumb,
+.popup textarea:hover::-webkit-scrollbar-thumb {
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+
+/* notepopup */

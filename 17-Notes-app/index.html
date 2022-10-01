@@ -9,23 +9,40 @@
   </head>
   <body>
     <main class="container">
+      <!--  add new notebox -->
+      <aside class="notepopup">
+        <h2>Add a new Note</h2>
+        <hr />
+        <h3>Title</h3>
+        <input type="text" placeholder="Enter Title Here" />
+        <h3>Description</h3>
+        <textarea name="note" id="" cols="30" rows="10"></textarea>
+        <button class="save">Add Note</button>
+      </aside>
+      <!-- the content vivew -->
       <div class="addBox">
         <iconify-icon icon="carbon:add"></iconify-icon>
-        <h1>Add new Note</h1>
+        <h3>Add new Note</h3>
       </div>
       <div class="note">
-        <h1>Note Title</h1>
-        <p>
-          Data for icons is open source and is available for everyone to use.
-          <!-- You can use it with various icon components, create your own
-          components that use Iconify as source or just export raw SVGs. All
-          icons are validated, cleaned up and automatically kept up to date.
-          About Iconify Iconify gives you freedom to choose icons, while using
-          same open source icon components and tools. Visit Iconify website to
-          learn more about the project. -->
-        </p>
-        <hr />
-        <section class="date">12-October-2022</section>
+        <article>
+          <h1>Note Title</h1>
+          <p>
+            Data for icons is open source and is available for everyone to use.
+            You can use it with various icon components, create your own
+            components that use Iconify as source or just export raw SVGs. All
+            --> icons are validated, cleaned up and automatically kept up to
+            date. --> About Iconify Iconify gives you freedom to choose icons,
+            while using same open source icon components and tools. Visit
+            Iconify website to learn more about the project. --> -->
+          </p>
+        </article>
+        <section class="footer">
+          <footer class="date">12-October-2022</footer>
+          <footer class="settings">
+            <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
+          </footer>
+        </section>
       </div>
     </main>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
