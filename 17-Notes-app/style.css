@@ -102,9 +102,7 @@ article:hover::-webkit-scrollbar-thumb,
   align-items: center;
   background: rgba(0, 0, 0, 0.4);
 }
-.display {
-  display: none;
-}
+
 .containerNOte {
   display: flex;
   flex-direction: column;
@@ -163,4 +161,26 @@ article:hover::-webkit-scrollbar-thumb,
 }
 .popupbtn {
   position: absolute;
+  background-color: rgba(255, 255, 255, 0.918);
+  padding: 2px 0;
+  border-radius: 3px;
+  top: -70px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
+}
+.popupbtn h4 {
+  padding: 6px 12px;
+  font-size: 1rem;
+}
+.popupbtn h4:hover {
+  background-color: #e6e6e6;
+}
+
+.display {
+  display: none;
 }
