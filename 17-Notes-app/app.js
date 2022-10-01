@@ -90,7 +90,6 @@ save.addEventListener("click", (e) => {
     displaynotes();
   }
 });
-
 function getdate() {
   let today = weekdays[new Date().getDay()],
     todaydate = new Date().getDate(),
