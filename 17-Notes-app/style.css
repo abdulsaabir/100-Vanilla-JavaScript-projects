@@ -138,6 +138,7 @@ article:hover::-webkit-scrollbar-thumb,
   border: 1px solid rgba(0, 0, 0, 0.233);
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  outline: none;
 }
 .buttoncontent textarea {
   padding: 10px;
@@ -145,6 +146,7 @@ article:hover::-webkit-scrollbar-thumb,
   border: 1px solid rgba(0, 0, 0, 0.233);
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  outline: none;
 }
 
 .buttoncontent button {
