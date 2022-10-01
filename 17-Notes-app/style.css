@@ -67,6 +67,7 @@ article p {
   border-top: 1px solid rgba(0, 0, 0, 0.233);
   padding-top: 6px;
   /* background-color: red; */
+  position: relative;
 }
 
 article::-webkit-scrollbar,
@@ -159,4 +160,7 @@ article:hover::-webkit-scrollbar-thumb,
   color: #f1f1f1;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+.popupbtn {
+  position: absolute;
 }

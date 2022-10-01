@@ -8,32 +8,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
-      <!--  add new notebox -->
-      <aside class="notepopup display">
-        <aside class="containerNOte">
-          <aside class="titleholder">
-            <h2>Add a new Note</h2>
-            <aside class="cl">
-              <iconify-icon icon="iconoir:cancel"></iconify-icon>
-            </aside>
-          </aside>
-          <hr />
-          <aside class="buttoncontent">
-            <h3>Title</h3>
-            <input type="text" class="title" placeholder="Enter Title Here" />
-            <h3>Description</h3>
-            <textarea
-              class="body"
-              name="note"
-              id=""
-              cols="30"
-              rows="6"
-            ></textarea>
-            <button class="save">Add Note</button>
+    <aside class="notepopup display">
+      <aside class="containerNOte">
+        <aside class="titleholder">
+          <h2>Add a new Note</h2>
+          <aside class="cl">
+            <iconify-icon icon="iconoir:cancel"></iconify-icon>
           </aside>
         </aside>
+        <hr />
+        <aside class="buttoncontent">
+          <h3>Title</h3>
+          <input type="text" class="title" placeholder="Enter Title Here" />
+          <h3>Description</h3>
+          <textarea
+            class="body"
+            name="note"
+            id=""
+            cols="30"
+            rows="6"
+          ></textarea>
+          <button class="save">Add Note</button>
+        </aside>
       </aside>
+    </aside>
+    <main class="container">
+      <!--  add new notebox -->
       <!-- the content vivew -->
       <div class="addBox">
         <iconify-icon icon="carbon:add"></iconify-icon>
@@ -57,6 +57,16 @@
           <footer class="settings">
             <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
           </footer>
+          <section class="popupbtn">
+            <h4>
+              <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+              <span> Edit</span>
+            </h4>
+            <h4>
+              <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+              Delete
+            </h4>
+          </section>
         </section>
       </div>
     </main>
@@ -64,3 +74,6 @@
     <script src="./app.js"></script>
   </body>
 </html>
+
+<iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+<iconify-icon icon="ant-design:delete-filled"></iconify-icon>
