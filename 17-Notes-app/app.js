@@ -21,6 +21,9 @@ months = [
   "November",
   "December",
 ];
+window.addEventListener("DOMContentLoaded", () => {
+  displaynotes();
+});
 
 let addBox = document.querySelector(".addBox"),
   boxnote = document.querySelector(".notepopup"),
@@ -59,15 +62,12 @@ save.addEventListener("click", (e) => {
   };
   notetitle.value = "";
   notebody.value = "";
-  storage = JSON.parse(localStorage.getItem("notes")) || [];
-  storage.push(newNOte);
-  localStorage.setItem("notes", JSON.stringify(storage));
+
   // edit and deletebtn
-  // addtolacalstorage(newNOte);
-  displaynotes();
+  addtolacalstorage(newNOte);
   // console.log(valuetitle);
+  displaynotes();
 });
-displaynotes();
 function getdate() {
   let today = weekdays[new Date().getDay()],
     todaydate = new Date().getDate(),
@@ -81,98 +81,24 @@ function addzeroz(n) {
   return ((parseInt, 10), n < 10 ? "0" : "") + n;
 }
 
-// function addtothebody() {
-//   storage = JSON.parse(localStorage.getItem("notes"));
-//   if (storage) {
-//     storage.forEach((element) => {
-//       container.innerHTML += `<div class="note" id="${element.id}">
-//   <article>
-//     <h1>${element.notetitle}</h1>
-//     <p>
-//     ${element.note}
-//     </p>
-//   </article>
-//   <section class="footer">
-//     <footer class="date">${element.date}</footer>
-//     <footer class="settings">
-//       <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
-//     </footer>
-//     <section class="popupbtn display">
-//     <h4>
-//       <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
-//       <span> Edit</span>
-//     </h4>
-//     <h4>
-//       <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
-//       Delete
-//     </h4>
-//   </section>
-//   </section>`;
-//     });
-
-//     let popupbtn = document.querySelector(".popupbtn");
-//     let settings = document.querySelector(".settings");
-//     settingsfun(popupbtn, settings);
-//     hideclickelse(popupbtn);
-//   }
-// }
-
-// function hideclickelse(message) {
-//   document.addEventListener("mouseup", function (e) {
-//     if (!message.contains(e.target)) {
-//       message.classList.add("display");
-//     }
-//   });
-// }
-
-// function addtolacalstorage(object) {
-//   storage = JSON.parse(localStorage.getItem("notes"));
-//   localStorage.setItem("notes", JSON.stringify(storage));
-// }
-
-// function settingsfun(element, action) {
-//   action.addEventListener("click", () => {
-//     element.classList.remove("display");
-//   });
-// }
-
-//   storage = JSON.parse(localStorage.getItem("notes"));
-//   if (storage)
-//     storage.forEach((note) => {
-//       container.innerHTML += `<div class="note" id=${note.id}>
-//     <article>
-//       <h1>${note.notetitle}</h1>
-//       <p>
-//       ${note.note}
-//       </p>
-//     </article>
-//     <section class="footer">
-//       <footer class="date">${note.date}</footer>
-//       <footer class="settings">
-//         <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
-//       </footer>
-//       <section class="popupbtn display">
-//         <h4>
-//           <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
-//           <span> Edit</span>
-//         </h4>
-//         <h4>
-//           <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
-//           Delete
-//         </h4>
-//       </section>
-//     </section>
-//   </div>`;
-//     });
-// }
+function addtolacalstorage(object) {
+  storage = JSON.parse(localStorage.getItem("notes")) || [];
+  storage.push(object);
+  localStorage.setItem("notes", JSON.stringify(storage));
+  // displaynotes();
+}
 
 function displaynotes() {
+  while (container.lastChild.classList != "addBox") {
+    container.removeChild(container.lastChild);
+  }
   let storagenote = JSON.parse(localStorage.getItem("notes"));
-  storagenote.forEach((note) => {
-    let div = document.createElement("div");
-    div.classList.add("note");
-    div.setAttribute("id", note.id);
-    div.innerHTML = `<div class="note" id=${note.id}>
+  if (storagenote)
+    storagenote.forEach((note) => {
+      let newdiv = document.createElement("div");
+      newdiv.classList.add("note");
+      newdiv.setAttribute("id", note.id);
+      newdiv.innerHTML = `
        <article>
          <h1>${note.notetitle}</h1>
          <p>
@@ -195,6 +121,31 @@ function displaynotes() {
            </h4>
          </section>
        </section>
-     </div>`;
+     `;
+
+      container.appendChild(newdiv);
+    });
+
+  let settings = document.querySelectorAll(".settings");
+  // let popupbtn = document.q
+  settings.forEach((setting) => {
+    setting.addEventListener("click", (e) => {
+      let parent = e.currentTarget.parentElement.parentElement;
+      let popup = parent.querySelector(".popupbtn");
+      popup.classList.remove("display");
+      hideclickoutsidr(popup);
+    });
   });
+}
+
+function hideclickoutsidr(element) {
+  document.addEventListener("mouseup", function (e) {
+    if (!element.contains(e.target)) {
+      element.classList.add("display");
+    }
+  });
+}
+
+function deletenote() {
+  f;
 }
