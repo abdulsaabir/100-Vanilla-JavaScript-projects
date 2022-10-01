@@ -37,11 +37,18 @@ cancel.addEventListener("click", () => {
   boxnote.classList.add("display");
 });
 
+// save fucntion
 save.addEventListener("click", () => {
   let valuetitle = notetitle.value,
     valuebody = notebody.value;
   getdate();
   addtothebody(valuetitle, valuebody, getdate());
+  boxnote.classList.add("display");
+
+  // edit and deletebtn
+  let popupbtn = document.querySelectorAll(".popupbtn"),
+    settings = document.querySelector(".settings");
+  displaybtn();
 });
 
 function getdate() {
@@ -70,5 +77,21 @@ function addtothebody(title, body, date) {
     <footer class="settings">
       <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
     </footer>
+    <section class="popupbtn display">
+    <h4>
+      <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+      <span> Edit</span>
+    </h4>
+    <h4>
+      <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+      Delete
+    </h4>
+  </section>
   </section>`;
+}
+
+function displaybtn() {
+  settings.addEventListener("click", () => {
+    popupbtn.classList.remove("display");
+  });
 }

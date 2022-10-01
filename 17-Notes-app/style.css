@@ -172,6 +172,7 @@ article:hover::-webkit-scrollbar-thumb,
   align-items: center; */
   gap: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
+  transition: display 0.3s ease-in-out;
 }
 .popupbtn h4 {
   padding: 6px 12px;
