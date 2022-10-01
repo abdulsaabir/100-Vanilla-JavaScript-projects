@@ -58,7 +58,7 @@ save.addEventListener("click", (e) => {
     id = new Date().getTime().toString();
   getdate();
   boxnote.classList.add("display");
-  if (editFlag) {
+  if (!editFlag) {
     let newNOte = {
       id: id,
       notetitle: valuetitle,
@@ -73,7 +73,18 @@ save.addEventListener("click", (e) => {
     // console.log(valuetitle);
     displaynotes();
   } else {
-    storage = JSON.parse(localStorage("notes"));
+    console.log("editbale");
+    // storage = JSON.parse(localStorage.getItem("notes"));
+    // storage = storage.forEach((note) => {
+    //   if (note.id == idholder) {
+    //     note.notetitle = valuetitle;
+    //     note.note = valuebody;
+    //     note.date = getdate();
+    //   }
+    // });
+    // localStorage.setItem("notes", JSON.stringify(storage));
+    // dasplaynotes();
+    editFlag = false;
   }
 });
 function getdate() {
