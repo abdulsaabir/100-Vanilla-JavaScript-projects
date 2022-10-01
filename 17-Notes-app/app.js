@@ -161,8 +161,16 @@ function displaynotes() {
     // edit note
     let editnote = document.querySelectorAll(".edit");
     editnote.forEach((note) => {
-      note.addEventListener("click" , (e) => {
-        let titlenote = e.
+      note.addEventListener("click", (e) => {
+        let titlenote =
+          e.currentTarget.parentElement.parentElement.previousElementSibling
+            .firstElementChild.textContent;
+        let titleBody =
+          e.currentTarget.parentElement.parentElement.previousElementSibling
+            .lastElementChild.textContent;
+        boxnote.classList.remove("display");
+        notetitle.value = titlenote;
+        notebody.value = titleBody;
       });
     });
   });
