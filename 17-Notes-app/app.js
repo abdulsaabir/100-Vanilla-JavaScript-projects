@@ -21,9 +21,10 @@ months = [
   "November",
   "December",
 ];
+
 window.addEventListener("DOMContentLoaded", () => {
   displaynotes();
-  deletenote(deletenote);
+  // deletenote(deletenote);
 });
 
 let addBox = document.querySelector(".addBox"),
@@ -36,14 +37,9 @@ let addBox = document.querySelector(".addBox"),
   editFlag = false;
 let idholder = 0;
 
-let storage = JSON.parse(localStorage.getItem("notes")) || [];
-
-// addtothebody();
-
 addBox.addEventListener("click", () => {
   boxnote.classList.remove("display");
 });
-// let storage = JSON.parse(localStorage.getItem("notes") || []);
 
 cancel.addEventListener("click", () => {
   boxnote.classList.add("display");
@@ -51,7 +47,6 @@ cancel.addEventListener("click", () => {
   notebody.value = "";
 });
 
-// save fucntion
 save.addEventListener("click", (e) => {
   let valuetitle = notetitle.value,
     valuebody = notebody.value,
@@ -73,20 +68,14 @@ save.addEventListener("click", (e) => {
     // console.log(valuetitle);
     displaynotes();
   } else {
-    console.log("editbale");
-    // storage = JSON.parse(localStorage.getItem("notes"));
-    // storage = storage.forEach((note) => {
-    //   if (note.id == idholder) {
-    //     note.notetitle = valuetitle;
-    //     note.note = valuebody;
-    //     note.date = getdate();
-    //   }
-    // });
-    // localStorage.setItem("notes", JSON.stringify(storage));
-    // dasplaynotes();
+    notetitle.value = "";
+    notebody.value = "";
+    // storage = JSON.parse(localStorage("notes"));
+    console.log("delete");
     editFlag = false;
   }
 });
+
 function getdate() {
   let today = weekdays[new Date().getDay()],
     todaydate = new Date().getDate(),
@@ -209,5 +198,3 @@ function hideclickoutsidr(element) {
     }
   });
 }
-
-function deletenote(btns) {}
