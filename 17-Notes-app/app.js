@@ -169,7 +169,10 @@ function addzeroz(n) {
 function displaynotes() {
   let storagenote = JSON.parse(localStorage.getItem("notes"));
   storagenote.forEach((note) => {
-    `<div class="note" id=${note.id}>
+    let div = document.createElement("div");
+    div.classList.add("note");
+    div.setAttribute("id", note.id);
+    div.innerHTML = `<div class="note" id=${note.id}>
        <article>
          <h1>${note.notetitle}</h1>
          <p>
