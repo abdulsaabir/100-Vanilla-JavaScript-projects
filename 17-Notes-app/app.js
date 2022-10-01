@@ -21,9 +21,7 @@ months = [
   "November",
   "December",
 ];
-window.addEventListener("DOMContentLoaded", () => {
-  addtothebody();
-});
+
 let addBox = document.querySelector(".addBox"),
   boxnote = document.querySelector(".notepopup"),
   cancel = document.querySelector(".cl"),
@@ -31,12 +29,14 @@ let addBox = document.querySelector(".addBox"),
   notetitle = document.querySelector(".title"),
   notebody = document.querySelector(".body"),
   container = document.querySelector(".container");
+let storage = JSON.parse(localStorage.getItem("notes")) || [];
+
+// addtothebody();
 
 addBox.addEventListener("click", () => {
   boxnote.classList.remove("display");
 });
 // let storage = JSON.parse(localStorage.getItem("notes") || []);
-let storage = JSON.parse(localStorage.getItem("notes")) || [];
 
 cancel.addEventListener("click", () => {
   boxnote.classList.add("display");
@@ -56,11 +56,11 @@ save.addEventListener("click", (e) => {
     note: valuebody,
     date: getdate(),
   };
+  notetitle.value = "";
+  notebody.value = "";
+  // edit and deletebtn
   addtolacalstorage(newNOte);
 
-  // edit and deletebtn
-  addtothebody();
-  hideclickelse(popupbtn);
   console.log(valuetitle);
 });
 
@@ -77,53 +77,88 @@ function addzeroz(n) {
   return ((parseInt, 10), n < 10 ? "0" : "") + n;
 }
 
-function addtothebody() {
-  storage = JSON.parse(localStorage.getItem("notes"));
-  if (storage) {
-    storage.forEach((element) => {
-      container.innerHTML += `<div class="note" id="${element.id}">
-  <article>
-    <h1>${element.notetitle}</h1>
-    <p>
-    ${element.note}
-    </p>
-  </article>
-  <section class="footer">
-    <footer class="date">${element.date}</footer>
-    <footer class="settings">
-      <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
-    </footer>
-    <section class="popupbtn display">
-    <h4>
-      <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
-      <span> Edit</span>
-    </h4>
-    <h4>
-      <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
-      Delete
-    </h4>
-  </section>
-  </section>`;
-    });
-  }
-  function btnsteting() {
-    let popupbtn = document.querySelector(".popupbtn");
-    let settings = document.querySelector(".settings");
-    settings.addEventListener("click", () => {
-      popupbtn.classList.remove("display");
-    });
-  }
-}
+// function addtothebody() {
+//   storage = JSON.parse(localStorage.getItem("notes"));
+//   if (storage) {
+//     storage.forEach((element) => {
+//       container.innerHTML += `<div class="note" id="${element.id}">
+//   <article>
+//     <h1>${element.notetitle}</h1>
+//     <p>
+//     ${element.note}
+//     </p>
+//   </article>
+//   <section class="footer">
+//     <footer class="date">${element.date}</footer>
+//     <footer class="settings">
+//       <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
+//     </footer>
+//     <section class="popupbtn display">
+//     <h4>
+//       <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+//       <span> Edit</span>
+//     </h4>
+//     <h4>
+//       <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+//       Delete
+//     </h4>
+//   </section>
+//   </section>`;
+//     });
 
-function hideclickelse(message) {
-  document.addEventListener("mouseup", function (e) {
-    if (!message.contains(e.target)) {
-      message.classList.add("display");
-    }
-  });
-}
+//     let popupbtn = document.querySelector(".popupbtn");
+//     let settings = document.querySelector(".settings");
+//     settingsfun(popupbtn, settings);
+//     hideclickelse(popupbtn);
+//   }
+// }
+
+// function hideclickelse(message) {
+//   document.addEventListener("mouseup", function (e) {
+//     if (!message.contains(e.target)) {
+//       message.classList.add("display");
+//     }
+//   });
+// }
 
 function addtolacalstorage(object) {
+  storage = JSON.parse(localStorage.getItem("notes"));
   storage.push(object);
   localStorage.setItem("notes", JSON.stringify(storage));
+}
+
+// function settingsfun(element, action) {
+//   action.addEventListener("click", () => {
+//     element.classList.remove("display");
+//   });
+// }
+
+function displaynotes() {
+  storage = JSON.parse(localStorage.getItem("notes"));
+  storage.forEach((note) => {
+    container.innerHTML += `<div class="note" id=${note.id}>
+    <article>
+      <h1>${note.notetitle}</h1>
+      <p>
+      
+      </p>
+    </article>
+    <section class="footer">
+      <footer class="date">12-October-2022</footer>
+      <footer class="settings">
+        <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
+      </footer>
+      <section class="popupbtn display">
+        <h4>
+          <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+          <span> Edit</span>
+        </h4>
+        <h4>
+          <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+          Delete
+        </h4>
+      </section>
+    </section>
+  </div>`;
+  });
 }
