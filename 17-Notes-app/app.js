@@ -32,7 +32,9 @@ let addBox = document.querySelector(".addBox"),
   save = document.querySelector(".save"),
   notetitle = document.querySelector(".title"),
   notebody = document.querySelector(".body"),
-  container = document.querySelector(".container");
+  container = document.querySelector(".container"),
+  editFlag = false;
+let idholder = 0;
 
 let storage = JSON.parse(localStorage.getItem("notes")) || [];
 
@@ -45,6 +47,8 @@ addBox.addEventListener("click", () => {
 
 cancel.addEventListener("click", () => {
   boxnote.classList.add("display");
+  notetitle.value = "";
+  notebody.value = "";
 });
 
 // save fucntion
@@ -162,15 +166,19 @@ function displaynotes() {
     let editnote = document.querySelectorAll(".edit");
     editnote.forEach((note) => {
       note.addEventListener("click", (e) => {
+        editFlag = true;
+        idholder = e.currentTarget.parentElement.parentElement.parentElement.id;
         let titlenote =
           e.currentTarget.parentElement.parentElement.previousElementSibling
             .firstElementChild.textContent;
         let titleBody =
           e.currentTarget.parentElement.parentElement.previousElementSibling
             .lastElementChild.textContent;
+        titleBody = titleBody.trim();
         boxnote.classList.remove("display");
         notetitle.value = titlenote;
         notebody.value = titleBody;
+        console.log(idholder);
       });
     });
   });
