@@ -98,7 +98,6 @@ function getdate() {
   let wholeDate = `${today} ${addzeroz(todaydate)}-${month}-${year}`;
   return wholeDate;
 }
-
 function addzeroz(n) {
   return ((parseInt, 10), n < 10 ? "0" : "") + n;
 }
