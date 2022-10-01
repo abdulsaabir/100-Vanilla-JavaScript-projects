@@ -33,6 +33,10 @@ div {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  cursor: pointer;
+}
+.addBox:hover {
+  background-color: rgba(240, 248, 255, 0.726);
 }
 .addBox iconify-icon {
   font-size: 4rem;
@@ -92,11 +96,10 @@ article:hover::-webkit-scrollbar-thumb,
   z-index: 2;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.473);
+  background: rgba(0, 0, 0, 0.4);
 }
 .display {
   display: none;
