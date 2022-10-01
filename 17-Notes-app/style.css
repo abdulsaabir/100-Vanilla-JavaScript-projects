@@ -11,4 +11,7 @@ body {
   width: 90%;
   margin: auto;
   padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
 }
+div
