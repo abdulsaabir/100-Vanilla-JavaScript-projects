@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: skyblue;
+  width: 100%;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0;
+}
