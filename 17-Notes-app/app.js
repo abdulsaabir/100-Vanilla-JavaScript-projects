@@ -58,20 +58,23 @@ save.addEventListener("click", (e) => {
     id = new Date().getTime().toString();
   getdate();
   boxnote.classList.add("display");
+  if (editFlag) {
+    let newNOte = {
+      id: id,
+      notetitle: valuetitle,
+      note: valuebody,
+      date: getdate(),
+    };
+    notetitle.value = "";
+    notebody.value = "";
 
-  let newNOte = {
-    id: id,
-    notetitle: valuetitle,
-    note: valuebody,
-    date: getdate(),
-  };
-  notetitle.value = "";
-  notebody.value = "";
-
-  // edit and deletebtn
-  addtolacalstorage(newNOte);
-  // console.log(valuetitle);
-  displaynotes();
+    // edit and deletebtn
+    addtolacalstorage(newNOte);
+    // console.log(valuetitle);
+    displaynotes();
+  } else {
+    storage = JSON.parse(localStorage("notes"));
+  }
 });
 function getdate() {
   let today = weekdays[new Date().getDay()],
