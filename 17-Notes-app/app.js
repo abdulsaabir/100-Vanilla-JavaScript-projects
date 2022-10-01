@@ -46,9 +46,9 @@ save.addEventListener("click", () => {
   boxnote.classList.add("display");
 
   // edit and deletebtn
-  let popupbtn = document.querySelectorAll(".popupbtn"),
-    settings = document.querySelector(".settings");
-  displaybtn();
+  let popupbtn = document.querySelectorAll(".popupbtn");
+  let settings = document.querySelector(".settings");
+  displaybtn(settings, popupbtn);
 });
 
 function getdate() {
@@ -90,8 +90,8 @@ function addtothebody(title, body, date) {
   </section>`;
 }
 
-function displaybtn() {
-  settings.addEventListener("click", () => {
-    popupbtn.classList.remove("display");
+function displaybtn(btn, action) {
+  btn.addEventListener("click", () => {
+    action.classList.remove("display");
   });
 }
