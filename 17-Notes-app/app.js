@@ -137,6 +137,28 @@ function displaynotes() {
 
       hideclickoutsidr(popup);
     });
+
+    // delete note
+    let deletenote = document.querySelectorAll(".del");
+    deletenote.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        let parentelement =
+          e.currentTarget.parentElement.parentElement.parentElement.id;
+
+        // fetch local storage notes
+        storage = JSON.parse(localStorage.getItem("notes"));
+        storage = storage.filter((note) => {
+          if (note.id != parentelement) {
+            return note;
+          }
+        });
+        localStorage.setItem("notes", JSON.stringify(storage));
+        displaynotes();
+      });
+    });
+    //
+    //
+    // edit note
   });
 
   // deletednote
