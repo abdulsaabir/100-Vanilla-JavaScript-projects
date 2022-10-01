@@ -112,12 +112,12 @@ function displaynotes() {
            <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
          </footer>
          <section class="popupbtn display">
-         <h4>
-             <iconify-icon   class='edit' icon="clarity:note-edit-line"></iconify-icon>
+         <h4 class='edit' >
+             <iconify-icon   icon="clarity:note-edit-line"></iconify-icon>
              <span> Edit</span>
            </h4>
-           <h4>
-             <iconify-icon class='del' icon="ant-design:delete-filled"></iconify-icon>
+           <h4 class='del'>
+             <iconify-icon  icon="ant-design:delete-filled"></iconify-icon>
              Delete
            </h4>
          </section>
@@ -134,17 +134,13 @@ function displaynotes() {
       let parent = e.currentTarget.parentElement.parentElement;
       let popup = parent.querySelector(".popupbtn");
       popup.classList.remove("display");
+
       hideclickoutsidr(popup);
     });
   });
 
   // deletednote
-  let deletenote = document.querySelectorAll(".del");
-  deletenote.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      console.log(e.currentTarget);
-    });
-  });
+
   // deletenote(deletenote);
 }
 
