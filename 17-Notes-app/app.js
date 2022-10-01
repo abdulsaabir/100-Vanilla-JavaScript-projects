@@ -29,6 +29,7 @@ let addBox = document.querySelector(".addBox"),
   notetitle = document.querySelector(".title"),
   notebody = document.querySelector(".body"),
   container = document.querySelector(".container");
+
 let storage = JSON.parse(localStorage.getItem("notes")) || [];
 
 // addtothebody();
@@ -58,12 +59,15 @@ save.addEventListener("click", (e) => {
   };
   notetitle.value = "";
   notebody.value = "";
+  storage = JSON.parse(localStorage.getItem("notes")) || [];
+  storage.push(newNOte);
+  localStorage.setItem("notes", JSON.stringify(storage));
   // edit and deletebtn
-  addtolacalstorage(newNOte);
-
-  console.log(valuetitle);
+  // addtolacalstorage(newNOte);
+  displaynotes();
+  // console.log(valuetitle);
 });
-
+displaynotes();
 function getdate() {
   let today = weekdays[new Date().getDay()],
     todaydate = new Date().getDate(),
@@ -121,11 +125,10 @@ function addzeroz(n) {
 //   });
 // }
 
-function addtolacalstorage(object) {
-  storage = JSON.parse(localStorage.getItem("notes"));
-  storage.push(object);
-  localStorage.setItem("notes", JSON.stringify(storage));
-}
+// function addtolacalstorage(object) {
+//   storage = JSON.parse(localStorage.getItem("notes"));
+//   localStorage.setItem("notes", JSON.stringify(storage));
+// }
 
 // function settingsfun(element, action) {
 //   action.addEventListener("click", () => {
@@ -133,32 +136,62 @@ function addtolacalstorage(object) {
 //   });
 // }
 
+//   storage = JSON.parse(localStorage.getItem("notes"));
+//   if (storage)
+//     storage.forEach((note) => {
+//       container.innerHTML += `<div class="note" id=${note.id}>
+//     <article>
+//       <h1>${note.notetitle}</h1>
+//       <p>
+//       ${note.note}
+//       </p>
+//     </article>
+//     <section class="footer">
+//       <footer class="date">${note.date}</footer>
+//       <footer class="settings">
+//         <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
+//       </footer>
+//       <section class="popupbtn display">
+//         <h4>
+//           <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+//           <span> Edit</span>
+//         </h4>
+//         <h4>
+//           <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+//           Delete
+//         </h4>
+//       </section>
+//     </section>
+//   </div>`;
+//     });
+// }
+
 function displaynotes() {
-  storage = JSON.parse(localStorage.getItem("notes"));
-  storage.forEach((note) => {
-    container.innerHTML += `<div class="note" id=${note.id}>
-    <article>
-      <h1>${note.notetitle}</h1>
-      <p>
-      
-      </p>
-    </article>
-    <section class="footer">
-      <footer class="date">12-October-2022</footer>
-      <footer class="settings">
-        <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
-      </footer>
-      <section class="popupbtn display">
-        <h4>
-          <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
-          <span> Edit</span>
-        </h4>
-        <h4>
-          <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
-          Delete
-        </h4>
-      </section>
-    </section>
-  </div>`;
+  let storagenote = JSON.parse(localStorage.getItem("notes"));
+  storagenote.forEach((note) => {
+    `<div class="note" id=${note.id}>
+       <article>
+         <h1>${note.notetitle}</h1>
+         <p>
+         ${note.note}
+         </p>
+       </article>
+       <section class="footer">
+         <footer class="date">${note.date}</footer>
+         <footer class="settings">
+           <iconify-icon icon="carbon:overflow-menu-horizontal"></iconify-icon>
+         </footer>
+         <section class="popupbtn display">
+         <h4>
+             <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+             <span> Edit</span>
+           </h4>
+           <h4>
+             <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+             Delete
+           </h4>
+         </section>
+       </section>
+     </div>`;
   });
 }
