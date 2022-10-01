@@ -29,6 +29,8 @@ let addBox = document.querySelector(".addBox"),
   notebody = document.querySelector(".body"),
   container = document.querySelector(".container");
 
+let storage = JSON.parse(localStorage.getItem("notes") || []);
+
 addBox.addEventListener("click", () => {
   boxnote.classList.remove("display");
 });
@@ -38,12 +40,19 @@ cancel.addEventListener("click", () => {
 });
 
 // save fucntion
-save.addEventListener("click", () => {
+save.addEventListener("click", (e) => {
   let valuetitle = notetitle.value,
     valuebody = notebody.value;
   getdate();
   addtothebody(valuetitle, valuebody, getdate());
   boxnote.classList.add("display");
+
+  // let newNOte = {
+  //   notetitle: valuetitle,
+  //   note: valuebody,
+  //   date: getdate(),
+  // };
+  // addtolacalstorage(newNOte);
 
   // edit and deletebtn
   let popupbtn = document.querySelector(".popupbtn");
@@ -104,3 +113,8 @@ function hideclickelse(message) {
     }
   });
 }
+
+// function addtolacalstorage(object) {
+//   storage.push(object);
+//   localStorage.setItem("notes", JSON.stringify(storage));
+// }
