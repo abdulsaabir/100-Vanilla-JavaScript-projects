@@ -46,9 +46,10 @@ save.addEventListener("click", () => {
   boxnote.classList.add("display");
 
   // edit and deletebtn
-  let popupbtn = document.querySelectorAll(".popupbtn");
+  let popupbtn = document.querySelector(".popupbtn");
   let settings = document.querySelector(".settings");
   displaybtn(settings, popupbtn);
+  hideclickelse(popupbtn);
 });
 
 function getdate() {
@@ -93,5 +94,13 @@ function addtothebody(title, body, date) {
 function displaybtn(btn, action) {
   btn.addEventListener("click", () => {
     action.classList.remove("display");
+  });
+}
+
+function hideclickelse(message) {
+  document.addEventListener("mouseup", function (e) {
+    if (!message.contains(e.target)) {
+      message.classList.add("display");
+    }
   });
 }
