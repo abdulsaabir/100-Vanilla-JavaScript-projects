@@ -23,6 +23,7 @@ months = [
 ];
 window.addEventListener("DOMContentLoaded", () => {
   displaynotes();
+  deletenote(deletenote);
 });
 
 let addBox = document.querySelector(".addBox"),
@@ -112,11 +113,11 @@ function displaynotes() {
          </footer>
          <section class="popupbtn display">
          <h4>
-             <iconify-icon icon="clarity:note-edit-line"></iconify-icon>
+             <iconify-icon   class='edit' icon="clarity:note-edit-line"></iconify-icon>
              <span> Edit</span>
            </h4>
            <h4>
-             <iconify-icon icon="ant-design:delete-filled"></iconify-icon>
+             <iconify-icon class='del' icon="ant-design:delete-filled"></iconify-icon>
              Delete
            </h4>
          </section>
@@ -136,6 +137,15 @@ function displaynotes() {
       hideclickoutsidr(popup);
     });
   });
+
+  // deletednote
+  let deletenote = document.querySelectorAll(".del");
+  deletenote.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      console.log(e.currentTarget);
+    });
+  });
+  // deletenote(deletenote);
 }
 
 function hideclickoutsidr(element) {
@@ -146,6 +156,4 @@ function hideclickoutsidr(element) {
   });
 }
 
-function deletenote() {
-  f;
-}
+function deletenote(btns) {}
