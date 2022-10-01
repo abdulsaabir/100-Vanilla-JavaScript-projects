@@ -63,7 +63,7 @@ save.addEventListener("click", (e) => {
   let popupbtn = document.querySelector(".popupbtn");
   let settings = document.querySelector(".settings");
 
-  hideclickelse(popupbtn, settings);
+  hideclickelse(popupbtn, action);
   console.log(valuetitle);
 });
 
@@ -116,10 +116,6 @@ function hideclickelse(message, action) {
     if (!message.contains(e.target)) {
       message.classList.add("display");
     }
-  });
-
-  action.addEventListener("click", () => {
-    message.classList.remove("display");
   });
 }
 
