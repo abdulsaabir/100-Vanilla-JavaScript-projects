@@ -13,5 +13,24 @@ body {
   padding: 1rem 0;
   display: flex;
   flex-wrap: wrap;
+  gap: 1em;
 }
-div
+div {
+  border-radius: 6px;
+  width: 300px;
+  height: 250px;
+  background-color: white;
+  padding: 1rem;
+}
+.addBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addBox iconify-icon {
+  font-size: 4rem;
+  border-radius: 50%;
+  border: 1px solid skyblue;
+  border-style: dotted 8px;
+}
