@@ -185,3 +185,21 @@ article:hover::-webkit-scrollbar-thumb,
 .display {
   display: none;
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .container div {
+    width: 100%;
+    width: 320px;
+    height: 250px;
+    margin: 6px;
+  }
+}
