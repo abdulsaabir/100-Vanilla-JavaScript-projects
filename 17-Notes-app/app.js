@@ -68,11 +68,26 @@ save.addEventListener("click", (e) => {
     // console.log(valuetitle);
     displaynotes();
   } else {
+    storage = JSON.parse(localStorage.getItem("notes"));
+    // console.log(storage);
+    // console.log(valuetitle);
+    storage = storage.map((note) => {
+      if (note.id == idholder) {
+        note.notetitle = valuetitle;
+        note.note = valuebody;
+        return note;
+
+        // console.log(note.id);
+      } else {
+        return note;
+      }
+    });
     notetitle.value = "";
     notebody.value = "";
-    // storage = JSON.parse(localStorage("notes"));
-    console.log("delete");
+    localStorage.setItem("notes", JSON.stringify(storage));
+    console.log(storage);
     editFlag = false;
+    displaynotes();
   }
 });
 
