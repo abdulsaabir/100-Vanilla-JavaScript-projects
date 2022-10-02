@@ -21,3 +21,11 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       dropZoneElement.classList.remove("drop-zone--over");
     });
   });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+    }
