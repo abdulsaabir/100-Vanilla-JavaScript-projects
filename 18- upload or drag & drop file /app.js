@@ -48,4 +48,10 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
     dropZoneElement.querySelector(".drop-zone__prompt").remove();
   }
+    // First time - there is no thumbnail element, so lets create it
+    if (!thumbnailElement) {
+      thumbnailElement = document.createElement("div");
+      thumbnailElement.classList.add("drop-zone__thumb");
+      dropZoneElement.appendChild(thumbnailElement);
+    }
 
