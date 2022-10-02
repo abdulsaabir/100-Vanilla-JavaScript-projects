@@ -6,7 +6,7 @@ containerDrag.addEventListener("dragover", (e) => {
 containerDrag.addEventListener("drop", (e) => {
   e.preventDefault();
   // if (e.dataTransfer.files.length)
-  console.log(e.dataTransfer.files[0].type);
+  console.log(e.dataTransfer.files0.type);
   //   upload(containerDrag, e.dataTransfer.files);
 });
 [("dragend", "dragleave")].forEach((type) => {
