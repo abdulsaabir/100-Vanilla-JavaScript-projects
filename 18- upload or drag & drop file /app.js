@@ -49,6 +49,7 @@ function updateThumbnail(dropZoneElement, file) {
   }
 
   // First time - there is no thumbnail element, so lets create it
+
   if (!thumbnailElement) {
     thumbnailElement = document.createElement("div");
     thumbnailElement.classList.add("drop-zone__thumb");
