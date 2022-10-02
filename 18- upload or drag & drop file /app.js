@@ -10,3 +10,8 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       updateThumbnail(dropZoneElement, inputElement.files[0]);
     }
   });
+
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
