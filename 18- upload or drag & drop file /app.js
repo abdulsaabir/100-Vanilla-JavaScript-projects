@@ -31,3 +31,16 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     dropZoneElement.classList.remove("drop-zone--over");
   });
 });
+
+/**
+ * Updates the thumbnail on a drop zone element.
+ *
+ * @param {HTMLElement} dropZoneElement
+ * @param {File} file
+ * 
+ * 
+ * 
+ *  */
+ function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
