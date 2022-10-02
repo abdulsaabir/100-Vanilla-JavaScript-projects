@@ -20,7 +20,7 @@
   border: dotted 0.4px black;
 }
 .background {
-  background-color: black;
+  background-color: rgba(146, 153, 106, 0.664);
 }
 body {
   background-color: rgba(71, 61, 139, 0.192);
