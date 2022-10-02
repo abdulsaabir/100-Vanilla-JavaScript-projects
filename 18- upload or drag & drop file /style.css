@@ -19,6 +19,9 @@
   text-align: center;
   border: dotted 0.4px black;
 }
+.background {
+  background-color: black;
+}
 body {
   background-color: rgba(71, 61, 139, 0.192);
 }
