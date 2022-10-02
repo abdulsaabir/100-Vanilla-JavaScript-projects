@@ -4,7 +4,10 @@ containerDrag.addEventListener("dragover", (e) => {
   containerDrag.classList.add("background");
 });
 containerDrag.addEventListener("drop", (e) => {
-  console.log(e.dataTransfer);
+  e.preventDefault();
+  upload();
+
+  //   upload(containerDrag, e.dataTransfer.files);
 });
 [("dragend", "dragleave")].forEach((type) => {
   containerDrag.addEventListener(type, (e) => {
@@ -15,3 +18,4 @@ containerDrag.addEventListener("drop", (e) => {
 containerDrag.addEventListener("click", (e) => {
   e.preventDefault();
 });
+function upload(box, file) {}
