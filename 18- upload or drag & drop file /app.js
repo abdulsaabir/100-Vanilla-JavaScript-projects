@@ -62,4 +62,8 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
   if (file.type.startsWith("image/")) {
     const reader = new FileReader();
 
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+    };
 
