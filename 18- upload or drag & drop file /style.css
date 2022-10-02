@@ -32,6 +32,7 @@
   background-size: cover;
   position: relative;
 }
+
 .drop-zone__thumb::after {
   content: attr(data-label);
   position: absolute;
