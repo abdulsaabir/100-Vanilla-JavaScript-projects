@@ -37,10 +37,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
  *
  * @param {HTMLElement} dropZoneElement
  * @param {File} file
- * 
- * 
- * 
+ *
+ *
+ *
  *  */
- function updateThumbnail(dropZoneElement, file) {
-  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-
