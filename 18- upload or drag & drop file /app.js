@@ -1,7 +1,6 @@
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
   const dropZoneElement = inputElement.closest(".drop-zone");
 
-
   dropZoneElement.addEventListener("click", (e) => {
     inputElement.click();
   });
@@ -29,3 +28,6 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       inputElement.files = e.dataTransfer.files;
       updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
     }
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
+});
