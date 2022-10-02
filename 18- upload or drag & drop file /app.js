@@ -55,3 +55,11 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       dropZoneElement.appendChild(thumbnailElement);
     }
 
+
+  thumbnailElement.dataset.label = file.name;
+
+  // Show thumbnail for image files
+  if (file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+
