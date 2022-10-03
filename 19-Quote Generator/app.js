@@ -61,6 +61,6 @@ copybtn.addEventListener("click", () => {
 });
 
 twitterBtn.addEventListener("click", () => {
-  let tweetUrl = `https://facebook.com/intent/post?url=${qoute.innerText}`;
+  let tweetUrl = `https://twitter.com/intent/tweet?url=${qoute.innerText}-${author.innerText} `;
   window.open(tweetUrl, "_blank");
 });
