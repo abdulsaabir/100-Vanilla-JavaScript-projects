@@ -26,12 +26,15 @@ body {
   font-size: 2.5rem;
   font-weight: 600px;
 }
-
+.qouteContent {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
 .qoutetext {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 30px 0;
 }
 .qoutetext p {
   font-size: 1.5rem;
@@ -46,3 +49,9 @@ body {
   font-size: 1.5rem;
   margin-right: 10px;
 }
+.quoteAuthor {
+  display: flex;
+  margin-top: 15px;
+  align-self: end;
+}
+.quoteAuthor;
