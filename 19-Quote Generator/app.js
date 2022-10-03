@@ -6,6 +6,7 @@ let author = document.querySelector(".author");
 let sound = document.querySelector(".sound");
 let copybtn = document.querySelector(".copy");
 let copied = document.querySelector(".copied");
+let twitterBtn = document.querySelector(".twitter");
 btnRandom.addEventListener("click", getRndomQuote);
 window.addEventListener("DOMContentLoaded", () => {
   if (SpeechSynthesisUtterance in window) {
@@ -60,6 +61,7 @@ copybtn.addEventListener("click", () => {
 });
 
 twitterBtn.addEventListener("click", () => {
-  let tweetUrl = `https://twitter.com/intent/tweet?url=${quoteText.innerText}`;
+  let tweetUrl = `https://facebook.com/intent/post?url=${qoute.innerText}`;
   window.open(tweetUrl, "_blank");
+  https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
 });
