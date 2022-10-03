@@ -22,21 +22,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let qoute = document.querySelector(".qoute");
         let author = document.querySelector(".author");
-        getRndomQuote(btnRandom);
         btnRandom.addEventListener("click", getRndomQuote);
+
+        function getRndomQuote() {
+          btnRandom.classList.add("loading");
+          btnRandom.textContent = "Loading..";
+          fetch("https://api.quotable.io/random")
+            .then((response) => response.json())
+            .then((result) => {
+              qoute.textContent = result.content;
+              author.textContent = result.author;
+              btnRandom.textContent = "New Quote";
+              btnRandom.classList.remove("loading");
+            });
+        }
       });
   }
 });
-
-function getRndomQuote(btn, quote, author) {
-  btnRandom.classList.add("loading");
-  btnRandom.textContent = "Loading..";
-  fetch("https://api.quotable.io/random")
-    .then((response) => response.json())
-    .then((result) => {
-      qoute.textContent = result.content;
-      author.textContent = result.author;
-      btnRandom.textContent = "New Quote";
-      btnRandom.classList.remove("loading");
-    });
-}
