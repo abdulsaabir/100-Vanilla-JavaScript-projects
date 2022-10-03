@@ -107,5 +107,6 @@ button {
   outline: none;
 }
 .loading {
-  color: #5372f0;
+  color: #5372f080;
+  pointer-events: none;
 }
