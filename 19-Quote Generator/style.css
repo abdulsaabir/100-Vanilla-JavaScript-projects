@@ -141,10 +141,13 @@ button {
 .copied iconify-icon {
   margin-left: 3px;
 }
+.qouteContent {
+  margin-bottom: 20px;
+}
 @media screen and (max-width: 600px) {
   .QuoteContianer {
     width: 350px;
-    max-height: 350px;
+    max-height: 340px;
   }
   .QuoteHeader h1 {
     font-size: 1.5rem;
@@ -158,5 +161,18 @@ button {
   }
   .features .effects p {
     font-size: 1rem;
+  }
+  .features .effects {
+    display: flex;
+    gap: 10px;
+  }
+  button {
+    padding: 10px 10px;
+  }
+  .quoteAuthor {
+    margin-bottom: 25px;
+  }
+  .qouteContent {
+    margin-bottom: 10px;
   }
 }
