@@ -3,6 +3,7 @@ const btnRandom = document.querySelector("button");
 let loader = document.querySelector(".loader");
 let qoute = document.querySelector(".qoute");
 let author = document.querySelector(".author");
+let sound = document.querySelector(".sound");
 btnRandom.addEventListener("click", getRndomQuote);
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -32,3 +33,9 @@ function getRndomQuote() {
       btnRandom.classList.remove("loading");
     });
 }
+sound.addEventListener("click", () => {
+  let text = new SpeechSynthesisUtterance(
+    `${qoute.innerText} by ${author.innerText}`
+  );
+  synth.speak(text);
+});
