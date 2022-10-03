@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   width: 100%;
-  background: url("https://i.pinimg.com/originals/80/4d/c3/804dc3192ddd41feb6e40a017392b2ab.jpg")
+  background: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQV0KgyKCveeicSzq2NckjBWw5biCOevfTInobESvLTy2WjR80c")
     no-repeat center center;
   background-size: cover;
 }
@@ -23,7 +23,8 @@ body {
   text-align: center;
 }
 input {
-  padding: 5px 0 5px 20px;
+  padding: 10px 0 10px 20px;
+  width: 300px;
   background-color: white;
   border-radius: 20px;
   border: none;
@@ -40,13 +41,13 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("https://i.pinimg.com/originals/80/4d/c3/804dc3192ddd41feb6e40a017392b2ab.jpg")
+  background: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQV0KgyKCveeicSzq2NckjBWw5biCOevfTInobESvLTy2WjR80c")
     no-repeat center center;
   background-size: cover;
   height: 70vh;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 5px 4px 30px 1px rgba(0, 0, 0, 0.6);
-  padding: 90px 15px 10px 15px;
+  padding: 60px 15px 10px 15px;
   color: white;
 }
 .city {
@@ -54,14 +55,45 @@ input {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
 }
+.center {
+  position: relative;
+}
 .degreetop {
   font-size: 5rem;
-  font-family: monospace;
+  font-family: "Roboto", sans-serif;
 }
-.degreec {
+.pos {
   font-size: 2rem;
   position: absolute;
+  top: 2px;
+  right: -30%;
+  color: rgba(255, 255, 255, 0.781);
 }
 .days {
-  margin-top: 3rem;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.today {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.596);
+  border-radius: 20px;
+  padding: 8px;
+  align-items: center;
+}
+.left,
+.right {
+  display: flex;
+  gap: 6px;
+}
+.lefts {
+  margin-left: 18px;
+}
+.dot iconify-icon {
+  font-size: 10px;
 }
