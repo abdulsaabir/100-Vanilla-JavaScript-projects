@@ -21,7 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>`;
         let qoute = document.querySelector(".qoute");
         let author = document.querySelector(".author");
-        btnRandom.addEventListener("click", getRndomQuote);
+        btnRandom.addEventListener(
+          "click",
+          getRndomQuote(btnRandom, qoute, author)
+        );
 
         // function getRndomQuote() {
         //   btnRandom.classList.add("loading");
@@ -39,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function getRndomQuote() {
+function getRndomQuote(btn, qoute, author) {
   btnRandom.classList.add("loading");
   btnRandom.textContent = "Loading..";
   fetch("https://api.quotable.io/random")
