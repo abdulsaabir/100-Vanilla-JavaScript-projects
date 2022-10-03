@@ -142,11 +142,12 @@ button {
   margin-left: 3px;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .QuoteContianer {
     width: 350px;
   }
   .QuoteHeader h1 {
     font-size: 1.5rem;
   }
-}
+  .qouteContent p
+} */
