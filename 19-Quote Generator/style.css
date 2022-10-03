@@ -17,6 +17,7 @@ body {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+  max-width: 600px;
 }
 .QuoteHeader {
   text-align: center;
@@ -29,4 +30,12 @@ body {
 .qoutetext {
   display: flex;
   justify-content: center;
+  text-align: center;
+}
+.qoutetext p {
+  font-size: 1.5rem;
+}
+.qoutetext:nth-child(1) {
+  font-size: 3rem;
+  color: red;
 }
