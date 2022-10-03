@@ -170,7 +170,6 @@ button {
     padding: 10px 10px;
     font-size: 16px;
     border-radius: 6px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   .quoteAuthor {
     margin-bottom: 25px;
@@ -181,5 +180,8 @@ button {
   .qoutetext .left,
   .qoutetext .right {
     font-size: 1rem;
+  }
+  .line {
+    margin: -9px 5px 0 0;
   }
 }
