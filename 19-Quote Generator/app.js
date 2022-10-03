@@ -5,6 +5,9 @@ let qoute = document.querySelector(".qoute");
 let author = document.querySelector(".author");
 btnRandom.addEventListener("click", getRndomQuote);
 window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    loader.classList.add("none");
+  }, 1500);
   generate();
 
   function generate() {
