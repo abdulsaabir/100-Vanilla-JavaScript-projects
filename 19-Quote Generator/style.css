@@ -106,3 +106,6 @@ button {
   font-weight: bold;
   outline: none;
 }
+.loading {
+  color: #5372f0;
+}
