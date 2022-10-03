@@ -21,36 +21,20 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>`;
         let qoute = document.querySelector(".qoute");
         let author = document.querySelector(".author");
-        btnRandom.addEventListener(
-          "click",
-          getRndomQuote(btnRandom, qoute, author)
-        );
+        btnRandom.addEventListener("click", getRndomQuote());
 
-        // function getRndomQuote() {
-        //   btnRandom.classList.add("loading");
-        //   btnRandom.textContent = "Loading..";
-        //   fetch("https://api.quotable.io/random")
-        //     .then((response) => response.json())
-        //     .then((result) => {
-        //       qoute.textContent = result.content;
-        //       author.textContent = result.author;
-        //       btnRandom.textContent = "New Quote";
-        //       btnRandom.classList.remove("loading");
-        //     });
-        // }
+        function getRndomQuote() {
+          btnRandom.classList.add("loading");
+          btnRandom.textContent = "Loading..";
+          fetch("https://api.quotable.io/random")
+            .then((response) => response.json())
+            .then((result) => {
+              qoute.textContent = result.content;
+              author.textContent = result.author;
+              btnRandom.textContent = "New Quote";
+              btnRandom.classList.remove("loading");
+            });
+        }
       });
   }
 });
-
-function getRndomQuote(btn, qoute, author) {
-  btnRandom.classList.add("loading");
-  btnRandom.textContent = "Loading..";
-  fetch("https://api.quotable.io/random")
-    .then((response) => response.json())
-    .then((result) => {
-      qoute.textContent = result.content;
-      author.textContent = result.author;
-      btnRandom.textContent = "New Quote";
-      btnRandom.classList.remove("loading");
-    });
-}
