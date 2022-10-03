@@ -13,8 +13,14 @@ body {
   height: 100vh;
 }
 
-.qouteContianer {
+.QuoteContianer {
   background-color: white;
   padding: 30px;
   border-radius: 10px;
+}
+.QuoteHeader {
+  text-align: center;
+}
+.QuoteHeader h1 {
+  font-size: 2.5rem;
 }
