@@ -133,6 +133,11 @@ button {
   padding: 8px;
   border-radius: 4px;
   top: 55px;
-  left: 12%;
+  left: 11%;
   color: white;
+  display: flex;
+  display: none;
+}
+.copied iconify-icon {
+  margin-left: 3px;
 }

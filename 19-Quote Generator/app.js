@@ -5,6 +5,7 @@ let qoute = document.querySelector(".qoute");
 let author = document.querySelector(".author");
 let sound = document.querySelector(".sound");
 let copybtn = document.querySelector(".copy");
+let copied = document.querySelector(".copied");
 btnRandom.addEventListener("click", getRndomQuote);
 window.addEventListener("DOMContentLoaded", () => {
   if (SpeechSynthesisUtterance in window) {
@@ -52,4 +53,13 @@ sound.addEventListener("click", () => {
 
 copybtn.addEventListener("click", () => {
   navigator.clipboard.writeText(qoute.innerText);
+  copied.style.display = "flex";
+  setTimeout(() => {
+    copied.style.display = "none";
+  }, 600);
+});
+
+twitterBtn.addEventListener("click", () => {
+  let tweetUrl = `https://twitter.com/intent/tweet?url=${quoteText.innerText}`;
+  window.open(tweetUrl, "_blank");
 });
