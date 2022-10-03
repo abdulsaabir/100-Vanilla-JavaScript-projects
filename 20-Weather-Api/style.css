@@ -51,9 +51,17 @@ input {
 }
 .city {
   font-size: 1.6rem;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
 }
-
+.degreetop {
+  font-size: 5rem;
+  font-family: monospace;
+}
+.degreec {
+  font-size: 2rem;
+  position: absolute;
+}
 .days {
   margin-top: 3rem;
 }
