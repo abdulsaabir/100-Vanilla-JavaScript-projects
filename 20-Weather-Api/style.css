@@ -7,7 +7,53 @@
 body {
   height: 100vh;
   width: 100%;
-  background: url("https://images.pexels.com/photos/12762122/pexels-photo-12762122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=252&fit=crop&h=408")
+  background: url("https://i.pinimg.com/originals/80/4d/c3/804dc3192ddd41feb6e40a017392b2ab.jpg")
     no-repeat center center;
   background-size: cover;
+}
+
+.weatherin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  font-family: sans-serif;
+  text-align: center;
+}
+input {
+  padding: 5px 0 5px 20px;
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  color: #000000af;
+  font-family: monospace;
+  margin-bottom: 2rem;
+  margin-top: 0.4rem;
+}
+.display {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("https://i.pinimg.com/originals/80/4d/c3/804dc3192ddd41feb6e40a017392b2ab.jpg")
+    no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+  border-radius: 10px;
+  box-shadow: 5px 4px 30px 1px rgba(0, 0, 0, 0.6);
+  padding: 90px 15px 10px 15px;
+  color: white;
+}
+.city {
+  font-size: 1.6rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.days {
+  margin-top: 3rem;
 }
