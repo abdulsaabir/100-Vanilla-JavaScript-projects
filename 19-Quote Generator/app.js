@@ -63,5 +63,4 @@ copybtn.addEventListener("click", () => {
 twitterBtn.addEventListener("click", () => {
   let tweetUrl = `https://facebook.com/intent/post?url=${qoute.innerText}`;
   window.open(tweetUrl, "_blank");
-  https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
 });
