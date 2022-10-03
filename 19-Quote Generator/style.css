@@ -54,4 +54,9 @@ body {
   margin-top: 15px;
   align-self: end;
 }
-.quoteAuthor;
+.quoteAuthor .author {
+  margin: 0 6px;
+}
+.quoteAuthor:nth-child(1) {
+  color: red;
+}
