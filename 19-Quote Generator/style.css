@@ -147,7 +147,6 @@ button {
 @media screen and (max-width: 600px) {
   .QuoteContianer {
     width: 350px;
-    max-height: 340px;
   }
   .QuoteHeader h1 {
     font-size: 1.5rem;
