@@ -2,9 +2,7 @@ const btnRandom = document.querySelector("button");
 let qoute = document.querySelector(".qoute");
 let author = document.querySelector(".author");
 
-window.addEventListener('DOMContentLoaded' , => {
-    
-})
+window.addEventListener("DOMContentLoaded", () => {});
 function getRndomQuote() {
   btnRandom.textContent = "loading..";
   fetch("https://api.quotable.io/random")
