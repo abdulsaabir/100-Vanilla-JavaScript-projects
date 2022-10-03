@@ -4,8 +4,13 @@ let loader = document.querySelector(".loader");
 let qoute = document.querySelector(".qoute");
 let author = document.querySelector(".author");
 let sound = document.querySelector(".sound");
+let copybtn = document.querySelector(".copy");
 btnRandom.addEventListener("click", getRndomQuote);
 window.addEventListener("DOMContentLoaded", () => {
+  if (SpeechSynthesisUtterance in window) {
+    // Do something with Speech
+    console.log("we can/'t find");
+  }
   setTimeout(() => {
     loader.classList.add("none");
   }, 1500);
@@ -37,5 +42,14 @@ sound.addEventListener("click", () => {
   let text = new SpeechSynthesisUtterance(
     `${qoute.innerText} by ${author.innerText}`
   );
-  synth.speak(text);
+  window.speechSynthesis.speak(text);
+  setInterval(() => {
+    !speechSynthesis.speaking
+      ? sound.classList.remove("loading")
+      : sound.classList.add("loading");
+  }, 10);
+});
+
+copybtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(qoute.innerText);
 });

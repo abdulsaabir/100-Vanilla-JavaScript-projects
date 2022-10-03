@@ -124,3 +124,15 @@ button {
 .none {
   display: none;
 }
+.features {
+  position: relative;
+}
+.copied {
+  position: absolute;
+  background-color: rgb(34, 33, 33);
+  padding: 8px;
+  border-radius: 4px;
+  top: 55px;
+  left: 12%;
+  color: white;
+}
