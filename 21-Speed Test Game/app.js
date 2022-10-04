@@ -38,14 +38,19 @@ function countdown() {
 
   countertext.innerHTML = time;
 }
-
-function checkword() {
-  if (isplaying)
-    if (input.value === generatedWord.textContent) {
-      decisionover.textContent = "Correct!!";
-    }
+function startGame() {
+  if (checkword) {
+    isplaying = true;
+  }
 }
 
-function startGame() {
-  isplaying = true;
+function checkword() {
+  if (input.onkeyup) {
+    if (input.value === generatedWord.textContent) {
+      decisionover.textContent = "Correct!!";
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
