@@ -21,7 +21,8 @@ body {
   background: url("https://i.pinimg.com/originals/e9/29/1e/e9291eaddacd460280a34a151dcc5cc4.gif")
     no-repeat center rgb(31, 31, 53);
   background-size: 20%;
-  /* background-color: hsl(0, 0%, 90%); */
+  background-color: #071e26;
+} */
 .weatherin {
   width: 100%;
   display: flex;
