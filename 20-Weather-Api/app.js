@@ -17,6 +17,7 @@ let cityName = document.querySelector(".city"),
   dayName = document.querySelectorAll(".dayname"),
   degree = document.querySelectorAll(".degree");
 icons = document.querySelectorAll(".icon");
+
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -34,11 +35,11 @@ window.addEventListener("load", () => {
           showIcon.src = `http://openweathermap.org/img/w/${iconcode}.png`;
           cityName.innerText = data.name;
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
-          dayName[0].innerText = "Today";
-          degree[0].innerText = (data.main.temp - 273).toString().slice(0, 2);
         });
     });
   }
 });
 
-// "";
+let searchcity = JSON.parse(localStorage.getItem("city") || []);
+
+https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=1250c30e7025057655ffaea3ff929e53
