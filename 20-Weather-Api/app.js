@@ -3,7 +3,9 @@ let lat,
   api,
   apikey = "1250c30e7025057655ffaea3ff929e53";
 let cityName = document.querySelector(".city"),
-  degreetop = document.querySelector(".degreetop");
+  degreetop = document.querySelector(".degreetop"),
+  showIcon = document.querySelector(".showIcon"),
+  dayName = document.querySelectorAll(".dayname");
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -18,9 +20,10 @@ window.addEventListener("load", () => {
           console.log(data);
 
           let iconcode = data.weather[0].icon;
-
+          showIcon.src = `http://openweathermap.org/img/w/${iconcode}.png`;
           cityName.innerText = data.name;
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
+          console.log(dayName[0]);
         });
     });
   }
