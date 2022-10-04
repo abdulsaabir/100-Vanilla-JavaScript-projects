@@ -15,13 +15,14 @@ let cityName = document.querySelector(".city"),
   degreetop = document.querySelector(".degreetop"),
   showIcon = document.querySelector(".showIcon"),
   dayName = document.querySelectorAll(".dayname"),
-  degree = document.querySelectorAll(".degree");
-icons = document.querySelectorAll(".icon");
+  degree = document.querySelectorAll(".degree"),
+  icons = document.querySelectorAll(".icon"),
+  input = document.querySelector(".input");
 
 let searchbtn = document.getElementById("search");
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("clicked");
+  console.log(input.value);
 });
 
 window.addEventListener("load", () => {
