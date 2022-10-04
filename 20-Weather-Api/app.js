@@ -28,15 +28,15 @@ searchbtn.addEventListener("click", (e) => {
   }
 });
 
-// window.onload = () => {
-//   let loader = document.querySelector(".loader");
-//   loader.style.display = "block";
-//   setTimeout(() => {
-//     loader.style.display = "none";
-//   }, 1000);
-// };
+window.onload = () => {
+  let loader = document.querySelector(".loader");
+  loader.style.display = "block";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 1000);
+};
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
@@ -53,6 +53,8 @@ window.addEventListener("DOMContentLoaded", () => {
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
         });
     });
+  } else {
+    fetchdata("Mogdisho", dayName[0], degree[0], icons[0]);
   }
   // london
   fetchdata("london", dayName[0], degree[0], icons[0]);
