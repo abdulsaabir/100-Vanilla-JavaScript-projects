@@ -19,11 +19,6 @@ let cityName = document.querySelector(".city"),
   icons = document.querySelectorAll(".icon"),
   input = document.querySelector(".input");
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   // let loader = document.querySelector(".
-//   fetchdata("", cityName, degreetop, showIcon);
-// });
-
 let searchbtn = document.getElementById("search");
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
