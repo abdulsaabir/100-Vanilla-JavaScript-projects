@@ -46,7 +46,6 @@ window.addEventListener("load", () => {
       fetch(api)
         .then((response) => response.json())
         .then((data) => {
-          // console.log(data);
           let iconcode = data.weather[0].icon;
           showIcon.src = `http://openweathermap.org/img/w/${iconcode}.png`;
           cityName.innerText = data.name;
