@@ -33,7 +33,7 @@ window.onload = () => {
   loader.style.display = "block";
   setTimeout(() => {
     loader.style.display = "none";
-  }, 1000);
+  }, 2000);
 };
 
 window.addEventListener("load", () => {
@@ -54,7 +54,7 @@ window.addEventListener("load", () => {
         });
     });
   } else {
-    fetchdata("Mogdisho", dayName[0], degree[0], icons[0]);
+    fetchdata("Mogadishu", dayName[0], degree[0], icons[0]);
   }
   // london
   fetchdata("london", dayName[0], degree[0], icons[0]);
