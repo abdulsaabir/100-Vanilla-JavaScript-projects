@@ -6,7 +6,6 @@ function showPosition(position) {
   alert(`${position.coords.longitude} - ${position.coords.latitude}`);
 }
 window.addEventListener("load", () => {
-  navigator.geolocation.getCurrentPosition(this.showPosition);
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
