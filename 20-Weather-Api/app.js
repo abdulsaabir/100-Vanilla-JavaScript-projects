@@ -19,6 +19,10 @@ let cityName = document.querySelector(".city"),
   icons = document.querySelectorAll(".icon"),
   input = document.querySelector(".input");
 
+// window.addEventListener("DOMContentLoaded", () => {
+//   let loader = document.querySelector(".l
+// });
+
 let searchbtn = document.getElementById("search");
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -30,7 +34,7 @@ searchbtn.addEventListener("click", (e) => {
   }
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
