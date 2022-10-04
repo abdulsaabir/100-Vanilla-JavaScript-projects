@@ -20,7 +20,8 @@ let cityName = document.querySelector(".city"),
   input = document.querySelector(".input");
 
 // window.addEventListener("DOMContentLoaded", () => {
-//   let loader = document.querySelector(".l
+//   // let loader = document.querySelector(".
+//   fetchdata("", cityName, degreetop, showIcon);
 // });
 
 let searchbtn = document.getElementById("search");
@@ -35,6 +36,8 @@ searchbtn.addEventListener("click", (e) => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  let loader = document.querySelector(".loader");
+  loader.style.display = "block";
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
@@ -62,6 +65,8 @@ window.addEventListener("DOMContentLoaded", () => {
   fetchdata("new york", dayName[2], degree[2], icons[2]);
   //
   fetchdata("riyad", dayName[4], degree[4], icons[4]);
+
+  loader.style.display = "none";
 });
 
 // let searchcity = JSON.parse(localStorage.getItem("city") || []);
