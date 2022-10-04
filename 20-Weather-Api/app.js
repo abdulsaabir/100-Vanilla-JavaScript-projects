@@ -18,6 +18,12 @@ let cityName = document.querySelector(".city"),
   degree = document.querySelectorAll(".degree");
 icons = document.querySelectorAll(".icon");
 
+let searchbtn = document.getElementById("search");
+searchbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("clicked");
+});
+
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -59,7 +65,7 @@ function fetchdata(city, cityname, degree, icon) {
   )
     .then((resp) => resp.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       cityname.innerText = data.name;
       let digitdegree = (data.main.temp - 273).toString().slice(0, 2);
       digitdegree = digitdegree.split(".").join("");
