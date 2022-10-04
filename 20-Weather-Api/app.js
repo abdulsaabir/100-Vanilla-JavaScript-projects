@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
         });
     });
   }
-  fetchdata("london", dayName[0].innerText);
+  fetchdata("berlin", dayName[0], degree[0], icons[0]);
   // london
 });
 
@@ -45,14 +45,15 @@ let searchcity = JSON.parse(localStorage.getItem("city") || []);
 
 // https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=1250c30e7025057655ffaea3ff929e53
 // , day, weather, icon
-function fetchdata(city, city) {
+function fetchdata(city, cityname, degree, icon) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1250c30e7025057655ffaea3ff929e53`
   )
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
-      city = data.name;
-      console.log(city);
+      cityname.innerText = data.name;
+      degree.innerText = (data.main.temp - 273).toString().slice(0, 2);
+      icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     });
 }
