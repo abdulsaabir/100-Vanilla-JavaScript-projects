@@ -1,12 +1,3 @@
-let weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
 let lat,
   long,
   api,
