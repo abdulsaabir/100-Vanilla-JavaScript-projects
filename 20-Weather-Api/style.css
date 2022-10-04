@@ -97,3 +97,6 @@ input {
 .dot iconify-icon {
   font-size: 10px;
 }
+.right {
+  gap: 15px;
+}
