@@ -19,11 +19,16 @@ let cityName = document.querySelector(".city"),
   icons = document.querySelectorAll(".icon"),
   input = document.querySelector(".input");
 
-let searchbtn = document.getElementById("search");
-searchbtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(input.value);
-});
+// let searchbtn = document.getElementById("search");
+// searchbtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   let value = input.value;
+//   if (value) {
+//     searchbtn.textContent = "loading...";
+//     fetchdata(value, cityName, degreetop, showIcon);
+//     searchbtn.textContent = "Search";
+//   }
+// });
 
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
@@ -56,7 +61,7 @@ window.addEventListener("load", () => {
   fetchdata("riyad", dayName[4], degree[4], icons[4]);
 });
 
-let searchcity = JSON.parse(localStorage.getItem("city") || []);
+// let searchcity = JSON.parse(localStorage.getItem("city") || []);
 
 // https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=1250c30e7025057655ffaea3ff929e53
 // , day, weather, icon
