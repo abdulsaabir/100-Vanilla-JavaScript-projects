@@ -16,6 +16,7 @@ let cityName = document.querySelector(".city"),
   showIcon = document.querySelector(".showIcon"),
   dayName = document.querySelectorAll(".dayname"),
   degree = document.querySelectorAll(".degree");
+icons = document.querySelectorAll(".icon");
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
