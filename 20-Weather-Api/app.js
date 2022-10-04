@@ -19,23 +19,22 @@ let cityName = document.querySelector(".city"),
   icons = document.querySelectorAll(".icon"),
   input = document.querySelector(".input");
 
-// let searchbtn = document.getElementById("search");
-// searchbtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let value = input.value;
-//   if (value) {
-//     searchbtn.textContent = "loading...";
-//     fetchdata(value, cityName, degreetop, showIcon);
-//     searchbtn.textContent = "Search";
-//   }
-// });
+let searchbtn = document.getElementById("search");
+searchbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let value = input.value;
+  if (value) {
+    searchbtn.textContent = "loading...";
+    fetchdata(value, cityName, degreetop, showIcon);
+    searchbtn.textContent = "Search";
+  }
+});
 
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
       long = position.coords.longitude;
-
       api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=1250c30e7025057655ffaea3ff929e53`;
 
       fetch(api)
