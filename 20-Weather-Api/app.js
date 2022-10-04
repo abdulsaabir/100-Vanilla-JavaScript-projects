@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
           console.log(data);
 
           let iconcode = data.weather[0].icon;
-          console.log(iconcode);
+
           cityName.innerText = data.name;
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
         });
