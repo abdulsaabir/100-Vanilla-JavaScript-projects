@@ -41,4 +41,4 @@ window.addEventListener("load", () => {
   }
 });
 
-// "http://openweathermap.org/img/w/" + iconcode + ".png";
+// "";
