@@ -84,7 +84,6 @@ function fetchdata(city, cityname, degree, icon) {
       if (data.message === "city not found") {
         alert("City Not found");
       } else {
-        // console.log(data);
         cityname.innerText = data.name;
         let digitdegree = (data.main.temp - 273).toString().slice(0, 2);
         digitdegree = digitdegree.split(".").join("");
