@@ -29,8 +29,7 @@ window.addEventListener("load", () => {
       fetch(api)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
-
+          // console.log(data);
           let iconcode = data.weather[0].icon;
           showIcon.src = `http://openweathermap.org/img/w/${iconcode}.png`;
           cityName.innerText = data.name;
@@ -38,8 +37,20 @@ window.addEventListener("load", () => {
         });
     });
   }
+
+  // london
 });
 
 let searchcity = JSON.parse(localStorage.getItem("city") || []);
 
-https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=1250c30e7025057655ffaea3ff929e53
+// https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=1250c30e7025057655ffaea3ff929e53
+// , day, weather, icon
+function fetchdata(city) {
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1250c30e7025057655ffaea3ff929e53`
+  )
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data);
+    });
+}
