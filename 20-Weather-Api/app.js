@@ -2,7 +2,7 @@ let lat,
   long,
   api,
   apikey = "1250c30e7025057655ffaea3ff929e53";
-
+let cityName = document.querySelector(".city");
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -15,6 +15,7 @@ window.addEventListener("load", () => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          cityName.innerText = data.name;
         });
     });
   }
