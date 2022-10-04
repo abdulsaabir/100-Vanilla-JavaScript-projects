@@ -14,7 +14,8 @@ let lat,
 let cityName = document.querySelector(".city"),
   degreetop = document.querySelector(".degreetop"),
   showIcon = document.querySelector(".showIcon"),
-  dayName = document.querySelectorAll(".dayname");
+  dayName = document.querySelectorAll(".dayname"),
+  degree = document.querySelectorAll(".degree");
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -33,6 +34,7 @@ window.addEventListener("load", () => {
           cityName.innerText = data.name;
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
           dayName[0].innerText = weekdays[new Date().getDay()];
+          degree[0].innerText = (data.main.temp - 273).toString().slice(0, 2);
         });
     });
   }
