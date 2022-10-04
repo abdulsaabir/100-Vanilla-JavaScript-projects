@@ -35,6 +35,10 @@ searchbtn.addEventListener("click", (e) => {
   }
 });
 
+window.onload = () => {
+  setTimeout(() => {}, timeout);
+};
+
 window.addEventListener("DOMContentLoaded", () => {
   let loader = document.querySelector(".loader");
   loader.style.display = "block";
