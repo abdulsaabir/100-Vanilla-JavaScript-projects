@@ -70,11 +70,15 @@ function fetchdata(city, cityname, degree, icon) {
   )
     .then((resp) => resp.json())
     .then((data) => {
-      // console.log(data);
-      cityname.innerText = data.name;
-      let digitdegree = (data.main.temp - 273).toString().slice(0, 2);
-      digitdegree = digitdegree.split(".").join("");
-      degree.innerText = digitdegree;
-      icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+      if (data.message === "city not found") {
+        alert("City Not found");
+      } else {
+        // console.log(data);
+        cityname.innerText = data.name;
+        let digitdegree = (data.main.temp - 273).toString().slice(0, 2);
+        digitdegree = digitdegree.split(".").join("");
+        degree.innerText = digitdegree;
+        icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+      }
     });
 }
