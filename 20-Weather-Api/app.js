@@ -40,6 +40,6 @@ window.addEventListener("load", () => {
   }
 });
 
-let searchcity = JSON.parse(localStorage.getItem("city") || []);
+// let searchcity = JSON.parse(localStorage.getItem("city") || []);
 
 https://api.openweathermap.org/data/2.5/weather?q=Nairobi&appid=1250c30e7025057655ffaea3ff929e53
