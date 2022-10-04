@@ -1,3 +1,12 @@
+let weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let lat,
   long,
   api,
@@ -23,7 +32,7 @@ window.addEventListener("load", () => {
           showIcon.src = `http://openweathermap.org/img/w/${iconcode}.png`;
           cityName.innerText = data.name;
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
-          console.log(dayName[0]);
+          dayName[0].innerText = weekdays[new Date().getDay()];
         });
     });
   }
