@@ -28,13 +28,13 @@ searchbtn.addEventListener("click", (e) => {
   }
 });
 
-window.onload = () => {
-  let loader = document.querySelector(".loader");
-  loader.style.display = "block";
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 2000);
-};
+// window.onload = () => {
+//   let loader = document.querySelector(".loader");
+//   loader.style.display = "block";
+//   setTimeout(() => {
+//     loader.style.display = "none";
+//   }, 1000);
+// };
 
 window.addEventListener("DOMContentLoaded", () => {
   if (navigator.geolocation) {
@@ -83,3 +83,13 @@ function fetchdata(city, cityname, degree, icon) {
       }
     });
 }
+
+document.onreadystatechange = function () {
+  if (document.readyState !== "complete") {
+    document.querySelector("body").style.visibility = "hidden";
+    document.querySelector("#loader").style.visibility = "visible";
+  } else {
+    document.querySelector("#loader").style.display = "none";
+    document.querySelector("body").style.visibility = "visible";
+  }
+};

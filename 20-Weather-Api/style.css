@@ -22,7 +22,7 @@ body {
     no-repeat center rgb(31, 31, 53);
   background-size: 90%;
   background-color: #fff;
-  display: none;
+  /* display: none; */
 }
 .weatherin {
   width: 100%;
