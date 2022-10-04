@@ -60,11 +60,9 @@ window.addEventListener("load", () => {
   fetchdata("london", dayName[0], degree[0], icons[0]);
   // berlin
   fetchdata("Doha", dayName[1], degree[1], icons[1]);
-  // moscow
   fetchdata("Yakutsk", dayName[3], degree[3], icons[3]);
 
   fetchdata("new york", dayName[2], degree[2], icons[2]);
-  //
   fetchdata("riyad", dayName[4], degree[4], icons[4]);
 });
 
