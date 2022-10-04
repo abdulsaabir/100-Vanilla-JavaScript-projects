@@ -37,8 +37,16 @@ window.addEventListener("load", () => {
         });
     });
   }
-  fetchdata("berlin", dayName[0], degree[0], icons[0]);
   // london
+  fetchdata("london", dayName[0], degree[0], icons[0]);
+  // berlin
+  fetchdata("Doha", dayName[1], degree[1], icons[1]);
+  // moscow
+  fetchdata("Yakutsk", dayName[3], degree[3], icons[3]);
+
+  fetchdata("new york", dayName[2], degree[2], icons[2]);
+  //
+  fetchdata("riyad", dayName[4], degree[4], icons[4]);
 });
 
 let searchcity = JSON.parse(localStorage.getItem("city") || []);
@@ -53,7 +61,9 @@ function fetchdata(city, cityname, degree, icon) {
     .then((data) => {
       console.log(data);
       cityname.innerText = data.name;
-      degree.innerText = (data.main.temp - 273).toString().slice(0, 2);
+      let digitdegree = (data.main.temp - 273).toString().slice(0, 2);
+      digitdegree = digitdegree.split(".").join("");
+      degree.innerText = digitdegree;
       icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     });
 }

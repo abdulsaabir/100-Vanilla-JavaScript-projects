@@ -77,11 +77,11 @@ input {
   color: rgba(255, 255, 255, 0.781);
 }
 .days {
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 .today {
   padding: 0 5px;
