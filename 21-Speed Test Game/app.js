@@ -1,41 +1,51 @@
+window.addEventListener("load", () => {
+  innit();
+});
+// glbobal variables
+let time = 5;
+let score = 0;
+let isplaying;
+
+// varibles of Dom
 let countertext = document.querySelector(".counter");
 let decisionover = document.querySelector("h2");
 let generatedWord = document.querySelector("h1");
-let counter = 5;
 let input = document.querySelector("input");
 
-function counterdown(n) {
-  if (counter === 0) {
-    decisionover.textContent = "Game Over!!!";
-    clearInterval(counterCall);
-  }
-  console.log(n);
-  countertext.innerText = n;
-  counter--;
+function innit() {
+  fetchword();
+
+  setInterval(countdown, 1000);
+
+  checkword();
+  input.addEventListener("input", startGame());
 }
 
-// let counterCall = setInterval(() => {
-//   counterdown(counter);
-// }, 1000);
-
-window.addEventListener("DOMContentLoaded", () => {
+function fetchword() {
   fetch("https://random-word-api.herokuapp.com/word").then((response) =>
     response.json().then((word) => {
-      console.log(word);
       generatedWord.textContent = word;
     })
   );
-});
+}
 
-input.addEventListener("keyup", (e) => {
-  let counterword = 0;
-  let txt = generatedWord.textContent;
-  if (e.key === txt[counterword]) {
-    console.log("match");
-    counterword += 1;
-  } else {
-    counterword++;
-    console.log("nah wrong");
-    console.log(`${e.key} || ${generatedWord[counterword]}`);
+function countdown() {
+  if (time > 0) {
+    time--;
+  } else if (time === 0) {
+    isplaying = false;
   }
-});
+
+  countertext.innerHTML = time;
+}
+
+function checkword() {
+  if (isplaying)
+    if (input.value === generatedWord.textContent) {
+      decisionover.textContent = "Correct!!";
+    }
+}
+
+function startGame() {
+  isplaying = true;
+}
