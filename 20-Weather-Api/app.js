@@ -71,9 +71,6 @@ window.addEventListener("DOMContentLoaded", () => {
   fetchdata("riyad", dayName[4], degree[4], icons[4]);
 });
 
-// let searchcity = JSON.parse(localStorage.getItem("city") || []);
-
-// , day, weather, icon
 function fetchdata(city, cityname, degree, icon) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1250c30e7025057655ffaea3ff929e53`
