@@ -8,9 +8,13 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
       long = position.coords.longitude;
-    });
-    api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=1250c30e7025057655ffaea3ff929e53`;
 
-    console.log(api);
+      api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=1250c30e7025057655ffaea3ff929e53`;
+    });
+    fetch(api)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
   }
 });
