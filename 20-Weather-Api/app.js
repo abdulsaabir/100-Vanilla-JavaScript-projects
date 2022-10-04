@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
           showIcon.src = `http://openweathermap.org/img/w/${iconcode}.png`;
           cityName.innerText = data.name;
           degreetop.innerText = (data.main.temp - 273).toString().slice(0, 2);
-          dayName[0].innerText = weekdays[new Date().getDay()];
+          dayName[0].innerText = "Today";
           degree[0].innerText = (data.main.temp - 273).toString().slice(0, 2);
         });
     });
