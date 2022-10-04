@@ -29,19 +29,19 @@ searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
   let value = input.value;
   if (value) {
-    searchbtn.textContent = "loading...";
     fetchdata(value, cityName, degreetop, showIcon);
-    searchbtn.textContent = "Search";
   }
 });
 
 window.onload = () => {
-  setTimeout(() => {}, timeout);
+  let loader = document.querySelector(".loader");
+  loader.style.display = "block";
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 2000);
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  let loader = document.querySelector(".loader");
-  loader.style.display = "block";
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       lat = position.coords.latitude;
@@ -69,8 +69,6 @@ window.addEventListener("DOMContentLoaded", () => {
   fetchdata("new york", dayName[2], degree[2], icons[2]);
   //
   fetchdata("riyad", dayName[4], degree[4], icons[4]);
-
-  loader.style.display = "none";
 });
 
 // let searchcity = JSON.parse(localStorage.getItem("city") || []);
@@ -95,3 +93,6 @@ function fetchdata(city, cityname, degree, icon) {
       }
     });
 }
+
+// let settings={backgroundColor:"#2774ab",filterBrightness:2,timeOnScreen:100}
+// ,u=document.querySelector("*"),s=document.createElement("style"),a=document.createElement("div"),m="http://www.w3.org/2000/svg",g=document.createElementNS(m,"svg"),c=document.createElementNS(m,"circle");document.head.appendChild(s),s.innerHTML="@keyframes swell{to{transform:rotate(360deg)}}",a.setAttribute("style","background-color:"+settings.backgroundColor+";color:"+settings.backgroundColor+";display:flex;align-items:center;justify-content:center;position:fixed;top:0;height:100vh;width:100vw;z-index:2147483647"),document.body.prepend(a),g.setAttribute("style","height:50px;filter:brightness("+settings.filterBrightness+");animation:.3s swell infinite linear"),g.setAttribute("viewBox","0 0 100 100"),a.prepend(g),c.setAttribute("cx","50"),c.setAttribute("cy","50"),c.setAttribute("r","35"),c.setAttribute("fill","none"),c.setAttribute("stroke","currentColor"),c.setAttribute("stroke-dasharray","165 57"),c.setAttribute("stroke-width","10"),g.prepend(c),u.style.pointerEvents="none",u.style.userSelect="none",u.style.cursor="wait",window.onload=(()=>{setTimeout(()=>{u.style.pointerEvents="",u.style.userSelect="",u.style.cursor="",a.remove()},settings.timeOnScreen)});
