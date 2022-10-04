@@ -2,9 +2,7 @@ let lat,
   long,
   api,
   apikey = "1250c30e7025057655ffaea3ff929e53";
-function showPosition(position) {
-  alert(`${position.coords.longitude} - ${position.coords.latitude}`);
-}
+
 window.addEventListener("load", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
