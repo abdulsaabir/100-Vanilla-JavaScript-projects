@@ -33,16 +33,17 @@ function generateParagraph() {
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
-  counter--;
+  // console.log(characters[counter]);
   if (userType == undefined) {
-    // console.log(characters[counter - 1].classList);
-    if (characters[counter].classList.contains("incorrect")) {
-      mistakescounter--;
-      console.log(mistakescounter);
-    } else {
-      cpmcounter--;
-      console.log(cpmcounter);
-    }
+    counter--;
+    characters[counter].classList.contains("incorrect")
+      ? mistakescounter--
+      : cpmcounter--;
+    // if () {
+    //   mistakescounter--;
+    // } else {
+    //   cpmcounter--;
+    // }
 
     characters[counter].classList.remove("correct", "incorrect");
   } else {
