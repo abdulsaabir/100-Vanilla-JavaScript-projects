@@ -47,10 +47,9 @@ function checkuserinput() {
 
       characters[counter].classList.remove("active")/
     // } else { :
-    :
-      characters[counter].classList.add("incorrect")/
-      mistakescounter++/
-      characters[counter].classList.remove("active")/
+      characters[counter].classList.add("incorrect")
+      mistakescounter++;
+      characters[counter].classList.remove("active");
     }
 
     counter++;
