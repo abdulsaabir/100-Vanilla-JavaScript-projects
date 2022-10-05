@@ -47,9 +47,14 @@ body {
 .timeleft {
   font-size: 18px;
   font-family: sans-serif;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
 }
 .timeleft span {
   font-weight: bold;
+}
+.last {
+  border: none;
 }
 
 button {

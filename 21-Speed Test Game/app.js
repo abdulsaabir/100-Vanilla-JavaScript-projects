@@ -11,7 +11,7 @@ let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
 let wpmcounter = 0;
-let timecounter = 50,
+let timecounter = 10,
   istyping,
   timer;
 let maxtime = 50;
@@ -32,48 +32,53 @@ function generateParagraph() {
     activeWord = text.querySelectorAll("span")[counter];
     text.addEventListener("click", () => userinput.focus());
     document.addEventListener("keypress", () => userinput.focus());
+    button.innerHTML = "Try Again";
+    button.style.opacity = "1";
   });
 }
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
-  if (!istyping) {
-    timer = setInterval(() => {
-      countertime();
-    }, 1000);
-    istyping = true;
-  }
-  if (userType == undefined) {
-    counter--;
-    characters[counter].classList.contains("incorrect")
-      ? mistakescounter--
-      : cpmcounter--;
-    characters[counter].classList.remove("correct", "incorrect");
-  } else {
-    if (characters[counter].innerText === userType) {
-      characters[counter].classList.add("correct");
-      cpmcounter++;
-
-      characters[counter].classList.remove("active");
-    } else {
-      characters[counter].classList.add("incorrect");
-      mistakescounter++;
-      characters[counter].classList.remove("active");
+  if (counter < characters.length - 1 && timecounter > 0) {
+    if (!istyping) {
+      timer = setInterval(() => {
+        countertime();
+      }, 1000);
+      istyping = true;
     }
+    if (userType == undefined) {
+      counter--;
+      characters[counter].classList.contains("incorrect")
+        ? mistakescounter--
+        : cpmcounter--;
+      characters[counter].classList.remove("correct", "incorrect");
+    } else {
+      if (characters[counter].innerText === userType) {
+        characters[counter].classList.add("correct");
+        cpmcounter++;
 
-    counter++;
+        characters[counter].classList.remove("active");
+      } else {
+        characters[counter].classList.add("incorrect");
+        mistakescounter++;
+        characters[counter].classList.remove("active");
+      }
+
+      counter++;
+    }
+    mistakes.innerText = mistakescounter;
+    cpm.innerText = cpmcounter;
+    characters.forEach((span) => span.classList.remove("active"));
+    characters[counter].classList.add("active");
+
+    wpmcounter = Math.round(
+      ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
+    );
+    wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
+    wpm.innerHTML = wpmcounter;
+  } else {
+    clearInterval(timer);
   }
-  mistakes.innerText = mistakescounter;
-  cpm.innerText = cpmcounter;
-  characters.forEach((span) => span.classList.remove("active"));
-  characters[counter].classList.add("active");
-
-  wpmcounter = Math.round(
-    ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
-  );
-  wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
-  console.log(wpmcounter);
-  wpm.innerHTML = wpmcounter;
 }
 function countertime() {
   if (timecounter > 0) {
@@ -104,8 +109,6 @@ button.addEventListener("click", () => {
   cpm.innerHTML = cpmcounter;
   mistakes.innerHTML = mistakescounter;
   generateParagraph();
-  button.innerHTML = "Try Again";
-  button.style.opacity = "1";
 });
 
 generateParagraph();
