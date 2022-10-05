@@ -10,14 +10,16 @@ paragraphs = [
 let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
-let timecounter = 50;
+let timecounter = 50,
+  istyping,
+  timer;
 let text = document.querySelector(".text");
 let userinput = document.querySelector(".userinput");
 let time = document.querySelector(".time");
 let wpm = document.querySelector(".wpm");
 let cpm = document.querySelector(".cpm");
 let mistakes = document.querySelector(".mistakes");
-let activeWord;
+// let activeWord;
 
 function generateParagraph() {
   let ranIndex = Math.floor(Math.random() * paragraphs.length);
@@ -33,6 +35,12 @@ function generateParagraph() {
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
+  if (!istyping) {
+    timer = setInterval(() => {
+      countertime();
+    }, 1000);
+    istyping = true;
+  }
   if (userType == undefined) {
     counter--;
     characters[counter].classList.contains("incorrect")
@@ -60,6 +68,14 @@ function checkuserinput() {
 
   // let totalwords = cpmcounter + mistakescounter;
   // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
+}
+function countertime() {
+  if (min > 0) {
+    min--;
+    time.innerHTML = min;
+  } else {
+    clearInterval(timer);
+  }
 }
 // userinput.addEventListener("keyup", isplaying);
 
