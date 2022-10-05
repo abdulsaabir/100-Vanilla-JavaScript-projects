@@ -33,7 +33,6 @@ function generateParagraph() {
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
-  // console.log(characters[counter]);
   if (userType == undefined) {
     counter--;
     characters[counter].classList.contains("incorrect")
