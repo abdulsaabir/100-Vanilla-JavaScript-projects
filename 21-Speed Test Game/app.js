@@ -40,15 +40,17 @@ function checkuserinput() {
       : cpmcounter--;
     characters[counter].classList.remove("correct", "incorrect");
   } else {
-    if (characters[counter].innerText === userType) {
-      characters[counter].classList.add("correct");
-      cpmcounter++;
+    characters[counter].innerText === userType ? 
+    // if () {
+      characters[counter].classList.add("correct")/
+      cpmcounter++/
 
-      characters[counter].classList.remove("active");
-    } else {
-      characters[counter].classList.add("incorrect");
-      mistakescounter++;
-      characters[counter].classList.remove("active");
+      characters[counter].classList.remove("active")/
+    // } else { :
+    :
+      characters[counter].classList.add("incorrect")/
+      mistakescounter++/
+      characters[counter].classList.remove("active")/
     }
 
     counter++;
