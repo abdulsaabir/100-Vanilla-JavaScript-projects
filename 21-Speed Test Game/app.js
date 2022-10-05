@@ -68,14 +68,12 @@ function checkuserinput() {
   characters.forEach((span) => span.classList.remove("active"));
   characters[counter].classList.add("active");
 
-  interval = setInterval(() => {
-    wpmcounter = Math.round(
-      ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
-    );
-    wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
-
-    wpm.innerHTML = wpmcounter;
-  }, 1000);
+  wpmcounter = Math.round(
+    ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
+  );
+  wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
+  console.log(wpmcounter);
+  wpm.innerHTML = wpmcounter;
 }
 function countertime() {
   if (timecounter > 0) {
@@ -86,9 +84,12 @@ function countertime() {
   }
 }
 button.addEventListener("click", () => {
+  button.innerHTML = "loading..";
+  button.style.opacity = "0.7";
   text.innerHTML = "";
   istyping = false;
   clearInterval(timer);
+  // clearInterval(interval);
   timecounter = 50;
   let x = text.querySelectorAll("span");
   x.forEach((Q) => Q.remove());
@@ -97,12 +98,14 @@ button.addEventListener("click", () => {
   counter = 0;
   mistakescounter = 0;
   cpmcounter = 0;
-  clearInterval(interval);
+
   wpmcounter = 0;
   wpm.innerHTML = 0;
   cpm.innerHTML = cpmcounter;
   mistakes.innerHTML = mistakescounter;
   generateParagraph();
+  button.innerHTML = "Try Again";
+  button.style.opacity = "1";
 });
 
 generateParagraph();
