@@ -11,7 +11,7 @@ let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
 let timecounter = 50,
-  istyping,
+  istyping = 0,
   timer;
 let text = document.querySelector(".text");
 let userinput = document.querySelector(".userinput");
@@ -35,11 +35,12 @@ function generateParagraph() {
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
-  if (!istyping) {
+  // console.log(!istyping);
+  if (istyping == 0) {
     timer = setInterval(() => {
       countertime();
     }, 1000);
-    istyping = true;
+    istyping = 100;
   }
   if (userType == undefined) {
     counter--;
@@ -70,9 +71,9 @@ function checkuserinput() {
   // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
 }
 function countertime() {
-  if (min > 0) {
-    min--;
-    time.innerHTML = min;
+  if (timecounter > 0) {
+    timecounter--;
+    time.innerHTML = timecounter;
   } else {
     clearInterval(timer);
   }
