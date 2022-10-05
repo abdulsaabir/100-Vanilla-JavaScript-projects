@@ -35,7 +35,6 @@ function generateParagraph() {
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
-  console.log(istyping);
   if (!istyping) {
     timer = setInterval(() => {
       countertime();
