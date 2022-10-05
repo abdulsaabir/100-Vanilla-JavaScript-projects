@@ -22,3 +22,10 @@ body {
   border: 1px solid #ccc;
   padding: 20px;
 }
+.text {
+  font-size: 23px;
+  font-family: pop;
+  letter-spacing: 1.3px;
+  line-height: 140%;
+  margin-bottom: 20px;
+}
