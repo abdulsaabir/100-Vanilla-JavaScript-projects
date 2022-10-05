@@ -7,3 +7,21 @@ paragraphs = [
   "Authors often misinterpret the flag as a wayless trigonometry, when in actuality it feels more like a bousy gold. Few can name a jasp oven that isn't a stutter grape. They were lost without the huffy religion that composed their booklet. Those waves are nothing more than pedestrians. Few can name a quartered semicolon that isn't a rounding scooter. Though we assume the latter, the literature would have us believe.",
   "An aunt is a bassoon from the right perspective. As far as we can estimate, some posit the melic myanmar to be less than kutcha. One cannot separate foods from blowzy bows. The scampish closet reveals itself as a sclerous llama to those who look. A hip is the skirt of a peak. Some hempy laundries are thought of simply as orchids. A gum is a trumpet from the right perspective. A freebie flight is a wrench of the mind. Some posit the croupy.",
 ];
+
+let text = document.querySelector(".text");
+
+window.addEventListener("DOMContentLoaded", () => {
+  innit();
+});
+
+function innit() {
+  generateParagraph();
+}
+
+function generateParagraph() {
+  let ranIndex = Math.floor(Math.random() * paragraphs.length);
+  paragraphs[ranIndex].split("").forEach((word) => {
+    let wordbyword = `<span>${word}</span>`;
+    text.innerHTML += wordbyword;
+  });
+}
