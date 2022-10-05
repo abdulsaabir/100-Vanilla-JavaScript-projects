@@ -10,7 +10,7 @@ paragraphs = [
 let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
-
+let wpmcounter = 0;
 let timecounter = 50,
   istyping,
   timer;
@@ -27,6 +27,7 @@ let button = document.querySelector("button");
 function generateParagraph() {
   let ranIndex = Math.floor(Math.random() * paragraphs.length);
   paragraphs[ranIndex].split("").forEach((word) => {
+    console.log(word);
     let wordbyword = `<span>${word}</span>`;
     text.innerHTML += wordbyword;
     activeWord = text.querySelectorAll("span")[counter];
@@ -70,7 +71,7 @@ function checkuserinput() {
   characters[counter].classList.add("active");
 
   setInterval(() => {
-    let wpmcounter = Math.round(
+    wpmcounter = Math.round(
       ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
     );
     wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
@@ -88,8 +89,20 @@ function countertime() {
 }
 // userinput.addEventListener("keyup", isplaying);
 button.addEventListener("click", () => {
+  text.innerHTML = "";
+  istyping = false;
+  clearInterval(timer);
+  timecounter = 50;
+  let x = text.querySelectorAll("span");
+  x.forEach((Q) => Q.remove());
+  // timecounter = 50;
+  // counter = 0;
+  // mistakescounter = 0;
+  // cpmcounter = 0;
+  // wpmcounter = 0;
+  // clearInterval(timer);
   generateParagraph();
 });
 
-generateParagraph();
+// generateParagraph();
 userinput.addEventListener("input", checkuserinput);
