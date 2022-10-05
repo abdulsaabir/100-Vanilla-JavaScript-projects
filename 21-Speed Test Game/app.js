@@ -23,7 +23,6 @@ let wpm = document.querySelector(".wpm");
 let cpm = document.querySelector(".cpm");
 let mistakes = document.querySelector(".mistakes");
 let button = document.querySelector("button");
-// let activeWord;
 
 function generateParagraph() {
   let ranIndex = Math.floor(Math.random() * paragraphs.length);
