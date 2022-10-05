@@ -15,6 +15,7 @@ let timecounter = 50,
   istyping,
   timer;
 let maxtime = 50;
+let interval;
 let text = document.querySelector(".text");
 let userinput = document.querySelector(".userinput");
 let time = document.querySelector(".time");
@@ -27,11 +28,10 @@ let button = document.querySelector("button");
 function generateParagraph() {
   let ranIndex = Math.floor(Math.random() * paragraphs.length);
   paragraphs[ranIndex].split("").forEach((word) => {
-    console.log(word);
+    // console.log(word);
     let wordbyword = `<span>${word}</span>`;
     text.innerHTML += wordbyword;
     activeWord = text.querySelectorAll("span")[counter];
-    activeWord.classList.add("active");
     text.addEventListener("click", () => userinput.focus());
     document.addEventListener("keypress", () => userinput.focus());
   });
@@ -70,7 +70,7 @@ function checkuserinput() {
   characters.forEach((span) => span.classList.remove("active"));
   characters[counter].classList.add("active");
 
-  setInterval(() => {
+  interval = setInterval(() => {
     wpmcounter = Math.round(
       ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
     );
@@ -87,7 +87,6 @@ function countertime() {
     clearInterval(timer);
   }
 }
-// userinput.addEventListener("keyup", isplaying);
 button.addEventListener("click", () => {
   text.innerHTML = "";
   istyping = false;
@@ -95,14 +94,18 @@ button.addEventListener("click", () => {
   timecounter = 50;
   let x = text.querySelectorAll("span");
   x.forEach((Q) => Q.remove());
-  // timecounter = 50;
-  // counter = 0;
-  // mistakescounter = 0;
-  // cpmcounter = 0;
-  // wpmcounter = 0;
-  // clearInterval(timer);
+  userinput.value = "";
+  time.innerHTML = timecounter;
+  counter = 0;
+  mistakescounter = 0;
+  cpmcounter = 0;
+  clearInterval(interval);
+  wpmcounter = 0;
+  wpm.innerHTML = 0;
+  cpm.innerHTML = cpmcounter;
+  mistakes.innerHTML = mistakescounter;
   generateParagraph();
 });
 
-// generateParagraph();
+generateParagraph();
 userinput.addEventListener("input", checkuserinput);
