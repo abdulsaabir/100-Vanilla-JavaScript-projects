@@ -71,3 +71,6 @@ button {
   background: pink;
   border-radius: 4px;
 }
+.active {
+  color: #17a2b8;
+}
