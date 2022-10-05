@@ -36,26 +36,35 @@ function checkuserinput() {
   let characters = text.querySelectorAll("span");
 
   let userType = userinput.value.split("")[counter];
-  // console.log(userType);In
+  // console.log(userType);
   if (userType == undefined) {
+    console.log(characters[counter - 1].classList);
+    // if (characters[counter - 1].classList.contains("incorrect")) {
+    //   mistakescounter;
+    // } else {
+    //   cpmcounter--;
+    // }
     counter--;
     characters[counter].classList.remove("correct", "incorrect");
   } else {
     if (characters[counter].innerText === userType) {
       characters[counter].classList.add("correct");
       cpmcounter++;
-      cpm.innerText = cpmcounter;
+
       characters[counter].classList.remove("active");
     } else {
       characters[counter].classList.add("incorrect");
       mistakescounter++;
       characters[counter].classList.remove("active");
-      mistakes.innerText = mistakescounter;
     }
+
+    counter++;
   }
+  mistakes.innerText = mistakescounter;
+  cpm.innerText = cpmcounter;
   characters.forEach((span) => span.classList.remove("active"));
-  counter++;
   characters[counter].classList.add("active");
+
   // let totalwords = cpmcounter + mistakescounter;
   // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
 }
