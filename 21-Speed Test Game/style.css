@@ -61,3 +61,10 @@ button {
   font-size: 19px;
   font-weight: bold;
 }
+
+.correct {
+  color: rgb(73, 192, 73);
+}
+.incorrect {
+  background-color: rgb(235, 51, 51);
+}

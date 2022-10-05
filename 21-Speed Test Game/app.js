@@ -22,7 +22,18 @@ function generateParagraph() {
   });
 }
 
-function checkuserinput() {}
+function checkuserinput() {
+  let characters = text.querySelectorAll("span");
+  let userType = userinput.value.split("")[counter];
+
+  if (characters[counter].innerText === userType) {
+    characters[counter].classList.add("correct");
+  } else {
+    characters[counter].classList.add("incorrect");
+  }
+  // console.log(`${characters[counter].innerText} , ${userType[counter]}`);
+  counter++;
+}
 
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
