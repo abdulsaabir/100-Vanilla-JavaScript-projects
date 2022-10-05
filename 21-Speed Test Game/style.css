@@ -11,5 +11,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+.wrapper {
+  max-width: 90%;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+}
 .container {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 20px;
 }
