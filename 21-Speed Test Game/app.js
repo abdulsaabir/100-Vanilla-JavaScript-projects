@@ -38,12 +38,6 @@ function checkuserinput() {
     characters[counter].classList.contains("incorrect")
       ? mistakescounter--
       : cpmcounter--;
-    // if () {
-    //   mistakescounter--;
-    // } else {
-    //   cpmcounter--;
-    // }
-
     characters[counter].classList.remove("correct", "incorrect");
   } else {
     if (characters[counter].innerText === userType) {
