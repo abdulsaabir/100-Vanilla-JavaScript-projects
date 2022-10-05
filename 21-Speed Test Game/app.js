@@ -67,7 +67,5 @@ function checkuserinput() {
   characters.forEach((span) => span.classList.remove("active"));
   characters[counter].classList.add("active");
 }
-// userinput.addEventListener("keyup", isplaying);
-
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
