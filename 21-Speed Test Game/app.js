@@ -21,17 +21,8 @@ function generateParagraph() {
     document.addEventListener("keypress", () => userinput.focus());
   });
 }
-function checkuserinput() {
-  let textbody = text.querySelectorAll("span");
-  let inputuser = userinput.value.split("")[counter];
-  // console.log(textbody);
-  if (textbody[counter].innerText === inputuser) {
-    console.log("correct");
-  } else {
-    console.log("incorrect");
-  }
-  counter++;
-}
+
+function checkuserinput() {}
 
 generateParagraph();
-userinput.addEventListener("click", checkuserinput);
+userinput.addEventListener("input", checkuserinput);
