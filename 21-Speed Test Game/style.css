@@ -28,6 +28,7 @@ body {
   letter-spacing: 1.3px;
   line-height: 140%;
   margin-bottom: 20px;
+  position: relative;
 }
 .Rules {
   border-top: 1px solid #ccc;
@@ -63,7 +64,7 @@ button {
 }
 
 .correct {
-  color: #56964f;
+  color: #20fc08;
 }
 .incorrect {
   color: #cb3439;
@@ -73,4 +74,24 @@ button {
 }
 .active {
   color: #17a2b8;
+  /* text-decoration: underline; */
+}
+.text span {
+  position: relative;
+}
+.text span.active::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  opacity: 0;
+  animation: blinking 1s ease-in-out infinite;
+}
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
 }
