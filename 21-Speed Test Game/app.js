@@ -8,7 +8,10 @@ paragraphs = [
   "An aunt is a bassoon from the right perspective. As far as we can estimate, some posit the melic myanmar to be less than kutcha. One cannot separate foods from blowzy bows. The scampish closet reveals itself as a sclerous llama to those who look. A hip is the skirt of a peak. Some hempy laundries are thought of simply as orchids. A gum is a trumpet from the right perspective. A freebie flight is a wrench of the mind. Some posit the croupy.",
 ];
 
+let counter = 0;
+
 let text = document.querySelector(".text");
+let userinput = document.querySelector(".userinput");
 
 window.addEventListener("DOMContentLoaded", () => {
   innit();
@@ -16,6 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function innit() {
   generateParagraph();
+  onfocustext();
+  checkuserinput();
 }
 
 function generateParagraph() {
@@ -24,4 +29,12 @@ function generateParagraph() {
     let wordbyword = `<span>${word}</span>`;
     text.innerHTML += wordbyword;
   });
+}
+userinput.out;
+function onfocustext() {
+  text.addEventListener("click", () => userinput.focus());
+  document.addEventListener("keypress", () => userinput.focus());
+}
+function checkuserinput() {
+  let span;
 }
