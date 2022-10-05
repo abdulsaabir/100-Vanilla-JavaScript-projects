@@ -97,6 +97,7 @@ button.addEventListener("click", () => {
   counter = 0;
   mistakescounter = 0;
   cpmcounter = 0;
+  clearInterval(interval);
   wpmcounter = 0;
   wpm.innerHTML = 0;
   cpm.innerHTML = cpmcounter;
