@@ -32,23 +32,32 @@ function generateParagraph() {
 }
 function checkuserinput() {
   // isplaying();
-  activeWord.classList.add("active");
+  // activeWord.classList.add("active");
   let characters = text.querySelectorAll("span");
 
   let userType = userinput.value.split("")[counter];
-  if (characters[counter].innerText === userType) {
-    characters[counter].classList.add("correct");
-    cpmcounter++;
-    cpm.innerText = cpmcounter;
-    characters[counter].classList.remove("active");
+  // console.log(userType);In
+  if (userType == undefined) {
+    counter--;
+    characters[counter].classList.remove("correct", "incorrect");
   } else {
-    characters[counter].classList.add("incorrect");
-    mistakescounter++;
-    characters[counter].classList.remove("active");
-    mistakes.innerText = mistakescounter;
+    if (characters[counter].innerText === userType) {
+      characters[counter].classList.add("correct");
+      cpmcounter++;
+      cpm.innerText = cpmcounter;
+      characters[counter].classList.remove("active");
+    } else {
+      characters[counter].classList.add("incorrect");
+      mistakescounter++;
+      characters[counter].classList.remove("active");
+      mistakes.innerText = mistakescounter;
+    }
   }
+  characters.forEach((span) => span.classList.remove("active"));
   counter++;
   characters[counter].classList.add("active");
+  // let totalwords = cpmcounter + mistakescounter;
+  // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
 }
 function isplaying() {
   if (counter > 0) {
