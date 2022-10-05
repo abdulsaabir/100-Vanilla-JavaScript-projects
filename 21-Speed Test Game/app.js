@@ -11,7 +11,7 @@ let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
 let timecounter = 50,
-  istyping = 0,
+  istyping,
   timer;
 let text = document.querySelector(".text");
 let userinput = document.querySelector(".userinput");
@@ -35,12 +35,12 @@ function generateParagraph() {
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
   let userType = userinput.value.split("")[counter];
-  // console.log(!istyping);
-  if (istyping == 0) {
+  console.log(istyping);
+  if (!istyping) {
     timer = setInterval(() => {
       countertime();
     }, 1000);
-    istyping = 100;
+    istyping = true;
   }
   if (userType == undefined) {
     counter--;
