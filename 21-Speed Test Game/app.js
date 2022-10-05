@@ -31,10 +31,7 @@ function generateParagraph() {
   });
 }
 function checkuserinput() {
-  // isplaying();
-  // activeWord.classList.add("active");
   let characters = text.querySelectorAll("span");
-
   let userType = userinput.value.split("")[counter];
   counter--;
   if (userType == undefined) {
@@ -66,6 +63,11 @@ function checkuserinput() {
   cpm.innerText = cpmcounter;
   characters.forEach((span) => span.classList.remove("active"));
   characters[counter].classList.add("active");
+
+  // let totalwords = cpmcounter + mistakescounter;
+  // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
 }
+// userinput.addEventListener("keyup", isplaying);
+
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
