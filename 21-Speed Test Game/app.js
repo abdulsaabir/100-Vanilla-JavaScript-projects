@@ -10,15 +10,18 @@ paragraphs = [
 let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
+
 let timecounter = 50,
   istyping,
   timer;
+let maxtime = 50;
 let text = document.querySelector(".text");
 let userinput = document.querySelector(".userinput");
 let time = document.querySelector(".time");
 let wpm = document.querySelector(".wpm");
 let cpm = document.querySelector(".cpm");
 let mistakes = document.querySelector(".mistakes");
+let button = document.querySelector("button");
 // let activeWord;
 
 function generateParagraph() {
@@ -66,8 +69,14 @@ function checkuserinput() {
   characters.forEach((span) => span.classList.remove("active"));
   characters[counter].classList.add("active");
 
-  // let totalwords = cpmcounter + mistakescounter;
-  // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
+  setInterval(() => {
+    let wpmcounter = Math.round(
+      ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
+    );
+    wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
+
+    wpm.innerHTML = wpmcounter;
+  }, 1000);
 }
 function countertime() {
   if (timecounter > 0) {
@@ -78,6 +87,9 @@ function countertime() {
   }
 }
 // userinput.addEventListener("keyup", isplaying);
+button.addEventListener("click", () => {
+  generateParagraph();
+});
 
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
