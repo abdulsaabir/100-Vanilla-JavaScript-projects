@@ -27,7 +27,6 @@ let button = document.querySelector("button");
 function generateParagraph() {
   let ranIndex = Math.floor(Math.random() * paragraphs.length);
   paragraphs[ranIndex].split("").forEach((word) => {
-    // console.log(word);
     let wordbyword = `<span>${word}</span>`;
     text.innerHTML += wordbyword;
     activeWord = text.querySelectorAll("span")[counter];
