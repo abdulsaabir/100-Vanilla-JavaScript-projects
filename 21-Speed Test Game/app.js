@@ -36,15 +36,17 @@ function checkuserinput() {
   let characters = text.querySelectorAll("span");
 
   let userType = userinput.value.split("")[counter];
-  // console.log(userType);
+  counter--;
   if (userType == undefined) {
-    console.log(characters[counter - 1].classList);
-    // if (characters[counter - 1].classList.contains("incorrect")) {
-    //   mistakescounter;
-    // } else {
-    //   cpmcounter--;
-    // }
-    counter--;
+    // console.log(characters[counter - 1].classList);
+    if (characters[counter].classList.contains("incorrect")) {
+      mistakescounter--;
+      console.log(mistakescounter);
+    } else {
+      cpmcounter--;
+      console.log(cpmcounter);
+    }
+
     characters[counter].classList.remove("correct", "incorrect");
   } else {
     if (characters[counter].innerText === userType) {
@@ -64,18 +66,8 @@ function checkuserinput() {
   cpm.innerText = cpmcounter;
   characters.forEach((span) => span.classList.remove("active"));
   characters[counter].classList.add("active");
-
-  // let totalwords = cpmcounter + mistakescounter;
-  // wpm.innerHTML = (totalwords / 5 - mistakescounter) / 1;
-}
-function isplaying() {
-  if (counter > 0) {
-    timecounter--;
-    time.innerText = timecounter;
-  }
 }
 // userinput.addEventListener("keyup", isplaying);
 
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
-isplaying();
