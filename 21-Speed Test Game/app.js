@@ -132,6 +132,4 @@ window.addEventListener("DOMContentLoaded", () => {
     },
     body: encodedParams,
   };
-
-  fetch(
 });
