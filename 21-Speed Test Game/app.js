@@ -123,7 +123,6 @@ window.addEventListener("DOMContentLoaded", () => {
   encodedParams.append("lang", "en");
 
   const options = {
-    method: "POST",
     headers: {},
   };
 });
