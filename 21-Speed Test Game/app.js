@@ -20,10 +20,10 @@ let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
 let wpmcounter = 0;
-let timecounter = 30,
+let timecounter = 20,
   istyping,
   timer;
-let maxtime = 30;
+let maxtime = 20;
 let interval;
 let text = document.querySelector(".text");
 let userinput = document.querySelector(".userinput");
