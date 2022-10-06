@@ -136,3 +136,4 @@ window.addEventListener("DOMContentLoaded", () => {
   fetch("https://paraphraser-apis.p.rapidapi.com/paraphrasing-apis", options)
     .then((response) => response.json())
     .then((response) => console.log(response))
+    .catch((err) => console.error(err));
