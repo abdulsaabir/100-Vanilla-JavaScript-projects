@@ -134,5 +134,4 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   fetch(
-    options
 });
