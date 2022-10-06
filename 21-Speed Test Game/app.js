@@ -118,7 +118,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const encodedParams = new URLSearchParams();
   encodedParams.append(
     "data",
-    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime par1 ,eturn how much number of queries used. It provides human quality and plagiarism free content."
+    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime par1yeturn how much number of queries used. It provides human quality and plagiarism free content."
   );
   encodedParams.append("lang", "en");
   encodedParams.append("mode", "1");
