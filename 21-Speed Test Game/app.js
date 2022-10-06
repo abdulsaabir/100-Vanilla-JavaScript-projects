@@ -116,8 +116,5 @@ userinput.addEventListener("input", checkuserinput);
 
 window.addEventListener("DOMContentLoaded", () => {
   const encodedParams = new URLSearchParams();
-  encodedParams.append(
-    "data",
-    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime paraphrasing tool, 
-  );
+  encodedParams.append("data");
 });
