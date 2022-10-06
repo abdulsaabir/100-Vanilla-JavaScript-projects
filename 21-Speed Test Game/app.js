@@ -127,9 +127,6 @@ window.addEventListener("DOMContentLoaded", () => {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Host": "paraphraser-apis.p.rapidapi.com",
     },
   };
-
-  fetch(
 });
