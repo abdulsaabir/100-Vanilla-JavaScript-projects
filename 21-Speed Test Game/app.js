@@ -125,8 +125,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const options = {
     method: "POST",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded",
-    },
+    headers: {},
   };
 });
