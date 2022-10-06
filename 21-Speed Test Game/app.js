@@ -113,7 +113,3 @@ button.addEventListener("click", () => {
 
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
-
-window.addEventListener("DOMContentLoaded", () => {
-  const encodedParams = new URLSearchParams();
-});
