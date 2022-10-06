@@ -113,3 +113,28 @@ button.addEventListener("click", () => {
 
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
+
+window.addEventListener("DOMContentLoaded", () => {
+  const encodedParams = new URLSearchParams();
+  encodedParams.append(
+    "data",
+    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime paraphrasing tool, just like our tool works. So you can also rewrite articles fully with this API. Each 100 words checking consumes one query. If you are checking content using Paraphraser api our system will also return how much number of queries used. It provides human quality and plagiarism free content."
+  );
+  encodedParams.append("lang", "en");
+  encodedParams.append("mode", "1");
+
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "9231ea88c1msh675f10fdac8d6acp1a3f7djsn52f1f38a1611",
+      "X-RapidAPI-Host": "paraphraser-apis.p.rapidapi.com",
+    },
+    body: encodedParams,
+  };
+
+  fetch("https://paraphraser-apis.p.rapidapi.com/paraphrasing-apis", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+});
