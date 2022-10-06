@@ -7,11 +7,11 @@ paragraphs = [
   "Authors often misinterpret the flag as a wayless trigonometry, when in actuality it feels more like a bousy gold. Few can name a jasp oven that isn't a stutter grape. They were lost without the huffy religion that composed their booklet. Those waves are nothing more than pedestrians. Few can name a quartered semicolon that isn't a rounding scooter. Though we assume the latter, the literature would have us believe.",
   "An aunt is a bassoon from the right perspective. As far as we can estimate, some posit the melic myanmar to be less than kutcha. One cannot separate foods from blowzy bows. The scampish closet reveals itself as a sclerous llama to those who look. A hip is the skirt of a peak. Some hempy laundries are thought of simply as orchids. A gum is a trumpet from the right perspective. A freebie flight is a wrench of the mind. Some posit the croupy.",
 ];
-let counter = 0;
+let indexCounter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
 let wpmcounter = 0;
-let timecounter = 10,
+let timecounter = 50,
   istyping,
   timer;
 let maxtime = 50;
@@ -29,7 +29,7 @@ function generateParagraph() {
   paragraphs[ranIndex].split("").forEach((word) => {
     let wordbyword = `<span>${word}</span>`;
     text.innerHTML += wordbyword;
-    activeWord = text.querySelectorAll("span")[counter];
+    activeWord = text.querySelectorAll("span")[indexCounter];
     text.addEventListener("click", () => userinput.focus());
     document.addEventListener("keypress", () => userinput.focus());
     button.innerHTML = "Try Again";
@@ -38,8 +38,8 @@ function generateParagraph() {
 }
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
-  let userType = userinput.value.split("")[counter];
-  if (counter < characters.length - 1 && timecounter > 0) {
+  let userType = userinput.value.split("")[indexCounter];
+  if (indexCounter < characters.length - 1 && timecounter > 0) {
     if (!istyping) {
       timer = setInterval(() => {
         countertime();
@@ -47,32 +47,32 @@ function checkuserinput() {
       istyping = true;
     }
     if (userType == undefined) {
-      counter--;
-      characters[counter].classList.contains("incorrect")
+      indexCounter--;
+      characters[indexCounter].classList.contains("incorrect")
         ? mistakescounter--
         : cpmcounter--;
-      characters[counter].classList.remove("correct", "incorrect");
+      characters[indexCounter].classList.remove("correct", "incorrect");
     } else {
-      if (characters[counter].innerText === userType) {
-        characters[counter].classList.add("correct");
+      if (characters[indexCounter].innerText === userType) {
+        characters[indexCounter].classList.add("correct");
         cpmcounter++;
 
-        characters[counter].classList.remove("active");
+        characters[indexCounter].classList.remove("active");
       } else {
-        characters[counter].classList.add("incorrect");
+        characters[indexCounter].classList.add("incorrect");
         mistakescounter++;
-        characters[counter].classList.remove("active");
+        characters[indexCounter].classList.remove("active");
       }
 
-      counter++;
+      indexCounter++;
     }
     mistakes.innerText = mistakescounter;
     cpm.innerText = cpmcounter;
     characters.forEach((span) => span.classList.remove("active"));
-    characters[counter].classList.add("active");
+    characters[indexCounter].classList.add("active");
 
     wpmcounter = Math.round(
-      ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
+      ((indexCounter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
     );
     wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
     wpm.innerHTML = wpmcounter;
@@ -100,7 +100,7 @@ button.addEventListener("click", () => {
   x.forEach((Q) => Q.remove());
   userinput.value = "";
   time.innerHTML = timecounter;
-  counter = 0;
+  indexCounter = 0;
   mistakescounter = 0;
   cpmcounter = 0;
 
@@ -113,3 +113,28 @@ button.addEventListener("click", () => {
 
 generateParagraph();
 userinput.addEventListener("input", checkuserinput);
+
+window.addEventListener("DOMContentLoaded", () => {
+  const encodedParams = new URLSearchParams();
+  encodedParams.append(
+    "data",
+    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime par1 ,eturn how much number of queries used. It provides human quality and plagiarism free content."
+  );
+  encodedParams.append("lang", "en");
+  encodedParams.append("mode", "1");
+
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "X-RapidAPI-Key": "9231ea88c1msh675f10fdac8d6acp1a3f7djsn52f1f38a1611",
+      "X-RapidAPI-Host": "paraphraser-apis.p.rapidapi.com",
+    },
+    body: encodedParams,
+  };
+
+  fetch("https://paraphraser-apis.p.rapidapi.com/paraphrasing-apis", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+});
