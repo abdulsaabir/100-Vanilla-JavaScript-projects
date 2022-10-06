@@ -29,7 +29,7 @@ function generateParagraph() {
   paragraphs[ranIndex].split("").forEach((word) => {
     let wordbyword = `<span>${word}</span>`;
     text.innerHTML += wordbyword;
-    activeWord = text.querySelectorAll("span")[indexCounter];
+    activeWord = text.querySelectorAll("span")[counter];
     text.addEventListener("click", () => userinput.focus());
     document.addEventListener("keypress", () => userinput.focus());
     button.innerHTML = "Try Again";
