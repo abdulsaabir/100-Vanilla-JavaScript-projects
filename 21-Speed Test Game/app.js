@@ -116,5 +116,4 @@ userinput.addEventListener("input", checkuserinput);
 
 window.addEventListener("DOMContentLoaded", () => {
   const encodedParams = new URLSearchParams();
-  encodedParams.append("data");
 });
