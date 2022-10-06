@@ -122,7 +122,5 @@ window.addEventListener("DOMContentLoaded", () => {
   );
   encodedParams.append("lang", "en");
 
-  const options = {
-    headers: {},
-  };
+  const options = {};
 });
