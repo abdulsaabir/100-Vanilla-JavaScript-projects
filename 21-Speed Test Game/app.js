@@ -7,7 +7,7 @@ paragraphs = [
   "Authors often misinterpret the flag as a wayless trigonometry, when in actuality it feels more like a bousy gold. Few can name a jasp oven that isn't a stutter grape. They were lost without the huffy religion that composed their booklet. Those waves are nothing more than pedestrians. Few can name a quartered semicolon that isn't a rounding scooter. Though we assume the latter, the literature would have us believe.",
   "An aunt is a bassoon from the right perspective. As far as we can estimate, some posit the melic myanmar to be less than kutcha. One cannot separate foods from blowzy bows. The scampish closet reveals itself as a sclerous llama to those who look. A hip is the skirt of a peak. Some hempy laundries are thought of simply as orchids. A gum is a trumpet from the right perspective. A freebie flight is a wrench of the mind. Some posit the croupy.",
 ];
-let indexCounter = 0;
+let counter = 0;
 let mistakescounter = 0;
 let cpmcounter = 0;
 let wpmcounter = 0;
@@ -38,8 +38,8 @@ function generateParagraph() {
 }
 function checkuserinput() {
   let characters = text.querySelectorAll("span");
-  let userType = userinput.value.split("")[indexCounter];
-  if (indexCounter < characters.length - 1 && timecounter > 0) {
+  let userType = userinput.value.split("")[counter];
+  if (counter < characters.length - 1 && timecounter > 0) {
     if (!istyping) {
       timer = setInterval(() => {
         countertime();
@@ -47,32 +47,32 @@ function checkuserinput() {
       istyping = true;
     }
     if (userType == undefined) {
-      indexCounter--;
-      characters[indexCounter].classList.contains("incorrect")
+      counter--;
+      characters[counter].classList.contains("incorrect")
         ? mistakescounter--
         : cpmcounter--;
-      characters[indexCounter].classList.remove("correct", "incorrect");
+      characters[counter].classList.remove("correct", "incorrect");
     } else {
-      if (characters[indexCounter].innerText === userType) {
-        characters[indexCounter].classList.add("correct");
+      if (characters[counter].innerText === userType) {
+        characters[counter].classList.add("correct");
         cpmcounter++;
 
-        characters[indexCounter].classList.remove("active");
+        characters[counter].classList.remove("active");
       } else {
-        characters[indexCounter].classList.add("incorrect");
+        characters[counter].classList.add("incorrect");
         mistakescounter++;
-        characters[indexCounter].classList.remove("active");
+        characters[counter].classList.remove("active");
       }
 
-      indexCounter++;
+      counter++;
     }
     mistakes.innerText = mistakescounter;
     cpm.innerText = cpmcounter;
     characters.forEach((span) => span.classList.remove("active"));
-    characters[indexCounter].classList.add("active");
+    characters[counter].classList.add("active");
 
     wpmcounter = Math.round(
-      ((indexCounter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
+      ((counter - mistakescounter) / 5 / (maxtime - timecounter)) * 60
     );
     wpmcounter = wpmcounter < 0 || wpmcounter === Infinity ? 0 : wpmcounter;
     wpm.innerHTML = wpmcounter;
@@ -100,7 +100,7 @@ button.addEventListener("click", () => {
   x.forEach((Q) => Q.remove());
   userinput.value = "";
   time.innerHTML = timecounter;
-  indexCounter = 0;
+  counter = 0;
   mistakescounter = 0;
   cpmcounter = 0;
 
