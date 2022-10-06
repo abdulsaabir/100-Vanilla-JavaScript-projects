@@ -118,6 +118,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const encodedParams = new URLSearchParams();
   encodedParams.append(
     "data",
-    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime paraphrasing tool, quality and plagiarism free content."
+    "Paraphrasing API used to integrate content checking system with your website. You can built a realtime paraphrasing tool, 
   );
 });
