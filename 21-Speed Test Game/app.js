@@ -121,7 +121,6 @@ window.addEventListener("DOMContentLoaded", () => {
     "Paraphrasing API used to integrate content checking system with your website. You can built a realtime paraphrasing tool, just like our tool works. So you can also rewrite articles fully with this API. Each 100 words checking consumes one query. If you are checking content using Paraphraser api our system will also return how much number of queries used. It provides human quality and plagiarism free content."
   );
   encodedParams.append("lang", "en");
-  encodedParams.append("mode", "1");
 
   const options = {
     method: "POST",
