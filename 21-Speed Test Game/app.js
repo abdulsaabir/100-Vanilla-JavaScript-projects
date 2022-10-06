@@ -130,6 +130,5 @@ window.addEventListener("DOMContentLoaded", () => {
       "X-RapidAPI-Key": "9231ea88c1msh675f10fdac8d6acp1a3f7djsn52f1f38a1611",
       "X-RapidAPI-Host": "paraphraser-apis.p.rapidapi.com",
     },
-    body: encodedParams,
   };
 });
