@@ -124,7 +124,6 @@ window.addEventListener("DOMContentLoaded", () => {
   encodedParams.append("mode", "1");
 
   const options = {
-    method: "POST",
     headers: {},
   };
 });
