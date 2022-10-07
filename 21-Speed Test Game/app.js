@@ -41,8 +41,6 @@ function generateParagraph() {
     activeWord = text.querySelectorAll("span")[counter];
     text.addEventListener("click", () => userinput.focus());
     document.addEventListener("keypress", () => userinput.focus());
-    button.innerHTML = "Try Again";
-    button.style.opacity = "1";
   });
 }
 function checkuserinput() {
@@ -98,8 +96,6 @@ function countertime() {
   }
 }
 button.addEventListener("click", () => {
-  button.innerHTML = "loading..";
-  button.style.opacity = "0.7";
   text.innerHTML = "";
   istyping = false;
   clearInterval(timer);
@@ -112,7 +108,6 @@ button.addEventListener("click", () => {
   counter = 0;
   mistakescounter = 0;
   cpmcounter = 0;
-
   wpmcounter = 0;
   wpm.innerHTML = 0;
   cpm.innerHTML = cpmcounter;
