@@ -27,8 +27,8 @@ Searchplace.addEventListener("keypress", (e) => {
   let word = e.target.value.replace(/\s+/g, " ");
   if (e.key === "Enter") {
     let div = document.createElement("div");
-    div.innerHTML = ` <p class="append">
-            fsdafas
+    div.innerHTML = ` <p class="append">Type any existing word and press enter to get meaning, example,
+    synonyms, etc.
           </p>`;
     note.appendChild(div);
   }
