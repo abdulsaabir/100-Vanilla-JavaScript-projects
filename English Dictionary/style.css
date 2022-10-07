@@ -14,7 +14,7 @@ body {
   margin: auto;
   width: 80%;
   background-color: white;
-  padding: 15px;
+  padding: 25px;
   border-radius: 6px;
 }
 .header {
@@ -35,6 +35,9 @@ form {
   align-items: center;
   margin-bottom: 1rem;
 }
+.color {
+  border: 3px #4d59fb solid;
+}
 .rightsearch {
   display: flex;
   gap: 10px;
@@ -54,6 +57,12 @@ input::placeholder {
   font-size: 21px;
   opacity: 0.5;
 }
+.colorbtn {
+  color: #4d59fb;
+  opacity: 1;
+  font-weight: bold;
+}
+
 .cancel {
   display: none;
 }
