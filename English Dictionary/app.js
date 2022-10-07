@@ -21,13 +21,4 @@ window.addEventListener("click", (e) => {
   }
 });
 
-function inputKeyUp(e) {
-  console.log(e.key);
-  //   e.preventDefault();
-  if (e.key === "Enter") {
-    // submit
-    console.log("neter");
-  }
-}
-
 Searchplace.addEventListener("input", displaycancel);
