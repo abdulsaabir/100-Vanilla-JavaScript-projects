@@ -22,7 +22,8 @@ window.addEventListener("click", (e) => {
 });
 
 function inputKeyUp(e) {
-  e.preventDefault();
+  console.log(e.key);
+  //   e.preventDefault();
   if (e.key === "Enter") {
     // submit
     console.log("neter");
@@ -30,4 +31,3 @@ function inputKeyUp(e) {
 }
 
 Searchplace.addEventListener("input", displaycancel);
-Searchplace.addEventListener("", inputKeyUp);
