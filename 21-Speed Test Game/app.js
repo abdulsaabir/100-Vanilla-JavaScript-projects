@@ -97,9 +97,9 @@ function countertime() {
 }
 button.addEventListener("click", () => {
   text.innerHTML = "";
+  userinput.value = "";
   istyping = false;
   clearInterval(timer);
-  // clearInterval(interval);
   timecounter = 50;
   let x = text.querySelectorAll("span");
   x.forEach((Q) => Q.remove());
