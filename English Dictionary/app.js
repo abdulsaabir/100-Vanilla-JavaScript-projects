@@ -31,12 +31,7 @@ Searchplace.addEventListener("keypress", (e) => {
             fsdafas
           </p>`;
     note.appendChild(div);
-    alert(
-      "Type any existing word and press enter to get meaning, example,synonyms, etc."
-    );
   }
-  //   console.log(word);
-  //   console.log(e.key);
 });
 
 Searchplace.addEventListener("input", displaycancel);
