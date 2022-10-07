@@ -1,4 +1,4 @@
-let Searchplace = document.getElementById("Search");
+let Searchplace = document.querySelector("input");
 let cancelbtn = document.querySelector(".cancel");
 let form = document.querySelector("form");
 let iconsearch = document.querySelector(".btnsrch");
@@ -22,16 +22,16 @@ window.addEventListener("click", (e) => {
   }
 });
 
-Searchplace.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
+searchInput.addEventListener("keyup", (e) => {
+  let word = e.target.value.replace(/\s+/g, " ");
+  if (e.key == "Enter" && word) {
     let div = document.createElement("div");
     div.innerHTML = ` <p class="append">
-    Type any existing word and press enter to get meaning, example,
-    synonyms, etc.
-  </p>`;
+            Type any existing word and press enter to get meaning, example,
+            synonyms, etc.
+          </p>`;
     note.appendChild(div);
   }
-  e.preventDefault();
 });
 
 Searchplace.addEventListener("input", displaycancel);
