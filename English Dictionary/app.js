@@ -22,16 +22,21 @@ window.addEventListener("click", (e) => {
   }
 });
 
-searchInput.addEventListener("keyup", (e) => {
+Searchplace.addEventListener("keypress", (e) => {
+  e.preventDefault();
   let word = e.target.value.replace(/\s+/g, " ");
-  if (e.key == "Enter" && word) {
+  if (e.key === "Enter") {
     let div = document.createElement("div");
     div.innerHTML = ` <p class="append">
-            Type any existing word and press enter to get meaning, example,
-            synonyms, etc.
+            fsdafas
           </p>`;
     note.appendChild(div);
+    alert(
+      "Type any existing word and press enter to get meaning, example,synonyms, etc."
+    );
   }
+  //   console.log(word);
+  //   console.log(e.key);
 });
 
 Searchplace.addEventListener("input", displaycancel);
