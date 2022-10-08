@@ -69,10 +69,6 @@ searchbtn.addEventListener("click", (e) => {
   //   console.log(data);
   // });
 
-  // setInterval(() => {
-  //   note.textContent = original;
-  // }, 3000);
-  // console.log(value);
 });
 
 Searchplace.addEventListener("input", displaycancel);
