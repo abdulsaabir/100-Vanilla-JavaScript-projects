@@ -22,16 +22,4 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// Searchplace.addEventListener("keypress", (e) => {
-//   e.preventDefault();
-//   let word = e.target.value.replace(/\s+/g, " ");
-//   if (e.key === "Enter") {
-//     let div = document.createElement("div");
-//     div.innerHTML = ` <p class="append">Type any existing word and press enter to get meaning, example,
-//     synonyms, etc.
-//           </p>`;
-//     note.appendChild(div);
-//   }
-// });
-
 Searchplace.addEventListener("input", displaycancel);
