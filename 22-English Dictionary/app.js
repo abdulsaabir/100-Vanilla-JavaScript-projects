@@ -21,5 +21,9 @@ window.addEventListener("click", (e) => {
     iconsearch.classList.remove("colorbtn");
   }
 });
+iconsearch.addEventListener("click", (e) => {
+  let value = Searchplace.value;
+  console.log(value);
+});
 
 Searchplace.addEventListener("input", displaycancel);
