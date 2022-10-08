@@ -64,7 +64,13 @@ searchbtn.addEventListener("click", (e) => {
       </h4>
     </div>`;
         note.style.display = "None";
-        sound.addEventListener("click", () => {});
+        sound.addEventListener("click", () => {
+          const synth = window.speechSynthesis;
+          let ourText = "Hey there what's up!!!!";
+          const utterThis = new SpeechSynthesisUtterance(ourText);
+
+          synth.speak(utterThis);
+        });
       }
     });
 });
