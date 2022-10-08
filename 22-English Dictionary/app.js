@@ -27,6 +27,7 @@ window.addEventListener("click", (e) => {
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
   let value = Searchplace.value;
+  note.textContent = "Searching the word" + `"${value}"`;
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${value}`)
     .then((promise) => promise.json())
     .then((data) => {
@@ -61,7 +62,7 @@ searchbtn.addEventListener("click", (e) => {
   // .then((data) => {
   //   console.log(data);
   // });
-  // note.textContent = "Searching the word" + `"${value}"`;
+
   // setInterval(() => {
   //   note.textContent = original;
   // }, 3000);
