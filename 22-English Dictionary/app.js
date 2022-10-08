@@ -1,14 +1,14 @@
 let Searchplace = document.querySelector("input");
-let cancelbtn = document.querySelector(".cancel");
+let searchbtn = document.querySelector(".cancel");
 let form = document.querySelector("form");
 let iconsearch = document.querySelector(".btnsrch");
 let note = document.querySelector(".note");
 function displaycancel() {
   if (Searchplace.value != "") {
-    cancelbtn.style.display = "block";
+    searchbtn.style.display = "block";
   }
   if (Searchplace.value === "") {
-    cancelbtn.style.display = "none";
+    searchbtn.style.display = "none";
   }
 }
 
@@ -21,7 +21,8 @@ window.addEventListener("click", (e) => {
     iconsearch.classList.remove("colorbtn");
   }
 });
-iconsearch.addEventListener("click", (e) => {
+searchbtn.addEventListener("click", (e) => {
+  e.preventDefault();
   let value = Searchplace.value;
   console.log(value);
 });
