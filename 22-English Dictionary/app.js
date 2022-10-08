@@ -10,10 +10,10 @@ let searchbtn = document.querySelector("button");
 
 function displaycancel() {
   if (Searchplace.value != "") {
-    searchbtn.style.display = "block";
+    cancel.style.display = "block";
   }
   if (Searchplace.value === "") {
-    searchbtn.style.display = "none";
+    cancel.style.display = "none";
   }
 }
 
@@ -78,9 +78,9 @@ searchbtn.addEventListener("click", (e) => {
 });
 cancel.addEventListener("click", (e) => {
   parent.innerHTML = "";
-  note.innerHTML =
-    " Type any existing word and press enter to get meaning, example,synonyms, etc";
+  note.innerHTML = ``;
   Searchplace.value = "";
+  cancel.style.display = "None";
 });
 
 Searchplace.addEventListener("input", displaycancel);

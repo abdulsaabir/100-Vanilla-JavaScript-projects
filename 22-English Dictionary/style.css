@@ -82,6 +82,7 @@ input::placeholder {
   color: gray;
   font-size: 20px;
   font-weight: bold;
+  display: none;
 }
 .cancel iconify-icon {
   font-size: 25px;
