@@ -1,11 +1,12 @@
 let Searchplace = document.querySelector("input");
-let searchbtn = document.querySelector(".cancel");
+let cancel = document.querySelector(".cancel");
 let form = document.querySelector("form");
 let iconsearch = document.querySelector(".btnsrch");
 let note = document.querySelector(".note");
 let original = note.textContent;
 let parent = document.querySelector(".worddisplay");
 let bold = document.querySelector(".bold");
+let searchbtn = document.querySelector("button");
 
 function displaycancel() {
   if (Searchplace.value != "") {
@@ -74,6 +75,11 @@ searchbtn.addEventListener("click", (e) => {
         });
       }
     });
+});
+cancel.addEventListener("click", (e) => {
+  parent.innerHTML = "";
+  note.innerHTML =
+    " Type any existing word and press enter to get meaning, example,synonyms, etc";
 });
 
 Searchplace.addEventListener("input", displaycancel);
