@@ -78,8 +78,10 @@ searchbtn.addEventListener("click", (e) => {
 });
 cancel.addEventListener("click", (e) => {
   parent.innerHTML = "";
-  note.innerHTML = ``;
+  note.textContent =
+    " Type any existing word and press enter to get meaning, example,synonyms, etc";
   Searchplace.value = "";
+  note.style.display = "Block";
   cancel.style.display = "None";
 });
 
