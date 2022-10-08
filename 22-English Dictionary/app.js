@@ -26,19 +26,24 @@ window.addEventListener("click", (e) => {
 });
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
+  parent.innerHTML = "";
   let value = Searchplace.value;
-  note.textContent = "Searching the word" + `"${value}"`;
+  note.innerHTML = `Searching the word" <span class="bold"> "${value}"</span> `;
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${value}`)
     .then((promise) => promise.json())
     .then((data) => {
-      let example;
-      data[0].meanings[0].definitions.forEach((def) => {
-        example = def.example;
-      });
-      !example ? (example = "We didn't find Example ") : (example = example);
       console.log(data);
-      console.log();
-      parent.innerHTML = `        <div class="top">
+      if (data.title) {
+        note.innerHTML = `Can't find the meaning of <span class="bold"> "${value}"</span>  . Please, try to search for another word`;
+      } else {
+        let example;
+        data[0].meanings[0].definitions.forEach((def) => {
+          example = def.example;
+        });
+        !example ? (example = "We didn't find Example ") : (example = example);
+        console.log(data);
+        console.log();
+        parent.innerHTML = `        <div class="top">
       <div class="word">
         <h2 class="SEARCHWord">${data[0].word}</h2>
         <h4 class="verb">${data[0].meanings[0].partOfSpeech} ${data[0].phonetic}</h4>
@@ -57,7 +62,8 @@ searchbtn.addEventListener("click", (e) => {
        ${example}
       </h4>
     </div>`;
-    });
+        note.style.display = "None";
+      }
 
   // .then((data) => {
   //   console.log(data);
