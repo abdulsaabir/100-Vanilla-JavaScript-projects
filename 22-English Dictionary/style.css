@@ -72,7 +72,10 @@ input::placeholder {
   color: white;
   font-size: 20px;
   font-weight: bold;
-  /* dispay: none; */
+  position: absolute;
+  right: 10px;
+  display: none;
+  border-radius: 6px;
 }
 .cancel iconify-icon {
   font-size: 21px;
