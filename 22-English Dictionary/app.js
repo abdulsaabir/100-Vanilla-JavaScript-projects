@@ -26,11 +26,11 @@ window.addEventListener("click", (e) => {
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
   let value = Searchplace.value;
-  note.textContent = "Searching the word" + `"${value}"`;
-  setInterval(() => {
-    note.textContent = original;
-  }, 3000);
-  console.log(value);
+  // note.textContent = "Searching the word" + `"${value}"`;
+  // setInterval(() => {
+  //   note.textContent = original;
+  // }, 3000);
+  // console.log(value);
 });
 
 Searchplace.addEventListener("input", displaycancel);

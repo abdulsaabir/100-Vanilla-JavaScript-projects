@@ -91,6 +91,8 @@ input::placeholder {
   justify-content: space-between;
   margin: 10px 0;
   align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.575);
 }
 
 .word h2 {
@@ -104,3 +106,21 @@ input::placeholder {
   font-weight: 500;
   letter-spacing: 1.2px;
 }
+.meaning,
+.example {
+  margin: 15px 0;
+  border-left: 5px solid #4d59fb;
+  border-radius: 10px;
+  padding: 5px 0;
+  padding-left: 10px;
+}
+
+.meaning h4,
+.example h4 {
+  font-family: "Poppins", sans-serif;
+  color: rgba(128, 128, 128, 0.808);
+  font-weight: 500;
+}
+/* .example {
+  border: 2px solid #4d59fb;
+} */
