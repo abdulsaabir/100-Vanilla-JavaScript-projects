@@ -69,7 +69,6 @@ searchbtn.addEventListener("click", (e) => {
   //   console.log(data);
   // });
 
-  // setInterval(() => {
   //   note.textContent = original;
 });
 
