@@ -66,8 +66,7 @@ searchbtn.addEventListener("click", (e) => {
       }
 
   // .then((data) => {
-  //   console.log(data);
-  // });
+
 
 });
 
