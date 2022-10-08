@@ -6,6 +6,7 @@ let note = document.querySelector(".note");
 let original = note.textContent;
 let parent = document.querySelector(".worddisplay");
 let bold = document.querySelector(".bold");
+let sound = document.querySelector(".sound");
 function displaycancel() {
   if (Searchplace.value != "") {
     searchbtn.style.display = "block";
@@ -63,6 +64,7 @@ searchbtn.addEventListener("click", (e) => {
       </h4>
     </div>`;
         note.style.display = "None";
+        sound.addEventListener("click", () => {});
       }
     });
 });
