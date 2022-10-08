@@ -34,6 +34,8 @@ form {
   border-radius: 5px;
   align-items: center;
   margin-bottom: 1rem;
+
+  position: relative;
 }
 .color {
   border: 3px #4d59fb solid;
@@ -64,7 +66,13 @@ input::placeholder {
 }
 
 .cancel {
-  display: none;
+  padding: 5px 15px;
+  border: none;
+  background-color: #6a73f8;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* dispay: none; */
 }
 .cancel iconify-icon {
   font-size: 21px;
