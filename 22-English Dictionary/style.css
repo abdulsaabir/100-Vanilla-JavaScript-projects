@@ -90,9 +90,17 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+  align-items: center;
 }
+
 .word h2 {
   font-family: "Poppins", sans-serif;
   font-family: sans-serif;
   letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.word h4 {
+  color: rgba(128, 128, 128);
+  font-weight: 500;
+  letter-spacing: 1.2px;
 }
