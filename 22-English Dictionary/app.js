@@ -66,7 +66,7 @@ searchbtn.addEventListener("click", (e) => {
         note.style.display = "None";
         sound.addEventListener("click", () => {
           const synth = window.speechSynthesis;
-          let ourText = "Hey there what's up!!!!";
+          let ourText = "H";
           const utterThis = new SpeechSynthesisUtterance(ourText);
 
           synth.speak(utterThis);
