@@ -79,17 +79,12 @@ input::placeholder {
 .cancel {
   padding: 5px 15px;
   border: none;
-  background-color: #6a73f8;
-  color: white;
+  color: gray;
   font-size: 20px;
   font-weight: bold;
-  position: absolute;
-  right: 10px;
-  display: none;
-  border-radius: 6px;
 }
 .cancel iconify-icon {
-  font-size: 21px;
+  font-size: 25px;
 }
 .note {
   opacity: 0.6;
@@ -148,4 +143,9 @@ input::placeholder {
   color: rgb(0, 0, 0);
   opacity: 1;
   font-weight: bold;
+}
+button {
+  position: absolute;
+  z-index: -20;
+  visibility: hidden;
 }
