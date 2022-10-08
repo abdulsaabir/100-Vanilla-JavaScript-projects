@@ -3,6 +3,8 @@ let searchbtn = document.querySelector(".cancel");
 let form = document.querySelector("form");
 let iconsearch = document.querySelector(".btnsrch");
 let note = document.querySelector(".note");
+let original = note.textContent;
+let bold = document.querySelector(".bold");
 function displaycancel() {
   if (Searchplace.value != "") {
     searchbtn.style.display = "block";
@@ -24,6 +26,11 @@ window.addEventListener("click", (e) => {
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
   let value = Searchplace.value;
+  note.textContent = "Searching the word" + `"${value}"`;
+
+  setInterval(() => {
+    note.textContent = original;
+  }, 3000);
   console.log(value);
 });
 
