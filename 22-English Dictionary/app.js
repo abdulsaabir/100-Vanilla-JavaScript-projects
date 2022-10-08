@@ -64,11 +64,6 @@ searchbtn.addEventListener("click", (e) => {
     </div>`;
         note.style.display = "None";
       }
-      if (
-        data.resolution ==
-        "You can y the search again at later time or head to the web instead."
-      ) {
-
     });
   // .then((data) => {
   //   console.log(data);
