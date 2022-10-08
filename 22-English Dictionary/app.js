@@ -27,7 +27,6 @@ searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
   let value = Searchplace.value;
   note.textContent = "Searching the word" + `"${value}"`;
-
   setInterval(() => {
     note.textContent = original;
   }, 3000);

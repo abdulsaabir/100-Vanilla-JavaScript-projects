@@ -86,3 +86,13 @@ input::placeholder {
   font-family: "Poppins", sans-serif;
   margin-bottom: 10px;
 }
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.word h2 {
+  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+}
