@@ -65,7 +65,7 @@ searchbtn.addEventListener("click", (e) => {
         note.style.display = "None";
       }
 
-  // .then((data) => {
+
 
 
 });
