@@ -1,7 +1,7 @@
 let Searchplace = document.querySelector("input");
 let cancel = document.querySelector(".cancel");
 let form = document.querySelector("form");
-let iconsearch = document.querySelector(".btnsrch");
+let iconsearch = document.querySelector(".cancel");
 let note = document.querySelector(".note");
 let original = note.textContent;
 let parent = document.querySelector(".worddisplay");
@@ -80,6 +80,7 @@ cancel.addEventListener("click", (e) => {
   parent.innerHTML = "";
   note.innerHTML =
     " Type any existing word and press enter to get meaning, example,synonyms, etc";
+  Searchplace.value = "";
 });
 
 Searchplace.addEventListener("input", displaycancel);
