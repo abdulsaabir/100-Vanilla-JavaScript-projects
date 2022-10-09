@@ -1,6 +1,6 @@
 let Searchplace = document.querySelector("input");
 let cancel = document.querySelector(".cancel");
-let form = document.querySelector("form");
+let form = document.querySelector(".form");
 let iconsearch = document.querySelector(".cancel");
 let note = document.querySelector(".note");
 let original = note.textContent;
@@ -28,6 +28,7 @@ window.addEventListener("click", (e) => {
 });
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
+  console.log("eror");
   parent.innerHTML = "";
   let value = Searchplace.value;
   note.innerHTML = `Searching the word" <span class="bold"> "${value}"</span> `;

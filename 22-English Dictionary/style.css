@@ -24,7 +24,7 @@ body {
 .header h1 {
   margin: auto;
 }
-form {
+.form {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -145,6 +145,7 @@ input::placeholder {
 }
 button {
   position: absolute;
-  z-index: -20;
-  visibility: hidden;
+  top: 0;
+  /* z-index: -20;
+  visibility: hidden; */
 }
