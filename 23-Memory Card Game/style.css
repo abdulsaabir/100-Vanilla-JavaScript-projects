@@ -26,27 +26,3 @@ img {
 .view:hover {
   display: none;
 }
-
-/* view {
-  position: relative;
-} */
-/* .view::before {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 7px;
-  background: #fff;
-  pointer-events: none;
-  backface-visibility: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s linear;
-} */
-
-/* .center {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-} */
