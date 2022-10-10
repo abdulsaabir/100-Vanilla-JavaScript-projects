@@ -13,16 +13,3 @@ img {
   width: 40px;
   position: relative;
 }
-
-.view {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  position: relative;
-}
-.view img {
-  margin: auto;
-}
-.view:hover {
-  display: none;
-}
