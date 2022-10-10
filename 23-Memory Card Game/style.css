@@ -23,6 +23,9 @@ img {
 .view img {
   margin: auto;
 }
+.view:hover {
+  display: none;
+}
 
 /* view {
   position: relative;
