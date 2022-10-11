@@ -1,16 +1,20 @@
 let cards = document.querySelectorAll(".memory-card");
 let firstCard,
   secondCard,
-  isFlipped = true;
+  isFlipped = true,
+  iswait = false;
 function flipcards() {
+  if (iswait) return;
   this.classList.add("flip");
   if (isFlipped) {
     isFlipped = false;
     firstCard = this;
   } else {
+    iswait = true;
     isFlipped = true;
     secondCard = this;
     ismatch();
+    iswait = false;
   }
 }
 
