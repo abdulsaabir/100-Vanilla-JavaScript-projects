@@ -3,7 +3,14 @@ let firstCard,
   secondCard,
   isFlipped = true,
   iswait = false,
-  lockboard = false;
+  lockboard = false,
+  remainingTime = 40,
+  cardcounter = 0,
+  matchedcard = 0;
+
+let time = document.querySelector(".stats .timeLeft span");
+let totalCard = document.querySelector(".stats .timecardsflippedLeft span");
+let match = document.querySelector(".stats .matchedcard span");
 function flipcards() {
   if (this === firstCard) return;
   if (iswait) return;

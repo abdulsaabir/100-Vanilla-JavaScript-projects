@@ -26,11 +26,18 @@ body {
   justify-content: space-between;
   gap: 20px;
   width: 500px;
-  background-color: lime;
+  background-color: rgb(227, 177, 40);
   padding: 15px;
+  color: white;
+  text-align: center;
 }
 .stats p {
   font-size: 20px;
+  font-weight: bold;
+}
+.stats span {
+  font-size: 30px;
+  color: lime;
 }
 
 .memory-card {
