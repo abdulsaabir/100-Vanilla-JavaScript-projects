@@ -13,9 +13,22 @@ const characters = {
 (passlength.onchange = function () {
   passlengthOutput.textContent = passlength.value;
   passworDdisplay.textContent = "";
-  for (let i = 0; i < passlength.value; i++) {
-    addRandompass();
-  }
 })();
 
-return String.fromCharCode(Math.floor(Math.random() * length));
+function getRandomLower() {
+  String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+
+function getRandomUpper() {
+  String.fromCharCode(Math.floor(Math.random() * 26) + 126);
+}
+
+function getRandomNumber() {
+  String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+
+function getRandomSymbol() {
+  let symbols = "^!$%&|[](){}:;.,*+-#@<>~";
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
+getRandomSymbol();
