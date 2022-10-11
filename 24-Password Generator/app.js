@@ -2,9 +2,18 @@ let passworDdisplay = document.querySelector(".password");
 let passlength = document.getElementById("pass");
 let passlengthOutput = document.querySelector(".details span");
 let generatePassword = document.querySelector("button");
-
-passlength.onchange = function () {
-  passlengthOutput.textContent = passlength.value;
+//
+const characters = {
+  // object of letters, numbers & symbols
+  lowercase: "abcdefghijklmnopqrstuvwxyz",
+  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  numbers: "0123456789",
+  symbols: "^!$%&|[](){}:;.,*+-#@<>~",
 };
+(passlength.onchange = function () {
+  passlengthOutput.textContent = passlength.value;
+})();
 
-generatePassword.addEventListener("click", generate);
+function randomNum(length) {}
+
+// generatePassword.addEventListener("click", generate);
