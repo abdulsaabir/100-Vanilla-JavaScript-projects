@@ -38,6 +38,10 @@ body {
 .memory-card.flip {
   transform: rotateY(180deg);
 }
+.back-face {
+  display: flex;
+  justify-content: center;
+}
 
 .front-face,
 .back-face {
