@@ -1,3 +1,4 @@
-let card = document.querySelector(".card");
+let cards = document.querySelectorAll(".memory-card");
+function flipcards() {}
 
-arr.forEach((x) => (x >= 0 ? (sum += x) : (sum += 0)));
+cards.forEach((card) => card.addEventListener("click", flipcards));
