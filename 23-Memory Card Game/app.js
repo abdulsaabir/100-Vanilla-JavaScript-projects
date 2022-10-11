@@ -1,11 +1,23 @@
 const cards = document.querySelectorAll(".card");
+let time = document.querySelector(".time"),
+  timeCounter = 60,
+  istimecounting = false;
+let Flips = document.querySelector(".flips"),
+  flipsCounter = 0;
 
 let matched = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
 
 function flipCard({ target: clickedCard }) {
+  if (!istimecounting) {
+    startGame();
+    istimecounting = true;
+  }
   if (cardOne !== clickedCard && !disableDeck) {
+    flipsCounter++;
+    Flips.textContent = flipsCounter;
+    console.log(flipsCounter);
     clickedCard.classList.add("flip");
     if (!cardOne) {
       return (cardOne = clickedCard);
@@ -56,6 +68,13 @@ function shuffleCard() {
     imgTag.src = `images/img-${arr[i]}.png`;
     card.addEventListener("click", flipCard);
   });
+}
+
+function startGame() {
+  setInterval(() => {
+    timeCounter--;
+    time.textContent = timeCounter;
+  }, 1000);
 }
 
 shuffleCard();
