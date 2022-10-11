@@ -18,6 +18,19 @@ body {
   perspective: 1000px;
 }
 .stats {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 500px;
+  background-color: lime;
+  padding: 15px;
+}
+.stats p {
+  font-size: 20px;
 }
 
 .memory-card {
