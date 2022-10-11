@@ -4,17 +4,27 @@ let firstCard,
   isFlipped = true,
   iswait = false,
   lockboard = false,
-  remainingTime = 40,
+  remainingTime = 61,
   cardcounter = 0,
-  matchedcard = 0;
+  matchedcard = 0,
+  gamestarted = false;
 
 let time = document.querySelector(".stats .timeLeft span");
-let totalCard = document.querySelector(".stats .timecardsflippedLeft span");
+let totalCard = document.querySelector(".stats .cardsflipped span");
 let match = document.querySelector(".stats .matchedcard span");
+let refreshGame = document.querySelector("button");
 function flipcards() {
+  if (remainingTime === 0) return;
+  if (!gamestarted) {
+    gamestarted = true;
+    startgame();
+  }
   if (this === firstCard) return;
   if (iswait) return;
+
   this.classList.add("flip");
+  cardcounter++;
+  totalCard.textContent = cardcounter;
   if (isFlipped) {
     isFlipped = false;
     firstCard = this;
@@ -36,6 +46,8 @@ function removeclick() {
     card.removeEventListener("click", flipcards);
   });
   iswait = false;
+  matchedcard++;
+  match.textContent = matchedcard;
 }
 
 function backtodefualt() {
@@ -53,5 +65,18 @@ function backtodefualt() {
     card.style.order = RandomNumber;
   });
 })();
+
+function startgame() {
+  setInterval(() => {
+    if (remainingTime > 0) remainingTime--;
+    time.textContent = remainingTime;
+  }, 1000);
+}
+
+refreshGame.addEventListener("click", () => {
+  setTimeout(() => {
+    window.location.reload(true);
+  }, 400);
+});
 
 cards.forEach((card) => card.addEventListener("click", flipcards));
