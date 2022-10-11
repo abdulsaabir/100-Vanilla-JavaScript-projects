@@ -12,7 +12,7 @@ body {
 
 .memory-game {
   width: 440px;
-  height: 440px;
+  height: 380px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
