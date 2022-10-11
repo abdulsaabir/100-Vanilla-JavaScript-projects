@@ -1,114 +1,65 @@
-/* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #6563FF;
-}
-.wrapper{
-  padding: 25px;
-  border-radius: 10px;
-  background: #F8F8F8;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.cards, .card, .view{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cards{
-  height: 400px;
-  width: 400px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.cards .card{
-  cursor: pointer;
-  list-style: none;
-  user-select: none;
-  position: relative;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  height: calc(100% / 4 - 10px);
-  width: calc(100% / 4 - 10px);
-}
-.card.shake{
-  animation: shake 0.35s ease-in-out;
-}
-@keyframes shake {
-  0%, 100%{
-    transform: translateX(0);
-  }
-  20%{
-    transform: translateX(-13px);
-  }
-  40%{
-    transform: translateX(13px);
-  }
-  60%{
-    transform: translateX(-8px);
-  }
-  80%{
-    transform: translateX(8px);
-  }
-}
-.card .view{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 7px;
-  background: #fff;
-  pointer-events: none;
-  backface-visibility: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.25s linear;
-}
-.card .front-view img{
-  width: 19px;
-}
-.card .back-view img{
-  max-width: 45px;
-}
-.card .back-view{
-  transform: rotateY(-180deg);
-}
-.card.flip .back-view{
-  transform: rotateY(0);
-}
-.card.flip .front-view{
-  transform: rotateY(180deg);
-}
+const cards = document.querySelectorAll(".card");
 
-@media screen and (max-width: 700px) {
-  .cards{
-    height: 350px;
-    width: 350px;
-  }
-  .card .front-view img{
-    width: 17px;
-  }
-  .card .back-view img{
-    max-width: 40px;
+let matched = 0;
+let cardOne, cardTwo;
+let disableDeck = false;
+
+function flipCard({ target: clickedCard }) {
+  if (cardOne !== clickedCard && !disableDeck) {
+    clickedCard.classList.add("flip");
+    if (!cardOne) {
+      return (cardOne = clickedCard);
+    }
+    cardTwo = clickedCard;
+    disableDeck = true;
+    let cardOneImg = cardOne.querySelector(".back-view img").src,
+      cardTwoImg = cardTwo.querySelector(".back-view img").src;
+    matchCards(cardOneImg, cardTwoImg);
   }
 }
 
-@media screen and (max-width: 530px) {
-  .cards{
-    height: 300px;
-    width: 300px;
+function matchCards(img1, img2) {
+  if (img1 === img2) {
+    matched++;
+    if (matched == 8) {
+      setTimeout(() => {
+        return shuffleCard();
+      }, 1000);
+    }
+    cardOne.removeEventListener("click", flipCard);
+    cardTwo.removeEventListener("click", flipCard);
+    cardOne = cardTwo = "";
+    return (disableDeck = false);
   }
-  .card .front-view img{
-    width: 15px;
-  }
-  .card .back-view img{
-    max-width: 35px;
-  }
+  setTimeout(() => {
+    cardOne.classList.add("shake");
+    cardTwo.classList.add("shake");
+  }, 400);
+
+  setTimeout(() => {
+    cardOne.classList.remove("shake", "flip");
+    cardTwo.classList.remove("shake", "flip");
+    cardOne = cardTwo = "";
+    disableDeck = false;
+  }, 1200);
 }
+
+function shuffleCard() {
+  matched = 0;
+  disableDeck = false;
+  cardOne = cardTwo = "";
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8];
+  arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+  cards.forEach((card, i) => {
+    card.classList.remove("flip");
+    let imgTag = card.querySelector(".back-view img");
+    imgTag.src = `images/img-${arr[i]}.png`;
+    card.addEventListener("click", flipCard);
+  });
+}
+
+shuffleCard();
+
+cards.forEach((card) => {
+  card.addEventListener("click", flipCard);
+});
