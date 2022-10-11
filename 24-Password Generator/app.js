@@ -12,8 +12,10 @@ const characters = {
 };
 (passlength.onchange = function () {
   passlengthOutput.textContent = passlength.value;
+  passworDdisplay.textContent = "";
+  for (let i = 0; i < passlength.value; i++) {
+    addRandompass();
+  }
 })();
 
-function randomNum(length) {}
-
-// generatePassword.addEventListener("click", generate);
+return String.fromCharCode(Math.floor(Math.random() * length));
