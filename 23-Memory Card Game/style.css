@@ -116,3 +116,23 @@ body {
     max-width: 35px;
   }
 }
+.stats {
+  margin-top: 10px;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.stats p {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.stats span {
+  font-weight: bold;
+}
+button {
+  padding: 5px 8px;
+  background-color: #6563ff;
+  border-radius: 6px;
+  border: none;
+}
