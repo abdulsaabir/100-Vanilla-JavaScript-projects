@@ -11,8 +11,8 @@ body {
 }
 
 .memory-game {
-  width: 640px;
-  height: 640px;
+  width: 440px;
+  height: 440px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -38,10 +38,6 @@ body {
 .memory-card.flip {
   transform: rotateY(180deg);
 }
-.back-face {
-  display: flex;
-  justify-content: center;
-}
 
 .front-face,
 .back-face {
@@ -56,4 +52,11 @@ body {
 
 .front-face {
   transform: rotateY(180deg);
+}
+.back-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: 50px;
 }
