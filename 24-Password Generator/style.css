@@ -45,6 +45,7 @@ h1 {
   font-size: 20px;
   text-align: center;
 }
+
 .copy {
   color: rgb(66, 133, 244);
 }
@@ -54,6 +55,10 @@ h1 {
 label {
   font-size: 1.5rem;
 }
+.passwordContainer .password {
+  font-size: 18px;
+  opacity: 0.7;
+}
 
 .pass-length {
   margin: 1.56rem 0 1.25rem;
@@ -61,6 +66,9 @@ label {
 .details {
   display: flex;
   justify-content: space-between;
+}
+.details span {
+  font-size: 20px;
 }
 .pass-length input {
   margin-top: 5px;
@@ -73,7 +81,22 @@ label {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+  row-gap: 25px;
   margin-bottom: 2rem;
+}
+.option label {
+  font-size: 20px;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+.option:first-child {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.option input {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
 }
 
 button {
