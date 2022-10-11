@@ -14,7 +14,6 @@ function flipcards() {
     isFlipped = true;
     secondCard = this;
     ismatch();
-    iswait = false;
   }
 }
 
@@ -27,12 +26,14 @@ function removeclick() {
   [firstCard, secondCard].forEach((card) => {
     card.removeEventListener("click", flipcards);
   });
+  iswait = false;
 }
 
 function backtodefualt() {
   [firstCard, secondCard].forEach((card) => {
     setTimeout(() => {
       card.classList.remove("flip");
+      iswait = false;
     }, 1000);
   });
 }
