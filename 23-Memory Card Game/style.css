@@ -17,6 +17,8 @@ body {
   flex-wrap: wrap;
   perspective: 1000px;
 }
+.stats {
+}
 
 .memory-card {
   width: calc(25% - 10px);

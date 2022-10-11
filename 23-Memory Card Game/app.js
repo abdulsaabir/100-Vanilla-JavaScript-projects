@@ -2,8 +2,10 @@ let cards = document.querySelectorAll(".memory-card");
 let firstCard,
   secondCard,
   isFlipped = true,
-  iswait = false;
+  iswait = false,
+  lockboard = false;
 function flipcards() {
+  if (this === firstCard) return;
   if (iswait) return;
   this.classList.add("flip");
   if (isFlipped) {
