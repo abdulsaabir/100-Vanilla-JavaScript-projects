@@ -17,32 +17,50 @@
           <p class="password">Pwjv(TKDJBeR</p>
           <p class="copy"><iconify-icon icon="fa-solid:copy"></iconify-icon></p>
         </div>
-        <input type="range" id="volume" name="volume" min="0" max="11" />
-        <label for="PassowrdLength">Passowrd Length</label>
-        <p>Password Settings</p>
+        <div class="pass-length">
+          <div class="details">
+            <label class="title">Password Length</label>
+            <span></span>
+          </div>
+          <input type="range" min="1" max="30" value="15" step="1" />
+        </div>
         <div class="passwordSettings">
           <!-- lowerCase -->
-          <input type="checkbox" id="LowerCase" name="LowerCase" />
-          <label for="LowerCase">Lowercase (a-z) </label>
+
+          <div class="option">
+            <input type="checkbox" id="LowerCase" name="LowerCase" />
+            <label for="LowerCase">Lowercase (a-z) </label>
+          </div>
           <!-- uppercase -->
-          <input type="checkbox" id="uppercase" name="uppercase" />
-          <label for="uppercase">Uppercase (A-Z) </label>
+          <div class="option">
+            <input type="checkbox" id="uppercase" name="uppercase" />
+            <label for="uppercase">Uppercase (A-Z) </label>
+          </div>
           <!-- numbers -->
-          <input type="checkbox" id="Numbers" name="Numbers" />
-          <label for="Numbers">Numbers (0-9) </label>
+          <div class="option">
+            <input type="checkbox" id="Numbers" name="Numbers" />
+            <label for="Numbers">Numbers (0-9) </label>
+          </div>
           <!-- symbols -->
-          <input type="checkbox" id="Symbols" name="Symbols" />
-          <label for="Symbols">Symbols (!-$^+) </label>
+          <div class="option">
+            <input type="checkbox" id="Symbols" name="Symbols" />
+            <label for="Symbols">Symbols (!-$^+) </label>
+          </div>
           <!-- exclude duplicate -->
-          <input type="checkbox" id="Duplicate" name="Duplicate" />
-          <label for="Duplicate">Exclude Duplicate </label>
+          <div class="option">
+            <input type="checkbox" id="Duplicate" name="Duplicate" />
+            <label for="Duplicate">Exclude Duplicate </label>
+          </div>
           <!-- include spaces -->
-          <input type="checkbox" id="Spaces" name="Spaces" />
-          <label for="Spaces">Include Spaces </label>
+          <div class="option">
+            <input type="checkbox" id="Spaces" name="Spaces" />
+            <label for="Spaces">Include Spaces </label>
+          </div>
         </div>
         <button>Generate Password</button>
       </div>
     </div>
+    <script src="./app.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   </body>
 </html>
