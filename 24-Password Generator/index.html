@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
@@ -15,6 +16,28 @@
       </div>
       <input type="range" id="volume" name="volume" min="0" max="11" />
       <label for="PassowrdLength">Passowrd Length</label>
+      <p>Password Settings</p>
+      <div class="passwordSettings">
+        <!-- lowerCase -->
+        <input type="checkbox" id="LowerCase" name="LowerCase" />
+        <label for="LowerCase">Lowercase (a-z) </label>
+        <!-- uppercase -->
+        <input type="checkbox" id="uppercase" name="uppercase" />
+        <label for="uppercase">Uppercase (A-Z) </label>
+        <!-- numbers -->
+        <input type="checkbox" id="Numbers" name="Numbers" />
+        <label for="Numbers">Numbers (0-9) </label>
+        <!-- symbols -->
+        <input type="checkbox" id="Symbols" name="Symbols" />
+        <label for="Symbols">Symbols (!-$^+) </label>
+        <!-- exclude duplicate -->
+        <input type="checkbox" id="Duplicate" name="Duplicate" />
+        <label for="Duplicate">Exclude Duplicate </label>
+        <!-- include spaces -->
+        <input type="checkbox" id="Spaces" name="Spaces" />
+        <label for="Spaces">Include Spaces </label>
+      </div>
+      <button>Generate Password</button>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   </body>
