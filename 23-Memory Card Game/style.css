@@ -74,8 +74,12 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s linear;
 }
-.card .front-view img {
+/* .card .front-view img {
   width: 19px;
+} */
+.card .front-view iconify-icon {
+  font-size: 30px;
+  color: #6563ff;
 }
 .card .back-view img {
   max-width: 45px;
@@ -115,3 +119,7 @@ body {
     max-width: 35px;
   }
 }
+/* 
+.view .front-view iconify-icon {
+  font-size: 65px;
+} */
