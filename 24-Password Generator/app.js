@@ -2,7 +2,15 @@ let passworDdisplay = document.querySelector(".password");
 let passlength = document.getElementById("pass");
 let passlengthOutput = document.querySelector(".details span");
 let generatePassword = document.querySelector("button");
+let lowercase = document.querySelector("#LowerCase"),
+  lowercaseChecked = lowercase.checked;
 
+let passwordObject = {
+  uppercase: getRandomUpper,
+  Number: getRandomNumber,
+  Symbol: getRandomSymbol,
+  lowercase: getRandomLower,
+};
 
 // upprcase
 let uppercase = document.querySelector("#uppercase"),
@@ -19,7 +27,7 @@ let Duplicate = document.querySelector("#Duplicate"),
 // space
 let Spaces = document.querySelector("#Spaces"),
   spaceChecked = Spaces.checked;
-  
+
 // update password display on change
 // const characters = {
 // object of letters, numbers & symbols
@@ -34,24 +42,30 @@ let Spaces = document.querySelector("#Spaces"),
 })();
 
 function getRandomLower() {
-  String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
 function getRandomUpper() {
-  String.fromCharCode(Math.floor(Math.random() * 26) + 126);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 126);
 }
+// passwordObject["getRandomUpper"]();
+// passwordObject[uppercase]();
 
 function getRandomNumber() {
-  String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
 function getRandomSymbol() {
   let symbols = "^!$%&|[](){}:;.,*+-#@<>~";
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
+let generatedPassword;
+// function getChecked() {
+//   generatedPassword = passwordObject[Object.keys(passwordObject)[0]];
+//   console.log(generatedPassword);
+// }
+// getChecked();
+// generatedPassword = passwordObject[uppercase]();
+getRandomNumber();
 
-function getChecked() {
- let  [upperCheked, symbolChecked, numberchecked, spaceChecked, duplicateChecked].forEach(checkedOne => {
-
-  });
-}
+// eval(passwordObject[getRandomNumber]());
