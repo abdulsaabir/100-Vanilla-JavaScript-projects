@@ -5,6 +5,8 @@ const lengthSlider = document.querySelector(".pass-length input"),
   passIndicator = document.querySelector(".pass-indicator"),
   generateBtn = document.querySelector(".generate-btn");
 
+passwordInput.style.color = "white";
+
 const characters = {
   // object of letters, numbers & symbols
   lowercase: "abcdefghijklmnopqrstuvwxyz",
