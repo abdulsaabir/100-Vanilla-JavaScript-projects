@@ -5,62 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- INSERT HTML HERE -->
     <div class="container">
-      <div class="header">
-        <h1>Password Generator</h1>
+      <h2>Password Generator</h2>
+      <div class="result-container">
+        <span id="result"></span>
+        <button class="btn" id="clipboard">
+          <i class="far fa-clipboard"></i>
+        </button>
       </div>
-      <div class="wrap">
-        <div class="passwordContainer">
-          <p class="password">Password will Appear Here</p>
-          <p class="copy"><iconify-icon icon="fa-solid:copy"></iconify-icon></p>
+      <div class="settings">
+        <div class="setting">
+          <label>Password length</label>
+          <input type="number" id="length" min="4" max="20" value="20" />
         </div>
-        <div class="pass-length">
-          <div class="details">
-            <label class="title">Password Length</label>
-            <span></span>
-          </div>
-          <input id="pass" type="range" min="1" max="30" value="15" step="1" />
+        <div class="setting">
+          <label>Include uppercase letters</label>
+          <input type="checkbox" id="uppercase" checked />
         </div>
-        <div class="passwordSettings">
-          <!-- lowerCase -->
+        <div class="setting">
+          <label>Include lowercase letters</label>
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include numbers</label>
+          <input type="checkbox" id="numbers" checked />
+        </div>
+        <div class="setting">
+          <label>Include symbols</label>
+          <input type="checkbox" id="symbols" checked />
+        </div>
+      </div>
+      <button class="btn btn-large" id="generate">Generate password</button>
+    </div>
 
-          <div class="option">
-            <input type="checkbox" checked id="LowerCase" name="LowerCase" />
-            <label for="LowerCase">Lowercase (a-z) </label>
-          </div>
-          <!-- uppercase -->
-          <div class="option">
-            <input type="checkbox" id="uppercase" name="uppercase" />
-            <label for="uppercase">Uppercase (A-Z) </label>
-          </div>
-          <!-- numbers -->
-          <div class="option">
-            <input type="checkbox" id="Numbers" name="Numbers" />
-            <label for="Numbers">Numbers (0-9) </label>
-          </div>
-          <!-- symbols -->
-          <div class="option">
-            <input type="checkbox" id="Symbols" name="Symbols" />
-            <label for="Symbols">Symbols (!-$^+) </label>
-          </div>
-          <!-- exclude duplicate -->
-          <div class="option">
-            <input type="checkbox" id="Duplicate" name="Duplicate" />
-            <label for="Duplicate">Exclude Duplicate </label>
-          </div>
-          <!-- include spaces -->
-          <div class="option">
-            <input type="checkbox" id="Spaces" name="Spaces" />
-            <label for="Spaces">Include Spaces </label>
-          </div>
-        </div>
-        <button>Generate Password</button>
+    <!-- SOCIAL PANEL HTML
+    <div class="social-panel-container">
+      <div class="social-panel">
+        <p>
+          Created with <i class="fa fa-heart"></i> by
+          <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+        </p>
+        <button class="close-btn"><i class="fas fa-times"></i></button>
+        <h4>Get in touch on</h4>
+        <ul>
+          <li>
+            <a href="https://www.patreon.com/florinpop17" target="_blank">
+              <i class="fab fa-discord"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/florinpop1705" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/florinpop17" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/florinpop17" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/florinpop17" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+    <button class="floating-btn">Get in Touch</button>
+
+    <div class="floating-text">
+      Part of
+      <a
+        href="https://florin-pop.com/blog/2019/09/100-days-100-projects"
+        target="_blank"
+        >#100Days100Projects</a
+      >
+    </div> -->
     <script src="./app.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   </body>
 </html>
