@@ -1,71 +1,90 @@
-let passworDdisplay = document.querySelector(".password");
-let passlength = document.getElementById("pass");
-let passlengthOutput = document.querySelector(".details span");
-let generatePassword = document.querySelector("button");
-let lowercase = document.querySelector("#LowerCase"),
-  lowercaseChecked = lowercase.checked;
+const resultEl = document.getElementById("result");
+const lengthEl = document.getElementById("length");
+const uppercaseEl = document.getElementById("uppercase");
+const lowercaseEl = document.getElementById("lowercase");
+const numbersEl = document.getElementById("numbers");
+const symbolsEl = document.getElementById("symbols");
+const generateEl = document.getElementById("generate");
+const clipboard = document.getElementById("clipboard");
 
-let passwordObject = {
-  uppercase: getRandomUpper,
-  Number: getRandomNumber,
-  Symbol: getRandomSymbol,
-  lowercase: getRandomLower,
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol,
 };
 
-// upprcase
-let uppercase = document.querySelector("#uppercase"),
-  upperCheked = uppercase.checked;
-// numbers
-let Numbers = document.querySelector("#Numbers"),
-  numberchecked = Numbers.checked;
-// symblos
-let Symbols = document.querySelector("#Symbols"),
-  symbolChecked = Symbols.checked;
-// duplicate
-let Duplicate = document.querySelector("#Duplicate"),
-  duplicateChecked = Duplicate.checked;
-// space
-let Spaces = document.querySelector("#Spaces"),
-  spaceChecked = Spaces.checked;
+clipboard.addEventListener("click", () => {
+  const textarea = document.createElement("textarea");
+  const password = resultEl.innerText;
 
-// update password display on change
-// const characters = {
-// object of letters, numbers & symbols
-//   lowercase: "abcdefghijklmnopqrstuvwxyz",
-//   uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-//   numbers: "0123456789",
-//   symbols: "^!$%&|[](){}:;.,*+-#@<>~",
-// };
-(passlength.onchange = function () {
-  passlengthOutput.textContent = passlength.value;
-  passworDdisplay.textContent = "";
-})();
+  if (!password) {
+    return;
+  }
+
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+  alert("Password copied to clipboard");
+});
+
+generate.addEventListener("click", () => {
+  const length = +lengthEl.value;
+  const hasLower = lowercaseEl.checked;
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasSymbol = symbolsEl.checked;
+
+  resultEl.innerText = generatePassword(
+    hasLower,
+    hasUpper,
+    hasNumber,
+    hasSymbol,
+    length
+  );
+});
+
+function generatePassword(lower, upper, number, symbol, length) {
+  let generatedPassword = "";
+  const typesCount = lower + upper + number + symbol;
+  const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
+    (item) => Object.values(item)[0]
+  );
+
+  // Doesn't have a selected type
+  if (typesCount === 0) {
+    return "";
+  }
+
+  // create a loop
+  for (let i = 0; i < length; i += typesCount) {
+    typesArr.forEach((type) => {
+      const funcName = Object.keys(type)[0];
+      console.log(funcName);
+      generatedPassword += randomFunc[funcName]();
+    });
+  }
+
+  const finalPassword = generatedPassword.slice(0, length);
+
+  return finalPassword;
+}
 
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
 function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 126);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
-// passwordObject["getRandomUpper"]();
-// passwordObject[uppercase]();
 
 function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
 function getRandomSymbol() {
-  let symbols = "^!$%&|[](){}:;.,*+-#@<>~";
+  const symbols = "!@#$%^&*(){}[]=<>/,.";
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
-let generatedPassword;
-// function getChecked() {
-//   generatedPassword = passwordObject[Object.keys(passwordObject)[0]];
-//   console.log(generatedPassword);
-// }
-// getChecked();
-// generatedPassword = passwordObject[uppercase]();
-getRandomNumber();
-
-// eval(passwordObject[getRandomNumber]());
