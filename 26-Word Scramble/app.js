@@ -104,18 +104,10 @@ let input = document.querySelector("input");
 
 function GenerateWord() {
   let number = Math.floor(Math.random() * words.length);
-  word.textContent = words[getrandomNUmber()].word
-    .toUpperCase()
-    .split("")
-    .sort()
-    .join("");
-}
-
-let getrandomNUmber = () => {
+  word.textContent = words[number].word.toUpperCase().split("").sort().join("");
   hint.textContent = words[number].hint;
   checkerWOrd = words[number].word;
-  word.textContent = words[number].word.toUpperCase().split("").sort().join("");
-};
+}
 
 function timer() {
   timeCounter--;
