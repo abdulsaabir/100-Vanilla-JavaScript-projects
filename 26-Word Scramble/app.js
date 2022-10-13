@@ -132,8 +132,8 @@ function checkWord() {
   else {
     alert("nah that was wrong");
   }
-  //   GenerateWord();
-  //   refreshGame;
+  GenerateWord();
+  refreshGame;
 }
 
 window.addEventListener("load", GenerateWord);
