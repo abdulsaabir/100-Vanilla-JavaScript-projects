@@ -126,7 +126,14 @@ function refreshGame() {
 
 function checkWord() {
   let value = input.value;
-  alert(value + "  " + checkerWOrd);
+  value = value.toLocaleLowerCase();
+
+  if (checkerWOrd == value) alert("You got it Right");
+  else {
+    alert("nah that was wrong");
+  }
+  //   GenerateWord();
+  //   refreshGame;
 }
 
 window.addEventListener("load", GenerateWord);
