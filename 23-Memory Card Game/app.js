@@ -5,6 +5,21 @@ let time = document.querySelector(".time"),
 let Flips = document.querySelector(".flips"),
   flipsCounter = 0;
 
+let button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  matched = 0;
+  cardOne, cardTwo;
+  disableDeck = false;
+  totalcards = 0;
+  timeCounter = 60;
+  flipsCounter = 0;
+  shuffleCard();
+  Flips.textContent = 0;
+  clearInterval(cleartimeOut);
+  time.textContent = timeCounter;
+  istimecounting = false;
+});
 let cleartimeOut;
 
 let matched = 0;
@@ -13,6 +28,7 @@ let disableDeck = false,
   totalcards = 0;
 
 function flipCard({ target: clickedCard }) {
+  if (timeCounter === 0) return;
   if (!istimecounting) {
     startGame();
     istimecounting = true;
@@ -41,11 +57,11 @@ function matchCards(img1, img2) {
     if (totalcards == 8) {
       clearInterval(cleartimeOut);
     }
-    if (matched == 8) {
-      setTimeout(() => {
-        return shuffleCard();
-      }, 1000);
-    }
+    // if (matched == 8) {
+    //   setTimeout(() => {
+    //     return shuffleCard();
+    //   }, 1000);
+    // }
     cardOne.removeEventListener("click", flipCard);
     cardTwo.removeEventListener("click", flipCard);
     cardOne = cardTwo = "";
@@ -86,7 +102,3 @@ function startGame() {
 }
 
 shuffleCard();
-
-cards.forEach((card) => {
-  card.addEventListener("click", flipCard);
-});
