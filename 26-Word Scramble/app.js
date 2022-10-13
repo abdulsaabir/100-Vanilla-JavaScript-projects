@@ -136,7 +136,7 @@ function checkWord() {
 }
 
 function startGame() {
-  if (timeCounter == 1) {
+  if (timeCounter == 0) {
     clearInterval(timeinterval);
     alert(`Time IS over The Correct Word was ${checkerWOrd.toUpperCase()}`);
     GenerateWord();
