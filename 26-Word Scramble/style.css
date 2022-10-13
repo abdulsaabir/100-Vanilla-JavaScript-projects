@@ -26,10 +26,6 @@ body {
   padding: 16px 25px;
   border-bottom: 1px solid #ccc;
 }
-.time span {
-  font-weight: bold;
-  color: red;
-}
 .container .content {
   margin: 25px 20px 35px;
 }
@@ -90,19 +86,17 @@ body {
 .buttons button:active {
   transform: scale(0.97);
 }
-.buttons .refresh {
+.buttons .refresh-word {
   background: #6c757d;
 }
-.buttons .refresh:hover {
+.buttons .refresh-word:hover {
   background: #5f666d;
-  transform: scale(1.1);
 }
-.buttons .check {
+.buttons .check-word {
   background: #5372f0;
 }
-.buttons .check:hover {
+.buttons .check-word:hover {
   background: #2c52ed;
-  transform: scale(1.1);
 }
 
 @media screen and (max-width: 470px) {
