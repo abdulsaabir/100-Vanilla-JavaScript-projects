@@ -122,18 +122,28 @@ function refreshGame() {
   GenerateWord();
   timeCounter = 20;
   time.textContent = timeCounter;
+  input.value("");
 }
 
 function checkWord() {
   let value = input.value;
+  if (!value) alert("Please enter the word to check!");
+  return;
   value = value.toLocaleLowerCase();
 
-  if (checkerWOrd == value) alert("You got it Right");
+  if (checkerWOrd == value)
+    alert(`Congrats! ${value.toLocaleUpperCase()} is the correct word`);
   else {
-    alert("nah that was wrong");
+    alert("Oops! as is not a correct word");
   }
   GenerateWord();
-  refreshGame;
+  refreshGame();
+}
+
+function Gameend() {
+  if (timeCounter === 0) alert("Time IS over");
+  GenerateWord();
+  refreshGame();
 }
 
 window.addEventListener("load", GenerateWord);
