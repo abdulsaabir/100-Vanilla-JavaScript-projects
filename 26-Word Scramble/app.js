@@ -14,7 +14,6 @@ function GenerateWord() {
       //   time.textContent = word;
       //   for (let i in Word) word.textContent += Word[getrandomNUmber(Word)];
     });
-  // .then((words) => (word.textContent = word));
 }
 
 window.addEventListener("load", GenerateWord);
