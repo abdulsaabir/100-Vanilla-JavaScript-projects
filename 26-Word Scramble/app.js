@@ -92,14 +92,15 @@ let words = [
     hint: "Place containing collection of books",
   },
 ];
-
+let checkerWOrd;
 let word = document.querySelector(".word");
 let hint = document.querySelector(".hint span");
 let time = document.querySelector(".time span"),
-  timeCounter = 20;
+  timeCounter = 30;
 let Input = document.querySelector("input");
 let refresh = document.querySelector(".refresh");
 let check = document.querySelector(".check");
+let input = document.querySelector("input");
 
 function GenerateWord() {
   word.textContent = words[getrandomNUmber()].word
@@ -114,6 +115,7 @@ let getrandomNUmber = () => {
   hint.textContent = words[number].hint;
   return number;
   word.textContent = words[number].word.toUpperCase().split("").sort().join("");
+  checkerWOrd = words[number.word];
 };
 
 function timer() {
@@ -125,4 +127,17 @@ let timeinterval = setInterval(() => {
   timer();
 }, 1000);
 
+function refreshGame() {
+  GenerateWord();
+  timeCounter = 20;
+  time.textContent = timeCounter;
+}
+
+function checkWord() {
+  let value = input.value;
+  alert(`${value}  ${checkWord}`);
+}
+
 window.addEventListener("load", GenerateWord);
+refresh.addEventListener("click", refreshGame);
+check.addEventListener("click", checkWord);
