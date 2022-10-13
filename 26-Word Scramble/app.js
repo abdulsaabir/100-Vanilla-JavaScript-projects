@@ -101,10 +101,16 @@ let refresh = document.querySelector(".refresh");
 let check = document.querySelector(".check");
 
 function GenerateWord() {
-  word.textContent = data[0].toUpperCase().split("").sort().join("");
+  word.textContent = words[getrandomNUmber()].word
+    .toUpperCase()
+    .split("")
+    .sort()
+    .join("");
 }
 
 window.addEventListener("load", GenerateWord);
-let getrandomNUmber = (word) => {
-  return Math.floor(Math.random() * word.length);
+let getrandomNUmber = () => {
+  let number = Math.floor(Math.random() * words.length);
+  console.log(words[number].word);
+  return number;
 };
