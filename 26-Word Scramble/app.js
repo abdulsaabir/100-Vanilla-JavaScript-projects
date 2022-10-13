@@ -94,8 +94,9 @@ let words = [
 ];
 
 let word = document.querySelector(".word");
-let hint = document.querySelector(".hint");
-let time = document.querySelector(".time");
+let hint = document.querySelector(".hint span");
+let time = document.querySelector(".time span"),
+  timeCounter = 20;
 let Input = document.querySelector("input");
 let refresh = document.querySelector(".refresh");
 let check = document.querySelector(".check");
@@ -115,3 +116,8 @@ let getrandomNUmber = () => {
   return number;
   word.textContent = words[number].word.toUpperCase().split("").sort().join("");
 };
+
+function timer() {
+  time.textContent = timeCounter;
+}
+timer();
