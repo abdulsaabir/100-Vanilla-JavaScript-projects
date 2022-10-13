@@ -111,6 +111,7 @@ function GenerateWord() {
 window.addEventListener("load", GenerateWord);
 let getrandomNUmber = () => {
   let number = Math.floor(Math.random() * words.length);
-  console.log(words[number].word);
+  hint.textContent = words[number].hint;
   return number;
+  word.textContent = words[number].word.toUpperCase().split("").sort().join("");
 };
