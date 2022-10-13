@@ -103,6 +103,7 @@ let check = document.querySelector(".check");
 let input = document.querySelector("input");
 
 function GenerateWord() {
+  let number = Math.floor(Math.random() * words.length);
   word.textContent = words[getrandomNUmber()].word
     .toUpperCase()
     .split("")
@@ -111,11 +112,9 @@ function GenerateWord() {
 }
 
 let getrandomNUmber = () => {
-  let number = Math.floor(Math.random() * words.length);
   hint.textContent = words[number].hint;
-  return number;
+  checkerWOrd = words[number].word;
   word.textContent = words[number].word.toUpperCase().split("").sort().join("");
-  checkerWOrd = words[number.word];
 };
 
 function timer() {
@@ -135,7 +134,7 @@ function refreshGame() {
 
 function checkWord() {
   let value = input.value;
-  alert(`${value}  ${checkWord}`);
+  alert(value + "  " + checkerWOrd);
 }
 
 window.addEventListener("load", GenerateWord);
