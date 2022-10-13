@@ -49,6 +49,10 @@ body {
 .details p b {
   font-weight: 500;
 }
+.time span {
+  font-weight: bold;
+  color: red;
+}
 .content input {
   width: 100%;
   height: 60px;
