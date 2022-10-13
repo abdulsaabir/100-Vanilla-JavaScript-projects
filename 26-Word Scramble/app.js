@@ -109,7 +109,6 @@ function GenerateWord() {
     .join("");
 }
 
-window.addEventListener("load", GenerateWord);
 let getrandomNUmber = () => {
   let number = Math.floor(Math.random() * words.length);
   hint.textContent = words[number].hint;
@@ -118,6 +117,12 @@ let getrandomNUmber = () => {
 };
 
 function timer() {
+  timeCounter--;
   time.textContent = timeCounter;
 }
-timer();
+let timeinterval = setInterval(() => {
+  if (timeCounter == 1) clearInterval(timeinterval);
+  timer();
+}, 1000);
+
+window.addEventListener("load", GenerateWord);
