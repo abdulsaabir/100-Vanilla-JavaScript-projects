@@ -11,8 +11,6 @@ function GenerateWord() {
     .then((data) => {
       hint.textContent = data[0];
       let Word = data[0].toUpperCase().split("").sort();
-      //   time.textContent = word;
-      //   for (let i in Word) word.textContent += Word[getrandomNUmber(Word)];
     });
 }
 
