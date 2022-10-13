@@ -129,10 +129,10 @@ function checkWord() {
   let value = input.value;
   if (!value) alert("Please enter the word to check!");
   return;
-  value = value.toLocaleLowerCase();
+  value = value.toLowerCase();
 
   if (checkerWOrd == value)
-    alert(`Congrats! ${value.toLocaleUpperCase()} is the correct word`);
+    alert(`Congrats! ${value.toUpperCase()} is the correct word`);
   else {
     alert("Oops! as is not a correct word");
   }
@@ -141,10 +141,12 @@ function checkWord() {
 }
 
 function Gameend() {
-  if (timeCounter === 0) alert("Time IS over");
-  GenerateWord();
-  refreshGame();
+  if (timeCounter === 0)
+    alert(`Time IS over The Correct Word was ${checkerWOrd.toUpperCase()}`);
+  //   GenerateWord();
+  //   refreshGame();
 }
+Gameend();
 
 window.addEventListener("load", GenerateWord);
 refresh.addEventListener("click", refreshGame);
