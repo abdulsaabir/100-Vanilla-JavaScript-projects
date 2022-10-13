@@ -146,12 +146,6 @@ function checkWord() {
   refreshGame();
 }
 
-// function Gameend() {
-//   if (timeCounter == 1)
-
-// }
-// Gameend();
-
 window.addEventListener("load", GenerateWord);
 refresh.addEventListener("click", refreshGame);
 check.addEventListener("click", checkWord);
