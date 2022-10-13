@@ -114,8 +114,14 @@ function timer() {
   time.textContent = timeCounter;
 }
 let timeinterval = setInterval(() => {
-  if (timeCounter == 1) clearInterval(timeinterval);
-  timer();
+  if (timeCounter == 1) {
+    clearInterval(timeinterval);
+    alert(`Time IS over The Correct Word was ${checkerWOrd.toUpperCase()}`);
+    GenerateWord();
+    refreshGame();
+  } else {
+    timer();
+  }
 }, 1000);
 
 function refreshGame() {
@@ -140,13 +146,11 @@ function checkWord() {
   refreshGame();
 }
 
-function Gameend() {
-  if (timeCounter === 0)
-    alert(`Time IS over The Correct Word was ${checkerWOrd.toUpperCase()}`);
-  //   GenerateWord();
-  //   refreshGame();
-}
-Gameend();
+// function Gameend() {
+//   if (timeCounter == 1)
+
+// }
+// Gameend();
 
 window.addEventListener("load", GenerateWord);
 refresh.addEventListener("click", refreshGame);
