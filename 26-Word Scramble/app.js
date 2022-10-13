@@ -109,21 +109,14 @@ function GenerateWord() {
   checkerWOrd = words[number].word;
 }
 let timeinterval = setInterval(() => {
-  if (timeCounter == 1) {
-    clearInterval(timeinterval);
-    alert(`Time IS over The Correct Word was ${checkerWOrd.toUpperCase()}`);
-    GenerateWord();
-    refreshGame();
-  } else {
-    startGame();
-  }
+  startGame();
 }, 1000);
 
+// settimeout();
 function refreshGame() {
   GenerateWord();
   timeCounter = 20;
   time.textContent = timeCounter;
-  startGame();
   input.value("");
 }
 
@@ -143,6 +136,12 @@ function checkWord() {
 }
 
 function startGame() {
+  if (timeCounter == 1) {
+    clearInterval(timeinterval);
+    alert(`Time IS over The Correct Word was ${checkerWOrd.toUpperCase()}`);
+    GenerateWord();
+    refreshGame();
+  }
   timeCounter--;
   time.textContent = timeCounter;
 }
