@@ -1,0 +1,18 @@
+{
+  "name": "28-currency-convertor",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.1.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "description": ""
+}
