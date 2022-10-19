@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency convertor</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="bg-blue-600 h-screen flex items-center justify-center">
     <div class="p-6 bg-white">
@@ -17,24 +17,30 @@
         class="w-80 border-blue-400 mt-2 border-2 px-3 py-2 rounded-md placeholder:text-lg outline-none"
       />
       <div>
-        <div>
-          <p class="text-black mt-4 text-lg">From</p>
-          <input
-            class="box-border outline-none w-0 hover:border-red-400 py-2 border-blue-400 border-2 rounded px-3"
-            type="text"
-            placeholder="Like USD..."
-          />
-        </div>
-        <div>
-          <p class="text-black mt-4 text-lg">To</p>
-          <input
-            class="box-border outline-none w-0 hover:border-red-400 py-2 border-blue-400 border-2 rounded px-3"
-            type="text"
-            placeholder="Like EURO..."
-          />
+        <div class="">
+          <div>
+            <p class="text-black mt-4 text-lg">From</p>
+            <input
+              class="box-border outline-none hover:border-red-400 py-2 border-blue-400 border-2 rounded px-3"
+              type="text"
+              placeholder="Like USD..."
+            />
+          </div>
+          <div>
+            <p class="text-black mt-4 text-lg">To</p>
+            <input
+              class="box-border outline-none hover:border-red-400 py-2 border-blue-400 border-2 rounded px-3"
+              type="text"
+              placeholder="Like EURO..."
+            />
+          </div>
         </div>
       </div>
-      <h3 class="text-red-400 mt-2">The Rate amount will apear here</h3>
+      <h3 class="text-red-400 mt-4">The Rate amount will apear here</h3>
+
+      <button class="p-2 mt-4 rounded bg-blue-700 border-none text-white">
+        Get the exchange Rate
+      </button>
     </div>
   </body>
 </html>
