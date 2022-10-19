@@ -1,9 +1,10 @@
-let apikey = "DLs7YzWdqUfcmPIWeTLaRBLukHG1MOtI";
-fetch(`http://data.fixer.io/api/latest?access_key=${apikey}}&format=1`);
+let amountMoney = document.querySelector(".amountMoney");
+let fromMoney = document.querySelector(".fromMoney");
+let toMoney = document.querySelector(".toMoney");
 
+const getRate = async (fromCurrency, toCUrrency) => {
+  let response = await fetch("https://api.exchangerate.host/latest");
+  console.log(response.data);
+};
 
-http://data.fixer.io/api/latest?access_key=DLs7YzWdqUfcmPIWeTLaRBLukHG1MOtI&format=1
-
-
-http://data.fixer.io/api/latest?access_key=f68b13604ac8e570a00f7d8fe7f25e1b&format=1
-
+getRate("USD,EURO");
