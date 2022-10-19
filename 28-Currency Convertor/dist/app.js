@@ -10,10 +10,9 @@ const getRate = async (fromCurrency, toCUrrency) => {
   request.send();
   let response;
   request.onload = function () {
-    response = request.response;
-    return response;
+    let response = request.response;
+    console.log(response);
   };
-  console.log(response);
 };
 
 getRate("USD", "EURO");
