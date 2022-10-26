@@ -27,7 +27,7 @@ const comPareGame = (player, comp) => {
   if (player === "rock") {
     if (comp === "Scissor") {
       result.textContent = "player Wins";
-//       userCounter++;
+      userCounter++;
 //     } else {
 //       result.textContent = "Computer Wins";
 //       compCounter++;
