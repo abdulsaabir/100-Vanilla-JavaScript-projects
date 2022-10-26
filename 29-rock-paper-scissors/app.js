@@ -53,7 +53,7 @@ const comPareGame = (player, comp) => {
       userCounter++;
     }
   }
-//   updateTHescore();
+  updateTHescore();
   gameOver();
 // };
 
