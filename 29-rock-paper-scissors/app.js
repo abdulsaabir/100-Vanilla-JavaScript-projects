@@ -74,4 +74,4 @@ function gameOver() {
     user.textContent = userCounter;
     comp.textContent = compCounter;
   }
-// }
+}
