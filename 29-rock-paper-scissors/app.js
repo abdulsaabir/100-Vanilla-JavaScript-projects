@@ -54,7 +54,7 @@ const comPareGame = (player, comp) => {
     }
   }
 //   updateTHescore();
-//   gameOver();
+  gameOver();
 // };
 
 // function updateTHescore() {
