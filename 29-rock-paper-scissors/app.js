@@ -13,7 +13,7 @@ Played.forEach((item) => {
   });
 });
 
-// const GenreteComputer = () => {
+const GenreteComputer = () => {
 //   let RandomNumber = Math.floor(Math.random() * 3);
 //   return ComputerCHoice[RandomNumber];
 // };
