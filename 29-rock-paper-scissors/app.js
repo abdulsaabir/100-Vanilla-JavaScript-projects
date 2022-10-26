@@ -62,7 +62,7 @@ function updateTHescore() {
   comp.textContent = compCounter;
 }
 
-// function gameOver() {
+function gameOver() {
 //   if (userCounter === 10 || compCounter === 10) {
 //     result.textContent =
 //       userCounter > compCounter
