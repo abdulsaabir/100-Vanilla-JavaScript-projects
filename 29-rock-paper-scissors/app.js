@@ -67,7 +67,7 @@ function gameOver() {
       userCounter > compCounter
         ? "Game over and User Won"
         : "Game over and Computer Won";
-    STOpgame();
+
     setTimeout(() => {
       userCounter = 0;
       compCounter = 0;
