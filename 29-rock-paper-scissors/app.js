@@ -29,7 +29,7 @@ const comPareGame = (player, comp) => {
       result.textContent = "player Wins";
       userCounter++;
     } else {
-//       result.textContent = "Computer Wins";
+      result.textContent = "Computer Wins";
 //       compCounter++;
 //     }
 //   }
