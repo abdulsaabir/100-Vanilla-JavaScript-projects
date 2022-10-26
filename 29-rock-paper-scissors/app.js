@@ -20,7 +20,7 @@ const GenreteComputer = () => {
 
 
 const comPareGame = (player, comp) => {
-//   if (player === comp) {
+  if (player === comp) {
 //     result.textContent = "it's tie game";
 //     return;
 //   }
