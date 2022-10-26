@@ -16,7 +16,7 @@ Played.forEach((item) => {
 const GenreteComputer = () => {
   let RandomNumber = Math.floor(Math.random() * 3);
   return ComputerCHoice[RandomNumber];
-// };
+};
 
 // const comPareGame = (player, comp) => {
 //   if (player === comp) {
