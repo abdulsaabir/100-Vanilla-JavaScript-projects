@@ -18,7 +18,8 @@ const GenreteComputer = () => {
   return ComputerCHoice[RandomNumber];
 };
 
-// const comPareGame = (player, comp) => {
+
+const comPareGame = (player, comp) => {
 //   if (player === comp) {
 //     result.textContent = "it's tie game";
 //     return;
