@@ -51,8 +51,8 @@ const comPareGame = (player, comp) => {
     } else {
       result.textContent = "Player Wins";
       userCounter++;
-//     }
-//   }
+    }
+  }
 //   updateTHescore();
 //   gameOver();
 // };
