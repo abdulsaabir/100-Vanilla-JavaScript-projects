@@ -60,7 +60,7 @@ const comPareGame = (player, comp) => {
 function updateTHescore() {
   user.textContent = userCounter;
   comp.textContent = compCounter;
-// }
+}
 
 // function gameOver() {
 //   if (userCounter === 10 || compCounter === 10) {
