@@ -14,7 +14,7 @@ Played.forEach((item) => {
 });
 
 const GenreteComputer = () => {
-//   let RandomNumber = Math.floor(Math.random() * 3);
+  let RandomNumber = Math.floor(Math.random() * 3);
 //   return ComputerCHoice[RandomNumber];
 // };
 
