@@ -76,9 +76,3 @@ function gameOver() {
     }, 2000);
   }
 }
-
-function STOpgame() {
-  Played.forEach((card) => {
-    card.removeEventListener(click);
-  });
-}
