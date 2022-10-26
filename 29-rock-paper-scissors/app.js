@@ -65,7 +65,7 @@ function updateTHescore() {
 function gameOver() {
   if (userCounter === 10 || compCounter === 10) {
     result.textContent =
-//       userCounter > compCounter
+      userCounter > compCounter
 //         ? "Game over and User Won"
 //         : "Game over and Computer Won";
 
