@@ -22,7 +22,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 260px 0;
+  padding: 160px 0;
 }
 .game {
   position: relative;
