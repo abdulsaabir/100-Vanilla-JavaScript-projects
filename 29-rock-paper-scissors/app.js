@@ -50,7 +50,7 @@ const comPareGame = (player, comp) => {
       compCounter++;
     } else {
       result.textContent = "Player Wins";
-//       userCounter++;
+      userCounter++;
 //     }
 //   }
 //   updateTHescore();
