@@ -21,7 +21,7 @@ const GenreteComputer = () => {
 
 const comPareGame = (player, comp) => {
   if (player === comp) {
-//     result.textContent = "it's tie game";
+    result.textContent = "it's tie game";
 //     return;
 //   }
 //   if (player === "rock") {
