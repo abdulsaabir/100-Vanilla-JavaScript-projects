@@ -31,7 +31,7 @@ const comPareGame = (player, comp) => {
     } else {
       result.textContent = "Computer Wins";
       compCounter++;
-//     }
+    }
 //   }
 
 //   if (player === "paper") {
