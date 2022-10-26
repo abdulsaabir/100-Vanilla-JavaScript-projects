@@ -35,7 +35,7 @@ const comPareGame = (player, comp) => {
   }
 
   if (player === "paper") {
-//     if (comp === "Scissor") {
+    if (comp === "Scissor") {
 //       result.textContent = "Computer Wins";
 //       compCounter++;
 //     } else {
