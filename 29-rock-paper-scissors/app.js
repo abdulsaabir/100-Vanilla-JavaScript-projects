@@ -24,8 +24,8 @@ const comPareGame = (player, comp) => {
     result.textContent = "it's tie game";
     return;
   }
-//   if (player === "rock") {
-//     if (comp === "Scissor") {
+  if (player === "rock") {
+    if (comp === "Scissor") {
 //       result.textContent = "player Wins";
 //       userCounter++;
 //     } else {
