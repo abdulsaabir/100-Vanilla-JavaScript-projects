@@ -58,7 +58,7 @@ const comPareGame = (player, comp) => {
 // };
 
 function updateTHescore() {
-//   user.textContent = userCounter;
+  user.textContent = userCounter;
 //   comp.textContent = compCounter;
 // }
 
