@@ -71,7 +71,7 @@ function gameOver() {
 
     userCounter = 0;
 //     compCounter = 0;
-//     user.textContent = userCounter;
+    user.textContent = userCounter;
 //     comp.textContent = compCounter;
 //   }
 // }
