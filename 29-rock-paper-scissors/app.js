@@ -73,5 +73,5 @@ function gameOver() {
     compCounter = 0;
     user.textContent = userCounter;
     comp.textContent = compCounter;
-//   }
+  }
 // }
