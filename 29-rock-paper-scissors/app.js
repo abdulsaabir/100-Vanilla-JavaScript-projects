@@ -70,7 +70,7 @@ function gameOver() {
         : "Game over and Computer Won";
 
     userCounter = 0;
-//     compCounter = 0;
+    compCounter = 0;
     user.textContent = userCounter;
 //     comp.textContent = compCounter;
 //   }
