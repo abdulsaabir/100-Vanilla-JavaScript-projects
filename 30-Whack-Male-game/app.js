@@ -26,9 +26,9 @@ function Popup() {
   }, time);
 }
 
-function smashthepeep() {
-  console.log("clicked");
-}
-Mole.forEach((mole) => {
-  mole.addEventListener("click", smashthepeep);
-});
+// function smashthepeep() {
+//   console.log("clicked");
+// }
+// Mole.forEach((mole) => {
+//   mole.addEventListener("click", smashthepeep);
+// });
