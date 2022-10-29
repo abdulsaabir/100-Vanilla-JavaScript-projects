@@ -7,7 +7,7 @@ let date = new Date(),
   currYear = date.getFullYear(),
   currMonth = date.getMonth();
 
-// storing full name of all months in array
+//  storing full name of all months in array
 const months = [
   "January",
   "February",
