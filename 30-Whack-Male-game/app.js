@@ -7,7 +7,16 @@ function getRandomTime(min, max) {
 
 function getRandomHoles() {
   let RandomHOle = Math.floor(Math.random() * HoLES.length);
-
   let Hole = HoLES[RandomHOle];
+  if (Hole === LastHole) {
+    console.log("nah nah we're same");
+    return getRandomHoles();
+  }
+  LastHole = Hole;
   return Hole;
+}
+
+function Popup() {
+  let time = getRandomTime(200, 1000);
+  let hole = getRandomHoles();
 }
