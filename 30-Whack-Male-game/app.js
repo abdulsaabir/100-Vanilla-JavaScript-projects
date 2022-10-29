@@ -17,7 +17,7 @@ function getRandomHoles() {
 }
 
 function Popup() {
-  let time = getRandomTime(800, 1000);
+  let time = getRandomTime(800, 1200);
   let hole = getRandomHoles();
   hole.classList.add("up");
   setTimeout(() => {
@@ -25,10 +25,17 @@ function Popup() {
     hole.classList.remove("up");
   }, time);
 }
-
-// function smashthepeep() {
-//   console.log("clicked");
-// }
-// Mole.forEach((mole) => {
-//   mole.addEventListener("click", smashthepeep);
-// });
+function bonk(e) {
+  if (!e.isTrusted) return; // cheater!
+  score++;
+  this.parentNode.classList.remove("up");
+  scoreBoard.textContent = score;
+}
+Mole.forEach((mole) => mole.addEventListener("click", bonk));
+function startGame() {
+  scoreBoard.textContent = 0;
+  timeUp = false;
+  score = 0;
+  peep();
+  setTimeout(() => (timeUp = true), 10000);
+}
