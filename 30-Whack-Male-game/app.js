@@ -1,4 +1,5 @@
 let HoLES = document.querySelectorAll(".hole");
+let Mole = document.querySelectorAll(".mole");
 let LastHole;
 
 function getRandomTime(min, max) {
@@ -9,7 +10,6 @@ function getRandomHoles() {
   let RandomHOle = Math.floor(Math.random() * HoLES.length);
   let Hole = HoLES[RandomHOle];
   if (Hole === LastHole) {
-    console.log("nah nah we're same");
     return getRandomHoles();
   }
   LastHole = Hole;
@@ -17,6 +17,18 @@ function getRandomHoles() {
 }
 
 function Popup() {
-  let time = getRandomTime(200, 1000);
+  let time = getRandomTime(800, 1000);
   let hole = getRandomHoles();
+  hole.classList.add("up");
+  setTimeout(() => {
+    Popup();
+    hole.classList.remove("up");
+  }, time);
 }
+
+function smashthepeep(e) {
+  //   if (!e.istrusted) return;
+  console.log("clicked");
+}
+
+Mole.forEach((moles) => moles.addEventListener("click", smashthepeep));
