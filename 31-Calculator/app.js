@@ -6,6 +6,7 @@ let operand;
 let numbernow = "";
 let  dataquals = document.querySelector('[ data-equals]')
 let dataallclear = document.querySelector('[data-all-clear]')
+let datadelete = document.querySelector('[data-delete]')
 numberBtn.forEach(number => {
    number.addEventListener('click' , e => {
    numbernow=  numbernow.concat(e.target.textContent)
@@ -54,4 +55,9 @@ dataallclear.addEventListener('click', () => {
     currentoperand.textContent=""
     operand=""
     numbernow=""
+})
+
+datadelete.addEventListener('click' ,() => {
+numbernow = numbernow.slice(0,-1)
+currentoperand.textContent = numbernow
 })
