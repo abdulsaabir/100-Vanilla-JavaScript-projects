@@ -5,6 +5,7 @@ let previousoperand = document.querySelector('.previous-operand')
 let operand;
 let numbernow = "";
 let  dataquals = document.querySelector('[ data-equals]')
+let dataallclear = document.querySelector('[data-all-clear]')
 numberBtn.forEach(number => {
    number.addEventListener('click' , e => {
    numbernow=  numbernow.concat(e.target.textContent)
@@ -15,7 +16,11 @@ numberBtn.forEach(number => {
 
 operationBtn.forEach(oper => {
     oper.addEventListener('click' , e=>{
-        if(currentoperand.textContent === "") return
+        if(currentoperand.textContent === "")
+        {
+            operand = e.target.textContent
+            return
+        }
        
         if(operand === "÷") operand = "/"
     //  console.log(operand)
@@ -38,6 +43,15 @@ operationBtn.forEach(oper => {
 
 dataquals.addEventListener('click' ,() => {
     if(!operand) return
+    if(operand === "÷") operand = "/"
     currentoperand.textContent= (eval(`${previousoperand.textContent} ${operand} ${currentoperand.textContent}`))
     previousoperand.textContent=""
+})
+
+
+dataallclear.addEventListener('click', () => {
+    previousoperand.textContent = ""
+    currentoperand.textContent=""
+    operand=""
+    numbernow=""
 })
