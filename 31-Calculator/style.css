@@ -38,4 +38,7 @@ body{
     align-items: flex-end;
     flex-direction: column;
     justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
