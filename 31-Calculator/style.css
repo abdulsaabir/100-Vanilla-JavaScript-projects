@@ -10,7 +10,7 @@ body{
 
 .calculator-grid{
     display: grid;
-    align-items: center;
+    align-content: center;
     justify-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
@@ -26,4 +26,16 @@ body{
 }
 .calculator-grid > button:hover{
     background-color: rgba(255, 255, 255, 0.9);
+}
+.calculator-grid .span-two {
+    grid-column:  span 2
+}
+ .output{
+    grid-column: 1/-1;
+    background-color: rgb(0, 0, 0,0.8);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
 }
