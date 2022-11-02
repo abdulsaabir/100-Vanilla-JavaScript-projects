@@ -14,7 +14,8 @@ numberBtn.forEach(number => {
 
 operationBtn.forEach(oper => {
     oper.addEventListener('click' , e=>{
-        // if(currentoperand.textContent) return
+        if(currentoperand.textContent === "") return
+       
         if(operand === "÷") operand = "/"
     //  console.log(operand)
     // console.log(Number(operand))
