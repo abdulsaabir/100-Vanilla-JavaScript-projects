@@ -15,6 +15,7 @@ class CalculatorClass {
     calOperation(symbol){
         if(!currentoperand.textContent) 
         {
+            console.log(previousoperand.textContent)
             this.operation = symbol.toString()
             return
         }
