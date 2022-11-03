@@ -47,21 +47,10 @@ class CalculatorClass {
       this.currentoperand.textContent = ""
       this.operand=""
     }
-    displayoperand(number){
-        const stringNumber = number.toString()
-        const integerDigits = parseFloat(stringNumber.split('.')[0])
-        const decimalDigits = stringNumber.split('.')[1]
-        let integerDisplay
-        if (isNaN(integerDigits)) {
-          integerDisplay = ''
-        } else {
-          integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
-        }
-        if (decimalDigits != null) {
-          return `${integerDisplay}.${decimalDigits}`
-        } else {
-          return integerDisplay
-        }
+    displayoperand(operand){
+        if(operand === "." && currentoperand.textContent.includes('.')) return
+        this.operand = this.operand.toString() + operand.toString()
+        this.updateCalc()
     }
     updateCalc(){
         this.currentoperand.textContent = this.operand
