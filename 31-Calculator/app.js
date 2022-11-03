@@ -13,16 +13,23 @@ class CalculatorClass {
         previousoperand.textContent=""
     }
     calOperation(symbol){
-        if(!currentoperand.textContent) return
+        if(!currentoperand.textContent) 
+        {
+            this.operation = symbol.toString()
+            return
+        }
         if(previousoperand.textContent)
         {
            
             this.calCulate()
+            this.operand=""
+            this.previousoperand.textContent =` ${this.completion} ${this.operation}`
+            this.currentoperand.textContent=""
             this.operation = symbol.toString()
             return
         }
         this.operation = symbol.toString()
-      this.previousoperand.textContent = this.currentoperand.textContent
+      this.previousoperand.textContent =` ${this.currentoperand.textContent} ${this.operation}`
       this.currentoperand.textContent = ""
       this.operand=""
     }
@@ -53,10 +60,6 @@ class CalculatorClass {
         default:
             break;
      }
-     this.operand=""
-     this.currentoperand.textContent=this.completion
-    //  console.log(this.completion)
-     this.previousoperand.textContent=""
     }
 
     deleteopreand(){
@@ -68,6 +71,9 @@ class CalculatorClass {
         else{
             
             this.calCulate()
+            this.operand=""
+            this.currentoperand.textContent=this.completion
+            this.previousoperand.textContent=""
         }
     }
 }
