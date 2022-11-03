@@ -17,8 +17,19 @@ class CalculatorClass {
     calOperation(symbol){
         if(!currentoperand.textContent) 
         {
-            
+            this.changing;
+            previousoperand.textContent.split('').forEach(xx => {
+                this.options.some(xy => {
+                    if(xx == xy)
+                    {
+                        this.changing = xx
+                        
+                    }
+                })
+            })
             this.operation = symbol.toString()
+           previousoperand.textContent=  `${previousoperand.textContent.split(this.changing).join('')} ${this.operation}`
+            
             return
         }
         if(previousoperand.textContent)
