@@ -58,10 +58,10 @@ class CalculatorClass {
     //  console.log(this.completion)
      this.previousoperand.textContent=""
     }
-    delete(){
-        let x =  currentoperand.textContent
-        currentoperand.textContent= x.slice(0,-1)
 
+    deleteopreand(){
+        this.operand = this.operand.slice(0,-1)
+        this.updateCalc()
     }
     equal(){
         if(!previousoperand.textContent || !currentoperand.textContent) return
@@ -105,4 +105,6 @@ operationBtn.forEach(btn => {
 dataquals.addEventListener('click' , () =>{
     Calculator.equal()
 })
-datadelete.addEventListener('click' ,Calculator.delete)
+datadelete.addEventListener('click' ,() => {
+    Calculator.deleteopreand()
+})
