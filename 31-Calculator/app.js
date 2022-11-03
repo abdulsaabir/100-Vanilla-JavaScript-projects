@@ -59,6 +59,8 @@ class CalculatorClass {
      this.previousoperand.textContent=""
     }
     delete(){
+        let x =  currentoperand.textContent
+        console.log(x)
 
     }
     equal(){
@@ -103,4 +105,4 @@ operationBtn.forEach(btn => {
 dataquals.addEventListener('click' , () =>{
     Calculator.equal()
 })
-datadelete.addEventListener('click')
+datadelete.addEventListener('click' ,Calculator.delete)
