@@ -60,7 +60,7 @@ class CalculatorClass {
     }
     delete(){
         let x =  currentoperand.textContent
-        console.log(x)
+        currentoperand.textContent= x.slice(0,-1)
 
     }
     equal(){
