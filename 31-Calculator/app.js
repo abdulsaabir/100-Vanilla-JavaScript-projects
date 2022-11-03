@@ -13,11 +13,15 @@ class CalculatorClass {
         this.previousoperand.textContent=""
     }
     calOperation(symbol){
+        if(!currentoperand.textContent) return
         if(previousoperand.textContent)
         {
+           
             this.calCulate()
+            this.operation = symbol.toString()
+            return
         }
-      this.operation = symbol
+        this.operation = symbol.toString()
       this.previousoperand.textContent = this.currentoperand.textContent
       this.currentoperand.textContent = ""
       this.operand=""
@@ -30,17 +34,28 @@ class CalculatorClass {
         this.currentoperand.textContent = this.operand
     }
     calCulate(){
+        console.log(this.operation)
         this.completion  ;
-     switch (this.operand) {
+     switch (this.operation) {
         case "+":
-            completion=parseFloat(previousoperand.textContent) + parseFloat(currentoperand.textContent)
+           this.completion= parseFloat(previousoperand.textContent) + parseFloat(currentoperand.textContent)
+        break;
+        case "-":
+           this.completion= parseFloat(previousoperand.textContent) - parseFloat(currentoperand.textContent)
+            break;
+        case "*":
+           this.completion= parseFloat(previousoperand.textContent) * parseFloat(currentoperand.textContent)
+            break;
+        case "÷":
+           this.completion= parseFloat(previousoperand.textContent) / parseFloat(currentoperand.textContent)
             break;
      
         default:
             break;
      }
-     console.log()
+     this.operand=""
      this.previousoperand.textContent=this.completion
+    //  console.log(this.completion)
      this.currentoperand.textContent=""
     }
     delete(){
