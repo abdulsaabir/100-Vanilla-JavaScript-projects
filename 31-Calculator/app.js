@@ -2,20 +2,24 @@ class CalculatorClass {
     constructor(previousoperand , currentoperand)
     {
         this.previousoperand = previousoperand;
-        this.currentoperand = currentoperand.textContent;
+        this.currentoperand = currentoperand;
         this.clear()
     }
 
     clear(){
         this.operand=""
         this.operation = ""
-        this.currentoperand="4"
+        this.currentoperand.textContent=""
         this.previousoperand.textContent=""
     }
     calOperation(symbol){
+        if(previousoperand.textContent)
+        {
+            this.calCulate()
+        }
       this.operation = symbol
-      this.previousoperand.textContent = this.currentoperand
-      this.currentoperand = ""
+      this.previousoperand.textContent = this.currentoperand.textContent
+      this.currentoperand.textContent = ""
       this.operand=""
     }
     displayoperand(operand){
@@ -23,10 +27,21 @@ class CalculatorClass {
         this.updateCalc()
     }
     updateCalc(){
-        this.currentoperand = this.operand
+        this.currentoperand.textContent = this.operand
     }
     calCulate(){
+        this.completion  ;
+     switch (this.operand) {
+        case "+":
+            completion=parseFloat(previousoperand.textContent) + parseFloat(currentoperand.textContent)
+            break;
      
+        default:
+            break;
+     }
+     console.log()
+     this.previousoperand.textContent=this.completion
+     this.currentoperand.textContent=""
     }
     delete(){
 
@@ -52,7 +67,6 @@ let Calculator = new CalculatorClass(previousoperand , currentoperand)
 numberBtn.forEach(btn =>{
     btn.addEventListener('click' , e => {
         Calculator.displayoperand(e.target.innerText);
-        Calculator.clear()
     })
 })
 
