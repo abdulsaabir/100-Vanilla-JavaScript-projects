@@ -9,8 +9,8 @@ class CalculatorClass {
     clear(){
         this.operand=""
         this.operation = ""
-        this.currentoperand.textContent=""
-        this.previousoperand.textContent=""
+        currentoperand.textContent=""
+        previousoperand.textContent=""
     }
     calOperation(symbol){
         if(!currentoperand.textContent) return
@@ -62,7 +62,7 @@ class CalculatorClass {
 
     }
     equal(){
-        if(this.previousoperand.textContent || this.currentoperand.textContent) return
+        if(!previousoperand.textContent || !currentoperand.textContent) return
         else{
             
             this.calCulate()
@@ -103,3 +103,4 @@ operationBtn.forEach(btn => {
 dataquals.addEventListener('click' , () =>{
     Calculator.equal()
 })
+datadelete.addEventListener('click')
