@@ -1,10 +1,12 @@
 class CalculatorClass {
     constructor(previousoperand , currentoperand)
     {
+        this.options = ['+' , '-' , '*']
         this.previousoperand = previousoperand;
         this.currentoperand = currentoperand;
         this.clear()
     }
+    th
 
     clear(){
         this.operand=""
@@ -15,7 +17,7 @@ class CalculatorClass {
     calOperation(symbol){
         if(!currentoperand.textContent) 
         {
-            console.log(previousoperand.textContent)
+            
             this.operation = symbol.toString()
             return
         }
