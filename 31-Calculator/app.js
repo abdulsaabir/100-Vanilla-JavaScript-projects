@@ -27,6 +27,7 @@ class CalculatorClass {
       this.operand=""
     }
     displayoperand(operand){
+        if(operand === "." && currentoperand.textContent.includes('.')) return
         this.operand = this.operand.toString() + operand.toString()
         this.updateCalc()
     }
@@ -34,7 +35,6 @@ class CalculatorClass {
         this.currentoperand.textContent = this.operand
     }
     calCulate(){
-        console.log(this.operation)
         this.completion  ;
      switch (this.operation) {
         case "+":
@@ -54,15 +54,19 @@ class CalculatorClass {
             break;
      }
      this.operand=""
-     this.previousoperand.textContent=this.completion
+     this.currentoperand.textContent=this.completion
     //  console.log(this.completion)
-     this.currentoperand.textContent=""
+     this.previousoperand.textContent=""
     }
     delete(){
 
     }
     equal(){
-
+        if(this.previousoperand.textContent || this.currentoperand.textContent) return
+        else{
+            
+            this.calCulate()
+        }
     }
 }
 
@@ -97,5 +101,5 @@ operationBtn.forEach(btn => {
 })
 
 dataquals.addEventListener('click' , () =>{
-    Calculator.calCulate()
+    Calculator.equal()
 })
