@@ -96,3 +96,6 @@ operationBtn.forEach(btn => {
     })
 })
 
+dataquals.addEventListener('click' , () =>{
+    Calculator.calCulate()
+})
