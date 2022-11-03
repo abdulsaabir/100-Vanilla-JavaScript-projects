@@ -3,6 +3,7 @@ class Calculator {
       this.previousOperandTextElement = previousOperandTextElement
       this.currentOperandTextElement = currentOperandTextElement
       this.clear()
+      this.options=['÷' , '*' , '+' , '-']
     }
   
     clear() {
@@ -21,7 +22,23 @@ class Calculator {
     }
   
     chooseOperation(operation) {
-      if (this.currentOperand === '') return
+      if (this.currentOperand === '') 
+      {
+        this.changing;
+        previousOperandTextElement.textContent.split('').forEach(xx => {
+            this.options.some(xy => {
+                if(xx == xy)
+                {
+                    this.changing = xx
+                    
+                }
+            })
+        })
+        this.operation = operation
+        previousOperandTextElement.textContent=  `${previousOperandTextElement.textContent.split(this.changing).join('')} ${this.operation}`
+        
+        return
+      }
       if (this.previousOperand !== '') {
         this.compute()
       }
