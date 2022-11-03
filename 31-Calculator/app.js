@@ -2,24 +2,31 @@ class CalculatorClass {
     constructor(previousoperand , currentoperand)
     {
         this.previousoperand = previousoperand;
-        this.currentoperand = currentoperand
+        this.currentoperand = currentoperand.textContent;
         this.clear()
     }
 
     clear(){
-        this.currentoperand = ""
-        this.previousoperand=""
         this.operand=""
         this.operation = ""
+        this.currentoperand="4"
+        this.previousoperand.textContent=""
+    }
+    calOperation(symbol){
+      this.operation = symbol
+      this.previousoperand.textContent = this.currentoperand
+      this.currentoperand = ""
+      this.operand=""
     }
     displayoperand(operand){
-        this.operand = operand
+        this.operand = this.operand.toString() + operand.toString()
+        this.updateCalc()
     }
     updateCalc(){
-        this.currentoperand.text = this.operand
+        this.currentoperand = this.operand
     }
     calCulate(){
-        console.log(this.currentoperand)
+     
     }
     delete(){
 
@@ -39,14 +46,24 @@ let  dataquals = document.querySelector('[ data-equals]')
 let dataallclear = document.querySelector('[data-all-clear]')
 let datadelete = document.querySelector('[data-delete]')
 
-let Calculator = new CalculatorClass()
+let Calculator = new CalculatorClass(previousoperand , currentoperand)
 
 
 numberBtn.forEach(btn =>{
     btn.addEventListener('click' , e => {
-        Calculator.displayoperand(e.target.innerText)
-        Calculator.calCulate()
+        Calculator.displayoperand(e.target.innerText);
+        Calculator.clear()
     })
 })
 
+
+dataallclear.addEventListener('click' , () => {
+    Calculator.clear()
+})
+
+operationBtn.forEach(btn => {
+    btn.addEventListener('click' , e => {
+        Calculator.calOperation(e.currentTarget.textContent)
+    })
+})
 
