@@ -1,7 +1,7 @@
 class CalculatorClass {
     constructor(previousoperand , currentoperand)
     {
-        this.options = ['+' , '-' , '*']
+        this.options = ['+' , '-' , '*' , '÷']
         this.previousoperand = previousoperand;
         this.currentoperand = currentoperand;
         this.clear()
@@ -117,3 +117,4 @@ dataquals.addEventListener('click' , () =>{
 datadelete.addEventListener('click' ,() => {
     Calculator.deleteopreand()
 })
+
