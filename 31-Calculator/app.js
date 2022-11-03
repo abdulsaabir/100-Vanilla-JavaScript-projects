@@ -3,7 +3,7 @@ class Calculator {
       this.previousOperandTextElement = previousOperandTextElement
       this.currentOperandTextElement = currentOperandTextElement
       this.clear()
-      this.options=['÷' , '*' , '+' , '-']
+      this.options=['÷','*','+','-']
     }
   
     clear() {
