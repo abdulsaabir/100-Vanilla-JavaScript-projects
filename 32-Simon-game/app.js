@@ -136,4 +136,15 @@ strictButton.addEventListener('click', (event) => {
         bottomRight.style.backgroundColor = "lightskyblue";
       }
       
-      
+      topLeft.addEventListener('click', (event) => {
+        if (on) {
+          playerOrder.push(1);
+          check();
+          one();
+          if(!win) {
+            setTimeout(() => {
+              clearColor();
+            }, 300);
+          }
+        }
+      })
