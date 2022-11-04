@@ -39,3 +39,9 @@ strictButton.addEventListener('click', (event) => {
       clearInterval(intervalId);
     }
   });
+
+  startButton.addEventListener('click', (event) => {
+    if (on || win) {
+      play();
+    }
+  });
