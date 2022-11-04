@@ -45,3 +45,21 @@ strictButton.addEventListener('click', (event) => {
       play();
     }
   });
+
+
+  function play() {
+    win = false;
+    order = [];
+    playerOrder = [];
+    flash = 0;
+    intervalId = 0;
+    turn = 1;
+    turnCounter.innerHTML = 1;
+    good = true;
+    for (var i = 0; i < 20; i++) {
+      order.push(Math.floor(Math.random() * 4) + 1);
+    }
+    compTurn = true;
+  
+    intervalId = setInterval(gameTurn, 800);
+  }
