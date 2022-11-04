@@ -121,3 +121,11 @@ strictButton.addEventListener('click', (event) => {
         noise = true;
         bottomRight.style.backgroundColor = "lightskyblue";
       }
+
+      function clearColor() {
+        topLeft.style.backgroundColor = "darkgreen";
+        topRight.style.backgroundColor = "darkred";
+        bottomLeft.style.backgroundColor = "goldenrod";
+        bottomRight.style.backgroundColor = "darkblue";
+      }
+      
