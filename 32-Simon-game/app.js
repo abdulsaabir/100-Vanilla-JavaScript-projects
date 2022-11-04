@@ -94,3 +94,12 @@ strictButton.addEventListener('click', (event) => {
         noise = true;
         topLeft.style.backgroundColor = "lightgreen";
       }
+
+      function two() {
+        if (noise) {
+          let audio = document.getElementById("clip2");
+          audio.play();
+        }
+        noise = true;
+        topRight.style.backgroundColor = "tomato";
+      }
