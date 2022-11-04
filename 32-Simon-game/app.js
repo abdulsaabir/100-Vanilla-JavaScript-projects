@@ -112,3 +112,12 @@ strictButton.addEventListener('click', (event) => {
         noise = true;
         bottomLeft.style.backgroundColor = "yellow";
       }
+
+      function four() {
+        if (noise) {
+          let audio = document.getElementById("clip4");
+          audio.play();
+        }
+        noise = true;
+        bottomRight.style.backgroundColor = "lightskyblue";
+      }
