@@ -213,3 +213,7 @@ strictButton.addEventListener('click', (event) => {
                 intervalId = setInterval(gameTurn, 800);
               }
             }, 800);
+
+            
+    noise = false;
+}
