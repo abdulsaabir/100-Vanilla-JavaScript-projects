@@ -103,3 +103,12 @@ strictButton.addEventListener('click', (event) => {
         noise = true;
         topRight.style.backgroundColor = "tomato";
       }
+
+      function three() {
+        if (noise) {
+          let audio = document.getElementById("clip3");
+          audio.play();
+        }
+        noise = true;
+        bottomLeft.style.backgroundColor = "yellow";
+      }
