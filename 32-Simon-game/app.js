@@ -85,3 +85,12 @@ strictButton.addEventListener('click', (event) => {
       }
     }
     
+
+    function one() {
+        if (noise) {
+          let audio = document.getElementById("clip1");
+          audio.play();
+        }
+        noise = true;
+        topLeft.style.backgroundColor = "lightgreen";
+      }
