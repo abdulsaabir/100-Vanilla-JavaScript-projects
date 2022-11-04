@@ -195,3 +195,10 @@ strictButton.addEventListener('click', (event) => {
         if (playerOrder.length == 3 && good) {
           winGame();
         }
+
+        if (good == false) {
+            flashColor();
+            turnCounter.innerHTML = "NO!";
+            setTimeout(() => {
+              turnCounter.innerHTML = turn;
+              clearColor();
