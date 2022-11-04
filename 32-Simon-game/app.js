@@ -128,4 +128,12 @@ strictButton.addEventListener('click', (event) => {
         bottomLeft.style.backgroundColor = "goldenrod";
         bottomRight.style.backgroundColor = "darkblue";
       }
+
+      function flashColor() {
+        topLeft.style.backgroundColor = "lightgreen";
+        topRight.style.backgroundColor = "tomato";
+        bottomLeft.style.backgroundColor = "yellow";
+        bottomRight.style.backgroundColor = "lightskyblue";
+      }
+      
       
