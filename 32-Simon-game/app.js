@@ -63,3 +63,13 @@ strictButton.addEventListener('click', (event) => {
   
     intervalId = setInterval(gameTurn, 800);
   }
+
+  function gameTurn() {
+    on = false;
+  
+    if (flash == turn) {
+      clearInterval(intervalId);
+      compTurn = false;
+      clearColor();
+      on = true;
+    }
