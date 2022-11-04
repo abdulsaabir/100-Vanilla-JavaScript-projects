@@ -18,3 +18,12 @@ const bottomRight = document.querySelector("#bottomright");
 const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
+
+
+strictButton.addEventListener('click', (event) => {
+    if (strictButton.checked == true) {
+      strict = true;
+    } else {
+      strict = false;
+    }
+  });
