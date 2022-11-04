@@ -202,3 +202,14 @@ strictButton.addEventListener('click', (event) => {
             setTimeout(() => {
               turnCounter.innerHTML = turn;
               clearColor();
+
+              if (strict) {
+                play();
+              } else {
+                compTurn = true;
+                flash = 0;
+                playerOrder = [];
+                good = true;
+                intervalId = setInterval(gameTurn, 800);
+              }
+            }, 800);
