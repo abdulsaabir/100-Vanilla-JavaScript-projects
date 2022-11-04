@@ -56,7 +56,7 @@ strictButton.addEventListener('click', (event) => {
     turn = 1;
     turnCounter.innerHTML = 1;
     good = true;
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 10; i++) {
       order.push(Math.floor(Math.random() * 4) + 1);
     }
     compTurn = true;
