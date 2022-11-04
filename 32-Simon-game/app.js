@@ -148,3 +148,17 @@ strictButton.addEventListener('click', (event) => {
           }
         }
       })
+
+      topRight.addEventListener('click', (event) => {
+        if (on) {
+          playerOrder.push(2);
+          check();
+          two();
+          if(!win) {
+            setTimeout(() => {
+              clearColor();
+            }, 300);
+          }
+        }
+      })
+      
